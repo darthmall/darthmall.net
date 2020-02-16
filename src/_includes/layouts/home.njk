@@ -1,7 +1,9 @@
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
-<main>
-  {{ content | safe }}
+<main class="grid-container">
+  <article class="about">
+    {{ content | safe }}
+  </article>
 </main>
 {% endblock %}

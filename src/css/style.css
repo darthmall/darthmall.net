@@ -388,7 +388,7 @@ a[class]:visited,
 }
 
 #site-footer > .copyright,
-#site-footer > .link-cloud {
+#site-footer > nav {
   grid-column: heading;
 }
 

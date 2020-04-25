@@ -1,0 +1,14 @@
+<footer id="site-footer" role="contentinfo">
+  <nav>
+    <ul class="link-cloud">
+    {%- for item in footer.items %}
+      <li class="droplet">
+        <a href="{{ item.url }}"{% if item.rel %} rel="{{ item.rel }}"{% endif %}>
+          {{ item.text }}
+        </a>
+      </li>
+    {%- endfor -%}
+    </ul>
+  </nav>
+  <p class="copyright">&copy; {{ site.copyright }}</p>
+</footer>

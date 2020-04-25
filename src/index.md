@@ -1,5 +1,6 @@
 ---
 layout: layouts/home
+profileImage: /images/me.gif
 ---
 
 I'm Evan Sheehan; I design and build software for the web. I am currently a member of the

@@ -2,7 +2,11 @@
 
 {% block content %}
 <main class="grid-container">
+
   <article class="about">
+    <div class="profile-photo">
+      <img src="{{ profileImage }}" alt="" width="277" height="480" />
+    </div>
     {{ content | safe }}
   </article>
 </main>

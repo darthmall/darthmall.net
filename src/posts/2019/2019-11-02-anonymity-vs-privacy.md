@@ -1,7 +1,6 @@
 ---
 title: Anonymity vs. Privacy
 date: 2019-11-02
-tags: post
 description: >-
     Wherein I muse about the difference between anonymity and privacy, and how
     advertisers try to conflate the two to assuage peoples concerns over

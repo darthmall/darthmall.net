@@ -134,8 +134,12 @@ h1,
 }
 
 h1 {
-  margin-top: 1.732em;
-  font-size: 5.196em;
+  margin-top: 8.999rem;
+  font-size: 5.196rem;
+}
+
+h1 + * {
+  margin-top: 5.196rem;
 }
 
 h2:not([class]),
@@ -173,7 +177,7 @@ hr,
 }
 
 * + h2 {
-  margin-top: 0.577em;
+  margin-top: 3rem;
 }
 
 hr + h2 {

@@ -69,7 +69,8 @@
 html {
   background-color: var(--bg-color);
   color: var(--fg-color);
-  font-size: 1.125em;
+  font-size: 1.5em;
+  line-height: 1.3;
 }
 
 *,
@@ -206,7 +207,7 @@ article.grid-container > h2 {
  */
 article > p:not([class]):first-of-type {
   font-family: 'Work Sans', sans-serif;
-  font-size: 1.732em;
+  font-size: 1.732rem;
   line-height: 1.2;
   max-width: 28em;
 }

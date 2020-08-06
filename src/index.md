@@ -3,7 +3,9 @@ layout: layouts/home
 profileImage: /images/me.gif
 ---
 
-I'm Evan Sheehan; I design and build software for the web. I am currently a member of the
-[Science On a Sphere](https://sos.noaa.gov) (SOS) at [NOAA](https://noaa.gov), where I
-maintain the SOS website and occasionally get to work on data visualization tools for
-scientists.
+# Howdy
+
+My name is Evan and this is my little corner of the web where I sometimes
+[write](/weblog/) down the things I think about; keep a small [portfolio](/work/) (because
+I'm a Professional™); and where you can find out what I'm up to [now](/now/), if that's
+your jam.

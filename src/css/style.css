@@ -151,7 +151,7 @@ h2:not([class]),
 }
 
 h2:not([class]) {
-  font-size: 3em;
+  font-size: 3rem;
   line-height: 1;
 }
 
@@ -161,7 +161,7 @@ h2 + * {
 
 h3 {
   font-family: 'Work Sans', sans-serif;
-  font-size: 1.732em;
+  font-size: 1.732rem;
   font-weight: bold;
 }
 
@@ -173,7 +173,7 @@ hr,
 
 hr,
 .grid-container hr {
-  margin: 3em 0 0 0;
+  margin: 3rem 0 0 0;
 }
 
 * + h2 {
@@ -190,11 +190,11 @@ p {
 
 [role="banner"] {
   grid-column: full;
-  margin-top: 1em;
+  margin-top: 1rem;
 }
 
 [role="banner"] > nav {
-  margin-top: 3em;
+  margin-top: 3rem;
 }
 
 article.grid-container > h2 {
@@ -219,12 +219,12 @@ figcaption,
   /* Shrink the monospace text a little so that it fits better with the
    * surrounding text set in Work Sans.
    */
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
 
 blockquote {
-  font: italic 1.732em/1.2 'Work Sans', sans-serif;
-  margin: 3em;
+  font: italic 1.732rem/1.2 'Work Sans', sans-serif;
+  margin: 3rem;
 }
 
 img:not([class]) {
@@ -245,7 +245,7 @@ a[class]:visited,
 
 .about p {
   background-color: var(--bg-color);
-  border: 0.577em solid var(--bg-color);
+  border: 0.577rem solid var(--bg-color);
   margin: 0 -0.577em;
 }
 

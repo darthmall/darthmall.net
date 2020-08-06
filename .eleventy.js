@@ -1,3 +1,5 @@
+const CleanCSS = require('clean-css');
+
 const {isoDateFilter, dateFilter} = require('./src/filters/date-filters.js');
 
 module.exports = function (config) {
@@ -6,7 +8,11 @@ module.exports = function (config) {
   config.addFilter('dateFilter', dateFilter);
   config.addFilter('isoDateFilter', isoDateFilter);
 
-  config.addPassthroughCopy('src/css');
+  config.addFilter('cssmin', function (code) {
+    return new CleanCSS({}).minify(code).styles;
+  });
+
+  config.addPassthroughCopy('src/fonts');
   config.addPassthroughCopy('src/images');
 
   const now = new Date();

@@ -7,8 +7,14 @@
 
   {% include "partials/meta-info.njk" %}
 
-  <link rel="stylesheet" href="/css/style.css">
+  {% set css %}
+    {% include "partials/global/style.njk" %}
+  {% endset %}
+  <style>
+    {{ css | cssmin | safe }}
+  </style>
 </head>
+
 <body>
   {% include "partials/site-header.njk" %}
   {% block content %}{% endblock content %}

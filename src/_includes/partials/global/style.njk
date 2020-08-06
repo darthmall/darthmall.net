@@ -57,12 +57,11 @@
 }
 
 :root {
-  --bg-color: white;
-  --fg-color: #333;
-  --accent-color: gold;
-  --link-color: teal;
-  --visited-color: cadetblue;
-  --measure: 60ch;
+{% for group, group_tokens in tokens %}
+  {% for token, value in group_tokens %}
+    --{{ group | safe }}-{{ token | safe }}: {{ value | safe }};
+  {% endfor %}
+{% endfor %}
   --overlap: 3rem;
 }
 

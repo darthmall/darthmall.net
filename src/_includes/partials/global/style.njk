@@ -70,6 +70,8 @@ html {
   color: {{ tokens.color.ink | safe }};
 }
 
+/* Begin reset */
+
 *,
 *::before,
 *::after {
@@ -77,32 +79,21 @@ html {
   margin-bottom: 0;
 }
 
-* + * {
-  margin-top: 1.3rem;
-}
-
+body,
+dl,
 dd,
 figcaption,
-li {
-  margin-top: 0;
-}
-
-ol[class],
-ul[class] {
-  list-style: none;
-  padding: 0;
-}
-
-body,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
 ol[class],
 ul[class] {
   margin: 0;
-}
-
-h1,
-h2,
-h3 {
-  margin-bottom: 0;
 }
 
 body {
@@ -120,6 +111,29 @@ a:not([class]) {
 a:not([class]):visited {
   color: {{ tokens.color.primary-shade | safe }};
 }
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
+  }
+}
+
+/* End reset */
 
 h1,
 .name-mark,
@@ -301,7 +315,7 @@ a[class]:visited,
 }
 
 .nav-list a[aria-current] {
-  text-decoration: underline double var(--link-color);
+  text-decoration: underline double var(--color-primary);
 }
 
 .name-mark {
@@ -334,7 +348,7 @@ a[class]:visited,
 }
 
 .nav-list > .item {
-  border-left: 0.25rem solid var(--accent-color);
+  border-left: 0.25rem solid var(--color-accent);
   padding-left: 0.5rem;
   white-space: nowrap;
 }
@@ -391,9 +405,9 @@ a[class]:visited,
     display: grid;
     grid-template-columns:
       [full-start] 0.5rem 1fr
-      [heading-start subhead-start] minmax(auto, calc(var(--measure) * 0.577))
+      [heading-start subhead-start] minmax(auto, calc(var(--type-measure) * 0.577))
       [subhead-end content-start] var(--overlap)
-      minmax(auto, calc(var(--measure) - var(--overlap)))
+      minmax(auto, calc(var(--type-measure) - var(--overlap)))
       [content-end heading-end] 3fr 0.5rem
       [full-end];
     margin-left: 0;
@@ -453,7 +467,7 @@ a[class]:visited,
   }
 
   .name-mark::after {
-    background-color: var(--fg-color);
+    background-color: var(--color-ink);
     content: "";
     display: block;
     grid-column: 1 / -1;
@@ -475,7 +489,7 @@ a[class]:visited,
 @supports (clip-path: polygon(0 0)) and (display: grid) {
   .name-mark::before {
     align-self: center;
-    background-color: var(--accent-color);
+    background-color: var(--color-accent);
     content: "";
     clip-path:
       polygon(
@@ -510,9 +524,9 @@ a[class]:visited,
     display: grid;
     grid-template-columns:
       [full-start] 0.5rem 1fr
-      [title-start] minmax(auto, calc(var(--measure) * 0.577))
+      [title-start] minmax(auto, calc(var(--type-measure) * 0.577))
       [title-end] var(--overlap)
-      [nav-start] minmax(auto, calc(var(--measure) - var(--overlap)))
+      [nav-start] minmax(auto, calc(var(--type-measure) - var(--overlap)))
       3fr 0.5rem
       [nav-end full-end];
     grid-template-rows: repeat(3, 1fr);
@@ -565,3 +579,4 @@ a[class]:visited,
   }
 }
 
+// vim: filetype=css

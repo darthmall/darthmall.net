@@ -194,28 +194,17 @@ blockquote {
       1fr
       [full-start] {{ tokens.space["2"] | safe }}
       [content-start] minmax(auto, {{ tokens.type.measure | safe }})
-      [content-end] {{ tokens.space["2"] | safe }}
+      [content-end] {{ tokens.space["2"] | safe }} 1fr
       [full-end]
       1fr;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   body > * > * {
     grid-column: content;
   }
 
-  .about > .profile-photo {
-    float: none;
-    grid-column: full;
-    grid-row: full;
-    justify-self: start;
-    margin: 0;
-  }
-
-  .about > p:first-of-type {
-    grid-column: content;
-    grid-row: content;
+  body > * > h1 {
+    grid-column: content-start / full-end;
   }
 
   .name-mark {

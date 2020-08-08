@@ -52,6 +52,7 @@ h4,
 h5,
 h6,
 li,
+p,
 ol[class],
 ul[class] {
   margin: 0;
@@ -96,12 +97,12 @@ textarea {
 
 /* End reset */
 
-* + * {
-  margin-top: 1em;
-}
-
 body {
   margin: 0 auto;
+}
+
+article > * + * {
+  margin-top: 1em;
 }
 
 h1,
@@ -138,6 +139,11 @@ figcaption {
 
 blockquote {
   margin: 3rem;
+}
+
+[role="banner"] {
+  margin-bottom: {{ tokens.space["4"] | safe }};
+  margin-top: {{ tokens.space["4"] | safe }};
 }
 
 .name-mark {

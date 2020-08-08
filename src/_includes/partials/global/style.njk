@@ -96,6 +96,14 @@ textarea {
 
 /* End reset */
 
+* + * {
+  margin-top: 1em;
+}
+
+body {
+  margin: 0 auto;
+}
+
 h1,
 .name-mark,
 .catalog-card > .title {
@@ -116,11 +124,6 @@ hr {
 
 p {
   max-width: {{ tokens.type.measure | safe }};
-}
-
-[role="banner"] {
-  grid-column: full;
-  margin-top: 1rem;
 }
 
 code,
@@ -179,17 +182,21 @@ blockquote {
 }
 
 @supports (display: grid) {
-  .grid-container {
+  body > :not(script) {
     display: grid;
     grid-template-columns:
-      [full-start] 0.5rem 1fr
-      [heading-start subhead-start] minmax(auto, calc(var(--type-measure) * 0.577))
-      [subhead-end content-start] var(--overlap)
-      minmax(auto, calc(var(--type-measure) - var(--overlap)))
-      [content-end heading-end] 3fr 0.5rem
-      [full-end];
-    margin-left: 0;
-    margin-right: 0;
+      1fr
+      [full-start] {{ tokens.space["2"] | safe }}
+      [content-start] minmax(auto, {{ tokens.type.measure | safe }})
+      [content-end] {{ tokens.space["2"] | safe }}
+      [full-end]
+      1fr;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body > * > * {
+    grid-column: content;
   }
 
   .about > .profile-photo {
@@ -205,33 +212,10 @@ blockquote {
     grid-row: content;
   }
 
-  .grid-container > * {
-    grid-column: content;
-  }
-
-  .grid-container > h1 {
-    grid-column: heading;
-  }
-
-  .grid-container > h2 {
-    grid-column: subhead;
-  }
-
-  .grid-container > hr {
-    grid-column: subhead-start / span 2;
-  }
-
-  .grid-container > footer {
-    grid-column: full;
-  }
-
-  .grid-container > .about {
-    grid-column: full;
-  }
-
   .name-mark {
     display: grid;
-    grid-template-columns: 0.5em 0.577fr 1fr 1.732fr 0.5em;
+    grid-column: full;
+    grid-template-columns: {{ tokens.space["2"] | safe }} 0.577fr 1fr 1.732fr {{ tokens.space["2"] | safe }};
     grid-template-rows: 0.65em 1px 0.65em;
     max-width: 8em;
   }
@@ -283,29 +267,6 @@ blockquote {
     height: 3em;
     width: 3em;
     z-index: -1;
-  }
-}
-
-@media screen and (min-width: 35em) {
-  /**
-   * Site header
-   */
-  [role="banner"] {
-    display: grid;
-    grid-template-columns:
-      [full-start] 0.5rem 1fr
-      [title-start] minmax(auto, calc(var(--type-measure) * 0.577))
-      [title-end] var(--overlap)
-      [nav-start] minmax(auto, calc(var(--type-measure) - var(--overlap)))
-      3fr 0.5rem
-      [nav-end full-end];
-    grid-template-rows: repeat(3, 1fr);
-  }
-
-  [role="banner"] > .name-mark {
-    align-self: center;
-    grid-column: title;
-    grid-row: 1 / span 2;
   }
 }
 

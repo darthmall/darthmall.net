@@ -19,10 +19,14 @@ $line-height: (
   "3": 1.6
 );
 
+$body-font-stack: sans-serif;
+$heading-font-stack: 'Sporting Grotesque', serif;
+$mono-font-stack: 'League Mono', monospace;
+
 $font: (
-  "body": "sans-serif",
-  "heading": "'Sporting Grotesque', serif",
-  "mono": "mono"
+  "body": $body-font-stack,
+  "heading": $heading-font-stack,
+  "mono": $mono-font-stack
 );
 
 $color: (

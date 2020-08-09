@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --serve"
+    "start": "DEBUG=Eleventy:Eleventy* eleventy --serve"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,8 @@
     "@11ty/eleventy": "^0.10.0"
   },
   "devDependencies": {
-    "clean-css": "^4.2.3"
+    "clean-css": "^4.2.3",
+    "debug": "^4.1.1",
+    "sass": "^1.26.10"
   }
 }

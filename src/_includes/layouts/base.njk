@@ -7,11 +7,8 @@
 
   {% include "partials/meta-info.njk" %}
 
-  {% set css %}
-    {% include "partials/global/style.njk" %}
-  {% endset %}
   <style>
-    {{ css | cssmin | safe }}
+    {{ "src/_scss/style.scss" | sass | cssmin | safe}}
   </style>
 </head>
 

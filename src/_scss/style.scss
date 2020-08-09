@@ -1,101 +1,15 @@
-@font-face {
-  font-family: 'Sporting Grotesque';
-  font-weight: bold;
-  src:
-    url(/fonts/sporting-grotesque-bold.woff2) format('woff2'),
-    url(/fonts/sporting-grotesque-bold.woff) format('woff'),
-    url(/fonts/sporting-grotesque-bold.otf) format('opentype');
-}
-
-@font-face {
-  font-family: 'League Mono';
-  font-style: normal;
-  font-weight: normal;
-  src:
-    url(/fonts/league-mono-light.woff2) format('woff2'),
-    url(/fonts/league-mono-light.woff) format('woff'),
-    url(/fonts/league-mono-light.otf) format('opentype');
-}
+@import "./tokens";
+@import "./fonts";
+@import "./reset";
 
 :root {
-{% for group, group_tokens in tokens %}
-  {% for token, value in group_tokens %}
-    --{{ group | safe }}-{{ token | safe }}: {{ value | safe }};
-  {% endfor %}
-{% endfor %}
   --overlap: 3rem;
 }
 
 html {
-  background-color: {{ tokens.color.light | safe }};
-  color: {{ tokens.color.ink | safe }};
+  background-color: map-get($color, "light");
+  color: map-get($color, "ink");
 }
-
-/* Begin reset */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin-bottom: 0;
-}
-
-body,
-dl,
-dd,
-figcaption,
-figure,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-li,
-p,
-ol[class],
-ul[class] {
-  margin: 0;
-}
-
-body {
-  font: {{ tokens["text-size"]["1"] | safe }}/{{ tokens["line-height"]["3"] | safe }} {{ tokens.font.body | safe }};
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizespeed;
-}
-
-a:not([class]) {
-  color: {{ tokens.color.primary | safe }};
-  text-decoration-skip: auto;
-}
-
-a:not([class]):visited {
-  color: {{ tokens.color.primary-shade | safe }};
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-button,
-input,
-select,
-textarea {
-  font: inherit;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms;
-    animation-iteration-count: 1;
-    transition-duration: 0.01ms;
-    scroll-behavior: auto;
-  }
-}
-
-/* End reset */
 
 body {
   margin: 0 auto;
@@ -108,23 +22,23 @@ article > * + * {
 h1,
 .name-mark,
 .catalog-card > .title {
-  font-family: {{ tokens.font.heading | safe }};
-  line-height: {{ tokens["line-height"]["0"] | safe }};
+  font-family: map-get($font, "heading");
+  line-height: map-get($line-height, 0);
 }
 
 h1 {
-  font-size: {{ tokens["text-size"]["5"] | safe }};
-  margin-bottom: {{ tokens.spacing["4"] | safe }};
-  margin-top: {{ tokens.spacing["4"] | safe }};
+  font-size: map-get($text-size, 5);
+  margin-bottom: map-get($space, 4);
+  margin-top: map-get($space, 4);
 }
 
 hr {
-  border-color: var(--fg);
+  border-color: map-get($color, "ink");
   border-width: 1px 0 0 0;
 }
 
 p {
-  max-width: {{ tokens.type.measure | safe }};
+  max-width: map-get($type, "measure");
 }
 
 code,
@@ -142,8 +56,8 @@ blockquote {
 }
 
 [role="banner"] {
-  margin-bottom: {{ tokens.space["4"] | safe }};
-  margin-top: {{ tokens.space["4"] | safe }};
+  margin-bottom: map-get($space, 4);
+  margin-top: map-get($space, 4);
 }
 
 [role="banner"] a:visited {
@@ -196,9 +110,9 @@ blockquote {
     display: grid;
     grid-template-columns:
       1fr
-      [full-start] {{ tokens.space["2"] | safe }}
-      [content-start] minmax(auto, {{ tokens.type.measure | safe }})
-      [content-end] {{ tokens.space["2"] | safe }} 1fr
+      [full-start] map-get($space, 2)
+      [content-start] minmax(auto, map-get($type, "measure"))
+      [content-end] map-get($space, 2) 1fr
       [full-end]
       1fr;
   }
@@ -214,7 +128,7 @@ blockquote {
   .name-mark {
     display: grid;
     grid-column: full;
-    grid-template-columns: {{ tokens.space["2"] | safe }} 0.577fr 1fr 1.732fr {{ tokens.space["2"] | safe }};
+    grid-template-columns: map-get($space, 2) 0.577fr 1fr 1.732fr map-get($space, 2);
     grid-template-rows: 0.65em 1px 0.65em;
     max-width: 8em;
   }
@@ -268,5 +182,3 @@ blockquote {
     z-index: -1;
   }
 }
-
-/* vim: filetype=css */

@@ -29,7 +29,7 @@
 @supports (clip-path: polygon(0 0)) and (display: grid) {
   .name-mark::before {
     align-self: center;
-    background-color: var(--color-accent);
+    background-color: map-get($color, "accent");
     content: "";
     clip-path:
       polygon(
@@ -53,5 +53,34 @@
     height: 3em;
     width: 3em;
     z-index: -1;
+  }
+}
+
+@supports (display: grid) {
+  .name-mark {
+    display: grid;
+    grid-column: full;
+    grid-template-columns: map-get($space, 2) 0.577fr 1fr 1.732fr map-get($space, 2);
+    grid-template-rows: 0.65em 1px 0.65em;
+    max-width: 8em;
+  }
+
+  .name-mark::after {
+    background-color: map-get($color, "ink");
+    content: "";
+    display: block;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    z-index: 2;
+  }
+
+  .name-mark > .first {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 2;
+  }
+
+  .name-mark > .last {
+    grid-column: 3 / span 2;
+    grid-row: 2 / span 2;
   }
 }

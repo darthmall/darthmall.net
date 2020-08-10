@@ -70,31 +70,4 @@ blockquote {
   body > * > h1 {
     grid-column: content-start / full-end;
   }
-
-  .name-mark {
-    display: grid;
-    grid-column: full;
-    grid-template-columns: map-get($space, 2) 0.577fr 1fr 1.732fr map-get($space, 2);
-    grid-template-rows: 0.65em 1px 0.65em;
-    max-width: 8em;
-  }
-
-  .name-mark::after {
-    background-color: var(--color-ink);
-    content: "";
-    display: block;
-    grid-column: 1 / -1;
-    grid-row: 2;
-    z-index: 2;
-  }
-
-  .name-mark > .first {
-    grid-column: 2 / span 2;
-    grid-row: 1 / span 2;
-  }
-
-  .name-mark > .last {
-    grid-column: 3 / span 2;
-    grid-row: 2 / span 2;
-  }
 }

@@ -1,12 +1,32 @@
+const CleanCSS = require('clean-css');
+const debug = require('debug')('Eleventy:Benchmark');
+const sass = require('sass');
+
 const {isoDateFilter, dateFilter} = require('./src/filters/date-filters.js');
 
 module.exports = function (config) {
+  config.addWatchTarget("./src/_scss/");
+
   config.setTemplateFormats('njk,md');
 
   config.addFilter('dateFilter', dateFilter);
   config.addFilter('isoDateFilter', isoDateFilter);
 
-  config.addPassthroughCopy('src/css');
+  config.addFilter('sass', function (file) {
+    const output = sass.renderSync({ file });
+
+    return output.css.toString('utf8');
+  });
+
+  config.addFilter('cssmin', function (code) {
+    const output = new CleanCSS({}).minify(code);
+
+    debug(`Minified CSS: ${Math.round(output.stats.minifiedSize / 102.4) / 10}kb`);
+
+    return output.styles;
+  });
+
+  config.addPassthroughCopy('src/fonts');
   config.addPassthroughCopy('src/images');
 
   const now = new Date();

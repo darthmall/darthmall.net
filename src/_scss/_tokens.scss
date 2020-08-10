@@ -1,0 +1,45 @@
+$type: (
+  "scale": 1.667,
+  "base": 20,
+  "measure": 60ch
+);
+
+$text-size: (
+  1: 1.25rem,
+  2: 2.084rem,
+  3: 3.474rem,
+  4: 5.791rem,
+  5: 9.653rem
+);
+
+$line-height: (
+  0: 0.9,
+  1: 1,
+  2: 1.3,
+  3: 1.6
+);
+
+$body-font-stack: sans-serif;
+$heading-font-stack: 'Sporting Grotesque', serif;
+$mono-font-stack: 'League Mono', monospace;
+
+$font: (
+  "body": $body-font-stack,
+  "heading": $heading-font-stack,
+  "mono": $mono-font-stack
+);
+
+$color: (
+  "primary": teal,
+  "primary-shade": cadetblue,
+  "accent": gold,
+  "light": white,
+  "ink": #333333
+);
+
+$space: (
+  1: 0.5rem,
+  2: 1rem,
+  3: 2rem,
+  4: 4rem
+);

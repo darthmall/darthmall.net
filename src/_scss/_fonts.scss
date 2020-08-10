@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'Sporting Grotesque';
+  font-weight: bold;
+  src:
+    url(/fonts/sporting-grotesque-bold.woff2) format('woff2'),
+    url(/fonts/sporting-grotesque-bold.woff) format('woff'),
+    url(/fonts/sporting-grotesque-bold.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'League Mono';
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url(/fonts/league-mono-light.woff2) format('woff2'),
+    url(/fonts/league-mono-light.woff) format('woff'),
+    url(/fonts/league-mono-light.otf) format('opentype');
+}

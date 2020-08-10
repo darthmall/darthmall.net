@@ -1,0 +1,61 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+
+body,
+dl,
+dd,
+figcaption,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+p,
+ol[class],
+ul[class] {
+  margin: 0;
+}
+
+body {
+  font: #{map-get($text-size, 1)}/#{map-get($line-height, 3)} map-get($font, "body");
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizespeed;
+}
+
+a:not([class]) {
+  color: map-get($color, "primary");
+  text-decoration-skip: auto;
+}
+
+a:not([class]):visited {
+  color: map-get($color, "primary-shade");
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
+  }
+}

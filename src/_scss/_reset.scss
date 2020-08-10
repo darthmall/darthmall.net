@@ -24,7 +24,7 @@ ul[class] {
 }
 
 body {
-  font: #{map-get($text-size, "1")}/#{map-get($line-height, "3")} map-get($font, "body");
+  font: #{map-get($text-size, 1)}/#{map-get($line-height, 3)} map-get($font, "body");
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizespeed;

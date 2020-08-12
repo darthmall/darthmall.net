@@ -8,6 +8,7 @@ html {
 }
 
 body {
+  font-family: "Anybody", sans-serif;
   margin: 0 auto;
 }
 
@@ -69,5 +70,11 @@ blockquote {
 
   body > * > h1 {
     grid-column: content-start / full-end;
+  }
+}
+
+@supports (font-variation-settings: normal) {
+  body {
+    font-family: "Anybody Variable";
   }
 }

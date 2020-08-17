@@ -25,7 +25,7 @@
 }
 
 .white-space {
-  background-color: map.get(tokens.$color, "primary");
+  background-color: map.get(tokens.$color, "mid");
 }
 
 // Utility classes for applying tokens to elements in style guide

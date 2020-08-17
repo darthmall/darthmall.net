@@ -10,6 +10,8 @@
   <style>
     {{ "src/_scss/style.scss" | sass | cssmin | safe}}
   </style>
+
+  {% block head %}{% endblock %}
 </head>
 
 <body>

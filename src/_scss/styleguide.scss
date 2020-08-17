@@ -1,0 +1,35 @@
+@use "sass:map";
+@use "sass:meta";
+
+@use "../_data/tokens.json" as tokens;
+@use "./mixins/typography" as type;
+
+.swatch {
+  border: 1px solid map.get(tokens.$color, "ink");
+  height: map.get(tokens.$space, 3);
+}
+
+@each $tok, $val in tokens.$color {
+  .swatch__#{$tok} {
+    background-color: $val;
+  }
+}
+
+.font-specimen {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(1em, 1fr));
+}
+
+@each $tok, $val in tokens.$font {
+  .font-#{$tok} {
+    font-family: #{$val};
+  }
+}
+
+$-min-text: map.get(tokens.$type, "min-step");
+$-max-text: map.get(tokens.$type, "max-step");
+@for $i from $-min-text through $-max-text {
+  .text-#{$i} {
+    @include type.font-size($i);
+  }
+}

@@ -4,20 +4,28 @@
 @use "../_data/tokens.json" as tokens;
 @use "./mixins/typography" as type;
 
+// Styleguide components
+
 .swatch {
   border: 1px solid map.get(tokens.$color, "ink");
   height: map.get(tokens.$space, 3);
 }
 
+.font-specimen {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(1em, 1fr));
+}
+
+.white-space {
+  background-color: map.get(tokens.$color, "primary");
+}
+
+// Utility classes for applying tokens to elements in style guide
+
 @each $tok, $val in tokens.$color {
   .swatch__#{$tok} {
     background-color: $val;
   }
-}
-
-.font-specimen {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(1em, 1fr));
 }
 
 @each $tok, $val in tokens.$font {
@@ -32,10 +40,6 @@ $-max-text: map.get(tokens.$type, "max-step");
   .text-#{$i} {
     @include type.font-size($i);
   }
-}
-
-.white-space {
-  background-color: map.get(tokens.$color, "primary");
 }
 
 @each $tok, $val in tokens.$space {

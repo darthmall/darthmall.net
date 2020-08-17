@@ -36,6 +36,12 @@ body {
   text-rendering: optimizespeed;
 }
 
+ol[class],
+ul[class] {
+  list-style: none;
+  padding: 0;
+}
+
 a:not([class]) {
   color: tokens.color("primary");
   text-decoration-skip: auto;

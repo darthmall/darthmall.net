@@ -1,6 +1,6 @@
-@import "./tokens";
-@import "./fonts";
-@import "./reset";
-@import "./global";
-@import "./components/site-header";
-@import "./components/profile-photo";
+@use "./global/fonts";
+@use "./global/reset";
+@use "./global/base";
+
+@use "./components/site-header";
+@use "./components/profile-photo";

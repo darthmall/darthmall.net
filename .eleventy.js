@@ -1,5 +1,6 @@
 const CleanCSS = require('clean-css');
 const debug = require('debug')('Eleventy:Benchmark');
+const jsonImporter = require('node-sass-json-importer');
 const sass = require('sass');
 
 const {isoDateFilter, dateFilter} = require('./src/filters/date-filters.js');
@@ -13,7 +14,10 @@ module.exports = function (config) {
   config.addFilter('isoDateFilter', isoDateFilter);
 
   config.addFilter('sass', function (file) {
-    const output = sass.renderSync({ file });
+    const output = sass.renderSync({
+      file,
+      importer: [jsonImporter()]
+    });
 
     return output.css.toString('utf8');
   });

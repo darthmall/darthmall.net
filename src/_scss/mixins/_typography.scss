@@ -1,0 +1,13 @@
+@use "../global/tokens" as tokens;
+
+@mixin font-family($name) {
+  font-family: tokens.font-family($name);
+}
+
+@mixin font-size($step: 0) {
+  font-size: tokens.font-size($step);
+}
+
+@mixin line-height($step) {
+  line-height: 1.6;
+}

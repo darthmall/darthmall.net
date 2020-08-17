@@ -1,10 +1,13 @@
+@use "./tokens" as tokens;
+@use "../mixins/typography" as *;
+
 :root {
   --overlap: 3rem;
 }
 
 html {
-  background-color: map-get($color, "light");
-  color: map-get($color, "ink");
+  background-color: tokens.color("light");
+  color: tokens.color("ink");
 }
 
 body {
@@ -19,28 +22,29 @@ article > * + * {
 h1,
 .name-mark,
 .catalog-card > .title {
-  font-family: map-get($font, "heading");
-  line-height: map-get($line-height, 0);
+  font-family: #{tokens.font-family("heading")};
+  line-height: 0.9;
 }
 
 h1 {
-  font-size: map-get($text-size, 5);
-  margin-bottom: map-get($space, 4);
-  margin-top: map-get($space, 4);
+  @include font-size(4);
+
+  margin-bottom: tokens.space(4);
+  margin-top: tokens.space(4);
 }
 
 hr {
-  border-color: map-get($color, "ink");
+  border-color: tokens.color("ink");
   border-width: 1px 0 0 0;
 }
 
 p {
-  max-width: map-get($type, "measure");
+  max-width: tokens.get("type", "measure");
 }
 
 code,
 figcaption {
-  font-family: 'League Mono', monospace;
+  font-family: tokens.font-family("mono");
 
   /* Shrink the monospace text a little so that it fits better with the
    * surrounding text set in Work Sans.
@@ -57,9 +61,9 @@ blockquote {
     display: grid;
     grid-template-columns:
       1fr
-      [full-start] map-get($space, 2)
-      [content-start] minmax(auto, map-get($type, "measure"))
-      [content-end] map-get($space, 2) 1fr
+      [full-start] tokens.space(2)
+      [content-start] minmax(auto, tokens.get("type", "measure"))
+      [content-end] tokens.space(2) 1fr
       [full-end]
       1fr;
   }
@@ -75,6 +79,6 @@ blockquote {
 
 @supports (font-variation-settings: normal) {
   body {
-    font-family: "Anybody Variable";
+    font-family: "Anybody Variable", sans-serif;
   }
 }

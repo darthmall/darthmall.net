@@ -1,0 +1,35 @@
+@use "sass:math";
+@use "sass:map";
+@use "sass:meta";
+
+@use "../../_data/tokens.json" as tokens;
+
+$-tokens: meta.module-variables(tokens);
+
+@function get($group, $name) {
+  $g: map.get($-tokens, $group);
+  @return map.get($g, $name);
+}
+
+@function color($name) {
+  @return get("color", $name);
+}
+
+@function space($name) {
+  @return get("space", $name);
+}
+
+@function font-family($name) {
+  @return get("font", $name);
+}
+
+@function font-size($step) {
+  @if $step < get("type", "min-step") or $step > get("type", "max-step") {
+    @error "Invalid token: text size #{$step}";
+  }
+
+  $base-size: get("type", "min-fontsize") / get("type", "base") * 1rem;
+  $scale: get("type", "min-scale");
+
+  @return $base-size * math.pow($scale, $step);
+}

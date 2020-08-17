@@ -1,6 +1,8 @@
+@use "../global/tokens";
+
 [role="banner"] {
-  margin-bottom: map-get($space, 4);
-  margin-top: map-get($space, 4);
+  margin-bottom: tokens.space(4);
+  margin-top: tokens.space(4);
 }
 
 [role="banner"] a:visited {
@@ -29,7 +31,7 @@
 @supports (clip-path: polygon(0 0)) and (display: grid) {
   .name-mark::before {
     align-self: center;
-    background-color: map-get($color, "accent");
+    background-color: tokens.color("accent");
     content: "";
     clip-path:
       polygon(
@@ -60,13 +62,13 @@
   .name-mark {
     display: grid;
     grid-column: full;
-    grid-template-columns: map-get($space, 2) 0.577fr 1fr 1.732fr map-get($space, 2);
+    grid-template-columns: tokens.space(2) 0.577fr 1fr 1.732fr tokens.space(2);
     grid-template-rows: 0.65em 1px 0.65em;
     max-width: 8em;
   }
 
   .name-mark::after {
-    background-color: map-get($color, "ink");
+    background-color: tokens.color("ink");
     content: "";
     display: block;
     grid-column: 1 / -1;

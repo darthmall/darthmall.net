@@ -1,3 +1,6 @@
+@use "./tokens" as tokens;
+@use "../mixins/typography" as *;
+
 *,
 *::before,
 *::after {
@@ -24,19 +27,22 @@ ul[class] {
 }
 
 body {
-  font: #{map-get($text-size, 1)}/#{map-get($line-height, 3)} map-get($font, "body");
+  @include font-size(0);
+  @include font-family("body");
+  @include line-height(3);
+
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizespeed;
 }
 
 a:not([class]) {
-  color: map-get($color, "primary");
+  color: tokens.color("primary");
   text-decoration-skip: auto;
 }
 
 a:not([class]):visited {
-  color: map-get($color, "primary-shade");
+  color: tokens.color("primary-shade");
 }
 
 img {

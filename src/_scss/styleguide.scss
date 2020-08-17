@@ -19,7 +19,9 @@
 
 .font-specimen {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(1em, 1fr));
+  grid-gap: 0.125em;
+  grid-template-columns: repeat(auto-fit, minmax(1em, 1fr));
+  justify-items: center;
 }
 
 .white-space {

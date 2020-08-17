@@ -49,5 +49,11 @@ layout:
     {% for i in range(tokens.type["min-step"], tokens.type["max-step"] + 1) %}
       <p class="text-{{ i | safe }}">Text size {{ i }}</p>
     {% endfor %}
+
+    <h2 class="token-group">Space</h2>
+    {% for tok, val in tokens.space %}
+      <h3>{{ val | safe }}</h3>
+      <div class="white-space h-{{ tok }}"></div>
+    {% endfor %}
   </main>
 {% endblock %}

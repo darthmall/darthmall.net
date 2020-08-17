@@ -33,3 +33,13 @@ $-max-text: map.get(tokens.$type, "max-step");
     @include type.font-size($i);
   }
 }
+
+.white-space {
+  background-color: map.get(tokens.$color, "primary");
+}
+
+@each $tok, $val in tokens.$space {
+  .h-#{$tok} {
+    height: $val;
+  }
+}

@@ -34,13 +34,11 @@ layout:
     <h2 class="token-group">Fonts</h2>
     {% for tok, val in tokens.font %}
       <h3 class="token-name">{{ tok }}</h3>
-      <ul class="font-specimen font-{{ tok | safe }} text-2">
-        {% for glyph in specimen %}
-          <li class="glyph">{{ glyph }}</li>
-        {% endfor %}
-      </ul>
-      <p class="font-sample font-{{ tok | safe }} text-2">
-        The quick brown fox jumps over a lazy dog.
+      <p class="font-sample font-{{ tok | safe }} text-0">
+        He took his vorpal sword in hand;<br />
+        Long time the manxome foe he sought—<br />
+        So rested he by the Tumtum tree<br />
+        And stood awhile in thought.
       </p>
       <p><code>tokens.color("{{ tok }}")</code></p>
     {% endfor %}

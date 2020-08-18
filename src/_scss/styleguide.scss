@@ -17,13 +17,6 @@
   height: map.get(tokens.$space, 3);
 }
 
-.font-specimen {
-  display: grid;
-  grid-gap: 0.125em;
-  grid-template-columns: repeat(auto-fit, minmax(1em, 1fr));
-  justify-items: center;
-}
-
 .white-space {
   background-color: map.get(tokens.$color, "mid");
 }

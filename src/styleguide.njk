@@ -33,25 +33,31 @@ layout:
 
     <h2 class="token-group">Fonts</h2>
     {% for tok, val in tokens.font %}
-      <h3 class="token-name">{{ tok }}</h3>
-      <p class="font-sample font-{{ tok | safe }} text-0">
-        He took his vorpal sword in hand;<br />
-        Long time the manxome foe he sought—<br />
-        So rested he by the Tumtum tree<br />
-        And stood awhile in thought.
-      </p>
-      <p><code>tokens.color("{{ tok }}")</code></p>
+      <div>
+        <h3 class="token-name">{{ tok }}</h3>
+        <p class="font-sample font-{{ tok | safe }} text-0">
+          He took his vorpal sword in hand;<br />
+          Long time the manxome foe he sought—<br />
+          So rested he by the Tumtum tree<br />
+          And stood awhile in thought.
+        </p>
+        <p><code>tokens.color("{{ tok }}")</code></p>
+      </div>
     {% endfor %}
 
-    <h2 class="token-group">Text Sizes</h2>
-    {% for i in range(tokens.type["min-step"], tokens.type["max-step"] + 1) %}
-      <p class="text-{{ i | safe }}">Text size {{ i }}</p>
-    {% endfor %}
+    <div>
+      <h2 class="token-group">Text Sizes</h2>
+      {% for i in range(tokens.type["min-step"], tokens.type["max-step"] + 1) %}
+        <p class="text-{{ i | safe }}">Text size {{ i }}</p>
+      {% endfor %}
+    </div>
 
-    <h2 class="token-group">Space</h2>
-    {% for tok, val in tokens.space %}
-      <h3>{{ val | safe }}</h3>
-      <div class="white-space h-{{ tok }}"></div>
-    {% endfor %}
+    <div>
+      <h2 class="token-group">Space</h2>
+      {% for tok, val in tokens.space %}
+        <h3>{{ val | safe }}</h3>
+        <div class="white-space h-{{ tok }}"></div>
+      {% endfor %}
+    </div>
   </main>
 {% endblock %}

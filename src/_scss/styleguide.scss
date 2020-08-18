@@ -4,6 +4,10 @@
 @use "../_data/tokens.json" as tokens;
 @use "./mixins/typography" as type;
 
+main > * + * {
+  margin-top: 1em;
+}
+
 // Styleguide components
 
 .swatches {

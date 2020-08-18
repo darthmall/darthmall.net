@@ -15,8 +15,11 @@ body {
   margin: 0 auto;
 }
 
+.flow > * + *,
 article > * + * {
-  margin-top: 1em;
+  // FIXME: these should be tokens?
+  margin-top: 1.2em;
+  margin-top: var(--flow-sp, 1.2em);
 }
 
 h1,
@@ -29,8 +32,11 @@ h1,
 h1 {
   @include font-size(4);
 
-  margin-bottom: tokens.space(4);
-  margin-top: tokens.space(4);
+  --flow-sp: 1.5em;
+}
+
+h2 {
+  --flow-sp: 1.3em;
 }
 
 hr {

@@ -84,9 +84,3 @@ blockquote {
     grid-column: content-start / full-end;
   }
 }
-
-@supports (font-variation-settings: normal) {
-  body {
-    font-family: "Anybody Variable", sans-serif;
-  }
-}

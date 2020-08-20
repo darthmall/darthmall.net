@@ -27,24 +27,24 @@ $max-step: tokens.get("type", "max-step");
       --fluid-max-scale-#{$i}: var(--fluid-max-scale-#{$j}) / var(--fluid-max-ratio);
       --fluid-min-size-#{$i}: (var(--fluid-min-size) * var(--fluid-min-scale-#{$i})) / #{$base};
       --fluid-max-size-#{$i}: (var(--fluid-max-size) * var(--fluid-max-scale-#{$i})) / #{$base};
-      --step-#{$i}: calc(((var(--fluid-min-size-#{$i}) * 1rem) + (var(--fluid-max-size-#{$i}) - var(--fluid-min-size-#{$i})) * var(--fluid-bp)));
+      --step-#{$i}: calc((var(--fluid-min-size-#{$i}) * 1rem) + (var(--fluid-max-size-#{$i}) - var(--fluid-min-size-#{$i})) * var(--fluid-bp));
     }
   }
 
-  --fluid-min-scale-0: 1;
-  --fluid-max-scale-0: 1;
+  --fluid-min-scale-0: var(--fluid-min-ratio);
+  --fluid-max-scale-0: var(--fluid-max-ratio);
   --fluid-min-size-0: var(--fluid-min-size) / #{$base};
   --fluid-max-size-0: var(--fluid-max-size) / #{$base};
-  --step-0: calc(((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp)));
+  --step-0: calc((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp));
 
   @for $i from max(1, $min-step) through $max-step {
     $j: $i - 1;
 
     --fluid-min-scale-#{$i}: var(--fluid-min-scale-#{$j}) * var(--fluid-min-ratio);
     --fluid-max-scale-#{$i}: var(--fluid-max-scale-#{$j}) * var(--fluid-max-ratio);
-    --fluid-min-size-#{$i}: (var(--fluid-min-size) * var(--fluid-min-scale-#{$i})) / #{$base};
-    --fluid-max-size-#{$i}: (var(--fluid-max-size) * var(--fluid-max-scale-#{$i})) / #{$base};
-    --step-#{$i}: calc(((var(--fluid-min-size-#{$i}) * 1rem) + (var(--fluid-max-size-#{$i}) - var(--fluid-min-size-#{$i})) * var(--fluid-bp)));
+    --fluid-min-size-#{$i}: (var(--fluid-min-size) * var(--fluid-min-scale-#{$j})) / #{$base};
+    --fluid-max-size-#{$i}: (var(--fluid-max-size) * var(--fluid-max-scale-#{$j})) / #{$base};
+    --step-#{$i}: calc((var(--fluid-min-size-#{$i}) * 1rem) + ((var(--fluid-max-size-#{$i}) - var(--fluid-min-size-#{$i})) * var(--fluid-bp)));
   }
 }
 

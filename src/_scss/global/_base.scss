@@ -63,6 +63,11 @@ blockquote {
   margin: 3rem;
 }
 
+strong {
+  font-family: #{tokens.font-family("heading")};
+  font-size-adjust: 0.55;
+}
+
 @supports (display: grid) {
   /* Base grid */
   body > :not(script) {

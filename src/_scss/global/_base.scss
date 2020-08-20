@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  font-family: "Anybody", sans-serif;
+  font-family: #{tokens.font-family("body")};
   margin: 0 auto;
 }
 
@@ -26,7 +26,7 @@ h1,
 .name-mark,
 .catalog-card > .title {
   font-family: #{tokens.font-family("heading")};
-  line-height: 0.9;
+  line-height: 1;
 }
 
 h1 {
@@ -37,6 +37,7 @@ h1 {
 
 h2 {
   --flow-sp: 1.3em;
+  font-family: #{tokens.font-family("condensed")};
 }
 
 hr {

@@ -5,7 +5,9 @@
 }
 
 @mixin font-size($step: 0) {
-  font-size: tokens.font-size($step);
+  $s: tokens.font-size($step);
+  font-size: $s;
+  font-size: var(--step-#{$step}, $s);
 }
 
 @mixin line-height($step) {

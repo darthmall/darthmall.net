@@ -28,8 +28,8 @@ $-tokens: meta.module-variables(tokens);
     @error "Invalid token: text size #{$step}";
   }
 
-  $base-size: get("type", "min-fontsize") / get("type", "base") * 1rem;
-  $scale: get("type", "min-scale");
+  $base-size: get("type", "fluid-min-size") / get("type", "base") * 1rem;
+  $scale: get("type", "fluid-min-ratio");
 
   @return $base-size * math.pow($scale, $step);
 }

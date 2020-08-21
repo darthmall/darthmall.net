@@ -1,6 +1,16 @@
 @use "../global/tokens";
 @use "../mixins/typography" as *;
 
+$-bp: 55em;
+
+h1, h2, h3, h4, h5, h6 {
+  position: relative;
+
+  @media screen and (max-width: $-bp) {
+    padding-right: tokens.space(3);
+  }
+}
+
 .header-anchor {
   @include font-family("heading");
 
@@ -24,4 +34,3 @@
 * .header-anchor:hover {
   color: tokens.color("primary");
 }
-

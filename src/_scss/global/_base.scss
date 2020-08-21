@@ -18,8 +18,8 @@ body {
 .flow > * + *,
 article > * + * {
   // FIXME: these should be tokens?
-  margin-top: 1.2em;
-  margin-top: var(--flow-sp, 1.2em);
+  margin-top: 1em;
+  margin-top: var(--flow-sp, 1em);
 }
 
 h1,
@@ -37,8 +37,18 @@ h1 {
 }
 
 h2 {
-  --flow-sp: 1.3em;
+  @include font-size(3);
+
+  line-height: 1;
   font-family: #{tokens.font-family("condensed")};
+}
+
+h3 {
+  @include font-size(2);
+}
+
+h4 {
+  @include font-size(1);
 }
 
 hr {
@@ -87,7 +97,8 @@ strong {
     grid-column: content;
   }
 
-  body > * > h1 {
+  body > * > h1,
+  body > * > h2 {
     grid-column: content-start / full-end;
   }
 }

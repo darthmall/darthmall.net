@@ -94,10 +94,10 @@ strong {
     display: grid;
     grid-template-columns:
       1fr
-      [full-start] tokens.space(2)
+      [full-start] tokens.space(1)
       [content-start wide-start] minmax(auto, tokens.get("type", "measure"))
       [content-end] 1fr
-      [wide-end] tokens.space(2)
+      [wide-end] tokens.space(1)
       [full-end]
       1fr;
   }

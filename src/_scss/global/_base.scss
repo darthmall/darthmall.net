@@ -29,6 +29,11 @@ h1,
   line-height: 1;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  position: relative;
+  padding-right: tokens.space(3);
+}
+
 h1 {
   @include font-size(4);
 
@@ -85,10 +90,10 @@ strong {
     display: grid;
     grid-template-columns:
       1fr
-      [full-start] tokens.space(1)
+      [full-start] tokens.space(2)
       [content-start wide-start] minmax(auto, tokens.get("type", "measure"))
       [content-end] 1fr
-      [wide-end] tokens.space(1)
+      [wide-end] tokens.space(2)
       [full-end]
       1fr;
   }

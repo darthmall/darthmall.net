@@ -62,7 +62,7 @@
   .name-mark {
     display: grid;
     grid-column: full;
-    grid-template-columns: tokens.space(1) 0.577fr 1fr 1.732fr tokens.space(1);
+    grid-template-columns: tokens.space(2) 0.577fr 1fr 1.732fr tokens.space(2);
     grid-template-rows: 0.65em 1px 0.65em;
     max-width: 8em;
   }

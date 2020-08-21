@@ -26,6 +26,10 @@ ul[class] {
   margin: 0;
 }
 
+html {
+  font-size: 100%;
+}
+
 body {
   @include font-size(0);
   @include font-family("body");

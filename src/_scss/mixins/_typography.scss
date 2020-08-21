@@ -1,7 +1,7 @@
 @use "../global/tokens" as tokens;
 
 @mixin font-family($name) {
-  font-family: tokens.font-family($name);
+  font-family: #{tokens.font-family($name)};
 }
 
 @mixin font-size($step: 0) {

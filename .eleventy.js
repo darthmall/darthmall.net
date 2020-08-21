@@ -8,9 +8,13 @@ const {isoDateFilter, dateFilter} = require('./src/filters/date-filters.js');
 
 module.exports = function (config) {
   const md = markdownIt({
-    html: true,
-    typographer: true,
-  });
+      html: true,
+      typographer: true,
+    })
+    .use(require('markdown-it-anchor'), {
+      permalink: true,
+      permalinkSymbol: '§',
+    });
 
   config.setLibrary('md', md);
 

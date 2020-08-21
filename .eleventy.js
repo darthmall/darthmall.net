@@ -1,11 +1,19 @@
 const CleanCSS = require('clean-css');
 const debug = require('debug')('Eleventy:Benchmark');
 const jsonImporter = require('node-sass-json-importer');
+const markdownIt = require('markdown-it');
 const sass = require('sass');
 
 const {isoDateFilter, dateFilter} = require('./src/filters/date-filters.js');
 
 module.exports = function (config) {
+  const md = markdownIt({
+    html: true,
+    typographer: true,
+  });
+
+  config.setLibrary('md', md);
+
   config.addWatchTarget("./src/_scss/");
 
   config.setTemplateFormats('njk,md');

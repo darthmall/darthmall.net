@@ -1,0 +1,15 @@
+@use "../global/tokens";
+@use "../mixins/typography" as *;
+
+#site-footer {
+  @include font-size(-2);
+
+  color: tokens.color("slate");
+}
+
+.copyright {
+  @include font-family("heading");
+
+  margin-bottom: tokens.space(3);
+  margin-top: tokens.space(3);
+}

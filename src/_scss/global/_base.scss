@@ -43,8 +43,18 @@ h1 {
 h2 {
   @include font-size(3);
 
-  line-height: 1;
   font-family: #{tokens.font-family("condensed")};
+  line-height: 1;
+
+  // Fallback to a static shadow for browsers that don't support CSS custom properties
+  text-shadow: 4px 4px 0 #{tokens.color("accent")};
+
+  // Use a CSS custom property to set the shadow direction so that it can track the time
+  // of day.
+  text-shadow:
+    var(--shadow-x, 0)
+    var(--shadow-y, 0)
+    0 #{tokens.color("accent")};
 }
 
 h3 {

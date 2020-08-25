@@ -16,7 +16,7 @@ body {
 }
 
 .flow > * + *,
-article > * + * {
+article:not([class]) > * + * {
   // FIXME: these should be tokens?
   margin-top: 1em;
   margin-top: var(--flow-sp, 1em);

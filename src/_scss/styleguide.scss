@@ -29,20 +29,6 @@
   }
 }
 
-@each $tok, $val in tokens.$font {
-  .font-#{$tok} {
-    font-family: #{$val};
-  }
-}
-
-$-min-text: map.get(tokens.$type, "min-step");
-$-max-text: map.get(tokens.$type, "max-step");
-@for $i from $-min-text through $-max-text {
-  .text-#{$i} {
-    @include type.font-size($i);
-  }
-}
-
 @each $tok, $val in tokens.$space {
   .h-#{$tok} {
     height: $val;

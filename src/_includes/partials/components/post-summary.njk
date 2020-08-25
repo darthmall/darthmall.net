@@ -1,0 +1,11 @@
+<article class="post-summary">
+  <h2>
+    <a href="{{ postUrl }}" class="text-ink text-decoration-none">{{ postTitle }}</a>
+  </h2>
+  <p class="font-heading text-slate text--1">
+    <time datetime="{{ postPubDate | isoDateFilter }}">
+      {{ postPubDate | dateFilter }}
+    </time>
+  </p>
+  <p>{{ postDescription }}</p>
+</article>

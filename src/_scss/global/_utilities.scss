@@ -11,20 +11,43 @@
   }
 }
 
-.text-decoration-none {
+.decoration-none {
   text-decoration: none;
 }
 
 $-min-text: map-get(tokens.$type, "min-step");
 $-max-text: map-get(tokens.$type, "max-step");
 @for $i from $-min-text through $-max-text {
-  .text-#{$i} {
+  .size-#{$i} {
     @include type.font-size($i);
   }
 }
 
+@each $tok, $val in tokens.$space {
+  .margin-#{$tok} {
+    margin: $val;
+  }
+
+  .margin-bottom-#{$tok} {
+    margin-bottom: $val;
+  }
+
+  .margin-left-#{$tok} {
+    margin-left: $val;
+  }
+
+  .margin-right-#{$tok} {
+    margin-right: $val;
+  }
+
+  .margin-top-#{$tok} {
+    margin-top: $val;
+  }
+
+}
+
 @each $tok, $val in tokens.$color {
-  .text-#{$tok} {
+  .color-#{$tok} {
     color: $val;
   }
 }

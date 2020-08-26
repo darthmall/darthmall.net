@@ -45,6 +45,7 @@ module.exports = function (config) {
   });
 
   config.addPassthroughCopy('src/fonts');
+  config.addPassthroughCopy('src/js');
   config.addPassthroughCopy('src/images');
 
   const now = new Date();

@@ -54,8 +54,9 @@ module.exports = function (config) {
 
   config.addCollection('posts', collection => {
     return collection
-      .getFilteredByGlob('./src/posts/**/*.md')
+      .getFilteredByGlob('./src/weblog/**/*.md')
       .filter(livePosts)
+      .filter(post => post.fileSlug !== 'weblog')
       .reverse();
   });
 

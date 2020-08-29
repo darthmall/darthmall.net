@@ -2,7 +2,14 @@
 @use "../mixins/typography" as *;
 
 #site-footer {
-  @include font-size(-2);
+
+  // Set the font-size on children of the footer instead of the footer itself so that the
+  // grid column whose max width is 60ch is the same as the other grids on the page. If we
+  // make the font-size smaller on the footer, 60ch is narrower than other grids and the
+  // grids don't align.
+  & > * {
+    @include font-size(-2);
+  }
 
   color: tokens.color("slate");
 }

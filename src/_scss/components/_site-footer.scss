@@ -8,15 +8,36 @@
   // make the font-size smaller on the footer, 60ch is narrower than other grids and the
   // grids don't align.
   & > * {
+    @include font-family("heading");
     @include font-size(-2);
   }
 
   color: tokens.color("slate");
+
+  hr {
+    flex: 1 1 auto;
+  }
+}
+
+.copyright,
+.colophon {
+  margin-bottom: tokens.space(3);
+  margin-top: tokens.space(3);
 }
 
 .copyright {
-  @include font-family("heading");
+  order: 1;
+}
 
-  margin-bottom: tokens.space(3);
-  margin-top: tokens.space(3);
+.colophon {
+  justify-self: center;
+  text-align: center;
+
+  &::after {
+    content: " ] ";
+  }
+
+  &::before {
+    content: " [ ";
+  }
 }

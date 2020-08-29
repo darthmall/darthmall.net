@@ -15,21 +15,6 @@ body {
   margin: 0 auto;
 }
 
-.flow,
-article:not([class]) {
-  & > * + * {
-    // FIXME: these should be tokens?
-    margin-top: 1em;
-    margin-top: var(--flow-sp, 1em);
-  }
-
-  // <h1>s have a bottom margin, so we can skip the top margin on any sibling element in
-  // case the elements are in a grid layout, which doesn't collapse margins.
-  & > h1 + * {
-    margin-top: 0;
-  }
-}
-
 h1,
 .name-mark,
 .catalog-card > .title {
@@ -99,28 +84,4 @@ blockquote {
 strong {
   font-family: #{tokens.font-family("heading")};
   font-size-adjust: 0.55;
-}
-
-@supports (display: grid) {
-  /* Base grid */
-  body > :not(script) {
-    display: grid;
-    grid-template-columns:
-      1fr
-      [full-start] tokens.space(1)
-      [content-start wide-start] minmax(auto, tokens.get("type", "measure"))
-      [content-end] 1fr
-      [wide-end] tokens.space(1)
-      [full-end]
-      1fr;
-  }
-
-  body > * > * {
-    grid-column: content;
-  }
-
-  body > * > h1,
-  body > * > h2 {
-    grid-column: content-start / full-end;
-  }
 }

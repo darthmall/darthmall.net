@@ -1,0 +1,19 @@
+@use "../global/tokens" as tokens;
+
+.cluster {
+  $gap: #{tokens.space(0)};
+  margin: -#{$gap};
+  margin: calc(var(--cluster-gap, #{$gap}) * -1);
+
+  > * {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  > * > * {
+    margin: $gap;
+    margin: var(--cluster-gap, #{$gap});
+  }
+}

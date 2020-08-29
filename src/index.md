@@ -1,8 +1,3 @@
----
-layout: layouts/home
-profileImage: /images/me.gif
----
-
 # Howdy
 
 My name is Evan and this is my little corner of the web where I sometimes

@@ -64,5 +64,6 @@ module.exports = function (config) {
     dir: {
       input: 'src',
     },
+    markdownTemplateEngine: "njk",
   };
 }

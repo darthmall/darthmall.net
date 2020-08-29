@@ -1,4 +1,7 @@
-# Howdy
+{% set antiHeroTitle = "Howdy" %}
+{% set antiHeroImage = "/images/me.gif" %}
+{% set antiHeroAlt = "Me" %}
+{% include "partials/components/anti-hero.njk" %}
 
 My name is Evan and this is my little corner of the web where I sometimes
 **[write](/weblog/)**; keep a small **[portfolio](/work/)** (because

@@ -8,7 +8,8 @@ article:not([class]) {
 
   // <h1>s have a bottom margin, so we can skip the top margin on any sibling element in
   // case the elements are in a grid layout, which doesn't collapse margins.
-  & > h1 + * {
+  & > h1 + *,
+  & > hr + * {
     margin-top: 0;
   }
 }

@@ -59,16 +59,17 @@ h4 {
 }
 
 hr {
+  --flow-sp: #{tokens.space(3)};
+
   border-color: tokens.color("mid");
   border-width: 1px 0 0 0;
+  margin-bottom: var(--flow-sp);
+  margin-top: var(--flow-sp);
+  width: 33%;
 }
 
 p {
   max-width: tokens.get("type", "measure");
-}
-
-dt {
-  border-bottom: 1px solid #{tokens.color("slate")};
 }
 
 dd {

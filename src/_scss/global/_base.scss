@@ -67,6 +67,15 @@ p {
   max-width: tokens.get("type", "measure");
 }
 
+dt {
+  border-bottom: 1px solid #{tokens.color("slate")};
+}
+
+dd {
+  --flow-sp: 0.5em;
+  @include font-size(-1);
+}
+
 code,
 figcaption {
   font-family: tokens.font-family("mono");

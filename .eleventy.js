@@ -16,7 +16,8 @@ module.exports = function (config) {
       permalink: true,
       permalinkSymbol: '§',
       slugify: require('slug'),
-    });
+    })
+    .disable("code");  // Disable code indentation for better inline HTML formatting
 
   config.setLibrary('md', md);
 

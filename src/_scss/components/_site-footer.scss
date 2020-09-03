@@ -2,6 +2,11 @@
 @use "../mixins/typography" as *;
 
 #site-footer {
+  --flow-sp: #{tokens.space(3)};
+
+  color: tokens.color("slate");
+  margin-bottom: #{tokens.space(4)};
+  margin-top: #{tokens.space(4)};
 
   // Set the font-size on children of the footer instead of the footer itself so that the
   // grid column whose max width is 60ch is the same as the other grids on the page. If we
@@ -12,17 +17,9 @@
     @include font-size(-2);
   }
 
-  color: tokens.color("slate");
-
   hr {
     flex: 1 1 auto;
   }
-}
-
-.copyright,
-.colophon {
-  margin-bottom: tokens.space(3);
-  margin-top: tokens.space(3);
 }
 
 .copyright {

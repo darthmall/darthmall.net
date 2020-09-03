@@ -1,11 +1,11 @@
+{% from "partials/macros/datetime.njk" import pubDate %}
+
 <article class="blog-entry">
   <h2>
     <a href="{{ postUrl }}" class="color-ink decoration-none">{{ postTitle }}</a>
   </h2>
-  <p class="font-heading color-slate size--1">
-    <time datetime="{{ postPubDate | isoDateFilter }}">
-      {{ postPubDate | dateFilter }}
-    </time>
+  <p class="size--1">
+    {{ pubDate(postPubDate) }}
   </p>
   <p class="margin-top-1">{{ postDescription }}</p>
 </article>

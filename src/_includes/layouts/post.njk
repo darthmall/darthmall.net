@@ -1,0 +1,19 @@
+{% extends 'layouts/base.njk' %}
+
+{% from "partials/macros/datetime.njk" import pubDate %}
+
+{% block content %}
+<article>
+  <h1>{{ title | safe }}</h1>
+  <aside role="note">
+    {{ pubDate(date) }}
+  </aside>
+
+  {{ content | safe }}
+
+  <footer>
+    <p><a href="/weblog/"><b>More writing&hellip;</b></a></p>
+  </footer>
+</article>
+
+{% endblock %}

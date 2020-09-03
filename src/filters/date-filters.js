@@ -20,9 +20,9 @@ function isoDateFilter(value) {
 
 function dateFilter(value) {
   const dt = new Date(value);
-  const month = MONTHS[dt.getMonth()];
+  const month = MONTHS[dt.getUTCMonth()];
 
-  return `${dt.getDate()} ${month} ${dt.getFullYear()}`;
+  return `${dt.getUTCDate()} ${month} ${dt.getUTCFullYear()}`;
 }
 
 module.exports = {

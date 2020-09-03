@@ -7,8 +7,6 @@ description: >-
     surveillance.
 ---
 
-# On Anonymity & Privacy
-
 The other day I was listening to [an episode][1] of Rework where they were
 they were talking about their decision to switch hosting providers for their
 podcast because their old provider, _Art19_, was introducing targeted

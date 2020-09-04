@@ -10,10 +10,14 @@
 }
 
 .name-mark {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 3em;
   display: block;
   font-size: 1.732em;
   line-height: 1;
-  max-width: 7em;
+  max-width: 8em;
+  overflow: visible;
   text-decoration: none;
   text-transform: lowercase;
 }
@@ -28,43 +32,13 @@
   transform: scale(-1);
 }
 
-@supports (clip-path: polygon(0 0)) and (display: grid) {
-  .name-mark::before {
-    align-self: center;
-    background-color: tokens.color("accent");
-    content: "";
-    clip-path:
-      polygon(
-        50% 100%,
-        73.236% 94.273%,
-        91.149% 78.403%,
-        99.635% 56.027%,
-        96.751% 32.27%,
-        83.156% 12.574%,
-        61.966% 1.453%,
-        38.034% 1.453%,
-        16.844% 12.574%,
-        3.249% 32.27%,
-        0.365% 56.027%,
-        8.851% 78.403%,
-        26.764% 94.273%,
-        50% 100%
-      );
-    grid-column: 3 / span 2;
-    grid-row: 1 / -1;
-    height: 3em;
-    width: 3em;
-    z-index: -1;
-  }
-}
-
 @supports (display: grid) {
   .name-mark {
     display: grid;
     grid-column: full;
     grid-template-columns: tokens.space(1) 0.577fr 1fr 1.732fr tokens.space(1);
-    grid-template-rows: 0.65em 1px 0.65em;
-    max-width: 8em;
+    grid-template-rows: 1fr 0.65em 1px 0.65em 1fr;
+    height: 3em;
   }
 
   .name-mark::after {
@@ -72,17 +46,17 @@
     content: "";
     display: block;
     grid-column: 1 / -1;
-    grid-row: 2;
+    grid-row: 3;
     z-index: 2;
   }
 
   .name-mark > .first {
     grid-column: 2 / span 2;
-    grid-row: 1 / span 2;
+    grid-row: 2 / span 2;
   }
 
   .name-mark > .last {
     grid-column: 3 / span 2;
-    grid-row: 2 / span 2;
+    grid-row: 3 / span 2;
   }
 }

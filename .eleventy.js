@@ -17,7 +17,7 @@ module.exports = function (config) {
       permalinkSymbol: '§',
       slugify: require('slug'),
     })
-    .disable("code");  // Disable code indentation for better inline HTML formatting
+    .disable('code');  // Disable code indentation for better inline HTML formatting
 
   config.setLibrary('md', md);
 
@@ -44,6 +44,8 @@ module.exports = function (config) {
 
     return output.styles;
   });
+
+  config.addShortcode('triskaidecagon', require('./src/_shortcodes/triskaidecagon.js'));
 
   config.addPassthroughCopy('src/fonts');
   config.addPassthroughCopy('src/js');

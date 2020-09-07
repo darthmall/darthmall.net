@@ -1,5 +1,5 @@
 {% set antiHeroTitle = "Howdy" %}
-{% set antiHeroImage = "/images/me.gif" %}
+{% set antiHeroImage = "/img/me.gif" %}
 {% set antiHeroAlt = "Me" %}
 {% include "partials/components/anti-hero.njk" %}
 

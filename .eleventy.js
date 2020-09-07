@@ -49,7 +49,7 @@ module.exports = function (config) {
 
   config.addPassthroughCopy('src/fonts');
   config.addPassthroughCopy('src/js');
-  config.addPassthroughCopy('src/images');
+  config.addPassthroughCopy('src/img');
 
   const now = new Date();
 
@@ -60,6 +60,13 @@ module.exports = function (config) {
       .getFilteredByGlob('./src/weblog/**/*.md')
       .filter(livePosts)
       .filter(post => post.fileSlug !== 'weblog')
+      .reverse();
+  });
+
+  config.addCollection('work', collection => {
+    return collection
+      .getFilteredByGlob('./src/work/**/*.md')
+      .filter(post => post.fileSlug !== 'work' && !post.data.draft)
       .reverse();
   });
 

@@ -1,7 +1,7 @@
 ---
 title: Spotify @ IXDA ’18
 order: 2018-02
-thumbnail: ixda/ixda_thumb@2x.png
+thumbnail: /img/work/ixda/ixda_thumb@2x.png
 client: Spotify
 abstract: >-
   Software for Spotify's IxDA 2018 booth showing a different aspect of your listening habits for each of the three days of the conference.

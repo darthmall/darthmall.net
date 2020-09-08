@@ -1,7 +1,7 @@
 ---
 title: "Jigs: Visualized"
 order: 2012-08
-thumbnail: jigs/jigs_thumb@2x.png
+thumbnail: /img/work/jigs/jigs_thumb@2x.png
 client: Personal
 repo: https://github.com/darthmall/Irish-Tune-Visualization
 abstract: >-

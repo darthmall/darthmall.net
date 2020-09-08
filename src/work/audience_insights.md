@@ -2,7 +2,7 @@
 title: Audience Insights
 client: Spotify
 order: 2015-10
-thumbnail: audience_insights/audience_insights_thumb@2x.png
+thumbnail: /img/work/audience_insights/audience_insights_thumb@2x.png
 abstract: A tool for understanding Spotify's user base.
 color: 5FBB89
 ---

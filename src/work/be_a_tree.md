@@ -1,7 +1,7 @@
 ---
 title: Be a Tree
 order: 2012-05
-thumbnail: be_a_tree/be_a_tree_thumb@2x.png
+thumbnail: /img/work/be_a_tree/be_a_tree_thumb@2x.png
 client: Personal
 repo: https://github.com/darthmall/Be-a-Tree
 abstract: >-

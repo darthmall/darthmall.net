@@ -1,7 +1,7 @@
 ---
 title: Stream Attribution
 order: 2017-10
-thumbnail: user_journey/user_journey_thumb@2x.png
+thumbnail: /img/work/user_journey/user_journey_thumb@2x.png
 client: Spotify
 abstract: >-
   A tool for exploring the paths users take through Spotify's clients to find something to stream.

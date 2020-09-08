@@ -6,9 +6,9 @@ layout: layouts/page.njk
 <h1>{{ title | safe }}</h1>
 
 {% for project in collections.work %}
-  <article>
-    <h2>
-      <a href="{{ project.url }}">{{ project.data.title }}</a>
+  <article class="card">
+    <h2 class="card__title">
+      <a href="{{ project.url }}" class="card__link">{{ project.data.title }}</a>
     </h2>
 
     <p>{{ project.data.client | default("Personal") }}</p>

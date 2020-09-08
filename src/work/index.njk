@@ -1,0 +1,14 @@
+---
+title: Work
+layout: layouts/page.njk
+---
+
+<h1>{{ title | safe }}</h1>
+
+{% for project in collections.work %}
+  <article>
+    <h2>{{ project.data.title }}</h2>
+    <p>{{ project.data.client | default("Personal") }}</p>
+    <img src="{{ project.data.thumbnail }}" alt="" />
+  </article>
+{% endfor %}

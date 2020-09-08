@@ -67,7 +67,17 @@ module.exports = function (config) {
     return collection
       .getFilteredByGlob('./src/work/**/*.md')
       .filter(post => post.fileSlug !== 'work' && !post.data.draft)
-      .reverse();
+      .sort((a, b) => {
+        // Sort by the order field first, placing older projects after newer projects
+        if (a.data.order > b.data.order) return -1;
+        if (a.data.order < b.data.order) return 1;
+
+        // If the order fields are identical fallback to sorting by title
+        if (a.data.title < b.data.title) return -1;
+        if (a.data.title > b.data.title) return 1;
+
+        return 0;
+      });
   });
 
   return {

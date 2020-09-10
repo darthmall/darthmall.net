@@ -1,6 +1,12 @@
 {
   "experience": [
     {
+      "title": "Web Developer",
+      "employer": "Cooperative Institute for Research in the Atmosphere",
+      "start": "2018-08-23",
+      "description": "At CIRA I am the web developer for NOAA's Science On a Sphere(r) team where I maintain the SOS website, and develop data visualization applications for NOAA."
+    },
+    {
       "title": "Designer",
       "employer": "Spotify",
       "start": "2015-06-01",

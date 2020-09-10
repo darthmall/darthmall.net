@@ -1,0 +1,40 @@
+{
+  "experience": [
+  ],
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "skills": [
+        "JavaScript", "Python", "HTML", "CSS", "SQL", "C", "C++"
+      ]
+    },
+    {
+      "name": "Libraries & Tools",
+      "skills": [
+        "D3", "Svelte", "Django", "Flask", "SQLAlchemy", "SCSS"
+      ]
+    },
+    {
+      "name": "Design",
+      "skills": [
+        "User Research", "Usability Studies", "Prototyping", "Wireframing"
+      ]
+    },
+    {
+      "name": "Graphics",
+      "skills": [
+        "Sketch", "Figma", "Adobe Illustrator", "Adobe InDesign"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "name": "Masters of Human-Computer Interaction",
+      "institution": "Carnegie Mellon University"
+    },
+    {
+      "name": "Bachelors of Computer Science",
+      "institution": "University of Colorado at Boulder"
+    }
+  ]
+}

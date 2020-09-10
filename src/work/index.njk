@@ -5,13 +5,19 @@ layout: layouts/page.njk
 
 <h1>{{ title | safe }}</h1>
 
-<div class="flow">{% for project in collections.work %}
-  <article class="card">
-    <h2 class="card__title">
-      <a href="{{ project.url }}" class="card__link">{{ project.data.title }}</a>
-    </h2>
 
-    <aside class="card__meta">{{ project.data.client | default("Personal") }}</aside>
-    <img src="{{ project.data.thumbnail }}" alt="" class="card__cover" />
-  </article>
-{% endfor %}</div>
+<div class="flow">
+
+  <p>&hellip;or see my <a href="/resume/">résumé</a>.</p>
+  {% for project in collections.work %}
+
+    <article class="card">
+      <h2 class="card__title">
+        <a href="{{ project.url }}" class="card__link">{{ project.data.title }}</a>
+      </h2>
+
+      <aside class="card__meta">{{ project.data.client | default("Personal") }}</aside>
+      <img src="{{ project.data.thumbnail }}" alt="" class="card__cover" />
+    </article>
+  {% endfor %}
+</div>

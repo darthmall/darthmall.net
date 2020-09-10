@@ -5,6 +5,18 @@ title: Résumé
 <section>
   <h2>Experience</h2>
 
+  {% for job in resume.experience %}
+    {% if not job.skip %}
+      <h3>{{ job.title }}</h3>
+
+      <aside>
+        <p>{{ job.employer }}</p>
+        <p>From {{ job.start }} to {{ job.end if job.end else "present" }}</p>
+      </aside>
+
+      <p>{{ job.description }}</p>
+    {% endif %}
+  {% endfor %}
 </section>
 
 <section>

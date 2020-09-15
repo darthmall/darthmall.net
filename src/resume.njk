@@ -7,9 +7,9 @@ title: Résumé
 
   {% for job in resume.experience %}
     {% if not job.skip %}
-      <h3>{{ job.title }}</h3>
+      <h3 class="size-0">{{ job.title }}</h3>
 
-      <aside>
+      <aside class="size--1">
         <p>{{ job.employer }}</p>
         <p>From {{ job.start }} to {{ job.end if job.end else "present" }}</p>
       </aside>
@@ -23,7 +23,7 @@ title: Résumé
   <h2>Skills</h2>
 
   {% for group in resume.skills %}
-    <h3>{{ group.name }}</h3>
+    <h3 class="size-0">{{ group.name }}</h3>
 
     <ul class="skills">
 

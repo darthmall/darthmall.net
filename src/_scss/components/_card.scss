@@ -3,15 +3,22 @@
 .card {
   display: grid;
   grid-gap: tokens.space(0);
-  grid-template-columns: 1em 10fr 1fr;
-  grid-template-rows: 6fr min-content 1fr;
+  grid-template-columns:
+    [cover-start] 1em
+    [title-start] 10fr
+    [cover-end meta-start] 1fr
+    [title-end meta-end];
+  grid-template-rows:
+    [cover-start meta-start] 6fr
+    [meta-end title-start] min-content
+    [title-end] 1fr
+    [cover-end];
 
   position: relative;
 
   .card__title {
     background-color: tokens.color("accent");
-    grid-column: 2 / -1;
-    grid-row: 2;
+    grid-area: title;
     line-height: 1;
     padding: tokens.space(0);
     text-shadow: none;
@@ -22,8 +29,7 @@
     align-self: end;
     color: tokens.color("slate");
     font-weight: bold;
-    grid-column: 3;
-    grid-row: 1;
+    grid-area: meta;
     line-height: 1;
     text-transform: uppercase;
     writing-mode: vertical-lr;
@@ -31,8 +37,7 @@
   }
 
   .card__cover {
-    grid-column: 1 / -2;
-    grid-row: 1 / -1;
+    grid-area: cover;
     z-index: 0;
   }
 

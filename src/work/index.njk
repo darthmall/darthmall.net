@@ -5,10 +5,7 @@ layout: layouts/page.njk
 
 <h1>{{ title | safe }}</h1>
 
-
 <div class="flow">
-
-  <p>&hellip;or see my <a href="/resume/">résumé</a>.</p>
   {% for project in collections.work %}
 
     <article class="card">
@@ -20,4 +17,6 @@ layout: layouts/page.njk
       <img src="{{ project.data.thumbnail }}" alt="" class="card__cover" />
     </article>
   {% endfor %}
+
+  <p>&hellip;or see my <a href="/resume/">résumé</a>.</p>
 </div>

@@ -5,10 +5,16 @@
   background-image:
     linear-gradient(123deg, var(--color-1) 19%, transparent 54%),
     radial-gradient(ellipse at -21% 157%, var(--color-1) 7%, transparent 76%);
+  box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
   break-inside: avoid;
   padding: 64% tokens.space(0) 16% tokens.space(0);
   padding: var(--padding-top, 64%) tokens.space(0) var(--padding-bottom, 16%) tokens.space(0);
   position: relative;
+  transition: filter 250ms ease-out;
+
+  &:hover {
+    filter: invert(100%);
+  }
 
   .card__title {
     line-height: 1;

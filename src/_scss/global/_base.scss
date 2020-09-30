@@ -68,6 +68,7 @@ hr {
   width: 33%;
 }
 
+figcaption,
 p {
   max-width: tokens.get("type", "measure");
 }
@@ -79,13 +80,14 @@ dd {
 
 code,
 figcaption {
-  font-family: tokens.font-family("mono");
+  @include font-family("mono");
 
   /* Shrink the monospace text a little so that it fits better with the
    * surrounding text set in Work Sans.
    */
   font-size: 0.9rem;
 }
+
 
 blockquote {
   margin: 3rem;

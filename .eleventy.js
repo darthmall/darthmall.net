@@ -77,6 +77,15 @@ module.exports = function (config) {
         if (a.data.title > b.data.title) return 1;
 
         return 0;
+      })
+      .map((p, i, posts) => {
+        const prev = posts[i - 1],
+              next = posts[i + 1];
+
+        if (prev) p.data.prev = prev.data;
+        if (next) p.data.next = next.data;
+
+        return p;
       });
   });
 

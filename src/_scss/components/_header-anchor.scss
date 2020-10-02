@@ -1,7 +1,7 @@
 @use "../global/tokens";
 @use "../mixins/typography" as *;
 
-$-bp: 55em;
+$-bp: 77em;
 
 h2:not([class]),
 h3:not([class]),
@@ -26,7 +26,7 @@ h6:not([class]) {
   top: 0;
   transition: 200ms ease-out color;
 
-  @media screen and (min-width: 55em) {
+  @media screen and (min-width: $-bp) {
     left: -#{tokens.space(3)};
     right: auto;
   }

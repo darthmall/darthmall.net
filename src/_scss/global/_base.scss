@@ -13,6 +13,9 @@ html {
 body {
   font-family: #{tokens.font-family("body")};
   margin: 0 auto;
+  max-width: tokens.get("type", "measure") * 4 / 3;
+  padding-left: tokens.$site-margin;
+  padding-right: tokens.$site-margin;
 }
 
 h1,

@@ -6,7 +6,7 @@ layout: layouts/page.njk
 {% from "partials/macros/datetime.njk" import pubDate %}
 
 {% for post in collections.posts %}
-    <article class="blog-entry">
+  <article>
     <h2>
       <a href="{{ post.page.url }}" class="color-ink decoration-none">
         {{ post.data.title }}
@@ -16,5 +16,5 @@ layout: layouts/page.njk
         {{ pubDate(post.data.date) }}
     </p>
     <p class="margin-top-1">{{ post.data.description }}</p>
-    </article>
+  </article>
 {% endfor %}

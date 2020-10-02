@@ -2,6 +2,9 @@
 
 {% block content %}
 <main tabindex="-1">
+  {% if title %}
+    <h1>{{ title | safe }}</h1>
+  {% endif %}
   {{ content | safe }}
 </main>
 {% endblock %}

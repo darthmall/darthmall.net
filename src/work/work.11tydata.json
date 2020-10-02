@@ -1,3 +1,4 @@
 {
-  "layout": "layouts/project.njk"
+  "layout": "layouts/article.njk",
+  "backLink": "Back to projects&hellip;"
 }

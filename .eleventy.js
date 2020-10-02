@@ -1,3 +1,5 @@
+const path = require("path");
+
 const CleanCSS = require('clean-css');
 const debug = require('debug')('Eleventy:Benchmark');
 const jsonImporter = require('node-sass-json-importer');
@@ -36,6 +38,8 @@ module.exports = function (config) {
 
     return output.css.toString('utf8');
   });
+
+  config.addFilter('dirname', (pth) => path.dirname(pth));
 
   config.addFilter('cssmin', function (code) {
     const output = new CleanCSS({}).minify(code);

@@ -1,0 +1,36 @@
+{% extends 'layouts/base.njk' %}
+
+{% from "partials/macros/datetime.njk" import pubDate %}
+
+{% block content %}
+<article>
+  <h1>{{ title | safe }}</h1>
+
+  {% if date %}
+    <aside role="note">
+      {{ pubDate(date) }}
+    </aside>
+  {% endif %}
+
+  {{ content | safe }}
+
+  {% set footer -%}
+    {%- if backLink -%}
+      <p><a href="{{ page.url | dirname }}/"><b>{{ backLink | safe }}</b></a></p>
+    {%- endif -%}
+    {%- if next -%}
+      <p>Next: <a href="{{ next.page.url }}">{{ next.title | safe }}</a></p>
+    {%- endif -%}
+    {%- if prev -%}
+      <p>Previous: <a href="{{ prev.page.url }}">{{ prev.title | safe }}</a></p>
+    {%- endif -%}
+  {%- endset %}
+
+  {% if footer %}
+    <footer>
+      {{ footer | safe }}
+    </footer>
+  {% endif %}
+</article>
+
+{% endblock %}

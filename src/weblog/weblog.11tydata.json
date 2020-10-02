@@ -1,4 +1,4 @@
 {
-  "layout": "layouts/post.njk",
-  "footerContent": "<p><a href='/weblog/'><b>More writing&hellip;</b></a></p>"
+  "layout": "layouts/article.njk",
+  "backLink": "More writing&hellip;"
 }

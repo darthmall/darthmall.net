@@ -1,0 +1,20 @@
+---
+title: Weblog
+layout: layouts/page.njk
+---
+
+{% from "partials/macros/datetime.njk" import pubDate %}
+
+{% for post in collections.posts %}
+    <article class="blog-entry">
+    <h2>
+      <a href="{{ post.page.url }}" class="color-ink decoration-none">
+        {{ post.data.title }}
+      </a>
+    </h2>
+    <p class="size--1">
+        {{ pubDate(post.data.date) }}
+    </p>
+    <p class="margin-top-1">{{ post.data.description }}</p>
+    </article>
+{% endfor %}

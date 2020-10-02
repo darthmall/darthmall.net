@@ -1,14 +1,7 @@
-{% extends 'layouts/base.njk' %}
+{% extends 'layouts/post.njk' %}
 
-{% block content %}
-<article>
-  <h1>{{ title | safe }}</h1>
-
-  {{ content | safe }}
-
+{% block footer %}
   <footer>
     <p><a href="/work/"><b>Back to projects&hellip;</b></a></p>
   </footer>
-</article>
-
 {% endblock %}

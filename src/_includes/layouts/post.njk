@@ -5,15 +5,22 @@
 {% block content %}
 <article>
   <h1>{{ title | safe }}</h1>
-  <aside role="note">
-    {{ pubDate(date) }}
-  </aside>
+
+  {% if date %}
+    <aside role="note">
+      {{ pubDate(date) }}
+    </aside>
+  {% endif %}
 
   {{ content | safe }}
 
-  <footer>
-    <p><a href="/weblog/"><b>More writing&hellip;</b></a></p>
-  </footer>
+  {% block footer %}
+    {% if footerContent %}
+      <footer>
+        {{ footerContent | safe }}
+      </footer>
+    {% endif %}
+  {% endblock %}
 </article>
 
 {% endblock %}

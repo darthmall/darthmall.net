@@ -1,6 +1,7 @@
 ---
 title: Weblog
 layout: layouts/page.njk
+permalink: /weblog/
 ---
 
 {% from "partials/macros/datetime.njk" import pubDate %}
@@ -8,7 +9,7 @@ layout: layouts/page.njk
 {% for post in collections.posts %}
   <article>
     <h2>
-      <a href="{{ post.page.url }}" class="color-ink decoration-none">
+      <a href="{{ post.url }}" class="color-ink decoration-none">
         {{ post.data.title }}
       </a>
     </h2>

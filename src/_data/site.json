@@ -1,4 +1,9 @@
 {
-  "name": "Evan Sheehan",
-  "copyright": "2020 W. Evan Sheehan"
+  "title": "Evan Sheehan",
+  "url": "https://darthmall.net",
+  "copyright": "2020 W. Evan Sheehan",
+  "author": {
+    "name": "Evan Sheehan",
+    "email": "evan.s@hey.com"
+  }
 }

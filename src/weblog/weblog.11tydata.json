@@ -1,5 +1,4 @@
 {
   "backLink": "More writing&hellip;",
-  "layout": "layouts/article.njk",
-  "permalink": "{{ page.fileSlug }}/"
+  "layout": "layouts/article.njk"
 }

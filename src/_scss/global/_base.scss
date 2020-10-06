@@ -72,7 +72,10 @@ hr {
 }
 
 figcaption,
-p:not([class]) {
+p:not([class]),
+dl,
+ul:not([class]),
+ol:not([class]) {
   max-width: tokens.get("type", "measure");
 }
 

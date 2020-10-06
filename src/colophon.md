@@ -1,8 +1,7 @@
 ---
 title: Colophon
+layout: layouts/article.njk
 ---
-
-# Colophon
 
 Congratulations! You've found the most self-indulgent part of any designer's website: the
 [colophon](https://en.wikipedia.org/wiki/Colophon_(publishing)).

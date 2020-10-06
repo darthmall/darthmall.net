@@ -1,5 +1,6 @@
 ---
 title: Now
+layout: layouts/article.njk
 ---
 
 I am currently on parental leave from [work](https://sos.noaa.gov/), so a lot of my time

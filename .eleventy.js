@@ -8,6 +8,7 @@ const markdownIt = require('markdown-it');
 const sass = require('sass');
 
 const {isoDateFilter, dateFilter} = require('./src/filters/date-filters.js');
+const { assetUrl } = require("./src/filters/assets.js");
 
 module.exports = function (config) {
   const md = markdownIt({
@@ -27,6 +28,7 @@ module.exports = function (config) {
   config.addPlugin(pluginRss);
   config.addWatchTarget("./src/_scss/");
 
+  config.addFilter("assetUrl", assetUrl);
   config.addFilter('dateFilter', dateFilter);
   config.addFilter('isoDateFilter', isoDateFilter);
 

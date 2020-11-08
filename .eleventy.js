@@ -27,8 +27,6 @@ module.exports = function (config) {
   config.addPlugin(pluginRss);
   config.addWatchTarget("./src/_scss/");
 
-  config.setTemplateFormats('njk,md');
-
   config.addFilter('dateFilter', dateFilter);
   config.addFilter('isoDateFilter', isoDateFilter);
 

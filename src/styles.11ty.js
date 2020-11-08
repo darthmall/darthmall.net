@@ -1,19 +1,23 @@
 class Stylesheet {
   data() {
     return {
+      eleventyComputed: {
+        assetKey: ({ stylesheet }) => stylesheet.fileName,
+      },
       permalink: ({ stylesheet }) => `/css/${stylesheet.fileName}`,
       pagination: {
+        addAllPagesToCollections: true,
         alias: "stylesheet",
         data: "styles",
         size: 1,
       },
-      tags: ["_styles"],
       layout: "",
+      tags: ["_styles"]
     };
   }
 
   render({ stylesheet }) {
-    return stylesheet.contents;
+    return stylesheet.content;
   }
 }
 

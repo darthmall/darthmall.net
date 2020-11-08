@@ -15,7 +15,7 @@ module.exports = function styles() {
 
     return {
       fileName: `${fileName}.css`,
-      contents: output.css.toString("utf8"),
+      content: output.css.toString("utf8"),
     };
   });
 };

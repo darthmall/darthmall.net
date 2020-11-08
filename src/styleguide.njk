@@ -6,7 +6,7 @@ layout:
 {% extends "layouts/base.njk" %}
 
 {% block head %}
-  <style>{{ "src/_scss/styleguide.scss" | sass | cssmin | safe }}</style>
+  <link rel="stylesheet" href="{{ collections._styles | assetUrl('styleguide.css') | url }}">
 {% endblock %}
 
 {% block content %}

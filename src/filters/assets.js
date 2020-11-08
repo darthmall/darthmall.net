@@ -1,6 +1,8 @@
-function assetUrl(assetCollection, fileName) {
-  for (const asset of assetCollection) {
-    if (asset.fileName === fileName) return asset.url;
+function assetUrl(assetCollection, key) {
+  for (let asset of assetCollection) {
+    if (asset.data.assetKey === key) {
+      return asset.url;
+    }
   }
 
   return "";

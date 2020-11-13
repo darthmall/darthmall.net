@@ -1,10 +1,6 @@
 @use "../../_data/tokens.json" as tokens;
 @use "../mixins/typography" as type;
 
-.basegrid-content { grid-column: content; }
-.basegrid-full    { grid-column: full; }
-.basegrid-wide    { grid-column: wide; }
-
 @each $tok, $val in tokens.$font {
   .font-#{$tok} {
     font-family: #{$val};

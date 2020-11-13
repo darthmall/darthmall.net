@@ -1,3 +1,4 @@
+const crypto = require("crypto");
 const path = require("path");
 
 const glob = require("glob");
@@ -13,9 +14,15 @@ module.exports = function styles() {
       importer: [jsonImporter()],
     });
 
+    const content = output.css.toString("utf8"),
+      hash = crypto.createHash("md5");
+
+    hash.update(content);
+
     return {
       fileName: `${fileName}.css`,
-      content: output.css.toString("utf8"),
+      hashedFileName: `${fileName}-${hash.digest("hex").slice(0, 10)}.css`,
+      content: content,
     };
   });
 };

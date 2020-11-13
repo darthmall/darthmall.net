@@ -7,11 +7,8 @@
 
   {% include "partials/meta-info.njk" %}
 
+  <link rel="stylesheet" href="{{ collections._styles | assetUrl('style.css') | url }}">
   <script async src="/js/shadow.js"></script>
-
-  <style>
-    {{ "src/_scss/style.scss" | sass | cssmin | safe}}
-  </style>
 
   {% block head %}{% endblock %}
 </head>

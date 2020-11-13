@@ -3,6 +3,9 @@ title: Now
 layout: layouts/article.njk
 ---
 
-I am currently on parental leave from [work](https://sos.noaa.gov/), so a lot of my time
-these days is just spent doing chores and keeping a baby alive and entertained. But I am
-finding time to work on a few projects (like this site) and read some books.
+Back at [work](https://sos.noaa.gov/) half time now. Baby's still alive (good
+job me) so I'm still spending a lot time with him. I just finished reading
+the [Machineries of
+Empire](https://www.goodreads.com/series/160439-the-machineries-of-empire)
+trilogy and ho-key-smokes I can recommend that series — at least the main
+three books.

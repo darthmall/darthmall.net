@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "eleventy",
-    "start": "DEBUG=Eleventy:Eleventy* eleventy --serve"
+    "start": "eleventy --serve"
   },
   "keywords": [],
   "author": "",

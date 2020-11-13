@@ -4,9 +4,10 @@ class Stylesheet {
       eleventyComputed: {
         assetKey: ({ stylesheet }) => stylesheet.fileName,
       },
-      permalink: ({ stylesheet }) => {
-        return `/css/${stylesheet.hashedFileName}`
-      },
+      permalink: ({ stylesheet }) =>
+        process.env.NODE_ENV === "production"
+          ? `/css/${stylesheet.hashedFileName}`
+          : `/css/${stylesheet.fileName}`,
       pagination: {
         addAllPagesToCollections: true,
         alias: "stylesheet",
@@ -14,7 +15,7 @@ class Stylesheet {
         size: 1,
       },
       layout: "",
-      tags: ["_styles"]
+      tags: ["_styles"],
     };
   }
 

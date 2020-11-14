@@ -14,7 +14,7 @@
   // grids don't align.
   & > * {
     @include font-family("heading");
-    @include font-size(-2);
+    @include font-size(-1);
   }
 
   hr {

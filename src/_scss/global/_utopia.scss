@@ -1,56 +1,41 @@
 // See https://utopia.fyi for more information
 
+@use "sass:math";
+
 @use "./tokens";
 
 $base: tokens.get("type", "base");
 $min-step: tokens.get("type", "min-step");
 $max-step: tokens.get("type", "max-step");
 
-:root {
+$min-scale: tokens.get("type", "fluid-min-ratio");
+$max-scale: tokens.get("type", "fluid-max-ratio");
+
+$min-size: tokens.get("type", "fluid-min-size");
+$max-size: tokens.get("type", "fluid-max-size");
+
+html {
   --fluid-min-width: #{tokens.get("type", "fluid-min-width")};
   --fluid-max-width: #{tokens.get("type", "fluid-max-width")};
-  --fluid-min-size: #{tokens.get("type", "fluid-min-size")};
-  --fluid-max-size: #{tokens.get("type", "fluid-max-size")};
-  --fluid-min-ratio: #{tokens.get("type", "fluid-min-ratio")};
-  --fluid-max-ratio: #{tokens.get("type", "fluid-max-ratio")};
-
   --fluid-screen: 100vw;
   --fluid-bp: calc(
-    (var(--fluid-screen) - ((var(--fluid-min-width) / #{$base}) * 1rem)) /
-    ((var(--fluid-max-width) / #{$base}) - (var(--fluid-min-width) / #{$base}))
+    (var(--fluid-screen) - var(--fluid-min-width) / #{$base} * 1rem) /
+      (var(--fluid-max-width) - var(--fluid-min-width))
   );
 
-  @if $min-step < 0 {
-    @for $i from $min-step to 0 {
-      $j: $i + 1;
-      --fluid-min-scale-#{$i}: var(--fluid-min-scale-#{$j}) / var(--fluid-min-ratio);
-      --fluid-max-scale-#{$i}: var(--fluid-max-scale-#{$j}) / var(--fluid-max-ratio);
-      --fluid-min-size-#{$i}: (var(--fluid-min-size) * var(--fluid-min-scale-#{$i})) / #{$base};
-      --fluid-max-size-#{$i}: (var(--fluid-max-size) * var(--fluid-max-scale-#{$i})) / #{$base};
-      --step-#{$i}: calc((var(--fluid-min-size-#{$i}) * 1rem) + (var(--fluid-max-size-#{$i}) - var(--fluid-min-size-#{$i})) * var(--fluid-bp));
-    }
-  }
-
-  --fluid-min-scale-0: var(--fluid-min-ratio);
-  --fluid-max-scale-0: var(--fluid-max-ratio);
-  --fluid-min-size-0: var(--fluid-min-size) / #{$base};
-  --fluid-max-size-0: var(--fluid-max-size) / #{$base};
-  --step-0: calc((var(--fluid-min-size-0) * 1rem) + (var(--fluid-max-size-0) - var(--fluid-min-size-0)) * var(--fluid-bp));
-
-  @for $i from max(1, $min-step) through $max-step {
-    $j: $i - 1;
-
-    --fluid-min-scale-#{$i}: var(--fluid-min-scale-#{$j}) * var(--fluid-min-ratio);
-    --fluid-max-scale-#{$i}: var(--fluid-max-scale-#{$j}) * var(--fluid-max-ratio);
-    --fluid-min-size-#{$i}: (var(--fluid-min-size) * var(--fluid-min-scale-#{$j})) / #{$base};
-    --fluid-max-size-#{$i}: (var(--fluid-max-size) * var(--fluid-max-scale-#{$j})) / #{$base};
-    --step-#{$i}: calc((var(--fluid-min-size-#{$i}) * 1rem) + ((var(--fluid-max-size-#{$i}) - var(--fluid-min-size-#{$i})) * var(--fluid-bp)));
+  @for $i from $min-step through $max-step {
+    --f-#{$i}-min: #{$min-size * math.pow($min-scale, $i)};
+    --f-#{$i}-max: #{$max-size * math.pow($max-scale, $i)};
+    --step-#{$i}: calc(
+      ((var(--f-#{$i}-min) / #{$base}) * 1rem) +
+        (var(--f-#{$i}-max) - var(--f-#{$i}-min)) *
+        var(--fluid-bp)
+    );
   }
 }
 
 @media screen and (min-width: #{tokens.get("type", "fluid-max-width")}px) {
-  :root {
+  html {
     --fluid-screen: calc(var(--fluid-max-width) * 1px);
   }
 }
-

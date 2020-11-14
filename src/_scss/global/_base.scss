@@ -54,11 +54,11 @@ h2 {
 }
 
 h3 {
-  @include font-size(2);
+  @include font-size(1);
 }
 
 h4 {
-  @include font-size(1);
+  @include font-size(0);
 }
 
 hr {
@@ -87,7 +87,6 @@ dd {
 code,
 figcaption {
   @include font-family("mono");
-  letter-spacing: -0.05em;
 }
 
 // Overriding styles from PrismJS
@@ -95,7 +94,7 @@ pre[class*="language-"] {
   line-height: 1 !important;
 
   code[class*="language-"] {
-    @include font-size(-2);
+    @include font-size(-1);
     line-height: inherit;
   }
 }

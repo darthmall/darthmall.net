@@ -1,6 +1,7 @@
 const path = require("path");
 
 const pluginRss = require('@11ty/eleventy-plugin-rss');
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const CleanCSS = require('clean-css');
 const debug = require('debug')('Eleventy:Benchmark');
 const jsonImporter = require('node-sass-json-importer');
@@ -26,6 +27,9 @@ module.exports = function (config) {
   config.setLibrary('md', md);
 
   config.addPlugin(pluginRss);
+  config.addPlugin(syntaxHighlight, {
+    templateFormats: ["njk", "md"],
+  });
   config.addWatchTarget("./src/_scss/");
 
   config.addFilter("assetUrl", assetUrl);

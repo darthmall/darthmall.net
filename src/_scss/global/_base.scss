@@ -87,13 +87,18 @@ dd {
 code,
 figcaption {
   @include font-family("mono");
-
-  /* Shrink the monospace text a little so that it fits better with the
-   * surrounding text set in Work Sans.
-   */
-  font-size: 0.9rem;
+  letter-spacing: -0.05em;
 }
 
+// Overriding styles from PrismJS
+pre[class*="language-"] {
+  line-height: 1 !important;
+
+  code[class*="language-"] {
+    @include font-size(-2);
+    line-height: inherit;
+  }
+}
 
 blockquote {
   margin: 3rem;

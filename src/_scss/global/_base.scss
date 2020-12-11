@@ -39,7 +39,7 @@ h1 {
 h2 {
   @include font-size(3);
 
-  font-family: #{tokens.font-family("condensed")};
+  font-family: #{tokens.font-family("body")};
   line-height: 1;
 
   // Fallback to a static shadow for browsers that don't support CSS custom properties

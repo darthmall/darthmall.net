@@ -19,12 +19,6 @@ these (to the best of my ability).
     <dd>Used for page titles, strong text, dates, and whatever else I feel like because I
     really love this font.</dd>
 
-    <dt class="font-condensed border-slate border-bottom-1px">GNOMON*</dt>
-    <dd>by <a href="https://indestructibletype.com/Gnomon.html">Indestructible
-    Type</a></dd>
-    <dd>Used for section headings. I was attracted to this font because it's a cool
-    experimental variable font.</dd>
-
     <dt class="font-body border-slate border-bottom-1px">Epilogue</dt>
     <dd>by <a href="https://etceteratype.co/epilogue">Etcetera Type Co.</a></dd>
     <dd>Used for the body text. Etcetera has lots of great fonts to choose from. I'm

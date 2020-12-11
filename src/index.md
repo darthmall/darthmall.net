@@ -5,5 +5,5 @@
 
 My name is Evan and this is my little corner of the web where I sometimes
 **[write](/weblog/)**; keep a small **[portfolio](/work/)** (because
-I'm a Professional<sup>TM</sup>); and where you can find out what I'm up to
+I'm a Professional&trade;); and where you can find out what I'm up to
 **[now](/now/)**, if that's your jam.

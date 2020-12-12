@@ -116,6 +116,7 @@ p code {
 // Overriding styles from PrismJS
 pre[class*="language-"] {
   line-height: 1 !important;
+  margin: 1em -1em !important;
 
   code[class*="language-"] {
     @include font-size(-1);

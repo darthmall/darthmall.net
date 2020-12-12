@@ -109,8 +109,10 @@ figcaption {
   @include font-family("mono");
 }
 
-p code {
-  font-size-adjust: 0.5;
+p, li, dt, dd {
+  code {
+    font-size-adjust: 0.5;
+  }
 }
 
 // Overriding styles from PrismJS

@@ -15,6 +15,10 @@ $-tokens: meta.module-variables(tokens);
   @return get("color", $name);
 }
 
+@function line-height($step) {
+  @return get("line-height", $step);
+}
+
 @function space($name) {
   @return get("space", $name);
 }

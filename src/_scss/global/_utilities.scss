@@ -19,7 +19,17 @@ $-max-text: map-get(tokens.$type, "max-step");
   }
 }
 
+@each $tok, $val in tokens.$line-height {
+  .line-height-#{$tok} {
+    line-height: $val;
+  }
+}
+
 @each $tok, $val in tokens.$space {
+  .flow-sp-#{$tok} {
+    --flow-sp: #{$val};
+  }
+
   .margin-#{$tok} {
     margin: $val;
   }

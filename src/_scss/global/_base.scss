@@ -84,6 +84,21 @@ ol:not([class]) {
   max-width: tokens.get("type", "measure");
 }
 
+ol,
+ul {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  padding-left: 2ch;
+}
+
+li {
+  line-height: 1.3;
+
+  & + li {
+    margin-top: 0.6em;
+  }
+}
+
 dd {
   --flow-sp: 0.5em;
   @include font-size(-1);

@@ -26,7 +26,7 @@ h1,
 }
 
 h1 {
-  @include font-size(4);
+  @include font-size(6);
 
   margin-top: 1.5em;
   margin-bottom: 1.5em;
@@ -37,10 +37,7 @@ h1 {
 }
 
 h2 {
-  @include font-size(3);
-
-  font-family: #{tokens.font-family("body")};
-  line-height: 1;
+  @include font-size(1);
 
   // Fallback to a static shadow for browsers that don't support CSS custom properties
   text-shadow: 4px 4px 0 #{tokens.color("accent")};
@@ -54,10 +51,6 @@ h2 {
 }
 
 h3 {
-  @include font-size(1);
-}
-
-h4 {
   @include font-size(0);
 }
 

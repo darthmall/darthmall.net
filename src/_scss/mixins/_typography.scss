@@ -10,6 +10,3 @@
   font-size: var(--step-#{$step}, $s);
 }
 
-@mixin line-height($step) {
-  line-height: 1.6;
-}

@@ -23,13 +23,13 @@
   }
 
   .card__title {
-    line-height: 1;
+    line-height: tokens.line-height(1);
     text-shadow: none;
   }
 
   .card__meta {
     font-weight: bold;
-    line-height: 1;
+    line-height: tokens.line-height(1);
     text-transform: uppercase;
   }
 

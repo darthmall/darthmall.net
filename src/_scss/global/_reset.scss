@@ -34,7 +34,7 @@ body {
   @include font-size(0);
   @include font-family("body");
 
-  line-height: 1.6;
+  line-height: tokens.line-height(3);
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizespeed;

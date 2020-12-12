@@ -14,7 +14,7 @@
   background-size: 3em;
   display: block;
   font-size: 1.732em;
-  line-height: 1;
+  line-height: tokens.line-height(1);
   max-width: 9em;
   overflow: visible;
   text-decoration: none;

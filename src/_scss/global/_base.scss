@@ -18,6 +18,19 @@ body {
   padding-right: tokens.$site-margin;
 }
 
+article {
+  & > * + * {
+    margin-top: 1em;
+  }
+
+  // <h3> is the lowest level heading I use in prose, and I like it to be like a little
+  // label for a paragraph, so I want it spaced just like a line in whatever paragraph
+  // follows it.
+  & > h3 + * {
+    margin-top: 0;
+  }
+}
+
 h1,
 .name-mark,
 .catalog-card > .title {
@@ -38,10 +51,13 @@ h1 {
 
 h2 {
   @include font-size(1);
+
+  margin: 3em auto;
 }
 
 h3 {
   @include font-size(0);
+  margin-top: 1.5em;
 }
 
 hr {

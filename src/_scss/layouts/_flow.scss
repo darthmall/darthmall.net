@@ -1,5 +1,4 @@
-.flow,
-article:not([class]) {
+.flow {
   & > * + * {
     // FIXME: these should be tokens?
     margin-top: 1em;

@@ -17,7 +17,7 @@ module.exports = function (config) {
       typographer: true,
     })
     .use(require('markdown-it-anchor'), {
-      level: 2,
+      level: [2],
       permalink: true,
       permalinkSymbol: '§',
       slugify: require('slug'),

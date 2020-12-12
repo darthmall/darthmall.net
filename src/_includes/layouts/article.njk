@@ -8,13 +8,13 @@
 
 {% block content %}
 <article>
-  <h1>{{ title | safe }}</h1>
+  <header>
+    <h1>{{ title | safe }}</h1>
 
-  {% if date %}
-    <aside role="note">
-      {{ pubDate(date) }}
-    </aside>
-  {% endif %}
+    {% if date %}
+      <p>{{ pubDate(date) }}</p>
+    {% endif %}
+  </header>
 
   {{ content | safe }}
 

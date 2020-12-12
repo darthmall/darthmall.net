@@ -118,7 +118,9 @@ p, li, dt, dd {
 // Overriding styles from PrismJS
 pre[class*="language-"] {
   line-height: 1 !important;
-  margin: 1em -1em !important;
+  margin: 1em -#{tokens.$site-margin} !important;
+  padding-left: #{tokens.$site-margin} !important;
+  padding-right: #{tokens.$site-margin} !important;
 
   code[class*="language-"] {
     @include font-size(-1);

@@ -34,4 +34,4 @@ $-tokens: meta.module-variables(tokens);
   @return $base-size * math.pow($scale, $step);
 }
 
-$site-margin: get("space", 1);
+$site-margin: get("space", 2);

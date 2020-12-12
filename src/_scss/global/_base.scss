@@ -109,6 +109,10 @@ figcaption {
   @include font-family("mono");
 }
 
+p code {
+  font-size-adjust: 0.5;
+}
+
 // Overriding styles from PrismJS
 pre[class*="language-"] {
   line-height: 1 !important;

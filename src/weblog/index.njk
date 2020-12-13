@@ -7,16 +7,11 @@ layout: layouts/page.njk
 
 <div class="flow flow-sp-3">
 {% for post in collections.posts %}
-  <article class="line-height-2">
-    <h2 class="font-heading size-2 margin-none">
-      <a href="{{ post.url }}" class="color-ink">
-        {{ post.data.title }}
-      </a>
-    </h2>
-    <p class="margin-none size--1">
-        {{ pubDate(post.data.date) }}
-    </p>
-    <p class="margin-top-1">{{ post.data.description }}</p>
-  </article>
+  {% set postUrl = post.url %}
+  {% set postTitle = post.data.title %}
+  {% set postDate = post.data.date %}
+  {% set postDescription = post.data.description %}
+
+  {% include "partials/components/post-summary.njk" %}
 {% endfor %}
 </div>

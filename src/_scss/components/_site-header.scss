@@ -19,6 +19,11 @@
   overflow: visible;
   text-decoration: none;
   text-transform: lowercase;
+
+  &:hover {
+    // Override default link hover effect
+    background-color: unset;
+  }
 }
 
 .name-mark > .first,

@@ -16,7 +16,11 @@
 <body>
   {% include "partials/global/site-header.njk" %}
 
-  <main tabindex="-1">
+  {% set mainClasses = "" %}
+  {% if classes %}
+    {% set mainClasses = ' class="' + classes + '"' %}
+  {% endif %}
+  <main tabindex="-1"{{ mainClasses | safe }}>
     {% block content %}
       {% if title %}
         <h1>{{ title | safe }}</h1>

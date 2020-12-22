@@ -1,0 +1,14 @@
+@use "../global/tokens";
+@use "../mixins/typography" as *;
+
+.home {
+  display: grid;
+  gap: tokens.space(2);
+  grid-auto-columns: max-content;
+  grid-auto-flow: column;
+  margin-top: tokens.space(3);
+
+  & > nav {
+    @include font-size(6);
+  }
+}

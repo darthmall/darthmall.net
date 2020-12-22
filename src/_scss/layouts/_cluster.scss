@@ -10,6 +10,9 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
+    // It's common to apply the cluster layout to lists, so we clear the list style.
+    list-style: none;
   }
 
   > * > * {

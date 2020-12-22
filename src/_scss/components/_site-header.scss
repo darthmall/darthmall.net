@@ -1,7 +1,17 @@
 @use "../global/tokens";
+@use "../layouts/cluster";
 
 [role="banner"] {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+
   margin-top: tokens.space(3);
+}
+
+[role="banner"] > nav {
+  @extend .cluster;
+  margin-left: auto;
 }
 
 [role="banner"] a:visited {
@@ -49,7 +59,6 @@
     grid-template-rows: 1fr 0.65em 1px 0.65em 1fr;
     height: 3em;
     margin-left: -#{tokens.$site-margin};
-    margin-right: -#{tokens.$site-margin};
   }
 
   .name-mark::after {

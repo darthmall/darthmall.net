@@ -140,3 +140,12 @@ strong {
   font-family: #{tokens.font-family("heading")};
   font-size-adjust: 0.55;
 }
+
+a {
+  transition: background-color 200ms ease-out;
+
+  &:hover {
+    background-color: tokens.color("accent");
+  }
+}
+

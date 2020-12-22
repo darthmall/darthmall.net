@@ -7,5 +7,7 @@
     <div class="last">Sheehan</div>
   </a>
 
-  {% include "partials/components/nav.njk" %}
+  {% if page.url != "/" %}
+    {% include "partials/components/nav.njk" %}
+  {% endif %}
 </header>

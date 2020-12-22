@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  {% include "partials/meta-info.njk" %}
+  {% include "partials/global/meta-info.njk" %}
 
   <link rel="stylesheet" href="{{ collections._styles | assetUrl('style.css') | url }}">
   <script async src="/js/shadow.js"></script>
@@ -14,8 +14,18 @@
 </head>
 
 <body>
-  {% include "partials/site-header.njk" %}
-  {% block content %}{% endblock content %}
-  {% include "partials/site-footer.njk" %}
+  {% include "partials/global/site-header.njk" %}
+
+  <main tabindex="-1">
+    {% block content %}
+      {% if title %}
+        <h1>{{ title | safe }}</h1>
+      {% endif %}
+
+      {{ content | safe }}
+    {% endblock content %}
+  </main>
+
+  {% include "partials/global/site-footer.njk" %}
 </body>
 </html>

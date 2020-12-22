@@ -38,7 +38,7 @@ h1,
   line-height: tokens.line-height(1);
 }
 
-article > header,
+main > header,
 h1 {
   @include font-size(6);
 
@@ -50,7 +50,7 @@ header > p {
   @include font-size(0);
 }
 
-article > header > h1 {
+header > h1 {
   margin: 0;
 }
 

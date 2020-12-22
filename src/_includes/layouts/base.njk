@@ -15,7 +15,14 @@
 
 <body>
   {% include "partials/global/site-header.njk" %}
-  {% block content %}{% endblock content %}
+
+  <main tabindex="-1">
+    {% block content %}
+      <h1>{{ title | safe }}</h1>
+      {{ content | safe }}
+    {% endblock content %}
+  </main>
+
   {% include "partials/global/site-footer.njk" %}
 </body>
 </html>

@@ -6,7 +6,25 @@
     </div>
   </div>
 
-  <p class="colophon">
-    <a rel="me" href="https://vis.social/@darth_mall">Mastodon</a>&emsp;&bull;&emsp;<a href="/feed.xml">RSS</a>
+  <div>
+    <nav class="cluster">
+      <ul>
+        {% for link in social %}
+          {% set relAttr = "" %}
+          {% if link.rel %}
+            {% set relAttr = " rel='" + link.rel + "'" %}
+          {% endif %}
+          <li>
+            <a href="{{ link.url }}"{{ relAttr | safe }}>{{ link.text }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+
+  <p>
+    Colophon: <a href="http://www.velvetyne.fr/fonts/sporting-grotesque/">Sporting
+      Grotesque</a> &amp; <a href="https://brailleinstitute.org/freefont">Atkinson
+      Hyperlegible</a>. Built with <a href="https://11ty.dev">Eleventy</a>.
   </p>
 </footer>

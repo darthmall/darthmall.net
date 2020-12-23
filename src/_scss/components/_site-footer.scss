@@ -2,20 +2,12 @@
 @use "../mixins/typography" as *;
 
 #site-footer {
-  --flow-sp: #{tokens.space(3)};
+  --flow-sp: #{tokens.space(2)};
+  @include font-size(-1);
 
   color: tokens.color("slate");
   margin-bottom: #{tokens.space(4)};
   margin-top: #{tokens.space(4)};
-
-  // Set the font-size on children of the footer instead of the footer itself so that the
-  // grid column whose max width is 60ch is the same as the other grids on the page. If we
-  // make the font-size smaller on the footer, 60ch is narrower than other grids and the
-  // grids don't align.
-  & > * {
-    @include font-family("heading");
-    @include font-size(-1);
-  }
 
   hr {
     flex: 1 1 auto;
@@ -23,18 +15,7 @@
 }
 
 .copyright {
+  @include font-family("heading");
+  font-size-adjust: 0.5;
   order: 1;
-}
-
-.colophon {
-  justify-self: center;
-  text-align: center;
-
-  &::after {
-    content: " ] ";
-  }
-
-  &::before {
-    content: " [ ";
-  }
 }

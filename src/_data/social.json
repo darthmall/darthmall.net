@@ -1,0 +1,17 @@
+[
+  {
+    "text": "Mastodon",
+    "url": "https://vis.social/@darth_mall",
+    "rel": "me"
+  },
+  {
+    "text": "Twitter",
+    "url": "https://twitter.com/darth_mall",
+    "rel": "me"
+  },
+  {
+    "text": "CodePen",
+    "url": "https://codepen.io/darthmall",
+    "rel": "me"
+  }
+]

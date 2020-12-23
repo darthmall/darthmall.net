@@ -4,11 +4,29 @@
 .home {
   display: grid;
   gap: tokens.space(2);
-  grid-auto-columns: max-content;
-  grid-auto-flow: column;
-  place-items: center;
+  grid-template-columns: minmax(auto, 277px) 1fr;
+
+  align-items: center;
+  justify-items: start;
+
+  & > img {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
 
   & > nav {
     @include font-size(6);
+    grid-column: 2 / 3;
+    grid-row: 1;
+  }
+
+  a {
+    background-color: #{tokens.color("light")};
+    outline: 0.125em solid transparent;
+    transition: outline-color 150ms linear;
+
+    &:hover {
+      outline-color: tokens.color("accent");
+    }
   }
 }

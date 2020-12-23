@@ -12,6 +12,12 @@
   hr {
     flex: 1 1 auto;
   }
+
+  svg {
+    display: inline-block;
+    height: 2em;
+    width: 2em;
+  }
 }
 
 .copyright {

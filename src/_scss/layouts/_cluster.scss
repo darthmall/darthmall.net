@@ -19,4 +19,8 @@
     margin: $gap;
     margin: var(--cluster-gap, #{$gap});
   }
+
+  .cluster__item--end {
+    margin-left: auto;
+  }
 }

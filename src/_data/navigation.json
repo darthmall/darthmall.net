@@ -1,0 +1,17 @@
+[
+  {
+    "text": "Weblog",
+    "url": "/weblog/",
+    "rel": null
+  },
+  {
+    "text": "Work",
+    "url": "/work/",
+    "rel": null
+  },
+  {
+    "text": "About",
+    "url": "/about/",
+    "rel": null
+  }
+]

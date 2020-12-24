@@ -1,41 +1,24 @@
 @use "../global/tokens";
 @use "../mixins/typography" as *;
 
-$-bp: 77em;
-
-h2:not([class]),
-h3:not([class]),
-h4:not([class]),
-h5:not([class]),
-h6:not([class]) {
+article > h2 {
   position: relative;
-
-  @media screen and (max-width: $-bp) {
-    padding-right: tokens.space(3);
-  }
 }
 
 .header-anchor {
-  @include font-family("heading");
-
-  color: tokens.color("mid");
+  color: tokens.color("slate");
   position: absolute;
-  right: 0;
+  left: -1.5ch;
   text-decoration: none;
   text-shadow: none;
-  top: 0;
   transition: 200ms ease-out color;
 
-  @media screen and (min-width: $-bp) {
-    left: -#{tokens.space(3)};
-    right: auto;
+  &:hover {
+    // Override hover styles for generic links
+    background-color: unset;
   }
 }
 
-*:hover > .header-anchor {
-  color: tokens.color("slate");
-}
-
-* .header-anchor:hover {
+.header-anchor:hover {
   color: tokens.color("primary");
 }

@@ -1,11 +1,29 @@
 @use "../global/tokens";
+@use "../layouts/cluster";
 
 [role="banner"] {
-  margin-top: tokens.space(3);
-}
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
 
-[role="banner"] a:visited {
-  color: inherit;
+  margin-bottom: tokens.space(3);
+  margin-top: tokens.space(3);
+
+  & > nav {
+    @extend .cluster;
+    margin-left: auto;
+  }
+
+  & a:visited {
+    color: inherit;
+  }
+
+  & [aria-current] {
+    color: tokens.color("primary") !important;
+    outline: 2px solid tokens.color("primary");
+    outline-offset: calc(#{tokens.space(0)} - 2px);
+  }
+
 }
 
 .name-mark {
@@ -14,11 +32,16 @@
   background-size: 3em;
   display: block;
   font-size: 1.732em;
-  line-height: 1;
-  max-width: 8em;
+  line-height: tokens.line-height(1);
+  max-width: 9em;
   overflow: visible;
   text-decoration: none;
   text-transform: lowercase;
+
+  &:hover {
+    // Override default link hover effect
+    background-color: unset;
+  }
 }
 
 .name-mark > .first,
@@ -44,7 +67,6 @@
     grid-template-rows: 1fr 0.65em 1px 0.65em 1fr;
     height: 3em;
     margin-left: -#{tokens.$site-margin};
-    margin-right: -#{tokens.$site-margin};
   }
 
   .name-mark::after {

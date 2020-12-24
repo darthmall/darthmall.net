@@ -1,0 +1,25 @@
+[
+  {
+    "text": "RSS",
+    "icon": "rss.svg",
+    "url": "/feed.xml"
+  },
+  {
+    "text": "Mastodon",
+    "icon": "mastodon.svg",
+    "url": "https://vis.social/@darth_mall",
+    "rel": "me"
+  },
+  {
+    "text": "Twitter",
+    "icon": "twitter.svg",
+    "url": "https://twitter.com/darth_mall",
+    "rel": "me"
+  },
+  {
+    "text": "CodePen",
+    "icon": "codepen.svg",
+    "url": "https://codepen.io/darthmall",
+    "rel": "me"
+  }
+]

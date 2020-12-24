@@ -18,47 +18,56 @@ body {
   padding-right: tokens.$site-margin;
 }
 
+* + * {
+  margin-top: 1em;
+}
+
+// <h3> is the lowest level heading I use in prose, and I like it to be like a little
+// label for a paragraph, so I want it spaced just like a line in whatever paragraph
+// follows it.
+h3 + * {
+  margin-top: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+}
+
 h1,
 .name-mark,
 .catalog-card > .title {
   font-family: #{tokens.font-family("heading")};
-  line-height: 1;
+  line-height: tokens.line-height(1);
 }
 
+main > header,
 h1 {
-  @include font-size(4);
+  @include font-size(6);
 
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+}
 
-  & + * {
-    margin-top: 0;
-  }
+header > p {
+  @include font-size(0);
+}
+
+header > h1 {
+  margin: 0;
 }
 
 h2 {
-  @include font-size(3);
+  @include font-size(1);
 
-  font-family: #{tokens.font-family("condensed")};
-  line-height: 1;
-
-  // Fallback to a static shadow for browsers that don't support CSS custom properties
-  text-shadow: 4px 4px 0 #{tokens.color("accent")};
-
-  // Use a CSS custom property to set the shadow direction so that it can track the time
-  // of day.
-  text-shadow:
-    var(--shadow-x, 0)
-    var(--shadow-y, 0)
-    0 #{tokens.color("accent")};
+  margin-top: 3em;
+  margin-bottom: 3em;
+  position: relative;
 }
 
 h3 {
-  @include font-size(1);
-}
-
-h4 {
   @include font-size(0);
+  margin-top: 1.5em;
 }
 
 hr {
@@ -72,11 +81,30 @@ hr {
 }
 
 figcaption,
-p:not([class]),
+p,
 dl,
 ul:not([class]),
 ol:not([class]) {
   max-width: tokens.get("type", "measure");
+}
+
+ol,
+ul {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  padding-left: 0;
+}
+
+li {
+  line-height: tokens.line-height(2);
+
+  &::marker {
+    color: tokens.color("slate");
+  }
+
+  & + li {
+    margin-top: 0.4em;
+  }
 }
 
 dd {
@@ -89,9 +117,18 @@ figcaption {
   @include font-family("mono");
 }
 
+p, li, dt, dd {
+  code {
+    font-size-adjust: 0.5;
+  }
+}
+
 // Overriding styles from PrismJS
 pre[class*="language-"] {
-  line-height: 1 !important;
+  line-height: #{tokens.line-height(1)} !important;
+  margin: 1em -#{tokens.$site-margin} !important;
+  padding-left: #{tokens.$site-margin} !important;
+  padding-right: #{tokens.$site-margin} !important;
 
   code[class*="language-"] {
     @include font-size(-1);
@@ -105,5 +142,14 @@ blockquote {
 
 strong {
   font-family: #{tokens.font-family("heading")};
-  font-size-adjust: 0.55;
+  font-size-adjust: 0.5;
 }
+
+a {
+  transition: background-color 200ms ease-out;
+
+  &:hover {
+    background-color: tokens.color("accent");
+  }
+}
+

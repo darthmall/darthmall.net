@@ -8,7 +8,6 @@
   margin-bottom: 0;
 }
 
-body,
 dl,
 dd,
 figcaption,
@@ -23,7 +22,7 @@ li,
 p,
 ol[class],
 ul[class] {
-  margin: 0;
+  margin-bottom: 0;
 }
 
 html {
@@ -33,8 +32,8 @@ html {
 body {
   @include font-size(0);
   @include font-family("body");
-  @include line-height(3);
 
+  line-height: tokens.line-height(3);
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizespeed;

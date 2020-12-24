@@ -6,4 +6,8 @@
     <div class="first">Evan</div>
     <div class="last">Sheehan</div>
   </a>
+
+  {% if page.url != "/" %}
+    {% include "partials/components/nav.njk" %}
+  {% endif %}
 </header>

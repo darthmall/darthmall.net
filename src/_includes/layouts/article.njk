@@ -3,18 +3,17 @@
 {% from "partials/macros/datetime.njk" import pubDate %}
 
 {% block head %}
-<link href="https://unpkg.com/prismjs@1.20.0/themes/prism.css" rel="stylesheet">
+  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism.css" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-<article>
-  <h1>{{ title | safe }}</h1>
+  <header>
+    <h1>{{ title | safe }}</h1>
 
-  {% if date %}
-    <aside role="note">
-      {{ pubDate(date) }}
-    </aside>
-  {% endif %}
+    {% if date %}
+      <p>{{ pubDate(date) }}</p>
+    {% endif %}
+  </header>
 
   {{ content | safe }}
 
@@ -35,6 +34,5 @@
       {{ footer | safe }}
     </footer>
   {% endif %}
-</article>
 
 {% endblock %}

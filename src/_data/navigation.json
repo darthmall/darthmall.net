@@ -13,10 +13,5 @@
     "text": "About",
     "url": "/about/",
     "rel": null
-  },
-  {
-    "text": "Now",
-    "url": "/now/",
-    "rel": null
   }
 ]

@@ -4,7 +4,7 @@
       {% set currentAttr = "" %}
       {% set relAttr = "" %}
 
-      {% if page.url == link.url %}
+      {% if page.url.startsWith(link.url) %}
         {% set currentAttr = ' aria-current="page"' %}
       {% endif %}
 

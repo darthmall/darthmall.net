@@ -3,18 +3,14 @@ title: Work
 layout: layouts/base.njk
 ---
 
-<div class="flow">
+{% for project in collections.work %}
+  {% if not project.draft %}
+    <article style="--color-1:#{{ project.data.color }}">
+      <h2>
+        <a href="{{ project.url }}" class="card__link">{{ project.data.title }}</a>
+      </h2>
 
-  <div class="card-stack flow">
-    {% for project in collections.work %}
-      <article class="card" style="--color-1:#{{ project.data.color }}">
-        <h2 class="card__title">
-          <a href="{{ project.url }}" class="card__link">{{ project.data.title }}</a>
-        </h2>
-
-        <aside class="card__meta">{{ project.data.client | default("Personal") }}</aside>
-      </article>
-    {% endfor %}
-  </div>
-
-</div>
+      {{ project.templateContent | safe }}
+    </article>
+  {% endif %}
+{% endfor %}

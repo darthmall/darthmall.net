@@ -6,10 +6,7 @@ role: Designed
 color: F573A0
 ---
 
-<figure>
-  <img alt="" src="/img/work/user_journey/journeys.png" />
-  <figcaption>A mockup of the visualization of user journeys. These images are mockups and contain no actual data.</figcaption>
-</figure>
+<img alt="" src="/img/work/user_journey/journeys.png" />
 
 This is a tool for data scientists, product owners, and designers to explore how users on
 Spotify navigate the various clients to find something to stream. It provides both a high

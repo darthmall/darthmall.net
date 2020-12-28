@@ -1,6 +1,7 @@
 ---
 title: Spotify @ IXDA ’18
 order: 2018-02
+draft: true
 client: Spotify
 role: Designed and built
 stack:

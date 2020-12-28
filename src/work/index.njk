@@ -5,12 +5,14 @@ layout: layouts/base.njk
 
 {% for project in collections.work %}
   {% if not project.draft %}
-    <article style="--color-1:#{{ project.data.color }}">
-      <h2>
-        <a href="{{ project.url }}" class="card__link">{{ project.data.title }}</a>
-      </h2>
+    {% set projectTitle = project.data.title %}
+    {% set projectClass = "project-summary--" + project.data.class %}
+    {% set projectColor = "#" + project.data.color %}
+    {% set projectRole = project.data.role %}
+    {% set projectMedia = project.data.media %}
+    {% set projectMediaAlt = project.data.mediaAlt %}
+    {% set projectDescription = project.templateContent %}
 
-      {{ project.templateContent | safe }}
-    </article>
+    {% include "partials/components/project-summary.njk" %}
   {% endif %}
 {% endfor %}

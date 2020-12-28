@@ -8,10 +8,17 @@
 html {
   background-color: tokens.color("light");
   color: tokens.color("ink");
+  font-size: 100%;
 }
 
 body {
-  font-family: #{tokens.font-family("body")};
+  @include font-size(0);
+  @include font-family("body");
+
+  line-height: tokens.line-height(3);
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizespeed;
   margin: 0 auto;
   max-width: tokens.get("type", "measure") * 4 / 3;
   padding-left: tokens.$site-margin;

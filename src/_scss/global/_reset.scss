@@ -5,7 +5,6 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  margin-bottom: 0;
 }
 
 dl,
@@ -25,18 +24,9 @@ ul[class] {
   margin-bottom: 0;
 }
 
-html {
-  font-size: 100%;
-}
-
-body {
-  @include font-size(0);
-  @include font-family("body");
-
-  line-height: tokens.line-height(3);
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizespeed;
+figure {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 ol[class],

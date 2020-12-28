@@ -1,0 +1,10 @@
+@use "../global/tokens" as tokens;
+
+.center {
+  box-sizing: content-box;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: tokens.get("type", "measure") * 4 / 3;
+  padding-left: tokens.$site-margin;
+  padding-right: tokens.$site-margin;
+}

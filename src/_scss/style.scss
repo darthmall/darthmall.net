@@ -4,8 +4,9 @@
 @use "./global/base";
 
 @use "./layouts/card-stack";
-@use "./layouts/flow";
+@use "./layouts/center";
 @use "./layouts/cluster";
+@use "./layouts/flow";
 
 @use "./components/card";
 @use "./components/header-anchor";

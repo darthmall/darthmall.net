@@ -1,17 +1,17 @@
 ---
 title: "Jigs: Visualized"
+media: /img/work/jigs/network.png
+mediaAlt: >-
+    A network of red circles each representing one jig connected to other jigs by white
+    lines against a black background
 order: 2012-08
 thumbnail: /img/work/jigs/jigs_thumb@2x.png
 client: Personal
 role: Designed and built
 repo: https://github.com/darthmall/Irish-Tune-Visualization
+class: ionian
 color: DF4A3F
 ---
-
-<figure>
-  <img src="/img/work/jigs/network.png" alt="">
-  <figcaption>A network of jigs connected by similarity.</figcaption>
-</figure>
 
 This data visualization attempts to show how much similarity exists in a corpus of Irish
 jigs taken from [The Session][thesession], an online database of Irish tunes.

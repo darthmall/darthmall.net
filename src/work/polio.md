@@ -12,9 +12,15 @@ class: dorian
 color: 00AEEF
 ---
 
-At Seed Scientific I worked with UNICEF to design and develop a tool for
-tracking the key indicators used to monitor UNICEF's polio eradication efforts in Nigeria,
-one of the three endemic countries (along with Pakistan and Afghanistan). The dashboard
-was both an interactive application and a printable report that could be handed out at
-meetings.
+At Seed Scientific, I worked with UNICEF to design and develop a tool for
+tracking the key indicators used to monitor UNICEF's polio eradication efforts in Nigeria.
+At the time, Nigeria was one of three countries — along with Pakistan and Afghanistan — in
+which wild polio virus still circulated. (In 2020, the [WHO certified Africa as being free
+of wild
+polio](https://www.who.int/news/item/25-08-2020-global-polio-eradication-initiative-applauds-who-african-region-for-wild-polio-free-certification).)
+
+The dashboard displayed over thirty indicators and needed to highlight trends in each one.
+In addition to being interactive on the web, the dashboard also needed to be printable on
+a single sheet of paper so that it could be used as a hand-out for leaders of the polio
+eradication initiative during briefings.
 

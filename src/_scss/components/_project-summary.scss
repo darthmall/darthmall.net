@@ -1,11 +1,12 @@
+@use "../theme";
 @use "../global/tokens";
 @use "../mixins/typography" as *;
 
 %project-summary {
   display: flex;
   flex-direction: column;
-  padding-left: tokens.$site-margin;
-  padding-right: tokens.$site-margin;
+  padding-left: theme.$site-margin;
+  padding-right: theme.$site-margin;
 
   * {
     margin-bottom: 0;
@@ -51,7 +52,7 @@
   }
 
   .project-summary__body {
-    columns: #{tokens.get("type", "measure") / 2} auto;
+    columns: tokens.measure(0) auto;
     gap: tokens.space(2);
     grid-area: body;
 
@@ -73,14 +74,14 @@
 .project-summary--ionian {
   @extend %project-summary;
 
-  @media (min-width: #{tokens.get("type", "measure") * 4 / 3}) {
+  @media (min-width: #{theme.$site-width}) {
     .project-summary__container {
       grid-template-areas:
         "media header"
         "media body";
       grid-template-columns:
         minmax(auto, max-content)
-        #{tokens.get("type", "measure") / 2};
+        #{tokens.measure(0)};
       grid-template-rows: min-content 1fr;
     }
   }
@@ -94,7 +95,7 @@
     box-sizing: content-box;
     margin-left: auto;
     margin-right: auto;
-    max-width: #{tokens.get("type", "measure") * 4 / 3};
+    max-width: #{theme.$site-width};
     width: 100%;
   }
 }
@@ -102,7 +103,7 @@
 .project-summary--phrygian {
   @extend %project-summary;
 
-  @media (min-width: #{tokens.get("type", "measure") * 4 / 3}) {
+  @media (min-width: #{theme.$site-width}) {
     .project-summary__container {
       display: block;
     }
@@ -117,7 +118,7 @@
       float: right;
       margin-bottom: tokens.space(1);
       margin-left: tokens.space(3);
-      max-width: calc(100% - #{tokens.get("type", "measure") / 2} - #{tokens.space(3)});
+      max-width: calc(100% - #{tokens.measure(0)} - #{tokens.space(3)});
     }
 
     .project-summary__body {

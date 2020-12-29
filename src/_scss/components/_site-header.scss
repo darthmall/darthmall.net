@@ -1,3 +1,4 @@
+@use "../theme";
 @use "../global/tokens";
 @use "../layouts/cluster";
 
@@ -59,14 +60,14 @@
     display: grid;
     grid-column: full;
     grid-template-columns:
-      tokens.$site-margin
+      theme.$site-margin
       0.577fr
       1fr
       1.732fr
-      tokens.$site-margin;
+      theme.$site-margin;
     grid-template-rows: 1fr 0.65em 1px 0.65em 1fr;
     height: 3em;
-    margin-left: -#{tokens.$site-margin};
+    margin-left: -#{theme.$site-margin};
   }
 
   .name-mark::after {

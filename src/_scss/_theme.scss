@@ -1,0 +1,6 @@
+@use "./global/tokens";
+
+$prose-measure: tokens.measure(1);
+
+$site-margin: tokens.space(2);
+$site-width: tokens.measure(2);

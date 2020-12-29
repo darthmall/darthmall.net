@@ -6,7 +6,7 @@ mediaAlt: >-
     cane), indicating the amount of energy produced by each crop. Below the map is a
     scatterplot of the same data
 order: 2012-11
-client: John Sheehan
+client: Student Project
 role: Designed and built
 stack:
     - Processing

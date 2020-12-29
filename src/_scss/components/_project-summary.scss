@@ -1,4 +1,5 @@
 @use "../global/tokens";
+@use "../mixins/typography" as *;
 
 %project-summary {
   display: flex;
@@ -25,8 +26,18 @@
 
   .project-summary__header {
     grid-area: header;
-    padding-top: tokens.space(0);
+    line-height: tokens.line-height(2);
+    padding-top: tokens.space(1);
     position: relative;
+
+    h2 {
+      @include font-family(heading);
+      font-size-adjust: 0.5;
+    }
+
+    p {
+      color: tokens.color("slate");
+    }
 
     &::before {
       content: "";
@@ -128,9 +139,15 @@
   padding-top: tokens.space(4);
   text-align: center;
 
-  .project-summary__header::before {
-    background-color: tokens.color("light");
-    left: 50%;
-    transform: translateX(-50%);
+  .project-summary__header {
+    p {
+      color: tokens.color("mid");
+    }
+
+    &::before {
+      background-color: tokens.color("light");
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }

@@ -5,7 +5,7 @@
   <div class="project-summary__container">
     <header class="project-summary__header">
       <h2>{{ projectTitle }}</h2>
-      <p>{{ projectRole }}</p>
+      {{ projectMeta | safe }}
     </header>
 
     <div class="project-summary__media">

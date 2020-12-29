@@ -6,7 +6,7 @@ mediaAlt: >-
     lines against a black background
 order: 2012-08
 thumbnail: /img/work/jigs/jigs_thumb@2x.png
-client: Personal
+client: Student Project
 role: Designed and built
 repo: https://github.com/darthmall/Irish-Tune-Visualization
 class: ionian

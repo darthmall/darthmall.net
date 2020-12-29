@@ -9,7 +9,9 @@ layout: layouts/base.njk
       {% set projectTitle = project.data.title %}
       {% set projectClass = "project-summary--" + project.data.class %}
       {% set projectColor = "#" + project.data.color %}
-      {% set projectRole = project.data.role %}
+      {% set projectMeta %}
+        <p>{{ project.data.client }}</p>
+      {% endset %}
       {% set projectMedia = project.data.media %}
       {% set projectMediaAlt = project.data.mediaAlt %}
       {% set projectDescription = project.templateContent %}

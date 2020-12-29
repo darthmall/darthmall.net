@@ -9,7 +9,12 @@
     </header>
 
     <div class="project-summary__media">
-      <img src="{{ projectMedia }}" alt="{{ projectMediaAlt }}">
+      {% set vimeo = r/vimeo\.com/g %}
+      {% if vimeo.test(projectMedia) %}
+        <iframe class="video" src="{{ projectMedia }}" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      {% else %}
+        <img src="{{ projectMedia }}" alt="{{ projectMediaAlt }}">
+      {% endif %}
     </div>
 
     <div class="project-summary__body">

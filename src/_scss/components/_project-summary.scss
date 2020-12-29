@@ -118,3 +118,19 @@
     }
   }
 }
+
+.project-summary--lydian {
+  @extend %project-summary;
+
+  background-color: var(--color-1);
+  color: tokens.color("light");
+  padding-bottom: tokens.space(4);
+  padding-top: tokens.space(4);
+  text-align: center;
+
+  .project-summary__header::before {
+    background-color: tokens.color("light");
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

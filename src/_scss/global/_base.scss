@@ -1,3 +1,4 @@
+@use "../theme";
 @use "./tokens" as tokens;
 @use "../mixins/typography" as *;
 
@@ -8,14 +9,18 @@
 html {
   background-color: tokens.color("light");
   color: tokens.color("ink");
+  font-size: 100%;
 }
 
 body {
-  font-family: #{tokens.font-family("body")};
-  margin: 0 auto;
-  max-width: tokens.get("type", "measure") * 4 / 3;
-  padding-left: tokens.$site-margin;
-  padding-right: tokens.$site-margin;
+  @include font-size(0);
+  @include font-family("body");
+
+  line-height: tokens.line-height(3);
+  margin: 0;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizespeed;
 }
 
 * + * {
@@ -35,8 +40,7 @@ nav ul {
 }
 
 h1,
-.name-mark,
-.catalog-card > .title {
+.name-mark {
   font-family: #{tokens.font-family("heading")};
   line-height: tokens.line-height(1);
 }
@@ -85,7 +89,7 @@ p,
 dl,
 ul:not([class]),
 ol:not([class]) {
-  max-width: tokens.get("type", "measure");
+  max-width: theme.$prose-measure;
 }
 
 ol,
@@ -126,9 +130,9 @@ p, li, dt, dd {
 // Overriding styles from PrismJS
 pre[class*="language-"] {
   line-height: #{tokens.line-height(1)} !important;
-  margin: 1em -#{tokens.$site-margin} !important;
-  padding-left: #{tokens.$site-margin} !important;
-  padding-right: #{tokens.$site-margin} !important;
+  margin: 1em -#{theme.$site-margin} !important;
+  padding-left: #{theme.$site-margin} !important;
+  padding-right: #{theme.$site-margin} !important;
 
   code[class*="language-"] {
     @include font-size(-1);

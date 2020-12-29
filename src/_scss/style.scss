@@ -3,16 +3,15 @@
 @use "./global/reset";
 @use "./global/base";
 
-@use "./layouts/card-stack";
-@use "./layouts/flow";
+@use "./layouts/center";
 @use "./layouts/cluster";
+@use "./layouts/flow";
 
-@use "./components/card";
 @use "./components/header-anchor";
 @use "./components/home";
 @use "./components/site-footer";
 @use "./components/site-header";
 @use "./components/site-nav";
-@use "./components/profile-photo";
+@use "./components/project-summary";
 
 @use "./global/utilities";

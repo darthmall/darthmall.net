@@ -23,7 +23,7 @@
   <main tabindex="-1"{{ mainClasses | safe }}>
     {% block content %}
       {% if title %}
-        <h1>{{ title | safe }}</h1>
+        <h1 class="center">{{ title | safe }}</h1>
       {% endif %}
 
       {{ content | safe }}

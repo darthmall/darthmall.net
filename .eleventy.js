@@ -56,6 +56,7 @@ module.exports = function (config) {
   });
 
   config.addShortcode('triskaidecagon', require('./src/_shortcodes/triskaidecagon.js'));
+  config.addPairedShortcode('markdown', (data) => md.render(data));
 
   config.addPassthroughCopy('src/fonts');
   config.addPassthroughCopy('src/js');

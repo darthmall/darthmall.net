@@ -3,18 +3,20 @@ title: Work
 layout: layouts/base.njk
 ---
 
-<div class="flow">
+<div class="flow flow-sp-4">
+  {% for project in collections.work %}
+    {% if not project.draft %}
+      {% set projectTitle = project.data.title %}
+      {% set projectClass = "project-summary--" + project.data.class %}
+      {% set projectColor = "#" + project.data.color %}
+      {% set projectMeta %}
+        <p>{{ project.data.client }}</p>
+      {% endset %}
+      {% set projectMedia = project.data.media %}
+      {% set projectMediaAlt = project.data.mediaAlt %}
+      {% set projectDescription = project.templateContent %}
 
-  <div class="card-stack flow">
-    {% for project in collections.work %}
-      <article class="card" style="--color-1:#{{ project.data.color }}">
-        <h2 class="card__title">
-          <a href="{{ project.url }}" class="card__link">{{ project.data.title }}</a>
-        </h2>
-
-        <aside class="card__meta">{{ project.data.client | default("Personal") }}</aside>
-      </article>
-    {% endfor %}
-  </div>
-
+      {% include "partials/components/project-summary.njk" %}
+    {% endif %}
+  {% endfor %}
 </div>

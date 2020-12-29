@@ -1,8 +1,10 @@
 ---
 layout: layouts/base.njk
-classes: "home"
 ---
 
-<img src="{{ '/img/me.gif' | url }}" alt="Me in a puffy vest with a glass of whisky" />
-
-{% include "partials/components/nav.njk" %}
+<div class="center">
+  <div class="home">
+    <img src="{{ '/img/me.gif' | url }}" alt="Me in a puffy vest with a glass of whisky" />
+    {% include "partials/components/nav.njk" %}
+  </div>
+</div>

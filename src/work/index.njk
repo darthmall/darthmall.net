@@ -3,16 +3,18 @@ title: Work
 layout: layouts/base.njk
 ---
 
-{% for project in collections.work %}
-  {% if not project.draft %}
-    {% set projectTitle = project.data.title %}
-    {% set projectClass = "project-summary--" + project.data.class %}
-    {% set projectColor = "#" + project.data.color %}
-    {% set projectRole = project.data.role %}
-    {% set projectMedia = project.data.media %}
-    {% set projectMediaAlt = project.data.mediaAlt %}
-    {% set projectDescription = project.templateContent %}
+<div class="flow flow-sp-4">
+  {% for project in collections.work %}
+    {% if not project.draft %}
+      {% set projectTitle = project.data.title %}
+      {% set projectClass = "project-summary--" + project.data.class %}
+      {% set projectColor = "#" + project.data.color %}
+      {% set projectRole = project.data.role %}
+      {% set projectMedia = project.data.media %}
+      {% set projectMediaAlt = project.data.mediaAlt %}
+      {% set projectDescription = project.templateContent %}
 
-    {% include "partials/components/project-summary.njk" %}
-  {% endif %}
-{% endfor %}
+      {% include "partials/components/project-summary.njk" %}
+    {% endif %}
+  {% endfor %}
+</div>

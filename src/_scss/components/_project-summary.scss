@@ -115,7 +115,7 @@
 
     .project-summary__media {
       float: right;
-      margin-bottom: tokens.space(3);
+      margin-bottom: tokens.space(1);
       margin-left: tokens.space(3);
       max-width: calc(100% - #{tokens.get("type", "measure") / 2} - #{tokens.space(3)});
     }

@@ -43,6 +43,10 @@
     columns: #{tokens.get("type", "measure") / 2} auto;
     gap: tokens.space(2);
     grid-area: body;
+
+    > * + * {
+      margin-top: 1em;
+    }
   }
 
   .project-summary__media {
@@ -81,5 +85,36 @@
     margin-right: auto;
     max-width: #{tokens.get("type", "measure") * 4 / 3};
     width: 100%;
+  }
+}
+
+.project-summary--phrygian {
+  @extend %project-summary;
+
+  @media (min-width: #{tokens.get("type", "measure") * 4 / 3}) {
+    .project-summary__container {
+      display: block;
+    }
+
+    .project-summary__header {
+      float: left;
+      margin-bottom: 1em;
+      margin-top: tokens.space(4);
+    }
+
+    .project-summary__media {
+      float: right;
+      margin-bottom: tokens.space(3);
+      margin-left: tokens.space(3);
+      max-width: calc(100% - #{tokens.get("type", "measure") / 2} - #{tokens.space(3)});
+    }
+
+    .project-summary__body {
+      display: contents;
+
+      > * {
+        clear: left;
+      }
+    }
   }
 }

@@ -1,18 +1,19 @@
 ---
 title: Energy Capture Map
+media: /img/work/energy_capture_map/screenshot.png
+mediaAlt: >-
+    A map of the world covered by horizontal bands in green (corn) and magenta (sugar
+    cane), indicating the amount of energy produced by each crop. Below the map is a
+    scatterplot of the same data
 order: 2012-11
 client: John Sheehan
 role: Designed and built
 stack:
     - Processing
 repo: https://github.com/darthmall/Energy-Capture-Map
+class: phrygian
 color: 779C8D
 ---
-
-<figure>
-  <img alt="" src="/img/work/energy_capture_map/screenshot.png" />
-  <figcaption>A screenshot of the application juxtaposing a map with a scatter plot</figcaption>
-</figure>
 
 "Energy capture" is a measure of the amount of energy per hectare produced by a crop.
 Using this measure to compare the energy efficiency of corn and sugar cane, we can see how

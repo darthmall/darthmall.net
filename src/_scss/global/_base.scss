@@ -40,8 +40,7 @@ nav ul {
 }
 
 h1,
-.name-mark,
-.catalog-card > .title {
+.name-mark {
   font-family: #{tokens.font-family("heading")};
   line-height: tokens.line-height(1);
 }

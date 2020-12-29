@@ -44,6 +44,7 @@ a:not([class]):visited {
   color: tokens.color("primary-shade");
 }
 
+iframe,
 img {
   display: block;
   max-width: 100%;

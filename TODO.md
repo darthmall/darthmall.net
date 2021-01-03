@@ -3,3 +3,5 @@
 - [ ] Optimize images
 - [ ] Résumé
 - [ ] Use service workers to create SPA-like behavior from page fragments @someday
+- [ ] Spotify "Now Playing"?
+- [ ] Currently reading?

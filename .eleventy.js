@@ -1,28 +1,34 @@
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const CleanCSS = require('clean-css');
-const debug = require('debug')('Eleventy:Benchmark');
-const jsonImporter = require('node-sass-json-importer');
 const markdownIt = require('markdown-it');
-const sass = require('sass');
 
 const collections = require('./utils/collections.js');
 const filters = require('./utils/filters.js');
 const shortcodes = require('./utils/shortcodes.js');
 
 module.exports = function (config) {
+  // Plugins
+  config.addPlugin(pluginRss);
+  config.addPlugin(syntaxHighlight, {
+    templateFormats: ["njk", "md"],
+  });
+
+  // Collections
   Object.keys(collections).forEach((collectionName) => {
     config.addCollection(collectionName, collections[collectionName]);
   });
 
+  // Filters
   Object.keys(filters).forEach((filterName) => {
     config.addFilter(filterName, filters[filterName]);
   });
 
+  // Shortcodes
   Object.keys(shortcodes).forEach((shortcodeName) => {
     config.addShortcode(shortcodeName, shortcodes[shortcodeName]);
   });
 
+  // Markdown
   const md = markdownIt({
       html: true,
       typographer: true,
@@ -37,15 +43,14 @@ module.exports = function (config) {
 
   config.setLibrary('md', md);
 
-  config.addPlugin(pluginRss);
-  config.addPlugin(syntaxHighlight, {
-    templateFormats: ["njk", "md"],
-  });
-
-  config.addWatchTarget("./src/_scss/");
-
+  // I find it handy to be able to write markdown in my Nunjucks templates sometimes, so I
+  // have a markdown shortcode for declaring blocks of markdown in Nunjucks.
   config.addPairedShortcode('markdown', (data) => md.render(data));
 
+  // Rebuild when the styles change
+  config.addWatchTarget("./src/_scss/");
+
+  // Don't mess with this stuff, just pass it on through
   config.addPassthroughCopy('src/fonts');
   config.addPassthroughCopy('src/js');
   config.addPassthroughCopy('src/img');

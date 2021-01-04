@@ -1,5 +1,3 @@
-const path = require("path");
-
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const CleanCSS = require('clean-css');
@@ -8,10 +6,13 @@ const jsonImporter = require('node-sass-json-importer');
 const markdownIt = require('markdown-it');
 const sass = require('sass');
 
-const {isoDateFilter, dateFilter} = require('./src/filters/date-filters.js');
-const { assetUrl } = require("./src/filters/assets.js");
+const filters = require('./utils/filters.js');
 
 module.exports = function (config) {
+  Object.keys(filters).forEach((filterName) => {
+    config.addFilter(filterName, filters[filterName]);
+  });
+
   const md = markdownIt({
       html: true,
       typographer: true,
@@ -30,30 +31,8 @@ module.exports = function (config) {
   config.addPlugin(syntaxHighlight, {
     templateFormats: ["njk", "md"],
   });
+
   config.addWatchTarget("./src/_scss/");
-
-  config.addFilter("assetUrl", assetUrl);
-  config.addFilter('dateFilter', dateFilter);
-  config.addFilter('isoDateFilter', isoDateFilter);
-
-  config.addFilter('sass', function (file) {
-    const output = sass.renderSync({
-      file,
-      importer: [jsonImporter()]
-    });
-
-    return output.css.toString('utf8');
-  });
-
-  config.addFilter('dirname', (pth) => path.dirname(pth));
-
-  config.addFilter('cssmin', function (code) {
-    const output = new CleanCSS({}).minify(code);
-
-    debug(`Minified CSS: ${Math.round(output.stats.minifiedSize / 102.4) / 10}kb`);
-
-    return output.styles;
-  });
 
   config.addShortcode('triskaidecagon', require('./src/_shortcodes/triskaidecagon.js'));
   config.addPairedShortcode('markdown', (data) => md.render(data));

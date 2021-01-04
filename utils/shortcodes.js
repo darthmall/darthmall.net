@@ -53,4 +53,6 @@ function triskaidecagon(size) {
   return svg;
 }
 
-module.exports = triskaidecagon;
+module.exports = {
+  triskaidecagon,
+};

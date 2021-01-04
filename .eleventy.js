@@ -7,10 +7,15 @@ const markdownIt = require('markdown-it');
 const sass = require('sass');
 
 const filters = require('./utils/filters.js');
+const shortcodes = require('./utils/shortcodes.js');
 
 module.exports = function (config) {
   Object.keys(filters).forEach((filterName) => {
     config.addFilter(filterName, filters[filterName]);
+  });
+
+  Object.keys(shortcodes).forEach((shortcodeName) => {
+    config.addShortcode(shortcodeName, shortcodes[shortcodeName]);
   });
 
   const md = markdownIt({
@@ -34,7 +39,6 @@ module.exports = function (config) {
 
   config.addWatchTarget("./src/_scss/");
 
-  config.addShortcode('triskaidecagon', require('./src/_shortcodes/triskaidecagon.js'));
   config.addPairedShortcode('markdown', (data) => md.render(data));
 
   config.addPassthroughCopy('src/fonts');

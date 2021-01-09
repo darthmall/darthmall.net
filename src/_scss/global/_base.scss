@@ -137,6 +137,10 @@ pre[class*="language-"] {
   code[class*="language-"] {
     @include font-size(-1);
     line-height: inherit;
+
+    * + * {
+      margin-top: 0;
+    }
   }
 }
 

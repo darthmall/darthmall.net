@@ -1,10 +1,18 @@
 const d3 = require("d3");
 
-const NUMSIDES = 13,
-      MINPOINTS = 1,
-      MAXPOINTS = 4;
+const siteMeta = require("../src/_data/site.json");
+
+function copyright() {
+  const now = new Date();
+
+  return `&copy; ${now.getUTCFullYear()} ${siteMeta.copyright}`;
+}
 
 function triskaidecagon(size) {
+  const NUMSIDES = 13,
+        MINPOINTS = 1,
+        MAXPOINTS = 4;
+
   // Generate an array of points for the outer hull of the polygon
   const hull = [];
 
@@ -53,4 +61,7 @@ function triskaidecagon(size) {
   return svg;
 }
 
-module.exports = triskaidecagon;
+module.exports = {
+  copyright,
+  triskaidecagon,
+};

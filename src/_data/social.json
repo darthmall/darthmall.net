@@ -11,12 +11,6 @@
     "rel": "me"
   },
   {
-    "text": "Twitter",
-    "icon": "twitter.svg",
-    "url": "https://twitter.com/darth_mall",
-    "rel": "me"
-  },
-  {
     "text": "CodePen",
     "icon": "codepen.svg",
     "url": "https://codepen.io/darthmall",

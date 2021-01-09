@@ -55,6 +55,7 @@ h1 {
 
 header > p {
   @include font-size(0);
+  margin-top: 0;
 }
 
 header > h1 {
@@ -137,6 +138,10 @@ pre[class*="language-"] {
   code[class*="language-"] {
     @include font-size(-1);
     line-height: inherit;
+
+    * + * {
+      margin-top: 0;
+    }
   }
 }
 

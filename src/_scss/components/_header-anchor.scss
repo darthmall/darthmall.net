@@ -1,24 +1,18 @@
 @use "../global/tokens";
 @use "../mixins/typography" as *;
 
-article > h2 {
-  position: relative;
-}
-
 .header-anchor {
   color: tokens.color("slate");
   position: absolute;
   left: -1.5ch;
   text-decoration: none;
   text-shadow: none;
-  transition: 200ms ease-out color;
 
   &:hover {
     // Override hover styles for generic links
     background-color: unset;
+
+    color: tokens.color("primary");
   }
 }
 
-.header-anchor:hover {
-  color: tokens.color("primary");
-}

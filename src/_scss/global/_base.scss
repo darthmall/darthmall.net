@@ -52,30 +52,16 @@ header > h1 {
 h2 {
   @include font-size(1);
 
-  margin-top: 3em;
-  margin-bottom: 3em;
   position: relative;
 }
 
 h3 {
   @include font-size(0);
-  margin-top: 1.5em;
-}
-
-// <h3> is the lowest level heading I use in prose, and I like it to be like a little
-// label for a paragraph, so I want it spaced just like a line in whatever paragraph
-// follows it.
-h3 + * {
-  margin-top: 0;
 }
 
 hr {
-  --flow-sp: #{tokens.space(3)};
-
   border-color: tokens.color("mid");
   border-width: 1px 0 0 0;
-  margin-bottom: var(--flow-sp);
-  margin-top: var(--flow-sp);
   width: 33%;
 }
 
@@ -132,10 +118,6 @@ pre[class*="language-"] {
   code[class*="language-"] {
     @include font-size(-1);
     line-height: inherit;
-
-    * + * {
-      margin-top: 0;
-    }
   }
 }
 

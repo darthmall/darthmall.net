@@ -150,6 +150,15 @@ strong {
   font-size-adjust: 0.5;
 }
 
+a:not([class]) {
+  color: tokens.color("primary");
+  text-decoration-skip: auto;
+}
+
+a:not([class]):visited {
+  color: tokens.color("primary-shade");
+}
+
 a {
   transition: background-color 200ms ease-out;
 

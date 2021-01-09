@@ -1,27 +1,15 @@
-@use "./tokens" as tokens;
-@use "../mixins/typography" as *;
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-dl,
-dd,
-figcaption,
-figure,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-li,
-p,
-ol[class],
-ul[class] {
+* {
   margin-bottom: 0;
+}
+
+* + * {
+  margin-top: 1em;
 }
 
 figure {

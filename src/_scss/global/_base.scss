@@ -2,11 +2,9 @@
 @use "./tokens" as tokens;
 @use "../mixins/typography" as *;
 
-:root {
-  --overlap: 3rem;
-}
-
 html {
+  --overlap: 3rem;
+
   background-color: tokens.color("light");
   color: tokens.color("ink");
   font-size: 100%;

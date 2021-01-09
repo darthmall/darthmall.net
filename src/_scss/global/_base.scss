@@ -21,13 +21,6 @@ body {
   text-rendering: optimizespeed;
 }
 
-// <h3> is the lowest level heading I use in prose, and I like it to be like a little
-// label for a paragraph, so I want it spaced just like a line in whatever paragraph
-// follows it.
-h3 + * {
-  margin-top: 0;
-}
-
 nav ul {
   list-style: none;
   margin: 0;
@@ -67,6 +60,13 @@ h2 {
 h3 {
   @include font-size(0);
   margin-top: 1.5em;
+}
+
+// <h3> is the lowest level heading I use in prose, and I like it to be like a little
+// label for a paragraph, so I want it spaced just like a line in whatever paragraph
+// follows it.
+h3 + * {
+  margin-top: 0;
 }
 
 hr {

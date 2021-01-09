@@ -148,20 +148,21 @@ strong {
   font-size-adjust: 0.5;
 }
 
-a:not([class]) {
-  color: tokens.color("primary");
-  text-decoration-skip: auto;
-}
-
-a:not([class]):visited {
-  color: tokens.color("primary-shade");
-}
-
 a {
-  transition: background-color 200ms ease-out;
+  color: tokens.color("ink");
+  text-decoration-color: tokens.color("primary");
+  text-decoration-skip: auto;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: 0.125em;
+  text-underline-offset: 0.125em;
+
+  &:visited {
+    text-decoration-color: tokens.color("slate");
+  }
 
   &:hover {
-    background-color: tokens.color("accent");
+    color: tokens.color("primary");
+    text-decoration-color: tokens.color("primary");
   }
 }
 

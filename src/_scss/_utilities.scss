@@ -41,8 +41,3 @@ $-max-text: map-get(tokens.$type, "max-step");
     color: $val;
   }
 }
-
-.border-bottom-1px {
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-}

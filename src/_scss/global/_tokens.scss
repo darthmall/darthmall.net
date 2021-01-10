@@ -6,14 +6,9 @@
 
 $-tokens: meta.module-variables(tokens);
 
-@function get($group, $name: null) {
+@function get($group, $name) {
   $g: map.get($-tokens, $group);
-
-  @if ($name) {
-    @return map.get($g, $name);
-  }
-
-  @return $g;
+  @return map.get($g, $name);
 }
 
 @function color($name) {

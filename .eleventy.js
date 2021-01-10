@@ -5,6 +5,7 @@ const markdownIt = require('markdown-it');
 const collections = require('./utils/collections.js');
 const filters = require('./utils/filters.js');
 const shortcodes = require('./utils/shortcodes.js');
+const transforms = require('./utils/transforms.js');
 
 module.exports = function (config) {
   // Plugins
@@ -26,6 +27,11 @@ module.exports = function (config) {
   // Shortcodes
   Object.keys(shortcodes).forEach((shortcodeName) => {
     config.addShortcode(shortcodeName, shortcodes[shortcodeName]);
+  });
+
+  // Transforms
+  Object.keys(transforms).forEach((transformName) => {
+    config.addTransform(transformName, transforms[transformName]);
   });
 
   // Markdown

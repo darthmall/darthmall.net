@@ -1,14 +1,10 @@
-@use "../../_data/tokens.json" as tokens;
-@use "../mixins/typography" as type;
+@use "../_data/tokens.json" as tokens;
+@use "mixins/typography" as type;
 
 @each $tok, $val in tokens.$font {
   .font-#{$tok} {
     font-family: #{$val};
   }
-}
-
-.decoration-none {
-  text-decoration: none;
 }
 
 $-min-text: map-get(tokens.$type, "min-step");
@@ -30,39 +26,18 @@ $-max-text: map-get(tokens.$type, "max-step");
     --flow-sp: #{$val};
   }
 
-  .margin-#{$tok} {
-    margin: $val;
+  @each $side in ("", "-bottom", "-left", "-right", "-top") {
+    .margin#{$side}-#{$tok} {
+      margin#{$side}: $val;
+    }
+    .pad#{$side}-#{$tok} {
+      padding#{$side}: $val;
+    }
   }
-
-  .margin-bottom-#{$tok} {
-    margin-bottom: $val;
-  }
-
-  .margin-left-#{$tok} {
-    margin-left: $val;
-  }
-
-  .margin-right-#{$tok} {
-    margin-right: $val;
-  }
-
-  .margin-top-#{$tok} {
-    margin-top: $val;
-  }
-
 }
 
 @each $tok, $val in tokens.$color {
   .color-#{$tok} {
     color: $val;
   }
-
-  .border-#{$tok} {
-    border-color: $val;
-  }
-}
-
-.border-bottom-1px {
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
 }

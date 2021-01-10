@@ -1,12 +1,10 @@
 @use "../theme";
-@use "./tokens" as tokens;
+@use "../tokens";
 @use "../mixins/typography" as *;
 
-:root {
-  --overlap: 3rem;
-}
-
 html {
+  --overlap: 3rem;
+
   background-color: tokens.color("light");
   color: tokens.color("ink");
   font-size: 100%;
@@ -21,17 +19,6 @@ body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizespeed;
-}
-
-* + * {
-  margin-top: 1em;
-}
-
-// <h3> is the lowest level heading I use in prose, and I like it to be like a little
-// label for a paragraph, so I want it spaced just like a line in whatever paragraph
-// follows it.
-h3 + * {
-  margin-top: 0;
 }
 
 nav ul {
@@ -65,23 +52,16 @@ header > h1 {
 h2 {
   @include font-size(1);
 
-  margin-top: 3em;
-  margin-bottom: 3em;
   position: relative;
 }
 
 h3 {
   @include font-size(0);
-  margin-top: 1.5em;
 }
 
 hr {
-  --flow-sp: #{tokens.space(3)};
-
   border-color: tokens.color("mid");
   border-width: 1px 0 0 0;
-  margin-bottom: var(--flow-sp);
-  margin-top: var(--flow-sp);
   width: 33%;
 }
 
@@ -130,18 +110,18 @@ p, li, dt, dd {
 
 // Overriding styles from PrismJS
 pre[class*="language-"] {
+  @include font-family("mono");
+
   line-height: #{tokens.line-height(1)} !important;
   margin: 1em -#{theme.$site-margin} !important;
   padding-left: #{theme.$site-margin} !important;
   padding-right: #{theme.$site-margin} !important;
 
   code[class*="language-"] {
+    @include font-family("mono");
     @include font-size(-1);
-    line-height: inherit;
 
-    * + * {
-      margin-top: 0;
-    }
+    line-height: inherit;
   }
 }
 
@@ -155,10 +135,20 @@ strong {
 }
 
 a {
-  transition: background-color 200ms ease-out;
+  color: tokens.color("ink");
+  text-decoration-color: tokens.color("primary");
+  text-decoration-skip: auto;
+  text-decoration-skip-ink: auto;
+  text-decoration-thickness: 0.125em;
+  text-underline-offset: 0.125em;
+
+  &:visited {
+    text-decoration-color: tokens.color("slate");
+  }
 
   &:hover {
-    background-color: tokens.color("accent");
+    color: tokens.color("primary");
+    text-decoration-color: tokens.color("primary");
   }
 }
 

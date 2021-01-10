@@ -1,0 +1,14 @@
+@use "../tokens";
+
+.post {
+  h2,
+  h2 + *,
+  hr,
+  h4 + * {
+    --flow-sp: #{tokens.space(3)};
+  }
+
+  h3 + * {
+    --flow-sp: 0;
+  }
+}

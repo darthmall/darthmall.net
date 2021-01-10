@@ -1,14 +1,11 @@
+@use "../tokens";
+
 .flow {
+  $default-space: tokens.space(1);
+
   & > * + * {
     // FIXME: these should be tokens?
-    margin-top: 1em;
-    margin-top: var(--flow-sp, 1em);
-  }
-
-  // <h1>s have a bottom margin, so we can skip the top margin on any sibling element in
-  // case the elements are in a grid layout, which doesn't collapse margins.
-  & > h1 + *,
-  & > hr + * {
-    margin-top: 0;
+    margin-top: $default-space;
+    margin-top: var(--flow-sp, #{$default-space});
   }
 }

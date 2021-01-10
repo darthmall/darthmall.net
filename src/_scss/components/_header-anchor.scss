@@ -1,5 +1,4 @@
 @use "../tokens";
-@use "../mixins/typography" as *;
 
 .header-anchor {
   color: tokens.color("slate");

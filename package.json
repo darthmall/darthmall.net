@@ -9,7 +9,7 @@
     "clean": "rm -rf _site",
     "eleventy:dev": "eleventy --serve",
     "eleventy:prod": "eleventy",
-    "style:prod": "purgecss --css _site/css/*.css --content _site/**/*.html --output _site/css/"
+    "style:prod": "purgecss --config ./purgecss.config.js"
   },
   "keywords": [],
   "author": "",

@@ -26,24 +26,13 @@ $-max-text: map-get(tokens.$type, "max-step");
     --flow-sp: #{$val};
   }
 
-  .margin-#{$tok} {
-    margin: $val;
-  }
-
-  .margin-bottom-#{$tok} {
-    margin-bottom: $val;
-  }
-
-  .margin-left-#{$tok} {
-    margin-left: $val;
-  }
-
-  .margin-right-#{$tok} {
-    margin-right: $val;
-  }
-
-  .margin-top-#{$tok} {
-    margin-top: $val;
+  @each $side in ("", "-bottom", "-left", "-right", "-top") {
+    .margin#{$side}-#{$tok} {
+      margin#{$side}: $val;
+    }
+    .pad#{$side}-#{$tok} {
+      padding#{$side}: $val;
+    }
   }
 }
 

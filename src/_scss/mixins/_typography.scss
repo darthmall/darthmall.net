@@ -1,4 +1,4 @@
-@use "../global/tokens" as tokens;
+@use "../tokens" as tokens;
 
 @mixin font-family($name) {
   font-family: #{tokens.font-family($name)};

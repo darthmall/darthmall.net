@@ -1,5 +1,5 @@
-@use "../../_data/tokens.json" as tokens;
-@use "../mixins/typography" as type;
+@use "../_data/tokens.json" as tokens;
+@use "mixins/typography" as type;
 
 @each $tok, $val in tokens.$font {
   .font-#{$tok} {

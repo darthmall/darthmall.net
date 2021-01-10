@@ -1,19 +1,16 @@
-@use "./global/fonts";
-@use "./global/utopia";
-@use "./global/reset";
-@use "./global/base";
+@use "global";
 
-@use "./layouts/center";
-@use "./layouts/cluster";
-@use "./layouts/flow";
+@use "layouts/center";
+@use "layouts/cluster";
+@use "layouts/flow";
 
-@use "./components/header-anchor";
-@use "./components/home";
-@use "./components/name-mark";
-@use "./components/site-footer";
-@use "./components/site-header";
-@use "./components/site-nav";
-@use "./components/post";
-@use "./components/project-summary";
+@use "components/header-anchor";
+@use "components/home";
+@use "components/name-mark";
+@use "components/site-footer";
+@use "components/site-header";
+@use "components/site-nav";
+@use "components/post";
+@use "components/project-summary";
 
-@use "./global/utilities";
+@use "utilities";

@@ -1,68 +1,77 @@
-@use "../../_data/tokens.json" as tokens;
+@use "sass:map";
 @use "../mixins/typography" as type;
+@use "./tokens";
 
-@each $tok, $val in tokens.$font {
-  .font-#{$tok} {
-    font-family: #{$val};
-  }
-}
+$-config: (
+  (
+    "tokens": "color",
+    "utilities": (
+      "bg": "background-color",
+      "color": "color"
+    )
+  ),
+  (
+    "tokens": "font",
+    "utilities": (
+      "font": "font-family"
+    )
+  ),
+  (
+    "tokens": "line-height",
+    "utilities": (
+      "line": "line-height"
+    )
+  ),
+  (
+    "tokens": "space",
+    "prefix": "gap",
+    "utilities": (
+      "bottom": "margin-bottom",
+      "left": "margin-left",
+      "right": "margin-right",
+      "top": "margin-top"
+    )
+  ),
+  (
+    "tokens": "space",
+    "prefix": "pad",
+    "utilities": (
+      "bottom": "padding-bottom",
+      "left": "padding-left",
+      "right": "padding-right",
+      "top": "padding-top"
+    )
+  ),
+  (
+    "tokens": "space",
+    "utilities": (
+      "flow-sp": "--flow-sp"
+    )
+  )
+);
 
-.decoration-none {
-  text-decoration: none;
-}
-
-$-min-text: map-get(tokens.$type, "min-step");
-$-max-text: map-get(tokens.$type, "max-step");
+$-min-text: tokens.get("type", "min-step");
+$-max-text: tokens.get("type", "max-step");
 @for $i from $-min-text through $-max-text {
   .size-#{$i} {
     @include type.font-size($i);
   }
 }
 
-@each $tok, $val in tokens.$line-height {
-  .line-height-#{$tok} {
-    line-height: $val;
-  }
-}
+@each $group in $-config {
+  $toks: tokens.get(map.get($group, "tokens"));
+  $utils: map.get($group, "utilities");
+  $prefix: "";
 
-@each $tok, $val in tokens.$space {
-  .flow-sp-#{$tok} {
-    --flow-sp: #{$val};
+  @if (map.has-key($group, "prefix")) {
+    $prefix: #{map.get($group, "prefix")}-;
   }
 
-  .margin-#{$tok} {
-    margin: $val;
+  @each $name, $prop in $utils {
+    @each $key, $val in $toks {
+      .#{$prefix}#{$name}-#{$key} {
+        #{$prop}: $val;
+      }
+    }
   }
-
-  .margin-bottom-#{$tok} {
-    margin-bottom: $val;
-  }
-
-  .margin-left-#{$tok} {
-    margin-left: $val;
-  }
-
-  .margin-right-#{$tok} {
-    margin-right: $val;
-  }
-
-  .margin-top-#{$tok} {
-    margin-top: $val;
-  }
-
-}
-
-@each $tok, $val in tokens.$color {
-  .color-#{$tok} {
-    color: $val;
-  }
-
-  .border-#{$tok} {
-    border-color: $val;
-  }
-}
-
-.border-bottom-1px {
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
 }

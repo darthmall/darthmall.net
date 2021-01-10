@@ -7,10 +7,6 @@
   }
 }
 
-.decoration-none {
-  text-decoration: none;
-}
-
 $-min-text: map-get(tokens.$type, "min-step");
 $-max-text: map-get(tokens.$type, "max-step");
 @for $i from $-min-text through $-max-text {
@@ -49,16 +45,11 @@ $-max-text: map-get(tokens.$type, "max-step");
   .margin-top-#{$tok} {
     margin-top: $val;
   }
-
 }
 
 @each $tok, $val in tokens.$color {
   .color-#{$tok} {
     color: $val;
-  }
-
-  .border-#{$tok} {
-    border-color: $val;
   }
 }
 

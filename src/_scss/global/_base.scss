@@ -110,13 +110,17 @@ p, li, dt, dd {
 
 // Overriding styles from PrismJS
 pre[class*="language-"] {
+  @include font-family("mono");
+
   line-height: #{tokens.line-height(1)} !important;
   margin: 1em -#{theme.$site-margin} !important;
   padding-left: #{theme.$site-margin} !important;
   padding-right: #{theme.$site-margin} !important;
 
   code[class*="language-"] {
+    @include font-family("mono");
     @include font-size(-1);
+
     line-height: inherit;
   }
 }

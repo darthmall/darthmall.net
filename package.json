@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "start": "run-s clean eleventy:dev --print-label",
-    "build": "run-s clean eleventy:prod --print-label",
+    "build": "run-s clean eleventy:prod style:prod --print-label",
     "clean": "rm -rf _site",
     "eleventy:dev": "eleventy --serve",
-    "eleventy:prod": "eleventy"
+    "eleventy:prod": "eleventy",
+    "style:prod": "purgecss --css _site/css/*.css --content _site/**/*.html --output _site/css/"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,7 @@
     "markdown-it-anchor": "^5.3.0",
     "node-sass-json-importer": "^4.3.0",
     "npm-run-all": "^4.1.5",
+    "purgecss": "^3.1.3",
     "sass": "^1.29.0",
     "slug": "^3.5.2"
   }

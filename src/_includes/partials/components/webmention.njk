@@ -1,0 +1,12 @@
+<article>
+  {% if webmention.author %}
+    {% if webmention.author.photo %}
+      <img src="{{ webmention.author.photo }}" alt="" loading="lazy" />
+    {% endif %}
+    <strong>{{ webmention.author.name }}</strong>
+  {% else %}
+    <strong>Anonymous</strong>
+  {% endif %}
+
+  {{ webmention.content.text }}
+</article>

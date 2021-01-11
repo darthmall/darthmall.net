@@ -1,5 +1,7 @@
 const path = require("path");
 
+const site = require("../src/_data/site");
+
 function assetUrl(assetCollection, key) {
   for (let asset of assetCollection) {
     if (asset.data.assetKey === key) {
@@ -41,9 +43,14 @@ function isoDateFilter(value) {
   return dt.toISOString();
 }
 
+function webmentionsForUrl(webmentions, url) {
+  return webmentions.children.filter((mention) => mention['wm-target'] === url);
+}
+
 module.exports = {
   assetUrl,
   dateFilter,
   dirname,
   isoDateFilter,
+  webmentionsForUrl,
 };

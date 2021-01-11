@@ -1,0 +1,11 @@
+{% set target %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
+{% set mentions = webmentions | webmentionsForUrl(target) %}
+
+{% if mentions.length > 0 %}
+  <aside>
+    <h2 class="font-heading">Webmentions</h2>
+    {% for webmention in mentions %}
+      {% include "partials/components/webmention.njk" %}
+    {% endfor %}
+  </aside>
+{% endif %}

@@ -1,4 +1,5 @@
 .env
+_cache/
 
 *.code-workspace
 _site/

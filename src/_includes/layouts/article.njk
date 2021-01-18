@@ -1,3 +1,7 @@
+---
+classes: h-entry
+---
+
 {% extends 'layouts/base.njk' %}
 
 {% from "partials/macros/datetime.njk" import pubDate %}
@@ -8,18 +12,25 @@
 {% endblock %}
 
 {% block content %}
-  <header class="center">
-    <h1>{{ title | safe }}</h1>
+  <header class="[ center ]">
+    <h1 class="[ p-name ]">{{ title | safe }}</h1>
 
     {% if date %}
-      <p>{{ pubDate(date) }}</p>
+      <p class="[ dt-published ]">{{ pubDate(date) }}</p>
     {% endif %}
+    <p class="[ h-card p-author ] [ display-none ]">
+      <a href="/" class="[ u-url ]">
+        <span class="[ p-name ]">Evan Sheehan</span>
+      </a>
+      <img src="/img/evan.jpg" class="[ u-photo ]" />
+    </p>
   </header>
 
-  <div class="post flow center">
+  <div class="[ post ] [ flow center ] [ e-content ]">
     {{ content | safe }}
-    {% include "partials/components/webmentions.njk" %}
   </div>
+
+  {% include "partials/components/webmentions.njk" %}
 
 
   {% set footer -%}

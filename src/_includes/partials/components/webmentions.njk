@@ -4,7 +4,10 @@
 {% if mentions.length > 0 %}
   <aside class="[ margin-top-3 ]">
     <h2 class="[ font-heading ]">Webmentions</h2>
-    <div class="[ flow ] [ margin-top-1 ]">
+    <p>
+      <small><a href="/weblog/webmentions/">What’s a “Webmention”</a>, you ask?</small>
+    </p>
+    <div class="[ flow ] [ margin-top-2 ]">
       {% for webmention in mentions %}
         {% include "partials/components/webmention.njk" %}
       {% endfor %}

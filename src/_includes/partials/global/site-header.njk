@@ -1,11 +1,13 @@
 {% set bg %}{% triskaidecagon 130 %}{% endset %}
 
-<header role="banner" class="center">
-  <a href="/" class="name-mark" style="background-image:url('data:image/svg+xml;utf8,{{ bg
+<header role="banner" class="[ center ] [ h-card p-author ]">
+  <a href="/" class="[ name-mark ] [ u-url p-name ]" style="background-image:url('data:image/svg+xml;utf8,{{ bg
   }}')">
-    <div class="first">Evan</div>
-    <div class="last">Sheehan</div>
+    <span class="first">Evan</span>
+    <span class="last">Sheehan</span>
   </a>
+
+  <div hidden>{% include "partials/components/avatar.njk" %}</div>
 
   {% if page.url != "/" %}
     {% include "partials/components/nav.njk" %}

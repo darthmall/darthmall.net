@@ -13,4 +13,19 @@
       <p class="[ text-italic ]">No one’s mentioned this post yet.</p>
     {% endfor %}
   </div>
+
+  <p class="[ margin-top-2 ]">Send me a webmention!</p>
+
+  <form class="[ margin-top-1 ]" action="https://webmention.io/darthmall.net/webmention"
+        method="post">
+
+    <input name="target" type="hidden" value="{{ site.url }}{{ page.url }}">
+
+    <label for="webmention-source">URL</label>
+    <input id="webmention-source" name="source" type="url"
+           placeholder="https://example.com" required>
+
+    <button type="submit">Send Webmention</button>
+  </form>
+
 </aside>

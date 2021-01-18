@@ -1,12 +1,26 @@
-<article>
-  {% if webmention.author %}
-    {% if webmention.author.photo %}
-      <img src="{{ webmention.author.photo }}" alt="" loading="lazy" />
+<article class="[ webmention ]">
+  <a class="[ webmention__author ]" href="{{ webmention.url }}">
+    {% if webmention.author %}
+      <div class="[ webmention__avatar ] ">
+        {% if webmention.author.photo %}
+          <img src="{{ webmention.author.photo }}" alt="" loading="lazy" />
+        {% endif %}
+      </div>
+      <strong class="[ webmention__author ]">{{ webmention.author.name }}</strong>
+    {% else %}
+      <div class="[ webmention__avatar--anonymous ]"></div>
+      <strong class="[ webmention__author ]">Anonymous</strong>
     {% endif %}
-    <strong>{{ webmention.author.name }}</strong>
-  {% else %}
-    <strong>Anonymous</strong>
-  {% endif %}
+  </a>
 
-  {{ webmention.content.text }}
+  <div class="[ webmention__body ]">
+    {{ webmention.content.text }}
+  </div>
+  <footer class="[ webmention__foot ]">
+    <p>
+      <time datetime="{{ webmention.published }}">
+        {{ webmention.published | dateFilter }}
+      </time>
+    </p>
+  </footer>
 </article>

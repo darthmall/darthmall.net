@@ -4,8 +4,8 @@
   @return #{1 + random($first)}rem #{1 + random($second)}rem;
 }
 
-@mixin cornerVar($location, $first, $second) {
-  --#{$location}-radius: corner($first, $second);
+@mixin corner-var($location, $first, $second) {
+  --#{$location}-radius: #{corner($first, $second)};
 }
 
 @mixin blob {
@@ -73,5 +73,38 @@
     object-fit: cover;
 
     background-color: tokens.color("light");
+  }
+
+  &:nth-child(odd) {
+    &::after {
+      @include corner-var("top-left", $size, $size * 2);
+    }
+  }
+
+  &:nth-child(even) {
+    &::before {
+      @include corner-var("bottom-left", $size * 1.25, $size * 2);
+    }
+  }
+
+  &:nth-child(3n) {
+    &::before {
+      --rotate: #{70 + random(20)}deg;
+    }
+
+    &::after {
+      @include corner-var("top-right", $size * 3, $size * 2);
+    }
+  }
+
+  &:nth-child(5n) {
+    &::after {
+      @include corner-var("top-left", $size, $size * 2);
+    }
+
+    > img {
+      @include corner-var("top-right", $size, $size);
+      @include corner-var("bottom-right", $size * 2, $size);
+    }
   }
 }

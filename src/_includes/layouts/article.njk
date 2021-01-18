@@ -18,11 +18,12 @@ classes: h-entry
     {% if date %}
       <p class="[ dt-published ]">{{ pubDate(date) }}</p>
     {% endif %}
-    <p class="[ h-card p-author ] [ display-none ]">
+    <p class="[ h-card p-author ]" hidden>
       <a href="/" class="[ u-url ]">
         <span class="[ p-name ]">Evan Sheehan</span>
       </a>
-      <img src="/img/evan.jpg" class="[ u-photo ]" />
+
+      {% include "partials/components/avatar.njk" %}
     </p>
   </header>
 

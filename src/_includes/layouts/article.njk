@@ -18,13 +18,6 @@ classes: h-entry
     {% if date %}
       <p class="[ dt-published ]">{{ pubDate(date) }}</p>
     {% endif %}
-    <p class="[ h-card p-author ]" hidden>
-      <a href="/" class="[ u-url ]">
-        <span class="[ p-name ]">Evan Sheehan</span>
-      </a>
-
-      {% include "partials/components/avatar.njk" %}
-    </p>
   </header>
 
   <div class="[ post ] [ flow center ] [ e-content ]">

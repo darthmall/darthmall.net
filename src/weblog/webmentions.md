@@ -24,3 +24,17 @@ tutorials I looked at. My guess is that the authors had set up these backlinks f
 public profiles before they set up webmentions, so they never noticed. Since I'm being
 snobby about which services I advertise (I'm pleased with neither GitHub nor Twitter), I
 didn't have links to those profiles from this website.
+
+## References
+
+- [An In-Depth Tutorial of Webmentions +
+  Eleventy](https://sia.codes/posts/webmentions-eleventy-in-depth/) by Sia Karamalegos
+- [Making Persistent Build Folders in
+  Netlify](https://mxb.dev/blog/persistent-build-folders-netlify/) by Max Böck
+- [Adding Webmention Support to a Static
+  Site](https://keithjgrant.com/posts/2019/02/adding-webmention-support-to-a-static-site/)
+  by Keith J. Grant (for specifics on microformats)
+- [Scheduling Netlify deploys with GitHub
+  Actions](https://www.voorhoede.nl/en/blog/scheduling-netlify-deploys-with-github-actions/)
+  by Thadee
+

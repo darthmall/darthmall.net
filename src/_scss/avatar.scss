@@ -15,8 +15,9 @@
   border-bottom-right-radius: var(--bottom-right-radius, corner(7, 13));
 }
 
+$size: 4rem;
+
 .webmention__avatar {
-  $size: 4rem;
 
   position: relative;
 
@@ -41,8 +42,8 @@
 
     left: -0.25rem;
     top: 0;
-    height: $size - 0.5rem;
-    width: $size;
+    height: $size - 0.75rem;
+    width: $size + 1rem;
 
     transform: rotate(var(--rotate, 50deg));
 
@@ -74,20 +75,21 @@
 
     background-color: tokens.color("light");
   }
+}
 
-  &:nth-child(odd) {
+.webmention {
+  &:nth-child(even) .webmention__avatar {
+    &::before {
+      --rotate: #{65 + random(120)}deg;
+      width: $size;
+    }
+
     &::after {
       @include corner-var("top-left", $size, $size * 2);
     }
   }
 
-  &:nth-child(even) {
-    &::before {
-      @include corner-var("bottom-left", $size * 1.25, $size * 2);
-    }
-  }
-
-  &:nth-child(3n) {
+  &:nth-child(3n) .webmention__avatar {
     &::before {
       --rotate: #{70 + random(20)}deg;
     }
@@ -97,7 +99,7 @@
     }
   }
 
-  &:nth-child(5n) {
+  &:nth-child(5n) .webmention__avatar {
     &::after {
       @include corner-var("top-left", $size, $size * 2);
     }

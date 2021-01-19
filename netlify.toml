@@ -1,2 +1,2 @@
 [[plugins]]
-    package = "./netlify/webmention-cache"
+    package = "./plugins/webmention-cache"

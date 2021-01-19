@@ -152,3 +152,45 @@ a {
   }
 }
 
+button,
+input {
+  padding-bottom: tokens.space(1);
+  padding-top: tokens.space(1);
+}
+
+button {
+  padding-left: tokens.space(2);
+  padding-right: tokens.space(2);
+  border-radius: 4px;
+
+  color: white;
+}
+
+input {
+  padding-left: tokens.space(1);
+  padding-right: tokens.space(1);
+  border-color: tokens.color("slate");
+
+  &:focus {
+    border-color: tokens.color("primary");
+  }
+}
+
+
+[type="submit"] {
+  $bg: tokens.color("primary");
+
+  background-color: $bg;
+
+  &:focus,
+  &:hover {
+    outline-style: solid;
+    outline-color: transparent;
+
+    box-shadow: 0 0 0 4px scale-color($bg, $lightness: -40%);
+  }
+
+  &:active {
+    background-color: scale-color($bg, $lightness: -20%);
+  }
+}

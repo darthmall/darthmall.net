@@ -1,0 +1,18 @@
+.single-input-form {
+  display: flex;
+  flex-wrap: wrap;
+
+  label {
+    flex: 0 0 100%;
+  }
+
+  input {
+    flex: 1 1 auto;
+    border-right-width: 0;
+  }
+
+  button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}

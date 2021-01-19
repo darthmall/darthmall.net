@@ -4,7 +4,7 @@
   h2,
   h2 + *,
   hr,
-  h4 + * {
+  hr + * {
     --flow-sp: #{tokens.space(3)};
   }
 

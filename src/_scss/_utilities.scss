@@ -41,3 +41,7 @@ $-max-text: map-get(tokens.$type, "max-step");
     color: $val;
   }
 }
+
+.text-italic {
+  font-style: italic;
+}

@@ -1,0 +1,32 @@
+{% set target %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
+{% set mentions = webmentions | webmentionsForUrl(target) %}
+
+<aside class="[ center ] [ margin-top-3 ]">
+  <h2 class="[ font-heading ]">Webmentions</h2>
+  <p>
+    <small><a href="/weblog/webmentions/">What’s a “Webmention”</a>, you ask?</small>
+  </p>
+  <div class="[ flow ] [ margin-top-2 ]">
+    {% for webmention in mentions %}
+      {% include "partials/components/webmention.njk" %}
+    {% else %}
+      <p class="[ text-italic ]">No one’s mentioned this post yet.</p>
+    {% endfor %}
+  </div>
+
+  <p class="[ margin-top-3 ]">Send me a webmention!</p>
+
+  <form class="[ single-input-form ] [ margin-top-0 ]" action="https://webmention.io/darthmall.net/webmention"
+        method="post">
+
+    <input name="target" type="hidden" value="{{ site.url }}{{ page.url }}">
+
+    <label for="webmention-source">URL</label>
+
+    <input id="webmention-source" name="source" type="url"
+           placeholder="https://example.com" required>
+
+    <button type="submit">Send Webmention</button>
+  </form>
+
+</aside>

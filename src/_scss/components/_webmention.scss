@@ -1,0 +1,25 @@
+@use "../tokens";
+
+.webmention {
+  $avatar-size: 4rem;
+
+  display: grid;
+
+  grid-auto-rows: min-content;
+  grid-template-areas:
+    "av . auth"
+    "av . body";
+  grid-template-columns: $avatar-size #{tokens.space(0)} 1fr;
+
+  .webmention__avatar {
+    grid-area: av;
+  }
+
+  .webmention__author {
+    grid-area: auth;
+  }
+
+  .webmention__body {
+    grid-area: body;
+  }
+}

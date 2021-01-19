@@ -1,0 +1,30 @@
+<article class="[ webmention ]">
+  <div class="[ webmention__avatar ] ">
+    {% if webmention.author and webmention.author.photo %}
+      <img src="{{ webmention.author.photo }}" alt="" loading="lazy" />
+    {% else %}
+      <div class="[ webmention__avatar--anonymous ]"></div>
+    {% endif %}
+  </div>
+
+  <div class="[ webmention__author ]">
+    <a href="{{ webmention.url }}">
+      {%- if webmention.author -%}
+        <strong>{{ webmention.author.name }}</strong>
+      {%- else -%}
+        <strong>Anonymous</strong>
+      {%- endif -%}
+    </a>
+    <span class="[ color-slate ]">&mdash;
+      <small>
+        <time datetime="{{ webmention.published }}">
+          {{ webmention.published | dateFilter }}
+        </time>
+      </small>
+    </span>
+  </div>
+
+  <div class="[ webmention__body ]">
+    {{ webmention.content.text }}
+  </div>
+</article>

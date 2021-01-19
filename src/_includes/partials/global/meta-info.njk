@@ -4,7 +4,26 @@
   {% set pageTitle = site.title %}
 {% endif %}
 
+{% set canonicalUrl %}{{ site.url }}{{ page.url }}{% endset %}
+
 <title>{{ pageTitle }}</title>
+
+<link rel="canonical" href="{{ canonicalUrl }}">
+
+<meta property="og:site_name" content="{{ site.title }}">
+{% if title %}
+  <meta property="og:title" content="{{ title }}">
+{% endif %}
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ canonicalUrl }}">
+
+<meta property="twitter:creator" content="@darth_mall">
+
+{% if description %}
+  <meta property="description" content="{{ description }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="twitter:description" content="{{ description }}">
+{% endif %}
 
 {# For IndieAuth #}
 <link rel="me authn" href="https://github.com/darthmall" />

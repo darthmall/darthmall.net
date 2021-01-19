@@ -5,7 +5,7 @@ description: >-
     I design and build websites, web applications, and data visualizations.
 ---
 
-<div class="center">{% markdown %}
+<div class="[ flow center ]">{% markdown %}
 Professionally, I design and build websites, web applications, and data visualizations. I
 am currently employed by the [Cooperative Institute for Research in the
 Atmospher](https://www.cira.colostate.edu/) (CIRA) and I work at the [National Oceanic and

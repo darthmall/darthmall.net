@@ -1,6 +1,8 @@
 ---
 title: Résumé
 layout: layouts/base.njk
+styles:
+  - resume.css
 education:
   - school: Carnegie Mellon University
     degree: Master of Human-Computer Interaction
@@ -70,35 +72,44 @@ experience:
     skills: ["Python", "HTML", "CSS", "JavaScript", "SQLite", "Django", "YUI"]
 ---
 
-<div class="[ flow center ]">
-  <p>Desginer + Web Developer + Creative Technologist.</p>
+<div class="[ center ]">
+  <div class="[ resume ][ flow ]">
+    <p class="size-2">Designer + Web Developer + Creative Technologist.</p>
 
-  <h2>Education</h2>
+    <h2>Education</h2>
 
-  {% for diploma in education %}
-    <p>
-      <b>{{ diploma.degree }}</b>
-      <br />
-      {{ diploma.school }} {{ diploma.graduated }}
-    </p>
-  {% endfor %}
+    {% for diploma in education %}
+      <p class="line-height-1">
+        <b>{{ diploma.degree }}</b>
+        <br />
+        <span class="[ color-slate size--1 text-italic ]">
+          {{ diploma.school }} {{ diploma.graduated }}
+        </span>
+      </p>
+    {% endfor %}
 
-  <h2>Experience</h2>
-  {% for job in experience %}
-    <article>
-      <header>
-        <h3>{{ job.title }}</h3>
-        <p>{{ job.employer }}, {{ job.dates | join(" – ") }}</p>
-      </header>
-      {% markdown %}{{ job.description }}{% endmarkdown %}
-      <footer>
-        <h4>Skills</h4>
-        <ul class="horizontal-list" role="list">
-          {% for skill in job.skills %}
-          <li>{{ skill }}</li>
-          {% endfor %}
-        </ul>
-      </footer>
-    </article>
-  {% endfor %}
+    <h2>Experience</h2>
+    {% for job in experience %}
+      <article>
+        <header>
+          <h3>{{ job.title }}</h3>
+          <p class="[ color-slate size--1 text-italic ]">
+            {{ job.employer }}
+            <br />
+            {{ job.dates | join(" – ") }}
+          </p>
+        </header>
+        {% markdown %}{{ job.description }}{% endmarkdown %}
+        {% if job.skills %}
+        <footer class="[ size--1 margin-top-0 ]">
+          <ul class="horizontal-list" role="list">
+            {% for skill in job.skills %}
+            <li>{{ skill }}</li>
+            {% endfor %}
+          </ul>
+        </footer>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
 </div>

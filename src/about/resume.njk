@@ -1,5 +1,5 @@
 ---
-title: Resume
+title: Résumé
 layout: layouts/base.njk
 education:
   - school: Carnegie Mellon University
@@ -75,15 +75,13 @@ experience:
 
   <h2>Education</h2>
 
-  <ul>
-    {% for diploma in education %}
-      <li>
-        <b>{{ diploma.degree }}</b>
-        <br />
-        {{ diploma.school }} {{ diploma.graduated }}
-      </li>
-    {% endfor %}
-  </ul>
+  {% for diploma in education %}
+    <p>
+      <b>{{ diploma.degree }}</b>
+      <br />
+      {{ diploma.school }} {{ diploma.graduated }}
+    </p>
+  {% endfor %}
 
   <h2>Experience</h2>
   {% for job in experience %}
@@ -94,7 +92,8 @@ experience:
       </header>
       {% markdown %}{{ job.description }}{% endmarkdown %}
       <footer>
-        <ul>
+        <h3>Skills</h3>
+        <ul class="horizontal-list" role="list">
           {% for skill in job.skills %}
           <li>{{ skill }}</li>
           {% endfor %}

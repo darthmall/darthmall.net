@@ -1,0 +1,19 @@
+@use "../tokens";
+
+.horizontal-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  margin: 0;
+
+  > li {
+    margin: 0;
+  }
+
+  > li:not(:last-child)::after {
+    display: inline;
+
+    color: tokens.color("slate");
+    content: "\2002•\2002";
+  }
+}

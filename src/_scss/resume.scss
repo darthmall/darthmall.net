@@ -46,3 +46,10 @@
     }
   }
 }
+
+@media print {
+  [role="banner"],
+  main > h1 {
+    display: none;
+  }
+}

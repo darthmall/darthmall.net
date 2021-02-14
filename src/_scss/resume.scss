@@ -14,6 +14,31 @@
         grid-column: 2 / 3;
       }
 
+      > header {
+        display: grid;
+        align-items: baseline;
+        grid-column: 1 / -1;
+        grid-row-end: span 2;
+        grid-template-columns: subgrid;
+        grid-template-rows: subgrid;
+
+        > h1 {
+          grid-column: 1 / -1;
+          display: grid;
+          align-items: baseline;
+          grid-template-columns: subgrid;
+          grid-template-rows: subgrid;
+
+          > :first-child {
+            justify-self: end;
+          }
+        }
+
+        > p {
+          grid-column: 2 / 3;
+        }
+      }
+
       > h2 {
         grid-column: 1 / 2;
         text-align: right;

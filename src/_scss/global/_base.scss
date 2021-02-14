@@ -176,7 +176,6 @@ input {
   }
 }
 
-
 [type="submit"] {
   $bg: tokens.color("primary");
 
@@ -194,3 +193,16 @@ input {
     background-color: scale-color($bg, $lightness: -20%);
   }
 }
+
+@media screen {
+  .print-only {
+    display: none;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+}
+

@@ -8,6 +8,10 @@
   {% include "partials/global/meta-info.njk" %}
 
   <link rel="stylesheet" href="{{ collections._styles | assetUrl('style.css') | url }}">
+  {% for css in styles %}
+  <link rel="stylesheet" href="{{ collections._styles | assetUrl(css) | url }}">
+  {% endfor %}
+  <link rel="stylesheet" media="print" href="{{ collections._styles | assetUrl('print.css') | url }}">
 
   {% block head %}{% endblock %}
 </head>

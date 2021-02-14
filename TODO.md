@@ -1,7 +1,8 @@
 - [ ] Optimize images
 - [ ] Nav item spring animation
-- [ ] Résumé
 - [ ] Use service workers to create SPA-like behavior from page fragments
+- [ ] Add contact info to resume
+- [ ] Link to resume from somewhere?
 
 ## Someday
 
@@ -13,3 +14,4 @@
 
 - [x] Configure web mentions
 - [x] Optimize CSS
+- [x] Résumé

@@ -6,7 +6,7 @@
   align-items: baseline;
 
   @supports (grid-template-columns: subgrid) {
-    @media (min-width: 57em) {
+    @media print, screen and (min-width: 57em) {
       grid-template-columns: fit-content(30%) minmax(auto, tokens.measure(2));
       grid-auto-rows: min-content;
 

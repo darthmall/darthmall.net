@@ -1,0 +1,20 @@
+html {
+  background-color: transparent;
+  font-size: 8pt;
+}
+
+p {
+  max-width: unset;
+}
+
+a[href] {
+  text-decoration: none;
+}
+
+.center {
+  max-width: unset;
+}
+
+.resume {
+  grid-template-columns: fit-content(30%) 1fr;
+}

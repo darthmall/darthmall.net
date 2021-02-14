@@ -11,6 +11,7 @@
   {% for css in styles %}
   <link rel="stylesheet" href="{{ collections._styles | assetUrl(css) | url }}">
   {% endfor %}
+  <link rel="stylesheet" media="print" href="{{ collections._styles | assetUrl('print.css') | url }}">
 
   {% block head %}{% endblock %}
 </head>

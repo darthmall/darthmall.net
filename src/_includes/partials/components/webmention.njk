@@ -25,6 +25,14 @@
   </div>
 
   <div class="[ webmention__body ]">
-    {{ webmention.content.text }}
+    {% if webmention.content.text|length > 2000 -%}
+      Mentioned {% if webmention.name -%}
+        in <a href="{{ webmention.url }}">{{ webmention.name }}</a>
+        {%- else -%}
+        on <a href="{{ webmentin.url }}">{{ webmention.published | dateFilter }}</a>
+        {%- endif %}
+    {%- else -%}
+      {{ webmention.content.text }}
+    {%- endif %}.
   </div>
 </article>

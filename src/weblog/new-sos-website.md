@@ -89,9 +89,9 @@ what it's really good at, although with this new [serverless
 plugin](https://www.11ty.dev/docs/plugins/serverless/) that's coming in 1.0,
 maybe there will be better solutions to some of the build slowness.
 
-I also do think that a backend powering the catalog is a good idea The backend
-shouldn't just return JSON, it should be able to return full pages of HTML so
-that, even if JavaScript fails, you can use the filters.
+I also do think that a backend powering the catalog is a good idea. But the
+backend shouldn't just return JSON, it should be able to return full pages of
+HTML so that, even if JavaScript fails, you can use the filters.
 
 And of course I'd like to provide the team with some more user-friendly tools
 for updating the website than editing some Markdown files and opening a merge

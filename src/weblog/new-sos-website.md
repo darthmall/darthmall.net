@@ -53,10 +53,10 @@ loading our video gallery.
 ## Simplified Build Process
 
 The site is statically generated using [Eleventy](https://11ty.dev/). The old
-site was also mostly static files as well, but it was a mishmash of hand-written
-HTML and some pages managed in [Django](https://www.djangoproject.com/) and
-exported with [Django Bakery](https://django-bakery.readthedocs.io/en/latest/).
-The only part of the site that wasn't static was the index for the [dataset
+site was mostly static files as well, but it was a mishmash of hand-written HTML
+and some pages managed in [Django](https://www.djangoproject.com/) and exported
+with [Django Bakery](https://django-bakery.readthedocs.io/en/latest/).  The only
+part of the old site that wasn't static was the index for the [dataset
 catalog](https://sos.noaa.gov/catalog/datasets/); this was backed by a separate
 Django application that provided an API and the index was rendered client-side
 with some JavaScript.
@@ -75,12 +75,13 @@ unavailable, you just don't get the filters. You can still browse the catalog.
 (Without JavaScript on the old catalog, you'd just get a loading spinner that
 never went away.)
 
-The build process has handled automatically by GitLab's CI/CD pipelines any time
+The build process is handled automatically by GitLab's CI/CD pipelines any time
 a change is merged into the production branch. Our build times have dropped from
-approximately 30 minutes to about 13. It's still too long for my taste, but it
-is an improvement. It's also safer to trigger builds manually becaue there's no
-risk that the cron job will kick off a second build while your first is running
-and peg the CPU of the dev server.
+approximately 60 minutes (about 30 minutes to build, and then the syncs were
+staggered to ensure that the build had finished) to about 13 minutes. It's still
+too long for my taste, but it is an improvement. It's also safer to trigger
+builds manually becaue there's no risk that the cron job will kick off a second
+build while your first is running and peg the CPU of the dev server.
 
 ***
 

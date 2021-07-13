@@ -23,9 +23,9 @@ some point, but for now these are some of the highlights for me.
 ## Improved Lighthouse Scores
 
 Three of the four scores from Lighthouse went up on the homepage, from yellow to
-green. Two of them are 100s. Performance dipped a little, probaly because of the
-large hero images on the home page slowing down the largest contentful paint.
-Image optimization is on my list of things to do.
+green. Two of them are 100s. Performance dipped a little, probably because of
+the large hero images on the home page slowing down the largest contentful
+paint.  Image optimization is on my list of things to do.
 
 <figure>
 <div class="flow">

@@ -28,10 +28,12 @@ large hero images on the home page slowing down the largest contentful paint.
 Image optimization is on my list of things to do.
 
 <figure>
+<div class="flow">
 <img src="/img/new-sos-website/sos-original-lighthouse.png"
      alt="Performance: 89; Accessibility 89; Best Practices: 67; SEO: 64" />
 <img src="/img/new-sos-website/sos-lighthouse.png"
      alt="Performance: 81; Accessibility: 94; Best Practices: 100; SEO: 100" />
+</div>
 <figcaption>
 Before and after scores from Lighthouse
 </figcaption>

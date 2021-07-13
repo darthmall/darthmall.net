@@ -77,11 +77,10 @@ never went away.)
 
 The build process is handled automatically by GitLab's CI/CD pipelines any time
 a change is merged into the production branch. Our build times have dropped from
-approximately 60 minutes (about 30 minutes to build, and then the syncs were
-staggered to ensure that the build had finished) to about 13 minutes. It's still
-too long for my taste, but it is an improvement. It's also safer to trigger
-builds manually becaue there's no risk that the cron job will kick off a second
-build while your first is running and peg the CPU of the dev server.
+approximately 60 minutes to about 13 minutes. It's still too long for my taste,
+but it is an improvement. It's also safer to trigger builds manually becaue
+there's no risk that the cron job will kick off a second build while your first
+is running and peg the CPU of the dev server.
 
 ***
 

@@ -65,12 +65,16 @@ hr {
   width: 33%;
 }
 
-figcaption,
 p,
 dl,
 ul:not([class]),
 ol:not([class]) {
   max-width: theme.$prose-measure;
+}
+
+figcaption {
+  font-style: italic;
+  text-align: center;
 }
 
 ol,
@@ -97,8 +101,7 @@ dd {
   @include font-size(-1);
 }
 
-code,
-figcaption {
+code {
   @include font-family("mono");
 }
 

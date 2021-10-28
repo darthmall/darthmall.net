@@ -41,7 +41,7 @@ I like to use Docker Compose for development environments for a few reasons.
 - Starting the development environment is usually as simple as running
   `docker-compose up`
 - Docker Compose handles all of the networking between containers, so it's easy
-  to configure connections between the containers
+  to configure connections between them
 - If I'm not deploying the application as a container, then I can usually
   configure an official base image in `docker-compose.yml` directly instead of
   having to create a `Dockerfile`
@@ -51,12 +51,12 @@ I like to use Docker Compose for development environments for a few reasons.
 Whether you're using something like [Vite](https://vitejs.dev/) for hot module
 replacement (<abbr>HMR</abbr>) or [nodemon](https://nodemon.io/) to kick your
 Express server, most web development tools these days have some capacity to
-watch your source code for changes and automatically update them. I don't want
-to give up this handy aspect of modern tools just because I'm using Docker, so I
-usually create a [bind mount](https://docs.docker.com/storage/bind-mounts/) for
-my `src/` directory into the
-[WORKDIR](https://docs.docker.com/engine/reference/builder/#workdir) of the
-Docker container.
+watch your source code for changes and automatically update the running
+application. I don't want to give up this handy aspect of modern tools just
+because I'm using Docker, so I usually create a [bind
+mount](https://docs.docker.com/storage/bind-mounts/) for my `src/` directory
+into the [WORKDIR](https://docs.docker.com/engine/reference/builder/#workdir) of
+the Docker container.
 
 Binding your host directory over the working directory of the container means
 any changes to the files in there will be immediately available in the container
@@ -102,7 +102,7 @@ correct version of Node (or Python), possibly involving the use a version
 manager like [nvm](https://github.com/nvm-sh/nvm), and install dependencies into
 both environments and keep those environments in sync.
 
-Fortunately, there's a very easy way to override the user ID and group ID of the
+Fortunately, there's an easy way to override the user ID and group ID of the
 current user in a container so that whatever files are created by that user in
 the container will have the same ownership as if they had been created by your
 user on the host. Simply set the `user` property of the service in your
@@ -223,7 +223,7 @@ created by the Docker container, just to be safe.
 You may have noticed that we're putting the NPM cache directory in the directory
 that we've mounted our `src/` directory over, which means that the the NPM cache
 will end up on the host filesystem in `src/.npm-cache-docker`, so you'll want to
-remember to **add `./src/.npm-cache-docker` to your `.gitignore`**.
+remember to **add `src/.npm-cache-docker` to your `.gitignore`**.
 
 Other than having to add the NPM cache to your `.gitignore`, the only other
 disadvantage that I can think of with this approach is that you can't take

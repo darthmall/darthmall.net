@@ -24,6 +24,8 @@ function formatDate(dt, cls = "") {
     'December',
   ];
 
+  if (!(dt instanceof Date)) dt = new Date(dt);
+
   const month = MONTHS[dt.getUTCMonth()];
   const readableDate = `${dt.getUTCDate()} ${month} ${dt.getUTCFullYear()}`;
 

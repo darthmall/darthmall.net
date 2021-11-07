@@ -17,9 +17,7 @@
     </a>
     <span class="[ color-slate ]">&mdash;
       <small>
-        <time datetime="{{ webmention.published }}">
-          {{ webmention.published | dateFilter }}
-        </time>
+        {% formatDate webmention.published %}
       </small>
     </span>
   </div>
@@ -29,7 +27,7 @@
       Mentioned {% if webmention.name -%}
         in <a href="{{ webmention.url }}">{{ webmention.name }}</a>
         {%- else -%}
-        on <a href="{{ webmentin.url }}">{{ webmention.published | dateFilter }}</a>
+        on <a href="{{ webmentin.url }}">{% formatDate webmention.published %}</a>
         {%- endif %}
     {%- else -%}
       {{ webmention.content.text }}

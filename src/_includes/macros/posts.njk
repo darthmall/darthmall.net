@@ -6,7 +6,7 @@
       </a>
     </h2>
     <p class="margin-none size--1">
-      {# {{ datetime.pubDate(post.data.date) }} #}
+      {% formatDate post.data.date, "font-heading color-slate" %}
     </p>
     <p class="margin-top-1">{{ post.data.description }}</p>
   </article>

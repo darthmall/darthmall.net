@@ -8,6 +8,31 @@ function copyright() {
   return `&copy; ${now.getUTCFullYear()} ${siteMeta.copyright}`;
 }
 
+function formatDate(dt, cls = "") {
+  const MONTHS = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+
+  const month = MONTHS[dt.getUTCMonth()];
+  const readableDate = `${dt.getUTCDate()} ${month} ${dt.getUTCFullYear()}`;
+
+  // Get the ISO formatted date and strip out the time component
+  const isoDate = dt.toISOString().substring(0, 10);
+
+  return `<time datetime="${isoDate}" class="${cls}">${readableDate}</time>`;
+}
+
 function triskaidecagon(size) {
   const NUMSIDES = 13,
         MINPOINTS = 1,
@@ -63,5 +88,6 @@ function triskaidecagon(size) {
 
 module.exports = {
   copyright,
+  formatDate,
   triskaidecagon,
 };

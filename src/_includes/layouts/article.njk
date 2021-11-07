@@ -4,8 +4,6 @@ classes: h-entry
 
 {% extends 'layouts/base.njk' %}
 
-{% from "partials/macros/datetime.njk" import pubDate %}
-
 {% block head %}
   <link href="{{ collections._styles | assetUrl('avatar.css') | url }}" rel="stylesheet">
   <link href="https://unpkg.com/prismjs@1.20.0/themes/prism.css" rel="stylesheet">
@@ -16,7 +14,9 @@ classes: h-entry
     <h1 class="[ p-name ]">{{ title | safe }}</h1>
 
     {% if date %}
-      <p class="[ dt-published ]">{{ pubDate(date) }}</p>
+      <p class="[ dt-published ]">
+        {% formatDate date, "font-heading color-slate"%}
+      </p>
     {% endif %}
   </header>
 

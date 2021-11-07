@@ -27,7 +27,7 @@
       Mentioned {% if webmention.name -%}
         in <a href="{{ webmention.url }}">{{ webmention.name }}</a>
         {%- else -%}
-        on <a href="{{ webmentin.url }}">{% formatDate webmention.published %}</a>
+        on <a href="{{ webmention.url }}">{% formatDate webmention.published %}</a>
         {%- endif %}
     {%- else -%}
       {{ webmention.content.text }}

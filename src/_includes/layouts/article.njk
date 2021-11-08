@@ -24,8 +24,7 @@ classes: h-entry
     {{ content | safe }}
   </div>
 
-  {% include "partials/components/webmentions.njk" %}
-
+  {% include "partials/webmentions.njk" %}
 
   {% set footer -%}
     {%- if backLink -%}

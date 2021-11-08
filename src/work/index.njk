@@ -1,22 +1,16 @@
 ---
 title: Work
-layout: layouts/base.njk
+layout: null
 ---
-
+{% extends "layouts/base.njk" %}
+{% block content %}
 <div class="flow flow-sp-4">
   {% for project in collections.work %}
     {% if not project.draft %}
-      {% set projectTitle = project.data.title %}
-      {% set projectClass = "project-summary--" + project.data.class %}
-      {% set projectColor = "#" + project.data.color %}
-      {% set projectMeta %}
-        <p>{{ project.data.client }}</p>
-      {% endset %}
-      {% set projectMedia = project.data.media %}
-      {% set projectMediaAlt = project.data.mediaAlt %}
-      {% set projectDescription = project.templateContent %}
-
-      {% include "partials/components/project-summary.njk" %}
+      {% call projects.summary(project.data) %}
+        {{ project.templateContent | safe }}
+      {% endcall %}
     {% endif %}
   {% endfor %}
 </div>
+{% endblock %}

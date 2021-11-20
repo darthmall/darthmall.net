@@ -132,6 +132,14 @@ blockquote {
   margin: 3rem;
 }
 
+aside {
+  margin-inline: -#{tokens.space(2)};
+  padding: #{tokens.space(1)} #{tokens.space(2)};
+  font-size: #{tokens.font-size(-1)};
+  border: 2px solid #{tokens.color("accent")};
+  border-radius: #{tokens.space(0)};
+}
+
 strong {
   font-family: #{tokens.font-family("heading")};
   font-size-adjust: 0.5;
@@ -195,6 +203,10 @@ input {
   &:active {
     background-color: scale-color($bg, $lightness: -20%);
   }
+}
+
+ol.footnotes-list {
+  list-style: reset;
 }
 
 @media screen {

@@ -409,7 +409,7 @@ And for the portfolio, we just put the summary in the contents:
 
 Now we're done with our card macro, I think.
 
-***
+## Choosing the Right Tool
 
 At the end of the day, you should use whatever mechanism for encapsulating
 components that works for you. I'm not trying to convince you that it's wrong to

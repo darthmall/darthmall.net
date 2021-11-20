@@ -197,6 +197,10 @@ input {
   }
 }
 
+ol.footnotes-list {
+  list-style: reset;
+}
+
 @media screen {
   .print-only {
     display: none;

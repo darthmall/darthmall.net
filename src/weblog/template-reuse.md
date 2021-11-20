@@ -163,7 +163,7 @@ this:
 
 <aside>
 
-This example works for an [Eleventy
+<strong>Note:</strong> This example works for an [Eleventy
 collection](https://www.11ty.dev/docs/collections/). Eleventy surfaces the title
 and URL for a page in the object of the collection. Any additional metadata that
 you add via the [data cascade](https://www.11ty.dev/docs/data-cascade/) is
@@ -300,7 +300,7 @@ of additional variables to my template context.
 
 <aside>
 
-If you use Nunjucks template inheritance, you can `{{ "{% import %}" }}` your
+<strong>Tip:</strong> If you use Nunjucks template inheritance, you can `{{ "{% import %}" }}` your
 macros in the base template, and they'll be available from every template that
 `{{ "{% extends %}" }}` that template. This is a convenient way to make a
 library of components and form inputs available in all templates.

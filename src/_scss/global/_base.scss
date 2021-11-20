@@ -133,7 +133,8 @@ blockquote {
 }
 
 aside {
-  padding: #{tokens.space(1)};
+  margin-inline: -#{tokens.space(2)};
+  padding: #{tokens.space(1)} #{tokens.space(2)};
   font-size: #{tokens.font-size(-1)};
   border: 2px solid #{tokens.color("accent")};
   border-radius: #{tokens.space(0)};

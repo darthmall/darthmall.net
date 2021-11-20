@@ -132,6 +132,13 @@ blockquote {
   margin: 3rem;
 }
 
+aside {
+  padding: #{tokens.space(1)};
+  font-size: #{tokens.font-size(-1)};
+  border: 2px solid #{tokens.color("accent")};
+  border-radius: #{tokens.space(0)};
+}
+
 strong {
   font-family: #{tokens.font-family("heading")};
   font-size-adjust: 0.5;

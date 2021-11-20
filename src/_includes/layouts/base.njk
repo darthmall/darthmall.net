@@ -1,4 +1,5 @@
 {% import "macros/posts.njk" as posts %}
+{% import "macros/projects.njk" as projects %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  {% include "partials/global/meta-info.njk" %}
+  {% include "partials/meta-info.njk" %}
 
   <link rel="stylesheet" href="{{ collections._styles | assetUrl('style.css') | url }}">
   {% for css in styles %}
@@ -19,7 +20,7 @@
 </head>
 
 <body>
-  {% include "partials/global/site-header.njk" %}
+  {% include "partials/site-header.njk" %}
 
   {% set mainClasses = "" %}
   {% if classes %}
@@ -35,6 +36,6 @@
     {% endblock content %}
   </main>
 
-  {% include "partials/global/site-footer.njk" %}
+  {% include "partials/site-footer.njk" %}
 </body>
 </html>

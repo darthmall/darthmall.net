@@ -1,6 +1,6 @@
 ---
 title: Includes and Macros
-date: 2021-11-02
+date: 2021-11-20
 description: >-
     Comparing techniques for encapsulating HTML components in Nunjucks or
     Jinja2.

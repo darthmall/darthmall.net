@@ -28,6 +28,9 @@ Put another way: if I find myself having to use `{{ "{% set %} " }}` to
 configure the context for a partial before I `{{ "{% include %}" }}` that
 partial, it should probably be a macro.
 
+I'm going to walk through an example of when I would use each to illustrate how
+I use them in my templates.
+
 ## Includes
 
 Includes are the simplest of the two encapsulation mechanisms. All you have to
@@ -80,8 +83,8 @@ something like this:
 <figcaption>templates/post.njk</figcaption>
 </figure>
 
-Et voilà, all of the markup for my site header gets put in every blog post. If I
-need the site header in another page, I just have to `{{ '{% include
+<i>Et voilà</i>, all of the markup for my site header gets put in every blog
+post. If I need the site header in another page, I just have to `{{ '{% include
 "./includes/site-header.njk" %}' | safe }}` in that template wherever I want the
 site header to appear in the markup.
 
@@ -90,10 +93,10 @@ same context that is present in the calling template at the time the fragment
 was included. So in my `site-header.njk` partial, I'm making the following
 assumptions about the context:
 
-1. There is a variable called `site` which has a property `title`
-2. There is a variable called `navigation` that is iterable
-3. The objects yielded by iterating over `navigation` have two properties: `href`
-   and `text`
+- There is a variable called `site` which has a property `title`
+- There is a variable called `navigation` that is iterable
+- The objects yielded by iterating over `navigation` have two properties: `href`
+  and `text`
 
 Judging by my use of the fragment from `post.njk`, one might conclude that
 `site` and `navigation` are both global variables provided by whatever
@@ -130,8 +133,10 @@ that iterates over all of my blog posts. That partial might look like this:
 <figcaption>templates/includes/card.njk</figcaption>
 </figure>
 
-And if I wanted to list my blog posts on my home page, I can do something like
-this:
+This include assumes the presence of `cardUrl`, `cardTitle`, `cardMedia`,
+`cardMediaAlt`, and `cardBody` in the context when it is included. Since I am
+going to be changing each of these variables for each post in a list of posts, I
+will need to do something like this:
 
 <figure>
 
@@ -229,7 +234,7 @@ partial:
    variables are scoped to the macro
 
 The `{{ "{% macro %}" }}` tag acts a lot like the `function` keyword in
-JavaScript. You could almost think of the above as
+JavaScript. You could almost think of the above as:
 
 ```js
 function card(title, url, media, mediaAlt, body) {

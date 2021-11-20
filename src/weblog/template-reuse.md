@@ -170,12 +170,208 @@ the values from the last post that was evaluated. _If_ you happened to reuse
 those same variable for a different purpose and forgot to change or unset them,
 you could get some unexpected content in your page, but that's about it.
 
-But, for me, I think there's a better way to handle situations like this.
-Macros.
+But I think there's a better way to handle situations like this. Macros.
 
 ## Macros
 
+Macros are a bit like functions for Nunjucks. They don't receive the context of
+the calling template, so they have a local scope; they take parameters; you
+import them. If you don't know much about using macros in Nunjucks, I recommend
+having a look at [Thomas Semmler's writeup on using
+macros](https://helloyes.dev/blog/2021/using-parameters-in-your-eleventy-includes-with-nunjucks-macros/)
+in Eleventy.
+
+Now, let's have a look at how we can convert our card template into a macro. We
+can start by just converting our original card template into a macro by wrapping
+it in a `{{ "{% macro %}" }}` tag.
+
+<figure>
+
+{% raw %}
+```html
+{% macro card(title, url, media, mediaAlt, body) %}
+<article class="card">
+  <h2 class="card__title">
+    <a href="{{ url }}">{{ title | safe }}</a>
+  </h2>
+  <div class="card__media">
+    <img src="{{ media }}" alt="{{ mediaAlt }}" />
+  </div>
+  <div class="card__body">
+    {{ body | safe }}
+  </div>
+</article>
+{% endmacro %}
+```
+{% endraw %}
+
+<figcaption>templates/includes/card.njk</figcaption>
+</figure>
+
+There are only two differences between this new macro and our old template
+fragment:
+
+1. The HTML is wrapped in a `{{ "{% macro %}{% endmacro %}" }}` Nunjucks tag
+2. I've removed the `card*` prefix from all the variable names, since the
+   variables are scoped to the macro
+
+The `{{ "{% macro %}" }}` tag acts a lot like the `function` keyword in
+JavaScript. You could almost think of the above as
+
+```js
+function card(title, url, media, mediaAlt, body) {
+  return `<article class="card">
+    <h2 class="card__title">
+    ...
+  `;
+}
+```
+
+Now that we have defined our macro, we have to import it before we can call it.
+
+{% raw %}
+```html
+{% import "./includes/card.njk" as card %}
+```
+{% endraw %}
+
+And then we invoke the macro like it's a function inside of a Nunjucks variable
+reference.
+
+{% raw %}
+```html
+{{ card.card(post.title, post.url, post.media.src, post.media.alt, post.description) }}
+```
+{% endraw %}
+
+Now, I want to do one last thing before showing how this transforms the original
+template that relied on `{{ "{% include %}" }}`, because I dislike the
+`card.card()` call—it seems silly and redundant to me. You can collect macros
+into a single file that are all accessible from a single import, so I'm going to
+rename the `includes/card.njk` file to `macros/components.njk`. This keeps my
+macros separate from my template partials, and gives me a single place to
+collect my component macros.
+
+Now, with our macro in place, our template for the home page becomes this:
+
+<figure>
+
+{% raw %}
+```html
+{% import "./macros/components.njk" as components %}
+<!DOCTYPE html>
+<html>
+  <body>
+    {% include "./includes/site-header.njk" %}
+
+    <section aria-label="posts">
+      {% for post in posts %}
+        {{ components.card(post.title, post.url, post.media.src, post.media.alt, post.description) }}
+      {% endfor %}
+    </section>
+  </body>
+</html>
+```
+{% endraw %}
+
+<figcaption>templates/home.njk</figcaption>
+</figure>
+
+Personally, I like this much better. It's more succinct, and doesn't add a bunch
+of additional variables to my template context.
+
+<aside>
+
+If you use Nunjucks template inheritance, you can `{{ "{% import %}" }}` your
+macros in the base template, and they'll be available from every template that
+`{{ "{% extends %}" }}` that template. This is a convenient way to make a
+library of components and form inputs available in all templates.
+
+</aside>
+
 ### Call Blocks
+
+I have one last tweak I'd like to make to our macro to make it a little more
+flexible. Suppose we want the body of our card component to be a little more
+flexible. Maybe we use this component in our portfolio, where the description is
+a simple paragraph, but we also use it for our recent blog posts on the home
+page, where we want to include the description _and_ the publication date. Our
+portfolio template might look like:
+
+{% raw %}
+```html
+{% for p in projects %}
+  {{ card(p.title, p.url, p.screenshot.src, p.screenshot.alt, p.summary) }}
+{% endfor %}
+```
+{% endraw %}
+
+But our recent posts needs to construct a custom card body, so we might do
+something like this:
+
+{% raw %}
+```html
+{% for post in recent_posts %}
+  {% set postBody %}
+  <p>{{ post.description | safe }}</p>
+  <p>Published: {{ post.pub_date }}</p>
+  {% endset %}
+
+  {{ card(post.title, post.url, post.media.src, post.media.alt, postBody) }}
+{% endfor %}
+```
+{% endraw %}
+
+And now we're back to using `{{ "{% set %}" }}` again.
+
+Nunjucks offers an alternate syntax for invoking a macro called a `{{ "{% call
+%}" }}` block. Call blocks have start and end tags, and anything you put between
+the tags gets passed to the macro. So the first thing we have to do is update
+our card macro to use the contents of the call block. We do this by putting `{{
+"{{ caller() }}" }}` in our macro where we want that content to appear.
+
+<figure>
+
+{% raw %}
+```html
+{% macro card(title, url, media, mediaAlt) %}
+<article class="card">
+  <h2 class="card__title">
+    <a href="{{ url }}">{{ title | safe }}</a>
+  </h2>
+  <div class="card__media">
+    <img src="{{ media }}" alt="{{ mediaAlt }}" />
+  </div>
+  <div class="card__body">
+    {{ caller() }}
+  </div>
+</article>
+{% endmacro %}
+```
+{% endraw %}
+
+<figcaption>templates/macros/components.njk</figcaption>
+</figure>
+
+There are only two changes to the card macro:
+
+1. I removed the body parameter from the macro
+2. I replaced `{{ "{{ body | safe }}" }}` with `{{ "{{ caller() }}" }}`
+
+Now, when we want to create a card, we use a call block:
+
+{% raw %}
+```html
+{% for post in recent_posts %}
+  {% call components.card(post.title, post.url, post.media.src, post.media.alt) %}
+    <p>{{ post.description | safe }}</p>
+    <p>Published: {{ post.pub_date }}</p>
+  {% endcall %}
+{% endfor %}
+```
+{% endraw %}
+
+Now we're done with our card macro, I think.
 
 ***
 

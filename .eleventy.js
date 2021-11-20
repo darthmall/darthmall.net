@@ -45,6 +45,7 @@ module.exports = function (config) {
       permalinkSymbol: '§',
       slugify: require('slug'),
     })
+    .use(require('markdown-it-footnote'))
     .disable('code');  // Disable code indentation for better inline HTML formatting
 
   config.setLibrary('md', md);

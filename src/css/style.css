@@ -1,0 +1,69 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-family: sans-serif;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+iframe,
+img {
+  display: block;
+  max-width: 100%;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  line-height: 1;
+}
+
+input,
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  border: none;
+}
+
+input {
+  border-style: solid;
+}
+
+[hidden] {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
+  }
+}
+
+@media screen and (-ms-high-contrast: active) {
+  button {
+    border: 2px solid currentcolor;
+  }
+}

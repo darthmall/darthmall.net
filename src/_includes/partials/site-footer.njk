@@ -1,50 +1,36 @@
-<footer id="site-footer" role="contentinfo" class="[ center flow ][ no-print ]">
-  <div class="cluster">
-    <div>
-      <hr />
-      <p class="font-heading">{% copyright %}</p>
-    </div>
-  </div>
+<footer id="site-footer" role="contentinfo">
+  <hr />
+  <p>{% copyright %}</p>
 
-  <div>
-    <div class="cluster">
-      <div>
-        <p>
-          Colophon: <a href="http://www.velvetyne.fr/fonts/sporting-grotesque/">Sporting
-            Grotesque</a> &amp; <a href="https://brailleinstitute.org/freefont">Atkinson
-            Hyperlegible</a>. <a href="https://github.com/edent/SuperTinyIcons">SuperTiny</a>
-          icons. Built with <a href="https://11ty.dev">Eleventy</a>.
-        </p>
+  <p>
+    Colophon: <a href="http://www.velvetyne.fr/fonts/sporting-grotesque/">Sporting
+      Grotesque</a> &amp; <a href="https://brailleinstitute.org/freefont">Atkinson
+      Hyperlegible</a>. <a href="https://github.com/edent/SuperTinyIcons">SuperTiny</a>
+    icons. Built with <a href="https://11ty.dev">Eleventy</a>.
+  </p>
 
-        <div class="[ cluster__item--end ] [ no-print ]">
-          <nav class="cluster">
-            <ul>
-              {% for link in social %}
-                {% set relAttr = "" %}
-                {% set titleAttr = "" %}
-                {% set content = link.text %}
+  <nav>
+    <ul>
+      {% for link in social %}
+        {% set relAttr = "" %}
+        {% set titleAttr = "" %}
+        {% set content = link.text %}
 
-                {% if link.rel %}
-                  {% set relAttr = " rel='" + link.rel + "'" %}
-                {% endif %}
+        {% if link.rel %}
+          {% set relAttr = " rel='" + link.rel + "'" %}
+        {% endif %}
 
-                {% if link.icon %}
-                  {% set titleAttr = " title='" + link.text + "'" %}
-                  {% set content %}{% include "icons/" + link.icon %}{% endset %}
-                {% endif %}
+        {% if link.icon %}
+          {% set titleAttr = " title='" + link.text + "'" %}
+          {% set content %}{% include "icons/" + link.icon %}{% endset %}
+        {% endif %}
 
-                <li>
-                  <a href="{{ link.url }}"{{ relAttr | safe }}{{ titleAttr | safe }}>
-                    {{ content | safe }}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-          </nav>
-        </div>  {# /cluster__item--end #}
-
-      </div>
-    </div>  {# /cluster #}
-
-  </div>
+        <li>
+          <a href="{{ link.url }}"{{ relAttr | safe }}{{ titleAttr | safe }}>
+            {{ content | safe }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
 </footer>

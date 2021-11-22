@@ -1,59 +1,55 @@
 {% set target %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
 {% set mentions = webmentions | webmentionsForUrl(target) %}
 
-<aside class="[ center ] [ margin-top-3 ]">
-  <h2 class="[ font-heading ]">Webmentions</h2>
+<aside>
+  <h2>Webmentions</h2>
   <p>
     <small><a href="/weblog/webmentions/">What’s a “Webmention”</a>, you ask?</small>
   </p>
-  <div class="[ flow ] [ margin-top-2 ]">
-    {% for webmention in mentions %}
-      <article class="[ webmention ]">
-        <div class="[ webmention__avatar ] ">
-          {% if webmention.author and webmention.author.photo %}
-            <img src="{{ webmention.author.photo }}" alt="" loading="lazy" />
-          {% else %}
-            <div class="[ webmention__avatar--anonymous ]"></div>
-          {% endif %}
-        </div>
+  {% for webmention in mentions %}
+    <article class="webmention">
+      <div class="webmention__avatar">
+        {% if webmention.author and webmention.author.photo %}
+          <img src="{{ webmention.author.photo }}" alt="" loading="lazy" />
+        {% else %}
+          <div class="webmention__avatar--anonymous"></div>
+        {% endif %}
+      </div>
 
-        <div class="[ webmention__author ]">
-          <a href="{{ webmention.url }}">
-            {%- if webmention.author -%}
-              <strong>{{ webmention.author.name }}</strong>
-            {%- else -%}
-              <strong>Anonymous</strong>
-            {%- endif -%}
-          </a>
-          <span class="[ color-slate ]">&mdash;
-            <small>
-              {% formatDate webmention.published %}
-            </small>
-          </span>
-        </div>
-
-        <div class="[ webmention__body ]">
-          {% if webmention.content.text|length > 2000 -%}
-            Mentioned {% if webmention.name -%}
-              in <a href="{{ webmention.url }}">{{ webmention.name }}</a>
-              {%- else -%}
-              on <a href="{{ webmention.url }}">{% formatDate webmention.published %}</a>
-              {%- endif %}
+      <div class="webmention__author">
+        <a href="{{ webmention.url }}">
+          {%- if webmention.author -%}
+            <strong>{{ webmention.author.name }}</strong>
           {%- else -%}
-            {{ webmention.content.text }}
-          {%- endif %}.
-        </div>
-      </article>
-    {% else %}
-      <p class="[ text-italic ]">No one’s mentioned this post yet.</p>
-    {% endfor %}
-  </div>
+            <strong>Anonymous</strong>
+          {%- endif -%}
+        </a>
+        <span>&mdash;
+          <small>
+            {% formatDate webmention.published %}
+          </small>
+        </span>
+      </div>
 
-  <p class="[ margin-top-3 ]">Send me a webmention!</p>
+      <div class="webmention__body">
+        {% if webmention.content.text|length > 2000 -%}
+          Mentioned {% if webmention.name -%}
+            in <a href="{{ webmention.url }}">{{ webmention.name }}</a>
+            {%- else -%}
+            on <a href="{{ webmention.url }}">{% formatDate webmention.published %}</a>
+            {%- endif %}
+        {%- else -%}
+          {{ webmention.content.text }}
+        {%- endif %}.
+      </div>
+    </article>
+  {% else %}
+    <p>No one’s mentioned this post yet.</p>
+  {% endfor %}
 
-  <form class="[ single-input-form ] [ margin-top-0 ]" action="https://webmention.io/darthmall.net/webmention"
-        method="post">
+  <p>Send me a webmention!</p>
 
+  <form action="https://webmention.io/darthmall.net/webmention" method="post">
     <input name="target" type="hidden" value="{{ site.url }}{{ page.url }}">
 
     <label for="webmention-source">URL</label>

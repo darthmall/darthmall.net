@@ -10,17 +10,17 @@ classes: h-entry
 {% endblock %}
 
 {% block content %}
-  <header class="[ center ]">
-    <h1 class="[ p-name ]">{{ title | safe }}</h1>
+  <header>
+    <h1 class="p-name">{{ title | safe }}</h1>
 
     {% if date %}
-      <p class="[ dt-published ]">
+      <p>
         {% formatDate date, "font-heading color-slate"%}
       </p>
     {% endif %}
   </header>
 
-  <div class="[ post ] [ flow center ] [ e-content ]">
+  <div class="e-content">
     {{ content | safe }}
   </div>
 
@@ -39,7 +39,7 @@ classes: h-entry
   {%- endset %}
 
   {% if footer %}
-    <footer class="[ center ] [ margin-top-3 ]">
+    <footer>
       {{ footer | safe }}
     </footer>
   {% endif %}

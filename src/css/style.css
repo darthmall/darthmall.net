@@ -11,8 +11,14 @@
 html {
   font-size: 1.25rem;
   line-height: 1.5;
-  font-family: sans-serif;
   font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
+body > * {
+  box-sizing: content-box;
+  max-width: 70ch;
+  margin-inline: auto;
+  padding-inline: 1rem;
 }
 
 iframe,

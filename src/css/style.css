@@ -41,6 +41,10 @@ nav > ul {
   list-style: none;
 }
 
+footer svg {
+  height: 1.5rem;
+}
+
 iframe,
 img {
   display: block;

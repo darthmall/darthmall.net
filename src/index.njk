@@ -1,9 +1,7 @@
 {% extends "layouts/base.njk" %}
 {% block content %}
-<div class="center flow flow-sp-3">
   <h2>Recent Posts</h2>
   {% for post in collections.posts.slice(0, site.recentPostCount) %}
     {{ posts.summary(post) }}
   {% endfor %}
-</div>
 {% endblock %}

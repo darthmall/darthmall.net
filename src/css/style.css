@@ -42,6 +42,10 @@ nav > ul {
   list-style: none;
 }
 
+main > * + * {
+  margin-block-start: var(--space, var(--space-md));
+}
+
 footer svg {
   height: 1.5rem;
 }

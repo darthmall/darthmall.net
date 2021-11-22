@@ -9,6 +9,9 @@
 }
 
 html {
+  --space-sm: 0.5rem;
+  --measure: 70ch;
+
   font-size: 1.25rem;
   line-height: 1.5;
   font-family: ui-sans-serif, system-ui, sans-serif;
@@ -16,9 +19,26 @@ html {
 
 body > * {
   box-sizing: content-box;
-  max-width: 70ch;
+  max-width: var(--measure);
   margin-inline: auto;
   padding-inline: 1rem;
+}
+
+/* Cluster layout */
+body > header,
+nav > ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+body > header > :first-child {
+  margin-inline-end: auto;
+}
+
+nav > ul {
+  gap: var(--space-sm);
+  padding: 0;
+  list-style: none;
 }
 
 iframe,

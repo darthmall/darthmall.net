@@ -1,12 +1,6 @@
-{% set bg %}{% triskaidecagon 130 %}{% endset %}
-
 <header role="banner" class="h-card p-author">
-  <a href="/" class="u-url p-name" style="background-image:url('data:image/svg+xml;utf8,{{ bg
-  }}')">
-    <span class="first">Evan</span>
-    <span class="last">Sheehan</span>
+  <a href="/" class="u-url p-name" aria-label="Home">
+    <img src="/img/evan.jpg" alt="" class="u-photo" />
   </a>
-
-  <div hidden>{% include "partials/avatar.njk" %}</div>
   {% include "partials/nav.njk" %}
 </header>

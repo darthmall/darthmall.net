@@ -26,10 +26,15 @@ nav > ul {
   display: flex;
   flex-wrap: wrap;
   gap: var(--gutter);
+  align-items: center;
 }
 
 body > header > :first-child {
   margin-inline-end: auto;
+}
+
+body > header img {
+  max-height: 3rem;
 }
 
 nav > ul {
@@ -85,6 +90,10 @@ input {
 
 [hidden] {
   display: none;
+}
+
+.u-photo {
+  border-radius: 50%;
 }
 
 @media (prefers-reduced-motion: reduce) {

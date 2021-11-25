@@ -5,6 +5,7 @@
 html {
   --space-sm: 0.5rem;
   --space-md: 1rem;
+  --space-lg: 2rem;
   --measure: 70ch;
 
   --gutter: var(--space-sm);
@@ -18,6 +19,14 @@ body > * {
   max-width: var(--measure);
   margin-inline: auto;
   padding-inline: var(--gutter, var(--space-sm));
+}
+
+body > header {
+  padding-block: var(--space-md);
+}
+
+body > footer {
+  padding-block: var(--space-lg);
 }
 
 /* Cluster layout */

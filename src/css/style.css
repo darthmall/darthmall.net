@@ -43,6 +43,10 @@ footer svg {
   height: 1.5rem;
 }
 
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
 iframe,
 img {
   display: block;

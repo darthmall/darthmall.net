@@ -7,6 +7,8 @@ html {
   --space-md: 1rem;
   --measure: 70ch;
 
+  --gutter: var(--space-sm);
+
   font-size: 1.25rem;
   line-height: 1.5;
   font-family: ui-sans-serif, system-ui, sans-serif;
@@ -23,6 +25,7 @@ body > header,
 nav > ul {
   display: flex;
   flex-wrap: wrap;
+  gap: var(--gutter);
 }
 
 body > header > :first-child {
@@ -30,7 +33,6 @@ body > header > :first-child {
 }
 
 nav > ul {
-  gap: var(--space-sm);
   padding: 0;
   list-style: none;
 }

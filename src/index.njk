@@ -1,7 +1,5 @@
 {% extends "layouts/base.njk" %}
 {% block content %}
   <h2>Recent Posts</h2>
-  {% for post in collections.posts.slice(0, site.recentPostCount) %}
-    {{ posts.summary(post) }}
-  {% endfor %}
+  {{ posts.list(collections.posts.slice(0, site.recentPostCount)) }}
 {% endblock %}

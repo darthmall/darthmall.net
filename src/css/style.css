@@ -1,18 +1,38 @@
+/* Reset */
+
 * {
   margin: 0;
 }
+
+html, body {
+  height: 100%;
+}
+
+canvas, iframe, img, svg, video {
+  display: block;
+  max-width: 100%;
+}
+
+button, input {
+  font: inherit;
+}
+
+/* End reset */
 
 html {
   --space-sm: 0.5rem;
   --space-md: 1rem;
   --space-lg: 2rem;
-  --measure: 70ch;
 
   --gutter: var(--space-sm);
+  --measure: 70ch;
+}
 
+body {
   font-size: 1.25rem;
   line-height: 1.5;
   font-family: ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 body > * {
@@ -63,23 +83,9 @@ h1, h2, h3 {
   line-height: 1.2;
 }
 
-iframe,
-img {
-  display: block;
-  max-width: 100%;
-}
-
 label {
   display: block;
   font-weight: bold;
-}
-
-button,
-input,
-select,
-textarea {
-  font: inherit;
-  line-height: 1;
 }
 
 input,
@@ -87,6 +93,7 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  line-height: 1;
 }
 
 button {

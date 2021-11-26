@@ -20,9 +20,7 @@ classes: h-entry
     {% endif %}
   </header>
 
-  <div class="prose e-content">
-    {{ content | safe }}
-  </div>
+  {{ super() }}
 
   {% include "partials/webmentions.njk" %}
 

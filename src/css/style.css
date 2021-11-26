@@ -112,6 +112,11 @@ input {
   border-radius: 50%;
 }
 
+.prose > * + * {
+  /* 1.5×line-height for WCAG AAA */
+  margin-block-start: var(--space, 2.25em);
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms;

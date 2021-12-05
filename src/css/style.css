@@ -152,6 +152,18 @@ input {
   border-style: solid;
 }
 
+a:link {
+  color: var(--link-color);
+}
+
+a:link:hover {
+  text-decoration-style: wavy;
+}
+
+a:visited {
+  color: var(--link-visited-color);
+}
+
 [hidden] {
   display: none;
 }

@@ -24,17 +24,18 @@ html {
   --space-md: 1rem;
   --space-lg: 2rem;
 
-  --font-size-0: clamp(1rem, calc(0.9rem + 0.42vw), 1.4rem);
-  --font-size-1: clamp(1.15rem, calc(0.99rem + 0.68vw), 1.8rem);
-  --font-size-2: clamp(1.5rem, calc(1.25rem + 1.05vw), 2.5rem);
-  --font-size-3: clamp(2rem, calc(1.21rem + 3.37vw), 5rem);
+  --font-size-0: clamp(0.833rem, calc(0.2906vw + 0.7649rem), 1.11rem);
+  --font-size-1: clamp(1rem, calc(0.5036vw + 0.8820rem), 1.48rem);
+  --font-size-2: clamp(1.2rem, calc(0.8110vw + 1.0099rem), 1.973rem);
+  --font-size-3: clamp(1.44rem, calc(1.2485vw + 1.1474rem), 2.63rem);
+  --font-size-4: clamp(1.728rem, calc(4.7234vw + 0.6210rem), 6.23rem);
 
   --gutter: var(--space-sm);
   --measure: 70ch;
 }
 
 body {
-  font-size: var(--font-size-0);
+  font-size: var(--font-size-1);
   line-height: 1.5;
   font-family: ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -85,7 +86,7 @@ footer svg {
 }
 
 h1 {
-  font-size: var(--font-size-3);
+  font-size: var(--font-size-4);
   line-height: 1.1;
 }
 
@@ -94,11 +95,11 @@ h2, h3 {
 }
 
 h2 {
-  font-size: var(--font-size-2);
+  font-size: var(--font-size-3);
 }
 
 h3 {
-  font-size: var(--font-size-1);
+  font-size: var(--font-size-2);
 }
 
 label {

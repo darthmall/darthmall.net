@@ -189,6 +189,7 @@ input {
 
 .posts li > small {
   margin-block-start: var(--space-sm);
+  color: var(--fg-fade);
 }
 
 @media (prefers-reduced-motion: reduce) {

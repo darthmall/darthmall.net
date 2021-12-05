@@ -31,8 +31,32 @@ html {
   --font-size-3: clamp(1.44rem, calc(1.2485vw + 1.1474rem), 2.63rem);
   --font-size-4: clamp(1.728rem, calc(4.7234vw + 0.6210rem), 6.23rem);
 
+  --monochrome-0: #222823;
+  --monochrome-1: #5A5E5A;
+  --monochrome-2: #6F716F;
+  --monochrome-3: #919491;
+  --monochrome-4: #C8CAC8;
+  --monochrome-5: #FFFFFF;
+
+  --accent-0: #00524E;
+  --accent-0-fade: #fD958F;
+  --accent-1: #812D4D;
+  --accent-1-fade: #DDA6BB;
+  --accent-2: #FFC167;
+  --accent-2-fade: #FFE0B3;
+
+  --bg: var(--monochrome-5);
+  --fg: var(--monochrome-0);
+  --fg-fade: var(--monochrome-1);
+
+  --link-color: var(--accent-0);
+  --link-visited-color: var(--accent-1);
+
   --gutter: var(--space-sm);
   --measure: 70ch;
+
+  background: var(--bg);
+  color: var(--fg);
 }
 
 body {

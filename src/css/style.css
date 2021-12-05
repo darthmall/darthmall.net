@@ -140,6 +140,32 @@ input {
   margin-block-start: var(--space, 2.25em);
 }
 
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+
+  list-style: none;
+  padding: 0;
+}
+
+.posts br {
+  display: none;
+}
+
+.posts li {
+  display: grid;
+}
+
+.posts li > strong {
+  margin-block-end: var(--space-xs);
+  font-size: var(--font-size-2);
+}
+
+.posts li > small {
+  margin-block-start: var(--space-sm);
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms;

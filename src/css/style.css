@@ -31,26 +31,19 @@ html {
   --font-size-3: clamp(1.44rem, calc(1.2485vw + 1.1474rem), 2.63rem);
   --font-size-4: clamp(1.728rem, calc(4.7234vw + 0.6210rem), 6.23rem);
 
-  --monochrome-0: #222823;
-  --monochrome-1: #5A5E5A;
-  --monochrome-2: #6F716F;
-  --monochrome-3: #919491;
-  --monochrome-4: #C8CAC8;
-  --monochrome-5: #FFFFFF;
+  --color-gray-0: #222323;
+  --color-gray-1: #3e3e3e;
+  --color-gray-2: #595959;
+  --color-gray-3: #adadad;
+  --color-gray-4: #d6d6d6;
+  --color-gray-5: #ffffff;
 
-  --accent-0: #00524E;
-  --accent-0-fade: #fD958F;
-  --accent-1: #812D4D;
-  --accent-1-fade: #DDA6BB;
-  --accent-2: #FFC167;
-  --accent-2-fade: #FFE0B3;
+  --bg: var(--color-gray-5);
+  --fg: var(--color-gray-0);
+  --fg-fade: var(--color-gray-1);
 
-  --bg: var(--monochrome-5);
-  --fg: var(--monochrome-0);
-  --fg-fade: var(--monochrome-1);
-
-  --link-color: var(--accent-0);
-  --link-visited-color: var(--accent-1);
+  --theme-link: var(--color-gray-0);
+  --theme-visited: var(--color-gray-1);
 
   --gutter: var(--space-sm);
   --measure: 70ch;
@@ -153,7 +146,7 @@ input {
 }
 
 a:link {
-  color: var(--link-color);
+  color: var(--theme-link);
 }
 
 a:link:hover {
@@ -161,7 +154,7 @@ a:link:hover {
 }
 
 a:visited {
-  color: var(--link-visited-color);
+  color: var(--theme-visited);
 }
 
 [hidden] {

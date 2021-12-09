@@ -1,3 +1,14 @@
+@font-face {
+  font-family: Anybody;
+  src:
+    url("../fonts/Anybody[slnt,wdth,wght].woff2") format("woff2 supports variations"),
+    url("../fonts/Anybody[slnt,wdth,wght].woff2") format("woff2-variations");
+  font-stretch: 50% 150%;
+  font-style: oblique -10deg 0deg;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 /* Reset */
 
 * {
@@ -55,7 +66,7 @@ html {
 body {
   font-size: var(--font-size-1);
   line-height: 1.5;
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: Anybody, ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 

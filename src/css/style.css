@@ -197,6 +197,17 @@ a:visited {
   color: var(--fg-fade);
 }
 
+@media (prefers-color-scheme: dark) {
+  html {
+    --bg: var(--color-gray-0);
+    --fg: var(--color-gray-5);
+    --fg-fade: var(--color-gray-4);
+
+    --theme-link: var(--color-gray-5);
+    --theme-visited: var(--color-gray-4);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms;

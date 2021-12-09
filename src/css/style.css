@@ -46,7 +46,7 @@ html {
   --color-gray-1: #3e3e3e;
   --color-gray-2: #595959;
   --color-gray-3: #adadad;
-  --color-gray-4: #d6d6d6;
+  --color-gray-4: #e2e2e2;
   --color-gray-5: #ffffff;
 
   --bg: var(--color-gray-5);
@@ -157,11 +157,27 @@ input {
 }
 
 a:link {
+  position: relative;
   color: var(--theme-link);
+  white-space: nowrap;
 }
 
-a:link:hover {
-  text-decoration-style: wavy;
+a:link::before {
+  content: "";
+  border-radius: 4px;
+  position: absolute;
+  top: -0.5em;
+  right: -0.25em;
+  bottom: -0.25em;
+  left: -0.25em;
+  z-index: -1;
+  background-color: var(--color-gray-4);
+  opacity: 0;
+  transition: opacity 150ms linear;
+}
+
+a:link:hover::before {
+  opacity: 1;
 }
 
 a:visited {

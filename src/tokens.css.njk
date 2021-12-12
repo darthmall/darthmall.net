@@ -5,11 +5,11 @@ permalink: css/tokens.css
 :root {
   {% for k, range in tokens.space %}
     --space-{{ k }}: {% clamp tokens.viewport, range, tokens.baseFontSize %};
-  {% endfor %}
+  {%- endfor %}
 
   {% for k, range in tokens.fontSize %}
     --font-size-{{ k }}: {% clamp tokens.viewport, range, tokens.baseFontSize %};
-  {% endfor %}
+  {%- endfor %}
 
   --line-height: {{ tokens.lineHeight }};
   --measure: {{ tokens.measure }};
@@ -17,6 +17,6 @@ permalink: css/tokens.css
   {% for name, palette in tokens.color %}
     {% for k, v in palette %}
       --color-{{ name }}-{{ k }}: {{ v }};
-    {% endfor %}
-  {% endfor %}
+    {%- endfor %}
+  {%- endfor %}
 }

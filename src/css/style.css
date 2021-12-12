@@ -220,6 +220,11 @@ a:visited {
   h1 {
     font-weight: 490;
   }
+
+  i {
+    font-feature-settings: "ss01";
+    font-variation-settings: "slnt" -5, "wdth" 110;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

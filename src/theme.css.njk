@@ -1,0 +1,22 @@
+---
+permalink: css/theme.css
+---
+
+:root {
+  {% for k, range in tokens.space %}
+    --space-{{ k }}: {% clamp tokens.viewport, range, tokens.baseFontSize %};
+  {% endfor %}
+
+  {% for k, range in tokens.fontSize %}
+    --font-size-{{ k }}: {% clamp tokens.viewport, range, tokens.baseFontSize %};
+  {% endfor %}
+
+  --line-height: {{ tokens.lineHeight }};
+  --measure: {{ tokens.measure }};
+
+  {% for name, palette in tokens.color %}
+    {% for k, v in palette %}
+      --color-{{ name }}-{{ k }}: {{ v }};
+    {% endfor %}
+  {% endfor %}
+}

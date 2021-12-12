@@ -31,24 +31,6 @@ button, input {
 /* End reset */
 
 html {
-  --space-xs: clamp(0.125rem, calc(0.1311vw + 0.0943rem), 0.25rem);
-  --space-sm: clamp(0.5rem, calc(0.5246vw + 0.3770rem), 1rem);
-  --space-md: clamp(1rem, calc(1.0492vw + 0.7541rem), 2rem);
-  --space-lg: clamp(2rem, calc(2.0984vw + 1.5082rem), 4rem);
-
-  --font-size-0: clamp(0.833rem, calc(0.2906vw + 0.7649rem), 1.11rem);
-  --font-size-1: clamp(1rem, calc(0.5036vw + 0.8820rem), 1.48rem);
-  --font-size-2: clamp(1.2rem, calc(0.8110vw + 1.0099rem), 1.973rem);
-  --font-size-3: clamp(1.44rem, calc(1.2485vw + 1.1474rem), 2.63rem);
-  --font-size-4: clamp(1.728rem, calc(4.7234vw + 0.6210rem), 6.23rem);
-
-  --color-gray-0: #222323;
-  --color-gray-1: #3e3e3e;
-  --color-gray-2: #595959;
-  --color-gray-3: #adadad;
-  --color-gray-4: #e2e2e2;
-  --color-gray-5: #ffffff;
-
   --bg: var(--color-gray-5);
   --fg: var(--color-gray-0);
   --fg-fade: var(--color-gray-1);
@@ -58,7 +40,6 @@ html {
   --theme-focus: var(--color-gray-4);
 
   --gutter: var(--space-sm);
-  --measure: 70ch;
 
   background: var(--bg);
   color: var(--fg);

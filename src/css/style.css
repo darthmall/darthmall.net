@@ -48,7 +48,8 @@ html {
 body {
   font-size: var(--font-size-1);
   line-height: var(--line-height);
-  font-family: Anybody, ui-sans-serif, system-ui, sans-serif;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-synthesis: none;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -204,6 +205,21 @@ a:visited {
 .posts li > small {
   margin-block-start: var(--space-sm);
   color: var(--fg-fade);
+}
+
+@supports (font-variation-settings: normal) {
+  body {
+    font-family: Anybody, ui-sans-serif, system-ui, sans-serif;
+    font-variation-settings: "wdth" 110;
+  }
+
+  h1, h2, h3 {
+    font-variation-settings: "wdth" 70;
+  }
+
+  h1 {
+    font-weight: 490;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

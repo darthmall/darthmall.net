@@ -10,11 +10,11 @@
 
   {% include "partials/meta-info.njk" %}
 
-  <link rel="stylesheet" href="/css/tokens.css">
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" media="print" href="/css/print.css">
-
-  {% block head %}{% endblock %}
+  {% block head %}
+    <link rel="stylesheet" href="/css/tokens.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" media="print" href="/css/print.css">
+  {% endblock %}
 </head>
 
 <body>

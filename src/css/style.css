@@ -1,4 +1,22 @@
 @font-face {
+  font-family: Epilogue;
+  src:
+    url("../fonts/Epilogue[wght].woff2") format("woff2 supports variations"),
+    url("../fonts/Epilogue[wght].woff2") format("woff2-variations");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: Epilogue;
+  src:
+    url("../fonts/Epilogue-Italic[wght].woff2") format("woff2 supports variations"),
+    url("../fonts/Epilogue-Italic[wght].woff2") format("woff2-variations");
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
   font-family: Anybody;
   src:
     url("../fonts/Anybody[slnt,wdth,wght].woff2") format("woff2 supports variations"),
@@ -226,8 +244,13 @@ a:visited {
 
 @supports (font-variation-settings: normal) {
   body {
+    font-family: Epilogue, ui-sans-serif, system-ui, sans-serif;
+    font-weight: 300;
+  }
+
+  body > header a,
+  h1, h2, h3 {
     font-family: Anybody, ui-sans-serif, system-ui, sans-serif;
-    font-variation-settings: "wdth" 110;
   }
 
   /* Main navigation */
@@ -251,9 +274,10 @@ a:visited {
     font-weight: 490;
   }
 
-  i {
-    font-feature-settings: "ss01";
-    font-variation-settings: "slnt" -5, "wdth" 110;
+  @media (prefers-color-scheme: dark) {
+    body {
+      font-weight: 350;
+    }
   }
 }
 

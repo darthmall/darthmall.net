@@ -5,6 +5,7 @@ layout: null
 
 {% extends "layouts/base.njk" %}
 {% block content %}
+  <h1>Weblog</h1>
   {{ super() }}
   {{ posts.list(collections.posts) }}
 {% endblock %}

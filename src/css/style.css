@@ -259,8 +259,9 @@ a:visited {
     font-weight: 300;
   }
 
+  h1, h2, h3,
   body > header a,
-  h1, h2, h3 {
+  .posts strong {
     font-family: Anybody, ui-sans-serif, system-ui, sans-serif;
   }
 
@@ -277,7 +278,7 @@ a:visited {
     text-underline-offset: 0.33em;
   }
 
-  h1, h2, h3 {
+  h1, h2 {
     font-variation-settings: "wdth" 70;
   }
 
@@ -285,9 +286,20 @@ a:visited {
     font-weight: 490;
   }
 
+  h3,
+  .posts strong {
+    font-variation-settings: "wdth" 85;
+    font-weight: 550;
+  }
+
   @media (prefers-color-scheme: dark) {
     body {
       font-weight: 350;
+    }
+
+    h3,
+    .posts strong {
+      letter-spacing: 0.02em;
     }
   }
 }

@@ -26,6 +26,24 @@
   font-weight: 100 900;
   font-display: swap;
 }
+@font-face {
+  font-family: Drafting;
+  src:
+    url("../fonts/Drafting[wght].woff2") format("woff2 supports variations"),
+    url("../fonts/Drafting[wght].woff2") format("woff2-variations");
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: Drafting;
+  src:
+    url("../fonts/Drafting-Italic[wght].woff2") format("woff2 supports variations"),
+    url("../fonts/Drafting-Italic[wght].woff2") format("woff2-variations");
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+}
 
 /* Reset */
 
@@ -263,6 +281,10 @@ a:visited {
   body > header a,
   .posts strong {
     font-family: Anybody, ui-sans-serif, system-ui, sans-serif;
+  }
+
+  .posts small {
+    font-family: Drafting, ui-monospace, monospace;
   }
 
   /* Main navigation */

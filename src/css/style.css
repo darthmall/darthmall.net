@@ -210,9 +210,20 @@ a:visited {
   border-radius: 50%;
 }
 
-.prose > * + * {
+.prose > * {
   /* 1.5×line-height for WCAG AAA */
-  margin-block-start: var(--space, 2.25em);
+  --space: calc(var(--line-height) * 1.5em);
+}
+
+.prose > * + * {
+  margin-block-start: var(--space);
+}
+
+.prose > h2 + *,
+.prose > h3 + *,
+.prose > h2,
+.prose > h3 {
+  --space: 1em;
 }
 
 .posts {

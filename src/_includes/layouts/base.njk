@@ -26,9 +26,6 @@
   {% endif %}
   <main tabindex="-1"{{ mainClasses | safe }}>
     {% block content %}
-      {% if title %}
-        <h1>{{ title }}</h1>
-      {% endif %}
       <div class="prose e-content">
         {{ content | safe }}
       </div>

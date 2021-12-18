@@ -29,8 +29,7 @@
 @font-face {
   font-family: Drafting;
   src:
-    url("../fonts/Drafting[wght].woff2") format("woff2 supports variations"),
-    url("../fonts/Drafting[wght].woff2") format("woff2-variations");
+    url("../fonts/Drafting[wght].ttf") format("truetype");
   font-style: normal;
   font-weight: 100 900;
   font-display: swap;
@@ -38,8 +37,7 @@
 @font-face {
   font-family: Drafting;
   src:
-    url("../fonts/Drafting-Italic[wght].woff2") format("woff2 supports variations"),
-    url("../fonts/Drafting-Italic[wght].woff2") format("woff2-variations");
+    url("../fonts/Drafting-Italic[wght].woff2") format("truetype");
   font-style: italic;
   font-weight: 100 900;
   font-display: swap;
@@ -67,6 +65,10 @@ button, input {
 /* End reset */
 
 html {
+  --font-stack-body: sans-serif;
+  --font-stack-heading: sans-serif;
+  --font-stack-mono: monospace;
+
   --bg: var(--color-gray-5);
   --fg: var(--color-gray-0);
   --fg-fade: var(--color-gray-1);
@@ -84,9 +86,14 @@ html {
 body {
   font-size: var(--font-size-1);
   line-height: var(--line-height);
-  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-stack-body);
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3,
+body > header a {
+  font-family: var(--font-stack-heading);
 }
 
 body > * {
@@ -263,28 +270,25 @@ a:visited {
 
 .posts li > strong {
   margin-block-end: var(--space-xs);
+  font-family: var(--font-stack-heading);
   font-size: var(--font-size-2);
 }
 
 .posts li > small {
   margin-block-start: var(--space-sm);
+  font-family: var(--font-stack-mono);
   color: var(--fg-fade);
 }
 
 @supports (font-variation-settings: normal) {
+  html {
+    --font-stack-body: Epilogue, sans-serif;
+    --font-stack-heading: Anybody, sans-serif;
+    --font-stack-mono: Drafting, monospace;
+  }
+
   body {
-    font-family: Epilogue, ui-sans-serif, system-ui, sans-serif;
     font-weight: 300;
-  }
-
-  h1, h2, h3,
-  body > header a,
-  .posts strong {
-    font-family: Anybody, ui-sans-serif, system-ui, sans-serif;
-  }
-
-  .posts small {
-    font-family: Drafting, ui-monospace, monospace;
   }
 
   /* Main navigation */

@@ -27,18 +27,12 @@
   font-display: swap;
 }
 @font-face {
-  font-family: Drafting;
+  font-family: "League Mono";
   src:
-    url("../fonts/Drafting[wght].ttf") format("truetype");
+    url("../fonts/LeagueMono[wdth,wght].woff2") format("woff2 supports variations"),
+    url("../fonts/LeagueMono[wdth,wght].woff2") format("woff2-variations");
+  font-stretch: 50% 200%;
   font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-}
-@font-face {
-  font-family: Drafting;
-  src:
-    url("../fonts/Drafting-Italic[wght].woff2") format("truetype");
-  font-style: italic;
   font-weight: 100 900;
   font-display: swap;
 }
@@ -65,9 +59,6 @@ button, input {
 /* End reset */
 
 html {
-  --font-stack-body: sans-serif;
-  --font-stack-heading: sans-serif;
-  --font-stack-mono: monospace;
 
   --bg: var(--color-gray-5);
   --fg: var(--color-gray-0);
@@ -76,6 +67,10 @@ html {
   --theme-link: var(--color-gray-0);
   --theme-visited: var(--color-gray-1);
   --theme-focus: var(--color-gray-4);
+
+  --theme-font-body: sans-serif;
+  --theme-font-heading: sans-serif;
+  --theme-font-mono: monospace;
 
   --gutter: var(--space-sm);
 
@@ -86,14 +81,14 @@ html {
 body {
   font-size: var(--font-size-1);
   line-height: var(--line-height);
-  font-family: var(--font-stack-body);
+  font-family: var(--theme-font-body);
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3,
 body > header a {
-  font-family: var(--font-stack-heading);
+  font-family: var(--theme-font-heading);
 }
 
 body > * {
@@ -270,21 +265,21 @@ a:visited {
 
 .posts li > strong {
   margin-block-end: var(--space-xs);
-  font-family: var(--font-stack-heading);
+  font-family: var(--theme-font-heading);
   font-size: var(--font-size-2);
 }
 
 .posts li > small {
   margin-block-start: var(--space-sm);
-  font-family: var(--font-stack-mono);
+  font-family: var(--theme-font-mono);
   color: var(--fg-fade);
 }
 
 @supports (font-variation-settings: normal) {
   html {
-    --font-stack-body: Epilogue, sans-serif;
-    --font-stack-heading: Anybody, sans-serif;
-    --font-stack-mono: Drafting, monospace;
+    --theme-font-body: var(--font-stack-body);
+    --theme-font-heading: var(--font-stack-heading);
+    --theme-font-mono: var(--font-stack-mono);
   }
 
   body {

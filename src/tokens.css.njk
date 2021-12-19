@@ -7,6 +7,10 @@ permalink: css/tokens.css
     --space-{{ k }}: {% clamp tokens.viewport, range, tokens.baseFontSize %};
   {%- endfor %}
 
+  {% for role, stack in tokens.fontStack %}
+    --font-stack-{{ role }}: {{ stack | safe }};
+  {%- endfor %}
+
   {% for k, range in tokens.fontSize %}
     --font-size-{{ k }}: {% clamp tokens.viewport, range, tokens.baseFontSize %};
   {%- endfor %}

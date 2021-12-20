@@ -313,6 +313,10 @@ a:visited {
     font-weight: 550;
   }
 
+  .posts small {
+    font-variation-settings: "wdth" 75;
+  }
+
   @media (prefers-color-scheme: dark) {
     body {
       font-weight: 350;

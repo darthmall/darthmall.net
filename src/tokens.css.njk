@@ -15,7 +15,10 @@ permalink: css/tokens.css
     --font-size-{{ k }}: {% clamp tokens.viewport, range, tokens.baseFontSize %};
   {%- endfor %}
 
-  --line-height: {{ tokens.lineHeight }};
+  {% for k, v in tokens.lineHeight %}
+    --line-height-{{ k }}: {{ v }};
+  {%- endfor %}
+
   --measure: {{ tokens.measure }};
 
   {% for name, palette in tokens.color %}

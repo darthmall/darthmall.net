@@ -1,29 +1,17 @@
 @font-face {
+  font-family: "Sporting Grotesque";
+  src: url("../fonts/SportingGrotesque-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-display: swap;
+}
+@font-face {
   font-family: Epilogue;
   src:
-    url("../fonts/Epilogue[wght].woff2") format("woff2 supports variations"),
-    url("../fonts/Epilogue[wght].woff2") format("woff2-variations");
+    url("../fonts/Epilogue[slnt,wght].woff2") format("woff2 supports variations"),
+    url("../fonts/Epilogue[slnt,wght].woff2") format("woff2-variations");
   font-style: normal;
   font-weight: 100 900;
-  font-display: swap;
-}
-@font-face {
-  font-family: Epilogue;
-  src:
-    url("../fonts/Epilogue-Italic[wght].woff2") format("woff2 supports variations"),
-    url("../fonts/Epilogue-Italic[wght].woff2") format("woff2-variations");
-  font-style: italic;
-  font-weight: 100 900;
-  font-display: swap;
-}
-@font-face {
-  font-family: Anybody;
-  src:
-    url("../fonts/Anybody[slnt,wdth,wght].woff2") format("woff2 supports variations"),
-    url("../fonts/Anybody[slnt,wdth,wght].woff2") format("woff2-variations");
-  font-stretch: 50% 150%;
-  font-style: oblique -10deg 0deg;
-  font-weight: 100 900;
+  font-style: oblique -12deg 0deg;
   font-display: swap;
 }
 @font-face {
@@ -59,7 +47,6 @@ button, input {
 /* End reset */
 
 html {
-
   --bg: var(--color-gray-5);
   --fg: var(--color-gray-0);
   --fg-fade: var(--color-gray-1);
@@ -79,16 +66,57 @@ html {
 }
 
 body {
-  font-size: var(--font-size-1);
-  line-height: var(--line-height);
-  font-family: var(--theme-font-body);
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3,
-body > header a {
+/* Font: Body */
+body {
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-regular, normal);
+  line-height: var(--line-height-md);
+  font-family: var(--theme-font-body);
+  font-feature-settings: "ss01";
+}
+
+/* Font: Title */
+h1 {
+  font-size: var(--font-size-xl);
   font-family: var(--theme-font-heading);
+  line-height: var(--line-height-xs);
+}
+
+/* Font: Heading */
+h2 {
+  font-size: var(--font-size-md);
+  font-weight: var(--weight-black, bold);
+  font-family: var(--theme-font-body);
+  font-feature-settings: normal;
+  line-height: var(--line-height-sm);
+}
+
+/* Font: Subheading */
+h3 {
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-bold, bold);
+  font-family: var(--theme-font-body);
+  font-feature-settings: normal;
+  line-height: var(--line-height-sm);
+}
+
+/* Font: Code */
+code {
+  font-family: var(--theme-font-mono);
+  font-variation-settings: "wdth" 80;
+}
+
+/* Font: Aside */
+aside,
+footer,
+.posts small {
+  font-size: var(--font-size-xs);
+  font-family: var(--theme-font-mono);
+  line-height: var(--line-height-sm);
 }
 
 body > * {
@@ -150,30 +178,9 @@ footer svg {
   height: 1.5rem;
 }
 
-h1 {
-  font-size: var(--font-size-4);
-  line-height: 1.1;
-}
-
-h2, h3 {
-  line-height: 1.2;
-}
-
-h2 {
-  font-size: var(--font-size-3);
-}
-
-h3 {
-  font-size: var(--font-size-2);
-}
-
 label {
   display: block;
   font-weight: bold;
-}
-
-small {
-  font-size: var(--font-size-0);
 }
 
 input,
@@ -230,20 +237,23 @@ a:visited {
   border-radius: 50%;
 }
 
+/* Prose */
 .prose > * {
-  /* 1.5×line-height for WCAG AAA */
-  --space: calc(var(--line-height) * 1.5em);
+  --space: calc(var(--line-height-sm) * 1em);
 }
 
-.prose > * + * {
+.prose li {
+  --space: calc(var(--line-height-sm) * 0.5em);
+}
+
+.prose > * + *,
+.prose li + li {
   margin-block-start: var(--space);
 }
 
-.prose > h2 + *,
-.prose > h3 + *,
 .prose > h2,
 .prose > h3 {
-  --space: 1em;
+  --space: calc(var(--line-height-sm) * 1.5em);
 }
 
 .posts {
@@ -265,14 +275,10 @@ a:visited {
 
 .posts li > strong {
   margin-block-end: var(--space-xs);
-  font-family: var(--theme-font-heading);
-  font-size: var(--font-size-2);
 }
 
 .posts li > small {
   margin-block-start: var(--space-sm);
-  font-family: var(--theme-font-mono);
-  color: var(--fg-fade);
 }
 
 @supports (font-variation-settings: normal) {
@@ -280,10 +286,10 @@ a:visited {
     --theme-font-body: var(--font-stack-body);
     --theme-font-heading: var(--font-stack-heading);
     --theme-font-mono: var(--font-stack-mono);
-  }
 
-  body {
-    font-weight: 300;
+    --weight-regular: 275;
+    --weight-bold: 500;
+    --weight-black: 750;
   }
 
   /* Main navigation */
@@ -299,14 +305,6 @@ a:visited {
     text-underline-offset: 0.33em;
   }
 
-  h1, h2 {
-    font-variation-settings: "wdth" 70;
-  }
-
-  h1 {
-    font-weight: 490;
-  }
-
   h3,
   .posts strong {
     font-variation-settings: "wdth" 85;
@@ -318,10 +316,6 @@ a:visited {
   }
 
   @media (prefers-color-scheme: dark) {
-    body {
-      font-weight: 350;
-    }
-
     h3,
     .posts strong {
       letter-spacing: 0.02em;

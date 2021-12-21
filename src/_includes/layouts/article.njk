@@ -14,10 +14,23 @@ classes: h-entry
   <header>
     <h1 class="p-name">{{ title | safe }}</h1>
 
-    {% if date %}
-      <p>
-        {% formatDate date, "font-heading color-slate"%}
-      </p>
+    {% set meta -%}
+      {% if date -%}
+        <p>{% formatDate date %}</p>
+      {%- endif %}
+      {% if tags -%}
+        {% set comma = joiner() %}
+        <p>
+          {% for t in tags -%}
+            {{ comma() }} {{ t }}
+          {%- endfor %}
+        </p>
+      {%- endif %}
+    {%- endset %}
+    {% if meta %}
+      <aside>
+        {{ meta | safe }}
+      </aside>
     {% endif %}
   </header>
 

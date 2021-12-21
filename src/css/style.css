@@ -116,7 +116,7 @@ footer,
 .posts small {
   font-size: var(--font-size-xs);
   font-family: var(--theme-font-mono);
-  line-height: var(--line-height-sm);
+  line-height: var(--line-height-md);
 }
 
 body > * {
@@ -146,6 +146,11 @@ body > header a {
 
 body > header [aria-current] {
   --theme-link: var(--color-gray-0);
+}
+
+/* Post headers */
+main > header {
+  padding-block: max(var(--space-md), 20vh);
 }
 
 /* Cluster layout */

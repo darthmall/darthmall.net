@@ -150,7 +150,7 @@ body > header [aria-current] {
 
 /* Post headers */
 main > header {
-  padding-block: max(var(--space-md), 20vh);
+  padding-block: max(var(--space-md), 20vmin);
 }
 
 /* Cluster layout */

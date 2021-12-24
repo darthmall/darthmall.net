@@ -111,6 +111,10 @@ p, li, dt, dd {
   }
 }
 
+figure > img {
+  display: inline-block;
+}
+
 // Overriding styles from PrismJS
 pre[class*="language-"] {
   @include font-family("mono");

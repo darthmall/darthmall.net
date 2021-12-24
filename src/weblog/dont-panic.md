@@ -9,20 +9,32 @@ tags:
 
 For the last ten years, I’ve been using the same image for my phone’s lock
 screen / wallpaper. I made it over winter break while I was in grad school, so,
-coincidentally, this is just about ten years to the day since I started using
-the wallpaper.
+coincidentally, this is just about ten years to the day since I made the
+wallpaper.
 
-![My original “Don’t Panic“ wallpaper](/img/dont-panic/dont-panic-original-320.png)
+<figure style="text-align:center">
+<img src="/img/dont-panic/dont-panic-original-320.png"
+    alt="“Don’t Panic” rendered like a glossy sticker in round pink letters against a
+        blue background">
+<figcaption>
+    My original “Don’t Panic” wallpaper.
+</figcaption>
+</figure>
 
-For whatever reason, I decided it was about time to come up with some new
-wallpapers that were sized for my current phone using a font I purchased last
-year specifically for this purpose: [Salbabida
+I had just learned how to create that glossy sticker effect from my friend, Bill
+Liu, during our final project for <i>Interaction Design Fundamentals</i>, so I
+decided to put it to use one night in homage to Douglas Adams. I believe the
+font I used was [Sniglet](https://www.theleagueofmoveabletype.com/sniglet).
+
+This week, I decided it was about time to come up with some new wallpapers that
+were sized for my current phone using a font I purchased last year specifically
+for this purpose: [Salbabida
 Sans](https://www.behance.net/gallery/107925677/Salbabida-Sans) by Jo Malinis.
 
-This time I came up with a few variations. I created a lock screen background
-for each that features the phrase in pink (just like the real Hitchhiker’s Guide
-to the Galaxy) and a wallpaper version that is lower contrast to avoid clashing
-with widgets and application icons on your home screen.
+I came up with a few variations. I created a lock screen background for each
+that features the phrase in pink (just like the real Hitchhiker’s Guide to the
+Galaxy) and a wallpaper version that is lower contrast to avoid clashing with
+widgets and application icons on your home screen.
 
 I’m currently using the “glow” variant, although I also quite like the “repeat”
 variant.

@@ -32,7 +32,11 @@ icons on your home screen.
     Panic“ repeated with no whitespace with little contrast against the
     background">
     <figcaption>
-        “Repeat” variant.
+        “Repeat” variant. <a
+        href="/img/dont-panic/dont-panic-repeat-lockscreen.png"
+        download>Full-size “Repeat” lockscreen</a>. <a
+        href="/img/dont-panic/dont-panic-repeat-wallpaper.png"
+        download>Full-size “Repeat” wallpaper</a>.
     </figcaption>
 </figure>
 <figure style="text-align:center">
@@ -42,7 +46,11 @@ icons on your home screen.
     letters of the phrase “Don’t Panic” arraned in a 3×3 grid with low contrast
     against the background">
     <figcaption>
-        “Grid” variant.
+        “Grid” variant. <a
+        href="/img/dont-panic/dont-panic-grid-lockscreen.png"
+        download>Full-size “Grid” lockscreen</a>. <a
+        href="/img/dont-panic/dont-panic-grid-wallpaper.png"
+        download>Full-size “Grid” wallpaper</a>.
     </figcaption>
 </figure>
 <figure style="text-align:center">
@@ -51,6 +59,10 @@ icons on your home screen.
     <img src="/img/dont-panic/dont-panic-glow-wallpaper-320.png" alt="The background
     from the glow lock screen with no lettering">
     <figcaption>
-        “Glow” variant.
+        “Glow” variant. <a
+        href="/img/dont-panic/dont-panic-glow-lockscreen.png"
+        download>Full-size “Glow” lockscreen</a>. <a
+        href="/img/dont-panic/dont-panic-glow-wallpaper.png"
+        download>Full-size “Glow” wallpaper</a>.
     </figcaption>
 </figure>

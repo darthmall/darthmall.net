@@ -19,11 +19,13 @@ wallpapers that were sized for my current phone using a font I purchased last
 year specifically for this purpose: [Salbabida
 Sans](https://www.behance.net/gallery/107925677/Salbabida-Sans) by Jo Malinis.
 
-This time I came up with a few variations. I am currently using the “glow”
-variant. I created a lock screen background for each that features the phrase in
-pink (just like the real Hitchhiker’s Guide to the Galaxy) and a wallpaper
-version that is lower contrast to avoid clashing with widgets and application
-icons on your home screen.
+This time I came up with a few variations. I created a lock screen background
+for each that features the phrase in pink (just like the real Hitchhiker’s Guide
+to the Galaxy) and a wallpaper version that is lower contrast to avoid clashing
+with widgets and application icons on your home screen.
+
+I’m currently using the “glow” variant, although I also quite like the “repeat”
+variant.
 
 <figure style="text-align:center">
     <img src="/img/dont-panic/dont-panic-repeat-lockscreen-320.png" alt="“Don’t

@@ -25,6 +25,11 @@
   <meta property="twitter:description" content="{{ description }}">
 {% endif %}
 
+{% if seo.image %}
+  <meta property="og:image" content="{{ site.url }}{{ seo.image }}">
+  <meta property="twitter:image" content="{{ site.url }}{{ seo.image }}">
+{% endif %}
+
 {# For IndieAuth #}
 <link rel="me authn" href="https://github.com/darthmall" />
 

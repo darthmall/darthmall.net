@@ -3,6 +3,8 @@ title: Don’t Panic
 date: 2021-12-24
 description: >-
     I made some more Hitchhiker’s Guide to the Galaxy themed phone wallpapers.
+seo:
+    image: /img/dont-panic/dont-panic-social.png
 tags:
     - Wallpaper
 ---

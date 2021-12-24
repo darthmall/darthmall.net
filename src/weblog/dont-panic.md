@@ -37,7 +37,8 @@ Galaxy) and a wallpaper version that is lower contrast to avoid clashing with
 widgets and application icons on your home screen.
 
 I’m currently using the “glow” variant, although I also quite like the “repeat”
-variant.
+variant. You’re welcome to download them and use them on your phone, if you
+like, just please don’t make an NFT of them.
 
 <figure style="text-align:center">
     <img src="/img/dont-panic/dont-panic-repeat-lockscreen-320.png" alt="“Don’t

@@ -1,5 +1,5 @@
 <nav>
-  <ul>
+  <ul data-layout="cluster" class="list-reset">
     {% for link in navigation %}
       {% set currentAttr = "" %}
       {% set relAttr = "" %}
@@ -12,8 +12,8 @@
         {% set relAttr = ' rel="' + link.rel + '"' %}
       {% endif %}
 
-      <li>
-        <a href="{{ link.url | url }}" class="nav-link"{{ relAttr | safe }}{{ currentAttr | safe }}>
+      <li class="type-heading-3">
+        <a href="{{ link.url | url }}"{{ relAttr | safe }}{{ currentAttr | safe }}>
           {{ link.text | safe }}
         </a>
       </li>

@@ -1,4 +1,4 @@
-<footer id="site-footer" role="contentinfo">
+<footer id="site-footer" role="contentinfo" class="pad-block-lg type-aside">
   <hr />
   <p>{% copyright %}</p>
 
@@ -10,7 +10,7 @@
   </p>
 
   <nav>
-    <ul>
+    <ul class="list-reset" data-layout="cluster">
       {% for link in social %}
         {% set relAttr = "" %}
         {% set titleAttr = "" %}

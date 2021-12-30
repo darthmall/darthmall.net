@@ -1,14 +1,14 @@
 {% macro list(collection) %}
 <ul class="posts list-reset" data-layout="flow">
   {% for post in collection %}
-    <li data-layout="flow">
+    <li data-layout="flow" data-space="lg">
       <strong>
-        <a href="{{ post.url }}">{{ post.data.title }}</a>
+        <a href="{{ post.url }}" class="type-display-2">{{ post.data.title }}</a>
       </strong>
       <br class="unstyled">
-      <span>{{ post.data.description }}</span>
+      <span data-space="xs">{{ post.data.description }}</span>
       <br class="unstyled">
-      <small>Published: {% formatDate post.data.date %}</small>
+      <small data-space="sm">Published: {% formatDate post.data.date %}</small>
     </li>
   {% endfor %}
 </ul>

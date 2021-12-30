@@ -92,7 +92,7 @@ h1 {
 
 /* Type: Display 2 */
 .type-display-2 {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-md);
   font-family: var(--theme-font-heading);
   line-height: var(--line-height-sm);
 }
@@ -213,8 +213,13 @@ body {
 }
 
 [data-layout=flow] > * + * {
-  margin-block-start: var(--flow-sp, var(--space-md));
+  margin-block-start: var(--space, var(--space-md));
 }
+
+[data-space=xs] { --space: var(--space-xs) }
+[data-space=sm] { --space: var(--space-sm) }
+[data-space=md] { --space: var(--space-md) }
+[data-space=lg] { --space: var(--space-lg) }
 
 [data-layout=cluster] {
   display: flex;

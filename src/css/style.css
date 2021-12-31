@@ -64,6 +64,26 @@ html {
 
   --gutter: var(--space-sm);
 
+  --shadow-color: 0deg 0% 53%;
+  --shadow-elevation-low:
+    0px 0.2px 0.2px hsl(var(--shadow-color) / 0.28),
+    0px 0.4px 0.5px -0.9px hsl(var(--shadow-color) / 0.34),
+    0px 0.9px 1.1px -1.9px hsl(var(--shadow-color) / 0.4);
+  --shadow-elevation-medium:
+    0px 0.2px 0.2px hsl(var(--shadow-color) / 0.3),
+    0px 0.8px 1px -0.6px hsl(var(--shadow-color) / 0.34),
+    0px 2px 2.4px -1.3px hsl(var(--shadow-color) / 0.39),
+    0.1px 4.6px 5.6px -1.9px hsl(var(--shadow-color) / 0.44);
+  --shadow-elevation-high:
+    0px 0.2px 0.2px hsl(var(--shadow-color) / 0.28),
+    0px 1.6px 1.9px -0.3px hsl(var(--shadow-color) / 0.3),
+    0px 3px 3.6px -0.5px hsl(var(--shadow-color) / 0.32),
+    0.1px 4.8px 5.8px -0.8px hsl(var(--shadow-color) / 0.34),
+    0.1px 7.4px 9px -1.1px hsl(var(--shadow-color) / 0.36),
+    0.2px 11.1px 13.5px -1.4px hsl(var(--shadow-color) / 0.38),
+    0.3px 16.5px 20.1px -1.6px hsl(var(--shadow-color) / 0.41),
+    0.4px 24px 29.2px -1.9px hsl(var(--shadow-color) / 0.43);
+
   background: var(--bg);
   color: var(--fg);
 }
@@ -187,6 +207,7 @@ figure > * {
 
 figure > :not(figcaption) {
   margin-block: var(--space-md);
+  box-shadow: var(--shadow-elevation-medium);
 }
 
 figure::after {
@@ -205,6 +226,13 @@ figcaption {
 pre {
   max-width: var(--measure-lg);
   overflow-x: auto;
+}
+
+pre[class*="language-"] {
+  padding: var(--space-md);
+  border-radius: 0.5rem;
+  background-color: var(--bg);
+  box-shadow: var(--shadow-elevation-medium);
 }
 
 label {
@@ -391,6 +419,26 @@ footer svg {
     --theme-link: var(--color-gray-5);
     --theme-visited: var(--color-gray-4);
     --theme-focus: var(--color-gray-1);
+
+    --shadow-color: 0deg 0% 11%;
+    --shadow-elevation-low:
+      0px 0.2px 0.2px hsl(var(--shadow-color) / 0.28),
+      0px 0.4px 0.5px -0.9px hsl(var(--shadow-color) / 0.34),
+      0px 0.9px 1.1px -1.9px hsl(var(--shadow-color) / 0.4);
+    --shadow-elevation-medium:
+      0px 0.2px 0.2px hsl(var(--shadow-color) / 0.3),
+      0px 0.8px 1px -0.6px hsl(var(--shadow-color) / 0.34),
+      0px 2px 2.4px -1.3px hsl(var(--shadow-color) / 0.39),
+      0.1px 4.6px 5.6px -1.9px hsl(var(--shadow-color) / 0.44);
+    --shadow-elevation-high:
+      0px 0.2px 0.2px hsl(var(--shadow-color) / 0.28),
+      0px 1.6px 1.9px -0.3px hsl(var(--shadow-color) / 0.3),
+      0px 3px 3.6px -0.5px hsl(var(--shadow-color) / 0.32),
+      0.1px 4.8px 5.8px -0.8px hsl(var(--shadow-color) / 0.34),
+      0.1px 7.4px 9px -1.1px hsl(var(--shadow-color) / 0.36),
+      0.2px 11.1px 13.5px -1.4px hsl(var(--shadow-color) / 0.38),
+      0.3px 16.5px 20.1px -1.6px hsl(var(--shadow-color) / 0.41),
+      0.4px 24px 29.2px -1.9px hsl(var(--shadow-color) / 0.43);
   }
 
   /* Main navigation */
@@ -404,6 +452,10 @@ footer svg {
 }
 
 @media screen and (min-width: 50em) {
+  figure > :not(figcaption) {
+    margin-block: var(--space-lg);
+  }
+
   figure > figcaption,
   [data-layout="grid"] > * {
     grid-column: 7 / -3;
@@ -420,6 +472,11 @@ footer svg {
 
   [data-layout="grid"] > h2 {
     grid-column: 2 / span 4;
+  }
+
+  figure > :not(figcaption),
+  pre[class*="language-"] {
+    box-shadow: var(--shadow-elevation-high);
   }
 }
 

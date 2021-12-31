@@ -181,11 +181,6 @@ h2::before {
   background-color: var(--fg-fade);
 }
 
-p,
-li {
-  max-width: var(--measure-md);
-}
-
 figure > * {
   grid-row-start: 1;
 }
@@ -277,7 +272,7 @@ figure,
     calc(50vw - 37rem);
 }
 
-figure,
+figure > *,
 [data-layout=grid] > * {
   grid-column: 2 / -2;
 }
@@ -404,8 +399,12 @@ footer svg {
 }
 
 @media screen and (min-width: 50em) {
-  figure > *,
+  figure > figcaption,
   [data-layout="grid"] > * {
+    grid-column: 7 / -3;
+  }
+
+  figure > * {
     grid-column: 6 / -2;
   }
 
@@ -415,7 +414,7 @@ footer svg {
   }
 
   [data-layout="grid"] > h2 {
-    grid-column: 2 / span 3;
+    grid-column: 2 / span 4;
   }
 }
 

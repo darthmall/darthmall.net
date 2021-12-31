@@ -178,6 +178,10 @@ ul {
   --space: calc(var(--line-height-md) * 1rem);
 }
 
+h2 {
+  margin-block-start: var(--space);
+}
+
 h2,
 h2 + * {
   --space: calc(var(--line-height-md) * 4rem);

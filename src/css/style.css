@@ -200,6 +200,7 @@ h2::before {
   position: relative;
   top: calc(var(--space-sm) * -1);
   height: 1px;
+  width: min(100%, 19rem);
 
   content: "";
   background-color: var(--fg-fade);

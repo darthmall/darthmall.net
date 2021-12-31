@@ -323,6 +323,10 @@ figure > *,
   list-style: none;
 }
 
+.list-reset > li {
+  margin: 0;
+}
+
 .unstyled { display: none }
 
 /* Components */

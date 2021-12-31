@@ -19,7 +19,9 @@ permalink: css/tokens.css
     --line-height-{{ k }}: {{ v }};
   {%- endfor %}
 
-  --measure: {{ tokens.measure }};
+  {% for k, v in tokens.measure %}
+    --measure-{{ k }}: {{ v }};
+  {%- endfor %}
 
   {% for name, palette in tokens.color %}
     {% for k, v in palette %}

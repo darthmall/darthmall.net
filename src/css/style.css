@@ -70,8 +70,17 @@ html {
 /* Type */
 
 body {
+  display: grid;
+  grid-template-columns:
+    minmax(var(--gutter), auto)
+    minmax(auto, 75rem)
+    minmax(var(--gutter), auto);
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
+}
+
+body > * {
+  grid-column-start: 2;
 }
 
 /* Type: Body */
@@ -201,10 +210,19 @@ a:visited {
 
 /* Layouts */
 
-body {
-  max-width: var(--measure);
-  margin-inline: auto;
-  padding-inline: var(--gutter, var(--space-sm));
+[data-layout=grid] {
+  display: grid;
+  column-gap: var(--gutter);
+  grid-template-columns: repeat(15, 1fr);
+}
+
+[data-layout=grid] > * {
+  grid-column: 1 / -1;
+  overflow: hidden;
+}
+
+[data-layout=grid] > [data-layout=grid] {
+  grid-column: 1 / -1;
 }
 
 [data-layout=flow] {
@@ -276,6 +294,15 @@ footer svg {
   height: 1.5rem;
 }
 
+/* Fallback for old browsers */
+@supports not (display: grid) {
+  body {
+    max-width: var(--measure);
+    margin-inline: auto;
+    padding-inline: var(--gutter, var(--space-sm));
+  }
+}
+
 @supports (font-variation-settings: normal) {
   html {
     --theme-font-body: var(--font-stack-body);
@@ -306,6 +333,21 @@ footer svg {
 
   body > header [aria-current] {
     --theme-link: var(--color-gray-5);
+  }
+}
+
+@media screen and (min-width: 50em) {
+  [data-layout="grid"] > * {
+    grid-column: 5 / -1;
+  }
+
+  [data-layout="grid"] > h1,
+  [data-layout="grid"] > header {
+    grid-column: 1 / -1;
+  }
+
+  [data-layout="grid"] > h2 {
+    grid-column: 1 / span 3;
   }
 }
 

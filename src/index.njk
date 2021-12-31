@@ -1,7 +1,5 @@
 {% extends "layouts/base.njk" %}
 {% block content %}
-  <div data-layout="flow">
-    <h2>Recent Posts</h2>
-    {{ posts.list(collections.posts.slice(0, site.recentPostCount)) }}
-  </div>
+  <h2>Recent Posts</h2>
+  {{ posts.list(collections.posts.slice(0, site.recentPostCount)) }}
 {% endblock %}

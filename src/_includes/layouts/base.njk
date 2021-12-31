@@ -24,9 +24,9 @@
   {% if classes %}
     {% set mainClasses = ' class="' + classes + '"' %}
   {% endif %}
-  <main tabindex="-1"{{ mainClasses | safe }}>
+  <main tabindex="-1"{{ mainClasses | safe }} data-layout="grid">
     {% block content %}
-      <div class="e-content">
+      <div class="e-content" data-layout="grid">
         {{ content | safe }}
       </div>
     {% endblock content %}

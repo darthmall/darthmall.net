@@ -170,9 +170,36 @@ li + li {
   margin-block-start: calc(var(--line-height-sm) * 1rem);
 }
 
+h2 {
+  contain: layout;
+}
+
+h2::before {
+  display: block;
+  position: relative;
+  top: calc(var(--space-sm) * -1);
+  height: 1px;
+
+  content: "";
+  background-color: var(--fg-fade);
+}
+
 p,
 li {
   max-width: var(--measure);
+}
+
+figure {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+pre {
+  overflow-x: auto;
 }
 
 label {

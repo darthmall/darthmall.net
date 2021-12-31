@@ -205,6 +205,11 @@ h2::before {
   background-color: var(--fg-fade);
 }
 
+hr {
+  border: none;
+  border-block-start: 1px solid var(--fg-fade);
+}
+
 figure > * {
   grid-row-start: 1;
 }

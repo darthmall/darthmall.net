@@ -306,7 +306,8 @@ figure,
 }
 
 figure > *,
-[data-layout=grid] > * {
+[data-layout=grid] > *,
+[data-columns=all] {
   grid-column: 2 / -2;
 }
 
@@ -461,7 +462,7 @@ footer svg {
   }
 
   figure > figcaption,
-  [data-layout="grid"] > * {
+  [data-layout="grid"] > :not(:where([data-columns], [data-layout="grid"])) {
     grid-column: 7 / -3;
   }
 
@@ -469,8 +470,7 @@ footer svg {
     grid-column: 6 / -2;
   }
 
-  [data-layout="grid"] > h1,
-  [data-layout="grid"] > header {
+  [data-layout="grid"] > h1 {
     grid-column: 2 / -2;
   }
 

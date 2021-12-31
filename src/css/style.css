@@ -153,6 +153,11 @@ code {
 
 /* Base Styles */
 
+p,
+li {
+  max-width: var(--measure);
+}
+
 label {
   display: block;
   font-weight: bold;
@@ -179,7 +184,6 @@ a:link {
   position: relative;
   text-underline-offset: 0.125em;
   color: var(--theme-link);
-  white-space: nowrap;
 }
 
 a:link::before {

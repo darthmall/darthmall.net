@@ -5,24 +5,26 @@ classes: h-entry
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
-  <header class="pad-block-xl">
-    <h1 class="p-name">{{ title | safe }}</h1>
+  <header class="pad-block-xl" data-layout="grid">
+    <h1 class="p-name" data-columns="all">{{ title | safe }}</h1>
 
     {% set meta -%}
       {% if date -%}
-        <p>{% formatDate date %}</p>
+        <p class="margin-block-end-sm" data-columns="headings">
+          {% formatDate date %}
+        </p>
       {%- endif %}
       {% if tags -%}
-        {% set comma = joiner() %}
-        <p>
+        {% set comma = joiner("<br>") %}
+        <p data-space="0">
           {% for t in tags -%}
-            {{ comma() }} {{ t }}
+            {{ comma() | safe }} {{ t }}
           {%- endfor %}
         </p>
       {%- endif %}
     {%- endset %}
     {% if meta %}
-      <aside>
+      <aside data-layout="grid">
         {{ meta | safe }}
       </aside>
     {% endif %}

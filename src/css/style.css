@@ -172,6 +172,7 @@ code {
 
 h3,
 p,
+aside,
 ol,
 ul {
   --space: calc(var(--line-height-md) * 1rem);

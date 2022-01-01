@@ -170,7 +170,6 @@ code {
 
 /* Base Styles */
 
-figure,
 h3,
 p,
 ol,
@@ -183,7 +182,9 @@ h2 {
 }
 
 h2,
-h2 + * {
+h2 + *,
+figure,
+figure + * {
   --space: calc(var(--line-height-md) * 4rem);
 }
 

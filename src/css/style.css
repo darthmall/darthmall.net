@@ -129,6 +129,7 @@ h2 {
   font-family: var(--theme-font-body);
   font-feature-settings: normal;
   line-height: var(--line-height-sm);
+  text-transform: lowercase;
 }
 
 /* Type: Heading 2 */
@@ -487,6 +488,7 @@ footer svg {
   [data-layout="grid"] > h2,
   [data-layout="grid"] > [data-columns="headings"] {
     grid-column: 2 / span 4;
+    text-align: right;
   }
 
   figure > :not(figcaption),

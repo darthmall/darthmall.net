@@ -436,25 +436,9 @@ footer svg {
     --theme-visited: var(--color-gray-4);
     --theme-focus: var(--color-gray-1);
 
-    --shadow-color: 0deg 0% 11%;
-    --shadow-elevation-low:
-      0px 0.2px 0.2px hsl(var(--shadow-color) / 0.28),
-      0px 0.4px 0.5px -0.9px hsl(var(--shadow-color) / 0.34),
-      0px 0.9px 1.1px -1.9px hsl(var(--shadow-color) / 0.4);
-    --shadow-elevation-medium:
-      0px 0.2px 0.2px hsl(var(--shadow-color) / 0.3),
-      0px 0.8px 1px -0.6px hsl(var(--shadow-color) / 0.34),
-      0px 2px 2.4px -1.3px hsl(var(--shadow-color) / 0.39),
-      0.1px 4.6px 5.6px -1.9px hsl(var(--shadow-color) / 0.44);
-    --shadow-elevation-high:
-      0px 0.2px 0.2px hsl(var(--shadow-color) / 0.28),
-      0px 1.6px 1.9px -0.3px hsl(var(--shadow-color) / 0.3),
-      0px 3px 3.6px -0.5px hsl(var(--shadow-color) / 0.32),
-      0.1px 4.8px 5.8px -0.8px hsl(var(--shadow-color) / 0.34),
-      0.1px 7.4px 9px -1.1px hsl(var(--shadow-color) / 0.36),
-      0.2px 11.1px 13.5px -1.4px hsl(var(--shadow-color) / 0.38),
-      0.3px 16.5px 20.1px -1.6px hsl(var(--shadow-color) / 0.41),
-      0.4px 24px 29.2px -1.9px hsl(var(--shadow-color) / 0.43);
+    --shadow-elevation-low: none;
+    --shadow-elevation-medium: none;
+    --shadow-elevation-high: none;
   }
 
   /* Main navigation */
@@ -464,6 +448,14 @@ footer svg {
 
   body > header [aria-current] {
     --theme-link: var(--color-gray-5);
+  }
+
+  figure::after {
+    background-color: var(--bg-fade);
+  }
+
+  pre[class*="language-"] {
+    background-color: var(--color-gray-2);
   }
 }
 

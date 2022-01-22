@@ -139,7 +139,6 @@ h3 {
   font-family: var(--theme-font-body);
   font-feature-settings: normal;
   line-height: var(--line-height-sm);
-  text-transform: lowercase;
 }
 
 /* Type: Heading 3 */

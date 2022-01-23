@@ -1,6 +1,7 @@
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const markdownIt = require('markdown-it');
+const anchor = require('markdown-it-anchor');
 
 const collections = require('./utils/collections.js');
 const filters = require('./utils/filters.js');
@@ -39,10 +40,10 @@ module.exports = function (config) {
       html: true,
       typographer: true,
     })
-    .use(require('markdown-it-anchor'), {
+    .use(anchor, {
       level: [2],
       permalink: true,
-      permalinkSymbol: '§',
+      permalinkSymbol: '#',
       slugify: require('slug'),
     })
     .use(require('markdown-it-footnote'))

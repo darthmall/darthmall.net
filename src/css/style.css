@@ -219,6 +219,12 @@ pre[class*="language-"] {
   background-color: var(--surface-1);
 }
 
+code {
+  border-radius: 0.125em;
+  padding: 0.125em;
+  background-color: var(--surface-1);
+}
+
 label {
   display: block;
   font-weight: bold;

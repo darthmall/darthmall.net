@@ -49,10 +49,12 @@ button, input {
 /* End reset */
 
 html {
-  --bg: var(--color-gray-5);
-  --bg-fade: var(--color-gray-4);
-  --fg: var(--color-gray-0);
-  --fg-fade: var(--color-gray-1);
+  --surface-0: var(--color-gray-5);
+  --surface-1: var(--color-gray-4);
+  --surface-2: var(--color-gray-3);
+  --text-0: var(--color-gray-0);
+  --text-1: var(--color-gray-1);
+  --text-2: var(--color-gray-2);
 
   --theme-link: var(--color-gray-0);
   --theme-visited: var(--color-gray-1);
@@ -64,28 +66,8 @@ html {
 
   --gutter: var(--space-sm);
 
-  --shadow-color: 0deg 0% 53%;
-  --shadow-elevation-low:
-    0px 0.2px 0.2px hsl(var(--shadow-color) / 0.28),
-    0px 0.4px 0.5px -0.9px hsl(var(--shadow-color) / 0.34),
-    0px 0.9px 1.1px -1.9px hsl(var(--shadow-color) / 0.4);
-  --shadow-elevation-medium:
-    0px 0.2px 0.2px hsl(var(--shadow-color) / 0.3),
-    0px 0.8px 1px -0.6px hsl(var(--shadow-color) / 0.34),
-    0px 2px 2.4px -1.3px hsl(var(--shadow-color) / 0.39),
-    0.1px 4.6px 5.6px -1.9px hsl(var(--shadow-color) / 0.44);
-  --shadow-elevation-high:
-    0px 0.2px 0.2px hsl(var(--shadow-color) / 0.28),
-    0px 1.6px 1.9px -0.3px hsl(var(--shadow-color) / 0.3),
-    0px 3px 3.6px -0.5px hsl(var(--shadow-color) / 0.32),
-    0.1px 4.8px 5.8px -0.8px hsl(var(--shadow-color) / 0.34),
-    0.1px 7.4px 9px -1.1px hsl(var(--shadow-color) / 0.36),
-    0.2px 11.1px 13.5px -1.4px hsl(var(--shadow-color) / 0.38),
-    0.3px 16.5px 20.1px -1.6px hsl(var(--shadow-color) / 0.41),
-    0.4px 24px 29.2px -1.9px hsl(var(--shadow-color) / 0.43);
-
-  background: var(--bg);
-  color: var(--fg);
+  background: var(--surface-0);
+  color: var(--text-0);
 }
 
 /* Type */
@@ -185,8 +167,7 @@ h2 {
 
 h2,
 h2 + *,
-figure,
-figure + * {
+figure {
   --space: calc(var(--line-height-md) * 4rem);
 }
 
@@ -206,34 +187,25 @@ h2::before {
   width: min(100%, 19rem);
 
   content: "";
-  background-color: var(--fg-fade);
+  background-color: var(--text-1);
 }
 
 hr {
   border: none;
-  border-block-start: 1px solid var(--fg-fade);
+  border-block-start: 1px solid var(--text-1);
 }
 
-figure > * {
-  grid-row-start: 1;
+figure {
+  margin-block: var(--space);
 }
 
-figure > :not(figcaption) {
-  margin-block: var(--space-md);
-  box-shadow: var(--shadow-elevation-medium);
-}
-
-figure::after {
-  grid-column: 1 / -1;
-  grid-row-start: 1;
-  z-index: -1;
-  content: "";
-  background-color: var(--bg-fade);
+figure + * {
+  --space: 0;
 }
 
 figcaption {
-  grid-row-start: 2;
-  margin-block-start: var(--space-xs);
+  margin-block-start: var(--space-sm);
+  color: var(--text-2);
 }
 
 pre {
@@ -242,10 +214,9 @@ pre {
 }
 
 pre[class*="language-"] {
+  border: 1px solid var(--surface-2);
   padding: var(--space-md);
-  border-radius: 0.5rem;
-  background-color: var(--bg);
-  box-shadow: var(--shadow-elevation-medium);
+  background-color: var(--surface-1);
 }
 
 label {
@@ -427,18 +398,16 @@ footer svg {
 
 @media (prefers-color-scheme: dark) {
   html {
-    --bg: var(--color-gray-0);
-    --bg-fade: var(--color-gray-1);
-    --fg: var(--color-gray-5);
-    --fg-fade: var(--color-gray-4);
+    --surface-0: var(--color-gray-0);
+    --surface-1: var(--color-gray-1);
+    --surface-2: var(--color-gray-2);
+    --text-0: var(--color-gray-5);
+    --text-1: var(--color-gray-4);
+    --text-2: var(--color-gray-3);
 
     --theme-link: var(--color-gray-5);
     --theme-visited: var(--color-gray-4);
     --theme-focus: var(--color-gray-1);
-
-    --shadow-elevation-low: none;
-    --shadow-elevation-medium: none;
-    --shadow-elevation-high: none;
   }
 
   /* Main navigation */
@@ -451,19 +420,11 @@ footer svg {
   }
 
   figure::after {
-    background-color: var(--bg-fade);
-  }
-
-  pre[class*="language-"] {
-    border: 1px solid var(--color-gray-2);
+    background-color: var(--surface-1);
   }
 }
 
 @media screen and (min-width: 50em) {
-  figure > :not(figcaption) {
-    margin-block: var(--space-lg);
-  }
-
   figure > figcaption,
   [data-layout="grid"] > :not(:where([data-columns], [data-layout="grid"])) {
     grid-column: 7 / -3;
@@ -481,11 +442,6 @@ footer svg {
   [data-layout="grid"] > [data-columns="headings"] {
     grid-column: 2 / span 4;
     text-align: right;
-  }
-
-  figure > :not(figcaption),
-  pre[class*="language-"] {
-    box-shadow: var(--shadow-elevation-high);
   }
 }
 

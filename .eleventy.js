@@ -42,12 +42,7 @@ module.exports = function (config) {
     })
     .use(anchor, {
       level: [2],
-      permalink: anchor.permalink.linkAfterHeader({
-        style: 'aria-label',
-        symbol: 'Permalink',
-        assistiveText: (title) => `Permalink to ${title}`,
-        visuallyHiddenClass: 'invisible',
-      }),
+      permalink: anchor.permalink.headerLink()
     })
     .use(require('markdown-it-footnote'))
     .disable('code');  // Disable code indentation for better inline HTML formatting

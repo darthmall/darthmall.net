@@ -139,7 +139,6 @@ h3 {
 aside,
 figcaption,
 small,
-.header-anchor,
 .type-aside {
   font-size: var(--font-size-xs);
   font-family: var(--theme-font-mono);
@@ -166,8 +165,12 @@ h2 {
   margin-block-start: var(--space);
 }
 
+h2 > a {
+  text-decoration: none;
+}
+
 h2,
-.header-anchor + *,
+h2 + *,
 figure {
   --space: calc(var(--line-height-md) * 4rem);
 }
@@ -366,12 +369,6 @@ body > header [aria-current] {
   border-radius: 50%;
 }
 
-a.header-anchor {
-  align-self: start;
-  justify-self: start;
-  color: var(--text-2);
-}
-
 /* Exceptions */
 
 /* Main navigation */
@@ -452,18 +449,9 @@ footer svg {
   }
 
   [data-layout="grid"] > h2,
-  [data-layout="grid"] > .header-anchor,
   [data-layout="grid"] > [data-columns="headings"] {
     grid-column: 2 / span 4;
     text-align: right;
-  }
-
-  a.header-anchor {
-    justify-self: end;
-  }
-
-  .header-anchor + * {
-    --space: 0;
   }
 }
 

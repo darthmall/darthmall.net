@@ -1,7 +1,11 @@
+const fs = require('fs');
+
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const markdownIt = require('markdown-it');
 const anchor = require('markdown-it-anchor');
+const jsonImporter = require('node-sass-json-importer');
+const sass = require('sass');
 
 const collections = require('./utils/collections.js');
 const filters = require('./utils/filters.js');
@@ -57,10 +61,23 @@ module.exports = function (config) {
   config.addWatchTarget("./src/_scss/");
 
   // Don't mess with this stuff, just pass it on through
-  config.addPassthroughCopy('src/css');
   config.addPassthroughCopy('src/fonts');
   config.addPassthroughCopy('src/js');
   config.addPassthroughCopy('src/img');
+
+  config.on('beforeBuild', () => {
+    const { css, map } = sass.renderSync({
+      file: './src/_scss/style.scss',
+      outFile: 'style.css',
+      importer: [jsonImporter()],
+      outputStyle: 'compressed',
+      sourceMap: true,
+    });
+
+    fs.mkdirSync('./_site/css/', { recursive: true });
+    fs.writeFileSync('./_site/css/style.css', css);
+    fs.writeFileSync('./_site/css/style.map.css', map);
+  });
 
   return {
     dir: {

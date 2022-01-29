@@ -64,7 +64,7 @@ html {
   --theme-font-heading: sans-serif;
   --theme-font-mono: monospace;
 
-  --gutter: var(--space-sm);
+  --gutter: var(--space-md);
 
   background: var(--surface-0);
   color: var(--text-0);

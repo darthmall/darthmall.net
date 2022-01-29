@@ -153,12 +153,11 @@ code {
 
 /* Base Styles */
 
-h3,
 p,
 aside,
 ol,
 ul {
-  --space: calc(var(--line-height-md) * 1rem);
+  --space: calc(var(--line-height-md) * 1em);
 }
 
 h2 {
@@ -170,13 +169,16 @@ h2 > a {
 }
 
 h2,
-h2 + *,
 figure {
-  --space: calc(var(--line-height-md) * 4rem);
+  --space: calc(var(--line-height-md) * 2em);
+}
+
+h3 {
+  --space: calc(var(--line-height-md) * 1.5em);
 }
 
 li + li {
-  margin-block-start: calc(var(--line-height-sm) * 1rem);
+  margin-block-start: 0.5em;
 }
 
 h2 {
@@ -453,6 +455,11 @@ footer svg {
     grid-column: 2 / span 4;
     text-align: right;
   }
+
+  [data-layout="grid"] > h2 + * {
+    --space: calc(var(--line-height-md) * 2em);
+  }
+
 }
 
 @media (prefers-reduced-motion: reduce) {

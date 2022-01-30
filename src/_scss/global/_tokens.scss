@@ -1,6 +1,39 @@
+@use "sass:list";
+@use "sass:map";
 @use "sass:math";
 
 @use "../../_data/tokens.json";
+
+@function to-precision($num, $precision) {
+  $mult: math.pow(10, $precision);
+  @return math.div(math.round($num * $mult), $mult);
+}
+
+@function fluid-clamp($min-size, $max-size, $min-viewport, $max-viewport, $base) {
+  // https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  $min-rem: to-precision(math.div($min-size, $base), 2);
+  $max-rem: to-precision(math.div($max-size, $base), 2);
+  $dx: $max-viewport - $min-viewport;
+  $dy: $max-size - $min-size;
+  $slope: math.div($dy, $dx);
+  $intercept: to-precision(math.div(-$min-viewport * $slope + $min-size, 16), 2);
+  @return 'clamp(#{$min-rem}rem, #{$intercept}rem + #{to-precision($slope * 100, 2)}vw, #{$max-rem})';
+}
+
+@mixin fluid-scale($viewport, $size, $scale, $steps, $base, $prefix) {
+  $min-viewport: list.nth($viewport, 1);
+  $max-viewport: list.nth($viewport, 2);
+
+  @for $step from list.nth($steps, 1) through list.nth($steps, 2) {
+    $min-size: list.nth($size, 1) * math.pow(list.nth($scale, 1), $step);
+    $max-size: list.nth($size, 2) * math.pow(list.nth($scale, 2), $step);
+    --#{$prefix}-#{$step}: #{fluid-clamp(
+        $min-size, $max-size,
+        $min-viewport, $max-viewport,
+        $base
+    )};
+  }
+}
 
 @mixin token($map, $prefix) {
   @each $tok, $val in $map {
@@ -14,6 +47,14 @@
     @include token($shades, $prefix);
   }
   @include token(tokens.$fontStack, 'font-family');
+  @include fluid-scale(
+    map.get(tokens.$typeScale, 'viewport'),
+    map.get(tokens.$typeScale, 'font-size'),
+    map.get(tokens.$typeScale, 'scale'),
+    map.get(tokens.$typeScale, 'steps'),
+    map.get(tokens.$typeScale, 'base'),
+    'font-size'
+  );
   @include token(tokens.$lineHeight, 'line-height');
   @include token(tokens.$measure, 'measure');
 }

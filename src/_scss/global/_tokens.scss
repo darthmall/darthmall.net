@@ -17,33 +17,24 @@
   $dy: $max-size - $min-size;
   $slope: math.div($dy, $dx);
   $intercept: to-precision(math.div(-$min-viewport * $slope + $min-size, 16), 2);
-  @return 'clamp(#{$min-rem}rem, #{$intercept}rem + #{to-precision($slope * 100, 2)}vw, #{$max-rem})';
-}
 
-@mixin fluid-scale($viewport, $size, $scale, $steps, $base, $prefix) {
+  @return 'clamp(#{$min-rem}rem, #{$intercept}rem + #{to-precision($slope * 100, 2)}vw, #{$max-rem}rem)'; }
+
+@mixin fluid-scale($size, $scale, $steps, $names, $viewport, $base-font-size, $prefix) {
   $min-viewport: list.nth($viewport, 1);
   $max-viewport: list.nth($viewport, 2);
 
   @for $step from list.nth($steps, 1) through list.nth($steps, 2) {
     $min-size: list.nth($size, 1) * math.pow(list.nth($scale, 1), $step);
     $max-size: list.nth($size, 2) * math.pow(list.nth($scale, 2), $step);
-    --#{$prefix}-#{$step}: #{fluid-clamp(
+    $label: $step;
+    @if $names {
+      $label: list.nth($names, $step + 1);
+    }
+    --#{$prefix}-#{$label}: #{fluid-clamp(
         $min-size, $max-size,
         $min-viewport, $max-viewport,
-        $base
-    )};
-  }
-}
-
-@mixin fluid-space($viewport, $space, $base, $prefix) {
-  $min-viewport: list.nth($viewport, 1);
-  $max-viewport: list.nth($viewport, 2);
-
-  @each $tok, $range in $space {
-    --#{$prefix}-#{$tok}: #{fluid-clamp(
-        list.nth($range, 1), list.nth($range, 2),
-        $min-viewport, $max-viewport,
-        $base
+        $base-font-size
     )};
   }
 }
@@ -55,26 +46,19 @@
 }
 
 :root {
-  @each $family, $shades in tokens.$color {
-    $prefix: color-#{$family};
-    @include token($shades, $prefix);
+  @each $prefix, $values in tokens.$static {
+    @include token($values, $prefix);
   }
-  @include token(tokens.$font-stack, 'font-family');
-  @include fluid-scale(
-    map.get(tokens.$fluid-scale, 'viewport'),
-    map.get(tokens.$fluid-scale, 'font-size'),
-    map.get(tokens.$fluid-scale, 'font-scale'),
-    map.get(tokens.$fluid-scale, 'font-steps'),
-    map.get(tokens.$fluid-scale, 'base'),
-    'font-size'
-  );
-  @include token(tokens.$line-height, 'line-height');
-  @include token(tokens.$measure, 'measure');
-  @include fluid-space(
-    map.get(tokens.$fluid-scale, 'viewport'),
-    map.get(tokens.$fluid-scale, 'space'),
-    map.get(tokens.$fluid-scale, 'base'),
-    'space-fluid'
-  );
-  @include token(tokens.$space-relative, 'space-relative');
+
+  @each $prefix, $scale in tokens.$fluid {
+    @include fluid-scale(
+      map.get($scale, 'size'),
+      map.get($scale, 'scale'),
+      map.get($scale, 'steps'),
+      map.get($scale, 'names'),
+      tokens.$viewport,
+      tokens.$base-font-size,
+      $prefix
+    );
+  }
 }

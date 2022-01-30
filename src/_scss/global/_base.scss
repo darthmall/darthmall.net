@@ -13,3 +13,8 @@
     @include mixins.dark-theme;
   }
 }
+
+html {
+  background: var(--surface-1);
+  color: var(--text-1);
+}

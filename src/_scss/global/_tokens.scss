@@ -1,5 +1,19 @@
 @use "sass:math";
-@use "sass:map";
 
 @use "../../_data/tokens.json";
 
+@mixin token($map, $prefix) {
+  @each $tok, $val in $map {
+    --#{$prefix}-#{$tok}: #{$val};
+  }
+}
+
+:root {
+  @each $family, $shades in tokens.$color {
+    $prefix: color-$family;
+    @include token($shades, $prefix);
+  }
+  @include token(tokens.$fontStack, 'font-family');
+  @include token(tokens.$lineHeight, 'line-height');
+  @include token(tokens.$measure, 'measure');
+}

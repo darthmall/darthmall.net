@@ -26,9 +26,11 @@
   {% endif %}
   <main tabindex="-1"{{ mainClasses | safe }} data-layout="center"
     data-center-width="site">
-    {% block content %}
-      {{ content | safe }}
-    {% endblock content %}
+    <div class="e-content">
+      {% block content %}
+        {{ content | safe }}
+      {% endblock content %}
+    </div>
   </main>
 
   {% include "partials/site-footer.njk" %}

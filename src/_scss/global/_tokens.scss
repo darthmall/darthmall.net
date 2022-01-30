@@ -43,7 +43,7 @@
 
 :root {
   @each $family, $shades in tokens.$color {
-    $prefix: color-$family;
+    $prefix: color-#{$family};
     @include token($shades, $prefix);
   }
   @include token(tokens.$fontStack, 'font-family');

@@ -30,10 +30,19 @@ h1 {
 
 h2 {
   @extend %heading-1;
+
+  > a {
+    text-decoration: none;
+  }
 }
 
 h3 {
   @extend %heading-2;
+}
+
+hr {
+  border: none;
+  border-block-start: 1px solid var(--text-1);
 }
 
 aside, figcaption, small {
@@ -44,7 +53,28 @@ aside, figcaption {
   max-width: var(--measure-sm);
 }
 
-code {
-  @extend %body-2;
+figcaption {
+  color: var(--text-2);
 }
 
+pre {
+  max-inline-size: var(--measure-lg);
+  overflow-x: auto;
+
+  &[class*="language-"] {
+    border: 1px solid var(--surface-3);
+    padding: var(--space-md);
+    background-color: var(--surface-2);
+  }
+}
+
+code {
+  @extend %body-2;
+  border-radius: 0.125em;
+  padding: 0.125em;
+  background-color: var(--surface-2);
+}
+
+li + li {
+  margin-block-start: var(--space-relative-sm);
+}

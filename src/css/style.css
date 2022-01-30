@@ -246,18 +246,6 @@ footer svg {
   }
 }
 
-@supports (font-variation-settings: normal) {
-  html {
-    --theme-font-body: var(--font-stack-body);
-    --theme-font-heading: var(--font-stack-heading);
-    --theme-font-mono: var(--font-stack-mono);
-
-    --weight-regular: 275;
-    --weight-bold: 500;
-    --weight-black: 750;
-  }
-}
-
 @media (prefers-color-scheme: dark) {
   html {
     --surface-0: var(--color-gray-0);

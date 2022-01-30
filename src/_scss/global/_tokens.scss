@@ -35,6 +35,19 @@
   }
 }
 
+@mixin fluid-space($viewport, $space, $base, $prefix) {
+  $min-viewport: list.nth($viewport, 1);
+  $max-viewport: list.nth($viewport, 2);
+
+  @each $tok, $range in $space {
+    --#{$prefix}-#{$tok}: #{fluid-clamp(
+        list.nth($range, 1), list.nth($range, 2),
+        $min-viewport, $max-viewport,
+        $base
+    )};
+  }
+}
+
 @mixin token($map, $prefix) {
   @each $tok, $val in $map {
     --#{$prefix}-#{$tok}: #{$val};
@@ -48,13 +61,20 @@
   }
   @include token(tokens.$fontStack, 'font-family');
   @include fluid-scale(
-    map.get(tokens.$typeScale, 'viewport'),
-    map.get(tokens.$typeScale, 'font-size'),
-    map.get(tokens.$typeScale, 'scale'),
-    map.get(tokens.$typeScale, 'steps'),
-    map.get(tokens.$typeScale, 'base'),
+    map.get(tokens.$fluid-scale, 'viewport'),
+    map.get(tokens.$fluid-scale, 'font-size'),
+    map.get(tokens.$fluid-scale, 'font-scale'),
+    map.get(tokens.$fluid-scale, 'font-steps'),
+    map.get(tokens.$fluid-scale, 'base'),
     'font-size'
   );
   @include token(tokens.$lineHeight, 'line-height');
   @include token(tokens.$measure, 'measure');
+  @include fluid-space(
+    map.get(tokens.$fluid-scale, 'viewport'),
+    map.get(tokens.$fluid-scale, 'space'),
+    map.get(tokens.$fluid-scale, 'base'),
+    'space-fluid'
+  );
+  @include token(tokens.$space-relative, 'space-relative');
 }

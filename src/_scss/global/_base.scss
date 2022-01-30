@@ -1,4 +1,5 @@
 @use "../mixins";
+@use "../type";
 
 [data-theme=light] {
   @include mixins.light-theme;
@@ -18,3 +19,28 @@ html {
   background: var(--surface-1);
   color: var(--text-1);
 }
+
+body {
+  @extend %body-1;
+}
+
+h1 {
+  @extend %display-1;
+}
+
+h2 {
+  @extend %heading-1;
+}
+
+h3 {
+  @extend %heading-2;
+}
+
+code {
+  @extend %body-2;
+}
+
+aside, figcaption, small {
+  @extend %body-3;
+}
+

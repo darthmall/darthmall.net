@@ -59,7 +59,7 @@
     $prefix: color-#{$family};
     @include token($shades, $prefix);
   }
-  @include token(tokens.$fontStack, 'font-family');
+  @include token(tokens.$font-stack, 'font-family');
   @include fluid-scale(
     map.get(tokens.$fluid-scale, 'viewport'),
     map.get(tokens.$fluid-scale, 'font-size'),
@@ -68,7 +68,7 @@
     map.get(tokens.$fluid-scale, 'base'),
     'font-size'
   );
-  @include token(tokens.$lineHeight, 'line-height');
+  @include token(tokens.$line-height, 'line-height');
   @include token(tokens.$measure, 'measure');
   @include fluid-space(
     map.get(tokens.$fluid-scale, 'viewport'),

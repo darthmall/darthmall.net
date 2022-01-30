@@ -30,7 +30,9 @@ classes: h-entry
     {% endif %}
   </header>
 
-  {{ super() }}
+  <div class="stack e-content" data-layout="center">
+    {{ super() }}
+  </div>
 
   {% include "partials/webmentions.njk" %}
 {% endblock %}

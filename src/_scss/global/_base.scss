@@ -36,11 +36,15 @@ h3 {
   @extend %heading-2;
 }
 
-code {
-  @extend %body-2;
-}
-
 aside, figcaption, small {
   @extend %body-3;
+}
+
+aside, figcaption {
+  max-width: var(--measure-sm);
+}
+
+code {
+  @extend %body-2;
 }
 

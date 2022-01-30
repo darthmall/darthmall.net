@@ -17,18 +17,17 @@
   {% endblock %}
 </head>
 
-<body data-layout="grid">
+<body>
   {% include "partials/site-header.njk" %}
 
   {% set mainClasses = "" %}
   {% if classes %}
     {% set mainClasses = ' class="' + classes + '"' %}
   {% endif %}
-  <main tabindex="-1"{{ mainClasses | safe }} data-layout="grid">
+  <main tabindex="-1"{{ mainClasses | safe }} data-layout="center"
+    data-center-width="site">
     {% block content %}
-      <div class="e-content" data-layout="grid">
-        {{ content | safe }}
-      </div>
+      {{ content | safe }}
     {% endblock content %}
   </main>
 

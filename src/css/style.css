@@ -137,52 +137,11 @@ a:visited {
 
 /* Layouts */
 
-figure,
-[data-layout=grid] {
-  display: grid;
-  column-gap: var(--gutter);
-  grid-template-columns:
-    calc(50vw - 37rem)
-    repeat(15, 1fr)
-    calc(50vw - 37rem);
-}
-
-figure > *,
-[data-layout=grid] > *,
-[data-columns=all] {
-  grid-column: 2 / -2;
-}
-
-[data-layout=grid] > * + * {
-  margin-block-start: var(--space, 0);
-}
-
-[data-layout=grid] > [data-layout=grid],
-[data-layout=grid] > figure {
-  grid-column: 1 / -1;
-}
-
-[data-layout=flow] {
-  display: flex;
-  flex-direction: column;
-}
-
-[data-layout=flow] > * + * {
-  margin-block-start: var(--space, var(--space-md));
-}
-
 [data-space="0"]  { --space: 0 }
 [data-space="xs"] { --space: var(--space-xs) }
 [data-space="sm"] { --space: var(--space-sm) }
 [data-space="md"] { --space: var(--space-md) }
 [data-space="lg"] { --space: var(--space-lg) }
-
-[data-layout=cluster] {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--gutter);
-  align-items: center;
-}
 
 /* Utilities */
 

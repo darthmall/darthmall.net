@@ -1,0 +1,25 @@
+.stack {
+  > * + * {
+    margin-block-start: var(--space, var(--space-relative-md));
+  }
+}
+
+[data-layout=cluster] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gutter);
+  align-items: center;
+}
+
+[data-layout=center] {
+  max-inline-size: var(--measure-md);
+  margin-inline: auto;
+  padding-inline: var(--space-fluid-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &[data-center-width=site] {
+    max-inline-size: var(--width-max-site);
+  }
+}

@@ -1,61 +1,18 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 * {
-  margin-bottom: 0;
-  margin-top: 0;
+  margin: 0;
 }
 
-figure {
-  margin-left: 0;
-  margin-right: 0;
+html, body {
+  height: 100%;
 }
 
-ol[class],
-ul[class] {
-  list-style: none;
-  padding: 0;
-}
-
-iframe,
-img {
+canvas, iframe, img, svg, video {
   display: block;
   max-width: 100%;
 }
 
-label {
-  display: block;
-  font-weight: bold;
-}
-
-button,
-input,
-select,
-textarea {
+button, input, select, textarea {
   font: inherit;
-  line-height: 1;
-}
-
-input,
-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-button {
-  border: none;
-
-  @media screen and (-ms-high-contrast: active) {
-    border: 2px solid currentcolor;
-  }
-}
-
-input {
-  border-style: solid;
 }
 
 [hidden] {

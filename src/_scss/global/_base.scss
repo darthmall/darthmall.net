@@ -1,0 +1,15 @@
+@use "../mixins";
+
+[data-theme=light] {
+  @include mixins.light-theme;
+}
+
+[data-theme=dark] {
+  @include mixins.dark-theme;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include mixins.dark-theme;
+  }
+}

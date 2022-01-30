@@ -2,6 +2,7 @@
 @use "sass:map";
 @use "sass:math";
 
+@use "../_mixins";
 @use "../../_data/tokens.json";
 
 @function to-precision($num, $precision) {
@@ -61,4 +62,8 @@
       $prefix
     );
   }
+
+  @include mixins.light-theme;
+
+  color-scheme: light dark;
 }

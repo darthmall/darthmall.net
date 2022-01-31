@@ -22,6 +22,10 @@ html {
 
 body {
   @extend %body-1;
+
+  > header {
+    --link-visited-color: var(--link-color);
+  }
 }
 
 h1 {

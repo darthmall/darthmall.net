@@ -24,6 +24,14 @@
 
 .align-self-start { align-self: start }
 .align-self-stretch { align-self: stretch }
+
+.type-heading-3 { @extend %heading-3 }
+.type-body-3 { @extend %body-3 }
+
 .unstyled { display: none }
 
-.type-body-3 { @extend %body-3 }
+.list-reset {
+  list-style: none;
+  padding: 0;
+}
+

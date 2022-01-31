@@ -4,7 +4,7 @@ layout: null
 ---
 {% extends "layouts/base.njk" %}
 {% block content %}
-<div class="flow flow-sp-4">
+<div class="stack" data-layout="center" data-center-width="site">
   {% for project in collections.work | rejectattr("draft") %}
     {% call projects.summary(project.data) %}
       {{ project.templateContent | safe }}

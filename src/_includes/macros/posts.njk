@@ -1,7 +1,7 @@
 {% macro list(collection) %}
-<ul class="posts list-reset" data-layout="flow">
+<ul class="stack list-reset" role="list">
   {% for post in collection %}
-    <li data-layout="flow" data-space="relative-xl">
+    <li class="stack" data-space="fluid-sm">
       <strong>
         <a href="{{ post.url }}" class="type-display-2">{{ post.data.title }}</a>
       </strong>

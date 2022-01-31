@@ -79,3 +79,31 @@ code {
 li + li {
   margin-block-start: var(--space-relative-sm);
 }
+
+a:link {
+  position: relative;
+  text-underline-offset: 0.125em;
+  color: var(--link-color);
+}
+
+a:link::before {
+  content: "";
+  border-radius: 4px;
+  position: absolute;
+  top: -0.5em;
+  right: -0.25em;
+  bottom: -0.25em;
+  left: -0.25em;
+  z-index: -1;
+  background-color: var(--focus-color);
+  opacity: 0;
+  transition: opacity 150ms linear;
+}
+
+a:link:hover::before {
+  opacity: 1;
+}
+
+a:visited {
+  color: var(--link-visited-color);
+}

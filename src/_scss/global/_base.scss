@@ -68,7 +68,13 @@ aside, figcaption {
   max-width: var(--measure-sm);
 }
 
+figure,
+figure + * {
+  --space: var(--space-relative-lg);
+}
+
 figcaption {
+  margin-block-start: var(--space-relative-sm);
   color: var(--text-2);
 }
 

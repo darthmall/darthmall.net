@@ -26,6 +26,16 @@ body {
   > header {
     --link-visited-color: var(--link-color);
   }
+
+  > header img {
+    // FIXME: Should this be a design token? Set with a utility class instead?
+    max-height: 3em;
+  }
+}
+
+footer svg {
+  // FIXME: Should this be a design token? Set with a utility class instead?
+  height: 1.5em;
 }
 
 h1 {

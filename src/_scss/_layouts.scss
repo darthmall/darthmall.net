@@ -7,9 +7,13 @@
 [data-layout=cluster] {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--gutter);
+  gap: var(--space);
   align-items: center;
   list-style: none;
+
+  > li {
+    margin: 0;
+  }
 }
 
 [data-layout=center] {

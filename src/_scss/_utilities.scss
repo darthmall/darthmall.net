@@ -1,47 +1,16 @@
-@use "../_data/tokens.json" as tokens;
-@use "mixins/typography" as type;
+[data-space="0"]  { --space: 0 }
+[data-space="relative-sm"] { --space: var(--space-relative-sm) }
+[data-space="relative-md"] { --space: var(--space-relative-md) }
+[data-space="relative-lg"] { --space: var(--space-relative-lg) }
+[data-space="relative-xl"] { --space: var(--space-relative-xl) }
 
-@each $tok, $val in tokens.$font {
-  .font-#{$tok} {
-    font-family: #{$val};
-  }
-}
+.margin-block-start-relative-md { margin-block-start: var(--space-relative-md) }
+.margin-block-end-relative-sm { margin-block-end: var(--space-relative-sm) }
+.margin-block-end-relative-md { margin-block-end: var(--space-relative-md) }
+.margin-inline-end-auto { margin-inline-end: auto }
 
-$-min-text: map-get(tokens.$type, "min-step");
-$-max-text: map-get(tokens.$type, "max-step");
-@for $i from $-min-text through $-max-text {
-  .size-#{$i} {
-    @include type.font-size($i);
-  }
-}
+.pad-block-relative-md { padding-block: var(--space-relative-md) }
+.pad-block-relative-lg { padding-block: var(--space-relative-lg) }
+.pad-block-relative-xl { padding-block: var(--space-relative-xl) }
 
-@each $tok, $val in tokens.$line-height {
-  .line-height-#{$tok} {
-    line-height: $val;
-  }
-}
-
-@each $tok, $val in tokens.$space {
-  .flow-sp-#{$tok} {
-    --flow-sp: #{$val};
-  }
-
-  @each $side in ("", "-bottom", "-left", "-right", "-top") {
-    .margin#{$side}-#{$tok} {
-      margin#{$side}: $val;
-    }
-    .pad#{$side}-#{$tok} {
-      padding#{$side}: $val;
-    }
-  }
-}
-
-@each $tok, $val in tokens.$color {
-  .color-#{$tok} {
-    color: $val;
-  }
-}
-
-.text-italic {
-  font-style: italic;
-}
+.unstyled { display: none }

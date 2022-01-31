@@ -32,3 +32,17 @@
     max-inline-size: var(--width-max-site);
   }
 }
+
+[data-layout=flow] {
+  @extend .stack;
+
+  display: flex;
+  flex-direction: column;
+}
+
+[data-layout=grid] {
+  display: grid;
+  gap: var(--space);
+  grid-template-columns:
+    repeat(auto-fit, minmax(min(var(--width-card), 100%), 1fr));
+}

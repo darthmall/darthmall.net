@@ -17,6 +17,11 @@
   line-height: var(--line-height-md);
 }
 
+%body-4 {
+  @extend %body-1;
+  font-size: var(--font-size--1);
+}
+
 %display-1 {
   font-size: var(--font-size-5);
   font-family: var(--font-stack-heading);

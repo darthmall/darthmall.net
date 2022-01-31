@@ -27,11 +27,20 @@
 
 .type-heading-3 { @extend %heading-3 }
 .type-body-3 { @extend %body-3 }
+.type-body-4 { @extend %body-4 }
+
+.text-1 { color: var(--text-1) }
+.text-2 { color: var(--text-2) }
+.text-3 { color: var(--text-3) }
 
 .unstyled { display: none }
 
 .list-reset {
   list-style: none;
   padding: 0;
+
+  > li {
+    margin: 0;
+  }
 }
 

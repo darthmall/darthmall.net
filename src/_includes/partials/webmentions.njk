@@ -1,7 +1,8 @@
 {% set target %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
 {% set mentions = webmentions | webmentionsForUrl(target) %}
 
-<aside data-layout="grid">
+<aside class="stack pad-block-fluid-lg"
+       data-layout="center" data-center-width="site">
   <h2>Webmentions</h2>
   <p>
     <small><a href="/weblog/webmentions/">What’s a “Webmention”</a>, you ask?</small>

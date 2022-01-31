@@ -5,32 +5,26 @@ classes: h-entry
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
-  <header class="pad-block-relative-xl">
-    <h1 class="p-name" data-columns="all">{{ title | safe }}</h1>
+  <header class="stack pad-block-fluid-lg" data-layout="center" data-center-width="site">
+    <h1 class="p-name">{{ title | safe }}</h1>
 
-    {% set meta -%}
-      {% if date -%}
-        <p class="margin-block-end-sm" data-columns="headings">
-          {% formatDate date %}
-        </p>
-      {%- endif %}
-      {% if tags -%}
-        {% set comma = joiner("<br>") %}
-        <p data-space="0">
-          {% for t in tags -%}
-            {{ comma() | safe }} {{ t }}
-          {%- endfor %}
-        </p>
-      {%- endif %}
-    {%- endset %}
-    {% if meta %}
-      <aside data-layout="grid">
-        {{ meta | safe }}
-      </aside>
-    {% endif %}
+    {% if tags -%}
+      <ul aria-label="topics" class="type-body-3" data-layout="cluster" data-space="fluid-md">
+        {% for t in tags -%}
+          <li>{{ t }}</li>
+        {%- endfor %}
+      </ul>
+    {%- endif %}
   </header>
 
   <div class="stack" data-layout="center">
+    {% if date -%}
+      <aside aria-label="publication date" class="align-self-start">
+        <p>
+          {% formatDate date %}
+        </p>
+      </aside>
+    {%- endif %}
     {{ super() }}
   </div>
 

@@ -23,6 +23,10 @@ html {
 body {
   @extend %body-1;
 
+  // Prevent scrollbars (especially on windows) when setting inline-size to
+  // 100vw to achive full-bleed or other breakout effects in the layout.
+  overflow-x: hidden;
+
   > header {
     --link-visited-color: var(--link-color);
   }

@@ -9,6 +9,13 @@
   flex-wrap: wrap;
   gap: var(--space);
   align-items: center;
+
+  &[data-cluster=center] {
+    justify-content: center;
+  }
+
+  // List reset, because lists are very common markup for cluster layouts
+  padding: 0;
   list-style: none;
 
   > li {

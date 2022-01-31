@@ -9,7 +9,8 @@ classes: h-entry
     <h1 class="p-name">{{ title | safe }}</h1>
 
     {% if tags -%}
-      <ul aria-label="topics" class="type-body-3" data-layout="cluster" data-space="fluid-md">
+      <ul aria-label="topics" class="type-body-3" data-layout="cluster"
+        data-space="fluid-md" data-cluster="center">
         {% for t in tags -%}
           <li>{{ t }}</li>
         {%- endfor %}

@@ -27,3 +27,9 @@ button, input, select, textarea {
     scroll-behavior: auto;
   }
 }
+
+@media screen and (-ms-high-contrast: active) {
+  button {
+    border: 2px solid currentcolor;
+  }
+}

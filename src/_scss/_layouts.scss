@@ -27,9 +27,6 @@
   max-inline-size: var(--measure-md);
   margin-inline: auto;
   padding-inline: var(--space-fluid-sm);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
   &[data-center-width=site] {
     max-inline-size: var(--width-max-site);

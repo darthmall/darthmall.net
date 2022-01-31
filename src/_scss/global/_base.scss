@@ -79,12 +79,16 @@ figcaption {
 }
 
 pre {
-  max-inline-size: var(--measure-lg);
+  --_size: min(100vw, var(--measure-lg));
+
+  box-sizing: border-box;
+  inline-size: var(--_size);
+  margin-inline-start: calc((100% - var(--_size)) / 2);
+  padding: var(--space-relative-md);
   overflow-x: auto;
 
   &[class*="language-"] {
     border: 1px solid var(--surface-3);
-    padding: var(--space-md);
     background-color: var(--surface-2);
   }
 }

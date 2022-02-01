@@ -26,7 +26,7 @@
 [data-layout=center] {
   max-inline-size: var(--measure-md);
   margin-inline: auto;
-  padding-inline: var(--space-fluid-sm);
+  padding-inline: var(--site-margin);
 
   &[data-center-width=site] {
     max-inline-size: var(--width-max-site);

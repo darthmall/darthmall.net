@@ -10,6 +10,8 @@
   --link-visited-color: var(--text-2);
 
   --focus-color: var(--surface-3);
+
+  --site-margin: var(--space-fluid-sm);
 }
 
 @mixin dark-theme {

@@ -68,8 +68,12 @@ aside, figcaption, small {
   @extend %body-3;
 }
 
-aside, figcaption {
-  max-width: var(--measure-sm);
+figure {
+  --_size: min(100vw, var(--measure-lg));
+
+  box-sizing: border-box;
+  inline-size: var(--_size);
+  margin-inline-start: calc((100% - var(--_size)) / 2);
 }
 
 figure,
@@ -83,11 +87,6 @@ figcaption {
 }
 
 pre {
-  --_size: min(100vw, var(--measure-lg));
-
-  box-sizing: border-box;
-  inline-size: var(--_size);
-  margin-inline-start: calc((100% - var(--_size)) / 2);
   padding: var(--space-relative-md);
   overflow-x: auto;
 

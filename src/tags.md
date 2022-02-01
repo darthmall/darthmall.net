@@ -10,6 +10,7 @@ pagination:
 permalink: /tags/{{ tag }}/
 layout: layouts/weblog.njk
 eleventyComputed:
-  title: 'Tagged {{ tag }}'
+  title: '{{ tag }}'
 ---
 
+Posts on the topic of “{{ tag }}”

@@ -5,7 +5,7 @@ description: >-
     Webmentions are now live on the site, powered by webmention.io! I've been
     meaning to do this for ages. I'm very excited to finally getting around to
     joining the IndieWeb.
-tags: ["11ty", "IndieWeb", "Web Dev"]
+tags: ["Eleventy", "IndieWeb", "Web Dev"]
 ---
 
 Finally! I'm very excited to have webmentions up and running (I hope). I've been

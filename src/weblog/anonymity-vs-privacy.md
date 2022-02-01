@@ -5,6 +5,8 @@ description: >-
     Wherein I muse about the difference between anonymity and privacy, and how
     advertisers try to conflate the two to assuage peoples concerns over
     surveillance.
+tags:
+    - Privacy
 ---
 
 The other day I was listening to [an episode][1] of Rework where they were

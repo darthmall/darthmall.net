@@ -4,7 +4,7 @@ date: 2021-07-12
 description: >-
     Today we launched the new website for Science On a Sphere that I've been
     working on for the last year or so.
-tags: ["11ty", "Science On a Sphere"]
+tags: ["Eleventy", "Science On a Sphere"]
 ---
 
 <figure>

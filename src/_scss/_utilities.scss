@@ -24,6 +24,7 @@
 
 .align-self-start { align-self: start }
 .align-self-stretch { align-self: stretch }
+.flex-nowrap { flex-wrap: nowrap }
 
 .type-heading-3 { @extend %heading-3 }
 .type-body-3 { @extend %body-3 }

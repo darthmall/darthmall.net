@@ -1,8 +1,12 @@
 {% extends "layouts/page.njk" %}
 {% block content %}
   {{ super() }}
-  <div data-layout="center" data-center-width="site">
+  <div class="stack" data-space="fluid-lg" data-layout="center" data-center-width="site">
     {% if not tag %}{% set tag = 'posts' %}{% endif %}
+    {% if tag == 'posts' %}
+      {% include 'partials/tag-index.njk' %}
+      <hr>
+    {% endif %}
     {{ posts.list(collections[tag]) }}
   </div>
 {% endblock %}

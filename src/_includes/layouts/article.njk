@@ -17,5 +17,7 @@ classes: h-entry
     {{ super() }}
   </div>
 
-  {% include "partials/webmentions.njk" %}
+  {% if webmentions !== false %}
+    {% include "partials/webmentions.njk" %}
+  {% endif %}
 {% endblock %}

@@ -3,6 +3,7 @@ title: About Evan
 layout: layouts/article.njk
 description: >-
     I design and build websites, web applications, and data visualizations.
+webmentions: false
 ---
 
 Professionally, I design and build websites, web applications, and data visualizations. I

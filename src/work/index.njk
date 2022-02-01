@@ -4,6 +4,7 @@ layout: null
 ---
 {% extends "layouts/base.njk" %}
 {% block content %}
+<h1 class="pad-block-fluid-lg">Portfolio</h1>
 <div class="stack" data-space="fluid-lg">
   {% for project in collections.work | rejectattr("draft") %}
     {% call projects.summary(project.data) %}

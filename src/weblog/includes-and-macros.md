@@ -24,7 +24,7 @@ I follow when I'm trying to decide how to organize my templates is:
   context that will be present in any page
 - Macros are for components that need to take parameters
 
-Put another way: if I find myself having to use `{{ "{% set %} " }}` to
+Put another way: if I find myself having to use `{{ "{% set %}" }}` to
 configure the context for a partial before I `{{ "{% include %}" }}` that
 partial, it should probably be a macro.
 

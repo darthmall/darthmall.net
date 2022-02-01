@@ -1,0 +1,8 @@
+{% extends "layouts/page.njk" %}
+{% block content %}
+  {{ super() }}
+  <div data-layout="center" data-center-width="site">
+    {% if not tag %}{% set tag = 'posts' %}{% endif %}
+    {{ posts.list(collections[tag]) }}
+  </div>
+{% endblock %}

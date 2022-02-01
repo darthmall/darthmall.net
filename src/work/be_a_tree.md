@@ -8,7 +8,7 @@ repo: https://github.com/darthmall/Be-a-Tree
 abstract: >-
   An interactive piece that uses a Kinect to project a silhouette of the viewer and grow tree limbs with blossoms from their body as they raise their arms.
 class: lydian
-color: "292E36"
+color: "E85B87"
 ---
 
 My final piece for Golan Levin's Interactive Art & Computational Design wherein

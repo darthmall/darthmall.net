@@ -4,7 +4,7 @@ layout: null
 ---
 {% extends "layouts/base.njk" %}
 {% block content %}
-<div class="stack" data-layout="center" data-center-width="site">
+<div class="stack" data-space="fluid-lg">
   {% for project in collections.work | rejectattr("draft") %}
     {% call projects.summary(project.data) %}
       {{ project.templateContent | safe }}

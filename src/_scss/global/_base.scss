@@ -35,6 +35,15 @@ body {
     // FIXME: Should this be a design token? Set with a utility class instead?
     max-height: 3em;
   }
+
+  > header a[href='/'] {
+    background-image: url('/img/evan-alt.jpg');
+    background-size: cover;
+
+    &:hover > * {
+      opacity: 0;
+    }
+  }
 }
 
 footer svg {

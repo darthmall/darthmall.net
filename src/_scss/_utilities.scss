@@ -15,7 +15,10 @@
 .margin-block-end-relative-md { margin-block-end: var(--space-relative-md) }
 .margin-inline-end-auto { margin-inline-end: auto }
 
-.shape-circle { border-radius: 50% }
+.shape-circle {
+  border-radius: 50%;
+  overflow: hidden;
+}
 
 .pad-block-fluid-lg { padding-block: var(--space-fluid-lg) }
 .pad-block-relative-md { padding-block: var(--space-relative-md) }

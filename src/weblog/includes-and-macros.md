@@ -236,6 +236,8 @@ partial:
 The `{{ "{% macro %}" }}` tag acts a lot like the `function` keyword in
 JavaScript. You could almost think of the above as:
 
+<figure>
+
 ```js
 function card(title, url, media, mediaAlt, body) {
   return `<article class="card">
@@ -245,7 +247,14 @@ function card(title, url, media, mediaAlt, body) {
 }
 ```
 
+<figcaption>
+The card macro written as a JavaScript function
+</figcaption>
+</figure>
+
 Now that we have defined our macro, we have to import it before we can call it.
+
+<figure>
 
 {% raw %}
 ```html
@@ -253,14 +262,22 @@ Now that we have defined our macro, we have to import it before we can call it.
 ```
 {% endraw %}
 
+<figcaption>Importing the card macro</figcaption>
+</figure>
+
 And then we invoke the macro like it's a function inside of a Nunjucks variable
 reference.
+
+<figure>
 
 {% raw %}
 ```html
 {{ card.card(post.title, post.url, post.media.src, post.media.alt, post.description) }}
 ```
 {% endraw %}
+
+<figcaption>Calling the card macro in a template</figcaption>
+</figure>
 
 Now, I want to do one last thing before showing how to change the original
 template that relied on `{{ "{% include %}" }}`, because I dislike the
@@ -321,6 +338,8 @@ on the home page, where we want to include the description _and_ the publication
 date in separate paragraphs. Our portfolio template might involve something
 like:
 
+<figure>
+
 {% raw %}
 ```html
 {% for p in projects %}
@@ -329,8 +348,16 @@ like:
 ```
 {% endraw %}
 
+<figcaption>
+A simple example of invoking the card macro where the card body is contained in
+a single property of our object
+</figcaption>
+</figure>
+
 But our recent posts needs to construct a custom card body, so we might do
 something like this:
+
+<figure>
 
 {% raw %}
 ```html
@@ -344,6 +371,11 @@ something like this:
 {% endfor %}
 ```
 {% endraw %}
+
+<figcaption>
+Creating a body for the card comprised of multiple properties from our object
+</figcaption>
+</figure>
 
 And now we're back to using `{{ "{% set %}" }}` again…
 
@@ -384,6 +416,8 @@ There are only two changes to the card macro:
 
 Now, when we want to create a card, we use a call block:
 
+<figure>
+
 {% raw %}
 ```html
 {% for post in recent_posts %}
@@ -395,7 +429,12 @@ Now, when we want to create a card, we use a call block:
 ```
 {% endraw %}
 
-And for the portfolio, we just put the summary in the contents:
+<figcaption>
+Invoking the macro using a {{ '{% call %}' }} block
+</figcaption>
+</figure>
+
+<figure>
 
 {% raw %}
 ```html
@@ -406,6 +445,13 @@ And for the portfolio, we just put the summary in the contents:
 {% endfor %}
 ```
 {% endraw %}
+
+<figcaption>
+For the portfolio, we just put the summary between the
+{{ '{% call %}{% endcall %}' }} tags
+</figcaption>
+
+</figure>
 
 Now we're done with our card macro, I think.
 

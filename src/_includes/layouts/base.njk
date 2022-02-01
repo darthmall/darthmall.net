@@ -24,11 +24,9 @@
     {% set mainClasses = ' class="' + classes + '"' %}
   {% endif %}
   <main tabindex="-1"{{ mainClasses | safe }}>
-    <div class="e-content">
-      {% block content %}
-        {{ content | safe }}
-      {% endblock content %}
-    </div>
+    {% block content %}
+      {{ content | safe }}
+    {% endblock content %}
   </main>
 
   {% include "partials/site-footer.njk" %}

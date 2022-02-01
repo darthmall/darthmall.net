@@ -1,6 +1,6 @@
 ---
 title: About Evan
-layout: layouts/page.njk
+layout: layouts/article.njk
 description: >-
     I design and build websites, web applications, and data visualizations.
 ---

@@ -5,20 +5,8 @@ classes: h-entry
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
-  <header class="stack pad-block-fluid-lg" data-layout="center" data-center-width="site">
-    <h1 class="p-name">{{ title | safe }}</h1>
-
-    {% if tags -%}
-      <ul aria-label="topics" class="type-body-3" data-layout="cluster"
-        data-space="fluid-md" data-cluster="center">
-        {% for t in tags -%}
-          <li>{{ t }}</li>
-        {%- endfor %}
-      </ul>
-    {%- endif %}
-  </header>
-
-  <div class="stack" data-layout="center">
+  {% include "partials/page-title.njk" %}
+  <div class="stack e-content" data-layout="center">
     {% if date -%}
       <aside aria-label="publication date" class="align-self-start">
         <p>

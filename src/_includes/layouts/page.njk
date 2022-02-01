@@ -1,5 +1,5 @@
 {% extends "layouts/base.njk" %}
 {% block content %}
-  <h1>{{ title | safe }}</h1>
+  {% include "partials/page-title.njk" %}
   {{ super() }}
 {% endblock %}

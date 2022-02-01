@@ -1,10 +1,8 @@
 ---
-title: Work
-layout: null
+title: Portfolio
+layout: layouts/page.njk
 ---
-{% extends "layouts/base.njk" %}
-{% block content %}
-<h1 class="pad-block-fluid-lg">Portfolio</h1>
+{% import "macros/projects.njk" as projects %}
 <div class="stack" data-space="fluid-lg">
   {% for project in collections.work | rejectattr("draft") %}
     {% call projects.summary(project.data) %}
@@ -12,4 +10,3 @@ layout: null
     {% endcall %}
   {% endfor %}
 </div>
-{% endblock %}

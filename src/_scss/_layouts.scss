@@ -23,6 +23,16 @@
   }
 }
 
+[data-layout=cover] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  min-block-size: 55vh;
+  padding: var(--space-fluid-lg) var(--site-margin);
+}
+
 [data-layout=center] {
   max-inline-size: var(--measure-md);
   margin-inline: auto;

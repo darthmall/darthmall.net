@@ -1,13 +1,9 @@
 ---
 title: Weblog
-layout: null
+layout: layouts/page.njk
 ---
 
-{% extends "layouts/base.njk" %}
-{% block content %}
-  <h1 class="pad-block-fluid-lg">Weblog</h1>
-  {{ super() }}
-  <div data-layout="center" data-center-width="site">
-    {{ posts.list(collections.posts) }}
-  </div>
-{% endblock %}
+{% import "macros/posts.njk" as posts %}
+<div data-layout="center" data-center-width="site">
+  {{ posts.list(collections.posts) }}
+</div>

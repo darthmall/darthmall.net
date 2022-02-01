@@ -83,6 +83,8 @@ figure + * {
 
 figcaption {
   margin-block-start: var(--space-relative-sm);
+  padding-inline: var(--site-margin);
+  text-align: center;
   color: var(--text-2);
 }
 

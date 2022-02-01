@@ -13,4 +13,3 @@ eleventyComputed:
   title: '{{ tag }}'
 ---
 
-Posts on the topic of “{{ tag }}”

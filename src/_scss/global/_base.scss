@@ -1,6 +1,12 @@
 @use "../mixins";
 @use "../type";
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include mixins.dark-theme;
+  }
+}
+
 [data-theme=light] {
   @include mixins.light-theme;
 }
@@ -9,23 +15,22 @@
   @include mixins.dark-theme;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    @include mixins.dark-theme;
-  }
-}
-
-html {
-  background: var(--surface-1);
-  color: var(--text-1);
-}
-
 body {
   @extend %body-1;
+
+  background: var(--surface-1);
+  color: var(--text-1);
 
   // Prevent scrollbars (especially on windows) when setting inline-size to
   // 100vw to achive full-bleed or other breakout effects in the layout.
   overflow-x: hidden;
+
+  --link-color: var(--text-1);
+  --link-visited-color: var(--text-2);
+
+  --focus-color: var(--surface-3);
+
+  --site-margin: var(--space-fluid-sm);
 
   > header {
     --link-visited-color: var(--link-color);

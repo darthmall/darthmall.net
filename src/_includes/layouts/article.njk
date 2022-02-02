@@ -6,6 +6,7 @@ classes: h-entry
 
 {% block content %}
   {% include "partials/page-title.njk" %}
+  {% include "partials/theme-toggle.njk" %}
   <div class="stack e-content" data-layout="center">
     {% if date -%}
       <aside aria-label="publication date" class="align-self-start">

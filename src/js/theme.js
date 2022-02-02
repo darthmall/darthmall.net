@@ -1,4 +1,11 @@
 (function () {
+  function init() {
+    const theme = localStorage.getItem(THEME_KEY);
+    if (theme) {
+      document.documentElement.dataset.theme = theme;
+    }
+  }
+
   const THEME_KEY = 'theme-preference';
 
   window.toggleTheme = function (event) {
@@ -14,4 +21,6 @@
       localStorage.setItem(THEME_KEY, theme);
     }
   };
+
+  init();
 })()

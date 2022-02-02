@@ -1,8 +1,18 @@
 (function () {
   function init() {
+    // Remove the theme toggle if localStorage is not supported, because we
+    // can't store the visitor's preferences.
+    if (!window.localStorage) {
+      const toggles = document.querySelector('.theme-toggle');
+      for (let el of toggles) {
+        el.remove();
+      }
+      return;
+    }
+
     const theme = localStorage.getItem(THEME_KEY);
     if (theme) {
-      document.documentElement.dataset.theme = theme;
+      document.documentElement.setAttribute('data-theme', theme);
     }
   }
 

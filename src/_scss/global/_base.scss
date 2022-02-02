@@ -28,8 +28,6 @@ body {
   --link-color: var(--text-1);
   --link-visited-color: var(--text-2);
 
-  --focus-color: var(--surface-3);
-
   --site-margin: var(--space-fluid-sm);
 
   > header {
@@ -140,7 +138,7 @@ a:link::before {
   bottom: -0.25em;
   left: -0.25em;
   z-index: -1;
-  background-color: var(--focus-color);
+  background-color: var(--focus-color, var(--surface-3));
   opacity: 0;
   transition: opacity 150ms linear;
 }
@@ -151,6 +149,41 @@ a:link:hover::before {
 
 a:visited {
   color: var(--link-visited-color);
+}
+
+button {
+  --background: var(--surface-2);
+  --border: var(--text-3);
+  --color: var(--text-1);
+  --active-background: var(--text-1);
+  --active-color: var(--surface-2);
+  --focus-background: var(--surface-2);
+  --focus-color: var(--text-1);
+  --focus-outline: var(--text-1);
+
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  padding: var(--space-relative-sm) var(--space-relative-md) var(--space-relative-xs);
+  line-height: 1;
+  color: var(--color);
+  font-weight: var(--font-weight-bold);
+  background-color: var(--background);
+
+  &:active,
+  &[aria-pressed] {
+    --focus-background: var(--active-background);
+    --focus-color: var(--active-color);
+
+    background: var(--active-background);
+    color: var(--active-color);
+  }
+
+  &:focus-visible {
+    background: var(--focus-background);
+    color: var(--focus-color);
+    outline: var(--space-relative-xs) solid var(--focus-outline);
+    outline-offset: var(--space-relative-xs);
+  }
 }
 
 .footnotes {

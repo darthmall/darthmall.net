@@ -163,7 +163,8 @@ button {
 
   border: 1px solid var(--border);
   border-radius: 0.25rem;
-  padding: var(--space-relative-sm) var(--space-relative-md) var(--space-relative-xs);
+  padding: var(--space-relative-sm) var(--space-relative-md)
+  calc(var(--space-relative-sm) - 0.1em);
   line-height: 1;
   color: var(--color);
   font-weight: var(--font-weight-bold);

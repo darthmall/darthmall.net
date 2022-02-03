@@ -46,6 +46,10 @@ body {
     &:hover > * {
       opacity: 0;
     }
+
+    &::before {
+      display: none;
+    }
   }
 }
 

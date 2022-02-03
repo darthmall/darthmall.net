@@ -23,8 +23,8 @@ function recent(collection) {
     .getFilteredByGlob(['./src/weblog/**/*.md', './src/sketchbook/**/*.md'])
     .filter(page => !['weblog', 'sketchbook'].includes(page.fileSlug))
     .sort((a, b) => {
-      if (a.data.date > b.data.order) return -1;
-      if (a.data.date < b.data.order) return 1;
+      if (a.data.date > b.data.date) return -1;
+      if (a.data.date < b.data.date) return 1;
       if (a.data.title < b.data.title) return -1;
       if (a.data.title > b.data.title) return 1;
       return 0;

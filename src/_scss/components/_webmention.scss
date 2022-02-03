@@ -1,7 +1,5 @@
-@use "../tokens";
-
 .webmention {
-  $avatar-size: 4rem;
+  $avatar-size: 3rem;
 
   display: grid;
 
@@ -9,10 +7,17 @@
   grid-template-areas:
     "av . auth"
     "av . body";
-  grid-template-columns: $avatar-size #{tokens.space(0)} 1fr;
+  grid-template-columns: $avatar-size var(--space-fluid-sm) 1fr;
 
   .webmention__avatar {
     grid-area: av;
+    background-color: var(--surface-2);
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   .webmention__author {

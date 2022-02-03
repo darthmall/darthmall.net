@@ -19,6 +19,12 @@
 
 <meta property="twitter:creator" content="@darth_mall">
 
+{% if cover %}
+  <meta property="og:image" content="{{ site.url }}{{ cover }}">
+  <meta property="twitter:image" content="{{ site.url }}{{ cover }}">
+  <meta property="og:image:alt" content="{{ coverAlt or '' }}">
+  <meta property="twitter:image:alt" content="{{ coverAlt or '' }}">
+{% endif %}
 {% if description %}
   <meta property="description" content="{{ description }}">
   <meta property="og:description" content="{{ description }}">

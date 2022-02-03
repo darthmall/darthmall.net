@@ -1,3 +1,18 @@
+{% macro gallery(items) %}
+<ul class="list-reset" data-layout="grid" data-space="fluid-md" role="list">
+  {% for item in items %}
+    <li class="card">
+      <strong class="card__title">
+        <a href="{{ item.url }}">{{ item.data.title }}</a>
+      </strong>
+      {% if item.data.cover %}
+        <img class="card__media" src="{{ item.data.cover }}" alt="">
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+{% endmacro %}
+
 {% macro postList(collection) %}
 <ul class="list-reset" data-layout="grid" data-space="fluid-md" role="list">
   {% for post in collection %}

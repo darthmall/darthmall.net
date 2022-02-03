@@ -3,6 +3,6 @@
 <div class="stack" data-layout="center" data-center-width="site">
   {% include "partials/theme-toggle.njk" %}
   <h2>Recent Posts</h2>
-  {{ components.postList(collections.posts.slice(0, site.recentPostCount)) }}
+  {{ components.gallery(collections.all.slice(0, site.recentPostCount)) }}
 </div>
 {% endblock %}

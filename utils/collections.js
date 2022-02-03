@@ -1,3 +1,5 @@
+const site = require('../src/_data/site.json');
+
 function posts(collection) {
   const now = new Date(),
     livePosts = (post) => post.date <= now && !post.data.draft;
@@ -7,6 +9,27 @@ function posts(collection) {
     .filter(livePosts)
     .filter(post => post.fileSlug !== 'weblog')
     .reverse();
+}
+
+function sketches(collection) {
+  return collection
+    .getFilteredByGlob('./src/sketchbook/**/*.md')
+    .filter(sketch => sketch.fileSlug !== 'sketchbook')
+    .reverse();
+}
+
+function recent(collection) {
+  return collection
+    .getFilteredByGlob(['./src/weblog/**/*.md', './src/sketchbook/**/*.md'])
+    .filter(page => !['weblog', 'sketchbook'].includes(page.fileSlug))
+    .sort((a, b) => {
+      if (a.data.date > b.data.order) return -1;
+      if (a.data.date < b.data.order) return 1;
+      if (a.data.title < b.data.title) return -1;
+      if (a.data.title > b.data.title) return 1;
+      return 0;
+    })
+    .slice(0, site.recentPostCount);
 }
 
 function work(collection) {
@@ -37,5 +60,7 @@ function work(collection) {
 
 module.exports = {
   posts,
+  recent,
+  sketches,
   work,
 };

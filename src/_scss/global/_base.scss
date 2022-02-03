@@ -191,6 +191,12 @@ button {
   }
 }
 
+[class*=aspect-] > iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .footnotes {
   @extend %body-4;
 }

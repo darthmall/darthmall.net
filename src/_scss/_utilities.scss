@@ -26,6 +26,8 @@
 .pad-block-relative-lg { padding-block: var(--space-relative-lg) }
 .pad-block-relative-xl { padding-block: var(--space-relative-xl) }
 
+.aspect-square { aspect-ratio: 1 / 1 }
+
 .align-self-start { align-self: start }
 .align-self-stretch { align-self: stretch }
 .flex-nowrap { flex-wrap: nowrap }

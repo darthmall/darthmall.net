@@ -2,9 +2,12 @@
 <ul class="list-reset" data-layout="grid" data-space="fluid-md" role="list">
   {% for item in items %}
     <li class="card">
-      <strong class="card__title">
-        <a href="{{ item.url }}">{{ item.data.title }}</a>
-      </strong>
+      <div class="card__container pad-fluid-sm" data-layout="flow" data-space="0">
+        <strong>
+          <a href="{{ item.url }}">{{ item.data.title }}</a>
+        </strong>
+        <small>{% formatDate item.data.date %}</small>
+      </div>
       {% if item.data.cover %}
         <img class="card__media" src="{{ item.data.cover }}" alt="">
       {% endif %}

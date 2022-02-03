@@ -2,15 +2,15 @@
   display: grid;
   grid-template-areas: "stack";
   place-items: center;
-  padding: var(--space-fluid-sm);
   aspect-ratio: 1 / 1;
+  text-align: center;
   background-color: var(--surface-2);
 
   > * {
     grid-area: stack;
   }
 
-  .card__title {
-    text-align: center;
+  .card__container {
+    padding: var(--space-fluid-sm);
   }
 }

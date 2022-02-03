@@ -6,6 +6,8 @@ pagination:
   filter:
     - all
     - posts
+    - recent
+    - sketches
     - work
 permalink: /tags/{{ tag }}/
 layout: layouts/weblog.njk

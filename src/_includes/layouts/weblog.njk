@@ -7,6 +7,6 @@
       {% include 'partials/tag-index.njk' %}
       <hr>
     {% endif %}
-    {{ posts.list(collections[tag]) }}
+    {{ components.postList(collections[tag]) }}
   </div>
 {% endblock %}

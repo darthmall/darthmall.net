@@ -2,10 +2,10 @@
 title: Portfolio
 layout: layouts/page.njk
 ---
-{% import "macros/projects.njk" as projects %}
+{% import "components.njk" as components %}
 <div class="stack" data-space="fluid-lg">
   {% for project in collections.work | rejectattr("draft") %}
-    {% call projects.summary(project.data) %}
+    {% call components.projectSummary(project.data) %}
       {{ project.templateContent | safe }}
     {% endcall %}
   {% endfor %}

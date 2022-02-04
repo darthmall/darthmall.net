@@ -210,3 +210,25 @@ input {
 .footnotes {
   @extend %body-4;
 }
+
+[href="#Skip"] {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -100%);
+  border-radius: 4px;
+  padding: var(--space-fluid-xs) var(--space-fluid-sm);
+  background-color: var(--surface-2);
+  text-decoration: none;
+  opacity: 0;
+  transition-property: top, transform, opacity;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+
+  &:focus {
+    outline: var(--space-relative-xs) solid var(--primary-1);
+    transform: translate(-50%, 0);
+    top: var(--space-fluid-md);
+    opacity: 1;
+  }
+}

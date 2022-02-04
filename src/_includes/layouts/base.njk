@@ -23,7 +23,7 @@
   {% if classes %}
     {% set mainClasses = ' class="' + classes + '"' %}
   {% endif %}
-  <main tabindex="-1"{{ mainClasses | safe }}>
+  <main {{ mainClasses | safe }}>
     {% block content %}
       {{ content | safe }}
     {% endblock content %}

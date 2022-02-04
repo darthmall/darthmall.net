@@ -5,11 +5,14 @@
 [data-space="fluid-sm"] { --space: var(--space-fluid-sm) }
 [data-space="fluid-md"] { --space: var(--space-fluid-md) }
 [data-space="fluid-lg"] { --space: var(--space-fluid-lg) }
+[data-space="fluid-xl"] { --space: var(--space-fluid-xl) }
 [data-space="relative-sm"] { --space: var(--space-relative-sm) }
 [data-space="relative-md"] { --space: var(--space-relative-md) }
 [data-space="relative-lg"] { --space: var(--space-relative-lg) }
 [data-space="relative-xl"] { --space: var(--space-relative-xl) }
 
+.margin-block-start-fluid-lg { margin-block-start: var(--space-fluid-lg) }
+.margin-block-start-fluid-xl { margin-block-start: var(--space-fluid-xl) }
 .margin-block-start-relative-md { margin-block-start: var(--space-relative-md) }
 .margin-block-end-relative-sm { margin-block-end: var(--space-relative-sm) }
 .margin-block-end-relative-md { margin-block-end: var(--space-relative-md) }

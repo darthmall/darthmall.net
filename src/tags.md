@@ -6,10 +6,10 @@ pagination:
   alias: tag
   filter:
     - all
+    - portfolio
     - posts
     - recent
     - sketches
-    - work
 permalink: /tags/{{ tag }}/
 layout: layouts/weblog.njk
 eleventyComputed:

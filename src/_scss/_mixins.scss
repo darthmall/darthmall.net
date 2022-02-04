@@ -5,6 +5,7 @@
   --text-1: var(--color-gray-6);
   --text-2: var(--color-gray-5);
   --text-3: var(--color-gray-4);
+  --primary-1: var(--color-magenta-1);
 }
 
 @mixin dark-theme {
@@ -14,4 +15,5 @@
   --text-1: var(--color-gray-1);
   --text-2: var(--color-gray-2);
   --text-3: var(--color-gray-3);
+  --primary-1: var(--color-yellow-1);
 }

@@ -25,9 +25,6 @@ body {
   // 100vw to achive full-bleed or other breakout effects in the layout.
   overflow-x: hidden;
 
-  --link-color: var(--text-1);
-  --link-visited-color: var(--text-2);
-
   --site-margin: var(--space-fluid-sm);
 
   > header {
@@ -125,13 +122,21 @@ li + li {
   margin-block-start: var(--space-relative-sm);
 }
 
-a:link {
-  text-underline-offset: 0.125em;
-  color: var(--link-color);
-}
+a {
+  --color: var(--text-1);
+  --hover-color: var(--primary-1);
 
-a:visited {
-  color: var(--link-visited-color);
+  text-underline-offset: 0.125em;
+  color: var(--color);
+  transition: color 150ms linear;
+
+  &:hover {
+    color: var(--hover-color);
+  }
+
+  &:visited:not(:hover) {
+    color: inherit;
+  }
 }
 
 button {

@@ -93,6 +93,8 @@ figure {
   margin-inline-start: calc((100% - var(--_size)) / 2);
 }
 
+blockquote,
+blockquote + *,
 figure,
 figure + *,
 hr,
@@ -105,6 +107,11 @@ figcaption {
   padding-inline: var(--site-margin);
   text-align: center;
   color: var(--text-2);
+}
+
+blockquote {
+  padding: var(--space-relative-md);
+  background-color: var(--surface-2);
 }
 
 pre {

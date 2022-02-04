@@ -44,6 +44,8 @@ directory](https://www.11ty.dev/docs/config/#directory-for-global-data-files):
 `_data/styles.js`. The data created is an array of objects with three properties:
 fileName, hashedFileName, and contents.
 
+<figure>
+
 ``` js
 const crypto = require("crypto");
 const path = require("path");
@@ -98,6 +100,9 @@ module.exports = function styles() {
 };
 ```
 
+<figcaption>src/_data/stylesheets.js</figcaption>
+</figure>
+
 At this point we have an array available that contains the names and contents
 of all of our CSS. Next step is to write out those CSS files.
 
@@ -107,6 +112,8 @@ To create the assets, we'll use the technique for [creating pages from
 data][pages from data]. If you're not familiar with this technique, you might
 want to read through how it works first. I created a new JavaScript template
 in the root of my input directory: `styles.11ty.js`.
+
+<figure>
 
 ``` js
 class Stylesheet {
@@ -138,6 +145,9 @@ class Stylesheet {
 module.exports = Stylesheet;
 ```
 
+<figcaption>src/style.11ty.js</figcaption>
+</figure>
+
 Just a couple of things to point out here. I added a computed property to
 each page — `assetKey` — which we'll use in a minute to look up the asset
 URLs when we need them.
@@ -165,6 +175,8 @@ The last major piece of the puzzle is adding a filter that makes it easy to
 grab the URL for any of your assets. In your `.eleventy.js` configuration you
 can add this filter:
 
+<figure>
+
 ``` js
 module.exports = function (eleventyConfig) {
   // ...
@@ -181,10 +193,15 @@ module.exports = function (eleventyConfig) {
 };
 ```
 
+<figcaption>.eleventy.js</figcaption>
+</figure>
+
 ### Triggering rebuilds with a new watch target
 
 And finally, to make sure that Eleventy knows to pay attention to our assets
 and rebuild the site, you can add this to your `.eleventy.js` as well:
+
+<figure>
 
 ``` js
 module.exports = function (eleventyConfig) {
@@ -196,6 +213,9 @@ module.exports = function (eleventyConfig) {
 };
 ```
 
+<figcaption>.eleventy.js</figcaption>
+</figure>
+
 Now, whenever you make a change to your style, Eleventy will rebuild your CSS
 and reload the site.
 
@@ -204,9 +224,17 @@ and reload the site.
 Now that all the pieces are in place, we can load our assets fairly easily in
 our layouts.
 
+<figure>
+
 ``` jinja2
 <link rel="stylesheet" href="{{ '{{ collections._styles | assetUrl(\'global.css\') | url }}' | safe }}">
 ```
+
+<figcaption>
+Example <link> element in a Nunjucks template that loads the compiled styles
+from the global data object
+</figcaption>
+</figure>
 
 This assumes that we started with a file: `src/_scss/global.scss`. Remember
 we set the asset key for each asset as the file name, this was so that we can

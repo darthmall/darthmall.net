@@ -23,7 +23,7 @@ of doing all of those things across platforms.
 
 I like to think of webmentions as the modern equivalent of how mathematicians
 and scientists used to publish essays in response to one another's work. I write
-up my [thoughts about privacy](/weblog/anonymity-vs-privacy/). You read it and
+up my [thoughts about privacy](/weblog/2019/anonymity-vs-privacy/). You read it and
 have your own take, which you then write up on your own site. Then you send me a
 webmention which does two things: first, it lets me know that you've written up
 a response; second, it enables me to put a link on my site to your response so

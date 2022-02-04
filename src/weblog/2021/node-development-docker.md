@@ -67,12 +67,17 @@ application.
 In your `docker-compose.yml` file using an official Node image, it would look
 something like this:
 
+<figure>
+
 ```yaml
 frontend:
     image: "node:14.18.1-alpine"
     volumes:
         - "./src/:/home/node/app/"
 ```
+
+<figcaption>docker-compose.yml</figcaption>
+</figure>
 
 ## Setting the User ID in the Container
 
@@ -110,11 +115,16 @@ user on the host. Simply set the `user` property of the service in your
 can easily find by running `id -u` and `id -g` in a terminal. It looks something
 like this:
 
+<figure>
+
 ```yaml
 frontend:
     # ...
     user: "1000:1000"
 ```
+
+<figcaption>docker-compose.yml</figcaption>
+</figure>
 
 ### A More Portable `user` Setting
 
@@ -130,18 +140,28 @@ Docker Compose will check for a `.env` file in the same directory in which
 `docker-compose.yml` resides. So you can just put those IDs in variables in a
 `.env` and set them in your configuration from the variables.
 
-```bash
+<figure>
+
+``` bash
 echo "UID=$(id -u)" >> .env
 echo "GID=$(id -g)" >> .env
 ```
 
+<figcaption>.env</figcaption>
+</figure>
+
 And then your `docker-compose.yaml` refers to those variables.
+
+<figure>
 
 ```yaml
 frontend:
     # ...
     user: ${UID}:${GID}
 ```
+
+<figcaption>docker-compose.yml</figcaption>
+</figure>
 
 **Make sure you add `.env` to your `.gitignore`.** <i>Et voilà</i>, any files
 created by the user in the container will always have the appropriate ownership
@@ -159,6 +179,8 @@ script. This makes executing commands in the container a little easier for me,
 since I tend to use NPM scripts for all my tasks. So I'll add this to my
 `docker-compose.yml`:
 
+<figure>
+
 ```yaml
 frontend:
     # ...
@@ -166,16 +188,29 @@ frontend:
     command: ["run", "dev"]
 ```
 
+<figcaption>docker-compose.yml</figcaption>
+</figure>
+
 By default, the container will run `npm run dev`, but I can easily run other
 commands such as `npm install` by just passing the subcommand (`install` in this
 case) directly to the image when I run it. So installing dependencies is simply:
+
+<figure>
 
 ```bash
 docker-compose run --rm frontend install
 ```
 
+<figcaption>
+Installing dependencies in the container when you’ve set <code>npm</code> as the
+container entrypoint
+</figcaption>
+</figure>
+
 Alternatively, leave the `entrypoint` alone and just set up the command to be
 whatever you like:
+
+<figure>
 
 ```yaml
 frontend:
@@ -183,11 +218,22 @@ frontend:
     command: ["npm", "run", "dev"]
 ```
 
+<figcaption>docker-compose.yml</figcaption>
+</figure>
+
 And installing dependencies looks like:
+
+<figure>
 
 ```bash
 docker-compose run --rm frontend npm install
 ```
+
+<figcaption>
+Installing dependencies in the container with <code>npm</code> when you haven’t
+configured the entrypoint
+</figcaption>
+</figure>
 
 ## Moving the NPM Cache
 
@@ -210,12 +256,17 @@ just by prefixing them with `NPM_CONFIG_`. So we don't have to run `npm config
 cache` to change the cache directory, we can just set `NPM_CONFIG_CACHE` to the
 desired location in our `docker-compose.yaml`.
 
+<figure>
+
 ```yaml
 frontend:
     # ...
     environment:
         - NPM_CONFIG_CACHE=/home/node/app/.npm-cache-docker/
 ```
+
+<figcaption>docker-compose.yml</figcaption>
+</figure>
 
 I like to give it a name that makes it very clear that this is a directory
 created by the Docker container, just to be safe.

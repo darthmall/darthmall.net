@@ -7,21 +7,18 @@ function posts(collection) {
   return collection
     .getFilteredByGlob('./src/weblog/**/*.md')
     .filter(livePosts)
-    .filter(post => post.fileSlug !== 'weblog')
     .reverse();
 }
 
 function sketches(collection) {
   return collection
     .getFilteredByGlob('./src/sketchbook/**/*.md')
-    .filter(sketch => sketch.fileSlug !== 'sketchbook')
     .reverse();
 }
 
 function recent(collection) {
   return collection
     .getFilteredByGlob(['./src/weblog/**/*.md', './src/sketchbook/**/*.md'])
-    .filter(page => !['weblog', 'sketchbook'].includes(page.fileSlug))
     .sort((a, b) => {
       if (a.data.date > b.data.date) return -1;
       if (a.data.date < b.data.date) return 1;
@@ -35,7 +32,7 @@ function recent(collection) {
 function work(collection) {
   return collection
     .getFilteredByGlob('./src/portfolio/**/*.md')
-    .filter(post => post.fileSlug !== 'work' && !post.data.draft)
+    .filter(post => !post.data.draft)
     .sort((a, b) => {
       // Sort by the order field first, placing older projects after newer projects
       if (a.data.order > b.data.order) return -1;

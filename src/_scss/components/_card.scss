@@ -12,7 +12,7 @@
 
   .card__container {
     padding: var(--space-fluid-sm);
-    contain: layout;
+    position: relative;
     z-index: 2;
 
     &::after {

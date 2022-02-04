@@ -168,7 +168,7 @@ button {
   border: 1px solid var(--border);
   border-radius: 0.25rem;
   padding: var(--space-relative-sm) var(--space-relative-md)
-  calc(var(--space-relative-sm) - 0.1em);
+  calc(var(--space-relative-sm) * 0.666);
   line-height: 1;
   color: var(--color);
   font-weight: var(--font-weight-bold);
@@ -187,7 +187,31 @@ button {
     background: var(--focus-background);
     color: var(--focus-color);
     outline: var(--space-relative-xs) solid var(--focus-outline);
-    outline-offset: var(--space-relative-xs);
+  }
+}
+
+input {
+  --background: var(--surface-1);
+  --border: var(--text-2);
+  --color: var(--text-1);
+  --focus-background: var(--surface-1);
+  --focus-color: var(--text-1);
+  --focus-outline: var(--text-1);
+
+  border: 1px solid var(--border);
+  border-radius: 0.25rem;
+  padding:
+    var(--space-relative-sm)
+    var(--space-relative-md)
+    calc(var(--space-relative-sm) * 0.666);
+  line-height: 1;
+  color: var(--color);
+  background-color: var(--background);
+
+  &:focus-visible {
+    background: var(--focus-background);
+    color: var(--focus-color);
+    outline: 2px solid var(--focus-outline);
   }
 }
 

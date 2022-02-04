@@ -106,8 +106,8 @@
 
     .project-summary__media {
       float: right;
-      margin-inline-end: var(--space-relative-md);
       margin-inline-start: var(--space-relative-lg);
+      margin-block-end: var(--space-relative-lg);
       max-width: calc(100% - var(--measure-sm) - var(--space-relative-lg));
     }
 

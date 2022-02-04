@@ -27,10 +27,6 @@ body {
 
   --site-margin: var(--space-fluid-sm);
 
-  > header {
-    --link-visited-color: var(--link-color);
-  }
-
   > header img {
     max-height: var(--icon-lg);
   }
@@ -41,6 +37,15 @@ body {
 
     &:hover > * {
       opacity: 0;
+    }
+  }
+
+  > header nav a {
+    text-decoration: none;
+    border-bottom: 0.125em solid transparent;
+
+    &[aria-current] {
+      border-color: var(--primary-1);
     }
   }
 }
@@ -120,6 +125,7 @@ li + li {
 
 a {
   --color: var(--text-1);
+  --visited-color: var(--text-1);
   --hover-color: var(--primary-1);
 
   text-underline-offset: 0.125em;
@@ -131,7 +137,7 @@ a {
   }
 
   &:visited:not(:hover) {
-    color: inherit;
+    color: var(--visited-color);
   }
 }
 

@@ -50,6 +50,11 @@ body {
   }
 }
 
+*:focus {
+  outline: var(--space-relative-xs) solid var(--text-1);
+  outline-offset: var(--space-relative-xs);
+}
+
 footer svg {
   height: var(--icon-sm);
 }
@@ -173,6 +178,7 @@ button {
     background: var(--focus-background);
     color: var(--focus-color);
     outline: var(--space-relative-xs) solid var(--focus-outline);
+    outline-offset: 0;
   }
 }
 
@@ -198,6 +204,7 @@ input {
     background: var(--focus-background);
     color: var(--focus-color);
     outline: 2px solid var(--focus-outline);
+    outline-offset: 0;
   }
 }
 

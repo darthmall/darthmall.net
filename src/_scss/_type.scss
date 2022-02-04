@@ -53,12 +53,12 @@
 
 %heading-3 {
   font-size: var(--font-size-0);
-  font-weight: var(--font-weight-regular, normal);
+  font-weight: var(--font-weight-semi-bold, normal);
   line-height: var(--line-height-md);
   font-family: var(--font-stack-body);
   font-feature-settings: "ss01";
-  letter-spacing: 0.015em;
-  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
   color: var(--color-gray-1);
 }
 

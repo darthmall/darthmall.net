@@ -61,6 +61,7 @@ module.exports = function (config) {
   config.addWatchTarget("./src/_scss/");
 
   // Don't mess with this stuff, just pass it on through
+  config.addPassthroughCopy('src/_redirects');
   config.addPassthroughCopy('src/fonts');
   config.addPassthroughCopy('src/js');
   config.addPassthroughCopy('src/img');

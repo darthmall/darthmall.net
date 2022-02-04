@@ -35,8 +35,7 @@ body {
   }
 
   > header img {
-    // FIXME: Should this be a design token? Set with a utility class instead?
-    max-height: 3em;
+    max-height: var(--icon-lg);
   }
 
   > header a[href='/'] {
@@ -54,8 +53,7 @@ body {
 }
 
 footer svg {
-  // FIXME: Should this be a design token? Set with a utility class instead?
-  height: 1.5em;
+  height: var(--icon-sm);
 }
 
 h1 {

@@ -1,13 +1,11 @@
 .webmention {
-  $avatar-size: 3rem;
-
   display: grid;
 
   grid-auto-rows: min-content;
   grid-template-areas:
     "av . auth"
     "av . body";
-  grid-template-columns: $avatar-size var(--space-fluid-sm) 1fr;
+  grid-template-columns: var(--icon-md) var(--space-fluid-sm) 1fr;
 
   .webmention__avatar {
     grid-area: av;

@@ -5,7 +5,7 @@ layout: layouts/page.njk
 ---
 {% import "components.njk" as components %}
 <div class="stack" data-space="fluid-lg">
-  {% for project in collections.portfolio | rejectattr("draft") %}
+  {% for project in collections.portfolio %}
     {% call components.projectSummary(project.data) %}
       {{ project.templateContent | safe }}
     {% endcall %}

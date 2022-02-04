@@ -7,5 +7,10 @@
   "author": {
     "name": "Evan Sheehan",
     "email": "evan.s@hey.com"
+  },
+  "a11y": {
+    "contact": "a11y@darthmall.net",
+    "subject": "Accessibility issue on darthmall.net",
+    "body": "Describe the issue in as much detail as you’re able. Thanks!"
   }
 }

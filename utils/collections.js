@@ -34,7 +34,7 @@ function recent(collection) {
 
 function work(collection) {
   return collection
-    .getFilteredByGlob('./src/work/**/*.md')
+    .getFilteredByGlob('./src/portfolio/**/*.md')
     .filter(post => post.fileSlug !== 'work' && !post.data.draft)
     .sort((a, b) => {
       // Sort by the order field first, placing older projects after newer projects

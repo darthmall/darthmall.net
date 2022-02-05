@@ -2,6 +2,12 @@
   display: grid;
   grid-template-areas: "stack";
   place-items: center;
+
+  // Without this, WebKit doesn't vertically center the titles for cards with no
+  // media. I have no idea why. It doesn't seem to negatively affect anything
+  // else.
+  align-content: center;
+
   aspect-ratio: 1 / 1;
   text-align: center;
   background-color: var(--surface-2);

@@ -6,7 +6,7 @@ description: >-
 seo:
     image: /img/dont-panic/dont-panic-social.png
 tags:
-    - Wallpaper
+    - Folderol
 ---
 
 For the last ten years, I’ve been using the same image for my phone’s lock

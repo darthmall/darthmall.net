@@ -4,6 +4,8 @@ date: 2021-05-04
 description: >-
     Supposedly an average person lives in eleven homes in their lifetime
     [Citation Needed]. I've lived in 17 different homes
+tags:
+    - Folderol
 ---
 
 I originally saw this on [CSS Tricks](https://css-tricks.com/number-of-homes/).

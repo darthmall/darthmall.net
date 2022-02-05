@@ -6,7 +6,7 @@ description: >-
     Jinja2.
 tags:
     - Eleventy
-    - Jinja2/Nunjucks
+    - Nunjucks
 ---
 
 When you're working with [Nunjucks](https://mozilla.github.io/nunjucks/) (or

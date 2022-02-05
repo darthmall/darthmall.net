@@ -2,7 +2,7 @@
 title: Programming isn't Hard
 date: 2021-05-16
 tags:
-    - Programming
+    - Folderol
 description: >-
     Heydon Pickering is being silly and provocative on Twitter again, and as
     usual, he pretty much nails it.

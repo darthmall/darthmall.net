@@ -1,9 +1,11 @@
+---
+eleventyExcludeFromCollections: true
+---
 {% extends "layouts/base.njk" %}
 {% block content %}
-<div class="center flow flow-sp-3">
-  <h2>Recent Posts</h2>
-  {% for post in collections.posts.slice(0, site.recentPostCount) %}
-    {{ posts.summary(post) }}
-  {% endfor %}
+<div class="stack" data-layout="center" data-center-width="site">
+  {% include "partials/theme-toggle.njk" %}
+  <h2 id="Skip" tabindex="-1">Recent Posts</h2>
+  {{ components.gallery(collections.feed.slice(0, site.recentPostCount)) }}
 </div>
 {% endblock %}

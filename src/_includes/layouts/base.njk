@@ -1,5 +1,4 @@
-{% import "macros/posts.njk" as posts %}
-{% import "macros/projects.njk" as projects %}
+{% import "components.njk" as components %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,13 +9,11 @@
 
   {% include "partials/meta-info.njk" %}
 
-  <link rel="stylesheet" href="{{ collections._styles | assetUrl('style.css') | url }}">
-  {% for css in styles %}
-  <link rel="stylesheet" href="{{ collections._styles | assetUrl(css) | url }}">
-  {% endfor %}
-  <link rel="stylesheet" media="print" href="{{ collections._styles | assetUrl('print.css') | url }}">
-
-  {% block head %}{% endblock %}
+  {% block head %}
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" media="print" href="/css/print.css">
+    <script src="/js/theme.js"></script>
+  {% endblock %}
 </head>
 
 <body>
@@ -26,12 +23,8 @@
   {% if classes %}
     {% set mainClasses = ' class="' + classes + '"' %}
   {% endif %}
-  <main tabindex="-1"{{ mainClasses | safe }}>
+  <main {{ mainClasses | safe }}>
     {% block content %}
-      {% if title %}
-        <h1 class="center">{{ title | safe }}</h1>
-      {% endif %}
-
       {{ content | safe }}
     {% endblock content %}
   </main>

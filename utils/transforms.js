@@ -1,9 +1,15 @@
 const prettier = require('prettier');
 
 function formatHtml(content, outputPath) {
-  return outputPath.endsWith('.html') ?
-    prettier.format(content, { parser: 'html' }) :
-    content;
+  if (outputPath.endsWith('.html')) {
+    return prettier.format(content, { parser: 'html' });
+  }
+
+  if (outputPath.endsWith('.css')) {
+    return prettier.format(content, { parser: 'css' });
+  }
+
+  return content;
 }
 
 module.exports = {

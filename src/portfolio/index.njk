@@ -1,0 +1,13 @@
+---
+title: Portfolio
+eleventyExcludeFromCollections: true
+layout: layouts/page.njk
+---
+{% import "components.njk" as components %}
+<div class="stack margin-block-start-fluid-lg" data-space="fluid-xl">
+  {% for project in collections.portfolio %}
+    {% call components.projectSummary(project.data) %}
+      {{ project.templateContent | safe }}
+    {% endcall %}
+  {% endfor %}
+</div>

@@ -4,44 +4,21 @@ classes: h-entry
 
 {% extends 'layouts/base.njk' %}
 
-{% block head %}
-  <link href="{{ collections._styles | assetUrl('avatar.css') | url }}" rel="stylesheet">
-  <link href="https://unpkg.com/prismjs@1.20.0/themes/prism.css" rel="stylesheet">
-{% endblock %}
-
 {% block content %}
-  <header class="[ center ]">
-    <h1 class="[ p-name ]">{{ title | safe }}</h1>
-
-    {% if date %}
-      <p class="[ dt-published ]">
-        {% formatDate date, "font-heading color-slate"%}
-      </p>
-    {% endif %}
-  </header>
-
-  <div class="[ post ] [ flow center ] [ e-content ]">
-    {{ content | safe }}
+  {% include "partials/page-title.njk" %}
+  {% include "partials/theme-toggle.njk" %}
+  <div class="stack e-content" data-layout="center">
+    {% if date -%}
+      <aside aria-label="publication date" class="align-self-start">
+        <p>
+          {% formatDate date %}
+        </p>
+      </aside>
+    {%- endif %}
+    {{ super() }}
   </div>
 
-  {% include "partials/webmentions.njk" %}
-
-  {% set footer -%}
-    {%- if backLink -%}
-      <p><a href="{{ page.url | dirname }}/"><b>{{ backLink | safe }}</b></a></p>
-    {%- endif -%}
-    {%- if next -%}
-      <p>Next: <a href="{{ next.page.url }}">{{ next.title | safe }}</a></p>
-    {%- endif -%}
-    {%- if prev -%}
-      <p>Previous: <a href="{{ prev.page.url }}">{{ prev.title | safe }}</a></p>
-    {%- endif -%}
-  {%- endset %}
-
-  {% if footer %}
-    <footer class="[ center ] [ margin-top-3 ]">
-      {{ footer | safe }}
-    </footer>
+  {% if webmentions !== false %}
+    {% include "partials/webmentions.njk" %}
   {% endif %}
-
 {% endblock %}

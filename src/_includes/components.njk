@@ -1,0 +1,62 @@
+{% macro gallery(items) %}
+<ul class="list-reset" data-layout="grid" data-space="fluid-md" role="list">
+  {% for item in items %}
+    <li class="card">
+      <div class="card__container pad-fluid-sm" data-layout="flow" data-space="0">
+        <strong>
+          <a href="{{ item.url }}">{{ item.data.title }}</a>
+        </strong>
+        <small>{% formatDate item.data.date %}</small>
+      </div>
+      {% if item.data.cover %}
+        <img class="card__media" src="{{ item.data.cover }}" alt="">
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+{% endmacro %}
+
+{% macro postList(collection) %}
+<ul class="list-reset" data-layout="grid" data-space="fluid-md" role="list">
+  {% for post in collection %}
+    <li data-layout="flow" data-space="0">
+      <small class="text-3">
+        {% formatDate post.data.date %}
+      </small>
+      <br class="unstyled">
+      <strong>
+        <a href="{{ post.url }}" class="type-display-2">{{ post.data.title }}</a>
+      </strong>
+      <br class="unstyled">
+      <span class="text-3 type-body-4" data-space="relative-sm">{{ post.data.description }}</span>
+    </li>
+  {% endfor %}
+</ul>
+{% endmacro %}
+
+{% macro projectSummary(project) %}
+  {% set classAttr = " class='project-summary--" + project.class + "'" if project.class else "" %}
+  {% set styleAttr = " style='--color-1:#" + project.color + "'" if project.color else "" %}
+
+  <article{{ classAttr | safe }}{{ styleAttr | safe }}>
+    <div class="project-summary__container">
+      <header class="project-summary__header">
+        <h2>{{ project.title }}</h2>
+        <p class="type-body-3">{{ project.client | safe }}</p>
+      </header>
+
+      <div class="project-summary__media">
+        {% set vimeo = r/vimeo\.com/g %}
+        {% if vimeo.test(project.media) %}
+          <iframe class="video" src="{{ project.media }}" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        {% else %}
+          <img src="{{ project.media }}" alt="{{ project.mediaAlt }}">
+        {% endif %}
+      </div>
+
+      <div class="project-summary__body">
+        {{ caller() }}
+      </div>
+    </div>
+  </article>
+{% endmacro %}

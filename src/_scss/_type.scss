@@ -1,0 +1,64 @@
+%body-1 {
+  font-size: var(--font-size-0);
+  font-weight: var(--font-weight-regular, normal);
+  line-height: var(--line-height-md);
+  font-family: var(--font-stack-body);
+  font-feature-settings: "ss01";
+}
+
+%body-2 {
+  font-family: var(--font-stack-mono);
+  font-variation-settings: "wdth" 80;
+}
+
+%body-3 {
+  font-size: var(--font-size--1);
+  font-family: var(--font-stack-mono);
+  line-height: var(--line-height-md);
+}
+
+%body-4 {
+  @extend %body-1;
+  font-size: var(--font-size--1);
+}
+
+%display-1 {
+  font-size: var(--font-size-5);
+  font-family: var(--font-stack-heading);
+  line-height: var(--line-height-xs);
+}
+
+%display-2 {
+  font-size: var(--font-size-1);
+  font-family: var(--font-stack-heading);
+  line-height: var(--line-height-sm);
+}
+
+%heading-1 {
+  font-size: var(--font-size-2);
+  font-weight: var(--font-weight-black, bold);
+  font-family: var(--font-stack-body);
+  font-feature-settings: normal;
+  line-height: var(--line-height-sm);
+  text-transform: lowercase;
+}
+
+%heading-2 {
+  font-size: var(--font-size-1);
+  font-weight: var(--font-weight-bold, bold);
+  font-family: var(--font-stack-body);
+  font-feature-settings: normal;
+  line-height: var(--line-height-sm);
+}
+
+%heading-3 {
+  font-size: var(--font-size-0);
+  font-weight: var(--font-weight-semi-bold, normal);
+  line-height: var(--line-height-md);
+  font-family: var(--font-stack-body);
+  font-feature-settings: "ss01";
+  letter-spacing: 0.05em;
+  text-transform: lowercase;
+  color: var(--color-gray-1);
+}
+

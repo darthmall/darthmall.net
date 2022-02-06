@@ -1,12 +1,10 @@
-{% set bg %}{% triskaidecagon 130 %}{% endset %}
-
-<header role="banner" class="[ center ] [ h-card p-author ]">
-  <a href="/" class="[ name-mark ] [ u-url p-name ]" style="background-image:url('data:image/svg+xml;utf8,{{ bg
-  }}')">
-    <span class="first">Evan</span>
-    <span class="last">Sheehan</span>
-  </a>
-
-  <div hidden>{% include "partials/avatar.njk" %}</div>
-  {% include "partials/nav.njk" %}
+<header role="banner" class="h-card p-author pad-block-relative-lg"
+  data-layout="center" data-center-width="site">
+  <a href="#Skip">Skip to content</a>
+  <div class="align-self-stretch" data-layout="cluster" data-space="fluid-sm">
+    <a href="/" class="shape-circle u-url p-name margin-inline-end-auto" aria-label="Home">
+      <img src="/img/evan.jpg" alt="" class="u-photo" />
+    </a>
+    {% include "partials/nav.njk" %}
+  </div>
 </header>

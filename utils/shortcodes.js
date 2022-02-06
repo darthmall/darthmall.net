@@ -2,6 +2,27 @@ const d3 = require("d3");
 
 const siteMeta = require("../src/_data/site.json");
 
+/**
+ * Return a clamp() expression for a responsive size.
+ */
+function clamp(viewport, range, baseFontSize = 16, precision = 4) {
+  const dVw = (viewport[1] - viewport[0]) / 100;
+  const minVw = viewport[0] / 100;
+  const dSize = (range[1] - range[0]) * baseFontSize;
+  const minSize = range[0] * baseFontSize;
+
+  // Slope of the line from the smallest font size at the smallest viewport to
+  // the largest font size at the largest viewport
+  const m = dSize / dVw;
+
+  // y-intercept of the line: font size when the viewport width is 0
+  const b = (minSize - (m * minVw)) / baseFontSize;
+
+  const calc = `calc(${m.toFixed(precision)}vw + ${b.toFixed(precision)}rem)`;
+
+  return `clamp(${range[0]}rem, ${calc}, ${range[1]}rem)`;
+}
+
 function copyright() {
   const now = new Date();
 
@@ -24,6 +45,7 @@ function formatDate(dt, cls = "") {
     'December',
   ];
 
+  if (!dt) return '';
   if (!(dt instanceof Date)) dt = new Date(dt);
 
   const month = MONTHS[dt.getUTCMonth()];
@@ -89,6 +111,7 @@ function triskaidecagon(size) {
 }
 
 module.exports = {
+  clamp,
   copyright,
   formatDate,
   triskaidecagon,

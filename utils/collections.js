@@ -1,5 +1,17 @@
 const site = require('../src/_data/site.json');
 
+function feed(collection) {
+  return collection
+    .getFilteredByGlob(['./src/weblog/**/*.md', './src/sketchbook/**/*.md'])
+    .sort((a, b) => {
+      if (a.data.date > b.data.date) return -1;
+      if (a.data.date < b.data.date) return 1;
+      if (a.data.title < b.data.title) return -1;
+      if (a.data.title > b.data.title) return 1;
+      return 0;
+    });
+}
+
 function portfolio(collection) {
   return collection
     .getFilteredByGlob('./src/portfolio/**/*.md')
@@ -42,22 +54,9 @@ function sketches(collection) {
     .reverse();
 }
 
-function recent(collection) {
-  return collection
-    .getFilteredByGlob(['./src/weblog/**/*.md', './src/sketchbook/**/*.md'])
-    .sort((a, b) => {
-      if (a.data.date > b.data.date) return -1;
-      if (a.data.date < b.data.date) return 1;
-      if (a.data.title < b.data.title) return -1;
-      if (a.data.title > b.data.title) return 1;
-      return 0;
-    })
-    .slice(0, site.recentPostCount);
-}
-
 module.exports = {
+  feed,
   portfolio,
   posts,
-  recent,
   sketches,
 };

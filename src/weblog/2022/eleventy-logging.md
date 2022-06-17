@@ -1,5 +1,6 @@
-# Eleventy Logging
-#blog/draft 
+---
+title: Logging in Eleventy
+---
 
 Eleventy uses the [debug](https://www.npmjs.com/package/debug) package to log debug messages to the console. If something is going wrong with your build, you can set the `DEBUG` environment variable to view log messages from specific parts of Eleventy, or all of it. The Eleventy docs refer to this as [Debug Mode](https://www.11ty.dev/docs/debugging/).
 

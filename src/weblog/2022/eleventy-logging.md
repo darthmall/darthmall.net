@@ -53,7 +53,7 @@ Now if we need to debug our database fetch, we can run our build with `DEBUG=dar
 
 <figure>
 
-```
+```bash
 DEBUG=darthmall:database eleventy
 ```
 

@@ -6,7 +6,7 @@ Eleventy uses the [debug](https://www.npmjs.com/package/debug) package to log de
 
 <figure>
 
-```
+```bash
 DEBUG=Eleventy* eleventy
 ```
 
@@ -15,7 +15,7 @@ DEBUG=Eleventy* eleventy
 
 <figure>
 
-```
+```bash
 DEBUG=Eleventy:ComputedData eleventy
 ```
 
@@ -41,7 +41,7 @@ module.exports = async function () {
   } catch {
     debug("Database read failed");
   }
-  
+
   return data;
 };
 ```
@@ -68,7 +68,7 @@ If you dig around in the [Eleventy source code](https://github.com/11ty/eleventy
 
 <figure>
 
-```
+```bash
 DEBUG=Eleventy:Logger,darthmall:database eleventy
 ```
 

@@ -1,5 +1,8 @@
 ---
 title: Logging in Eleventy
+date: 2022-06-18
+tags:
+  - Eleventy
 ---
 
 Eleventy uses the [debug](https://www.npmjs.com/package/debug) package to log debug messages to the console. If something is going wrong with your build, you can set the `DEBUG` environment variable to view log messages from specific parts of Eleventy, or all of it. The Eleventy docs refer to this as [Debug Mode](https://www.11ty.dev/docs/debugging/).
@@ -77,5 +80,34 @@ DEBUG=Eleventy:Logger,darthmall:database eleventy
 
 Et voila! We get to see Eleventy’s usual output about writing templates and so on along with our output from our database code. This way we get nice status messages in our builds, but if something goes wrong, we don’t have to re-run the build in CI to find out what went wrong.
 
-## Beware DEBUG with GitLab CI
+## Beware GitLab CI
 
+If you happen to be buiding your Eleventy site with GitLab CI, you have to be careful about how you set your `DEBUG` variable. You might be tempted—as I was—to set it as a variable in the job.
+
+<figure>
+
+```yaml
+build:
+  variables:
+    DEBUG: "Eleventy:Logger,darthmall:database"
+  script:
+    - eleventy
+```
+
+<figcaption>Set the `DEBUG` variable in GitLab CI’s environment variable config section.</figcaption>
+
+</figure>
+
+Doing this will probably break your builds. For some reason, setting a `DEBUG` variable in the job like this, causes artifacts to not be uploaded as well as some other bad behaviors. There’s an [open issue for GitLab CI](https://gitlab.com/gitlab-org/gitlab-runner/-/issues/3068), which has been open for several years. Instead, you should set the `DEBUG` variable when you invoke `eleventy`.
+
+<figure>
+
+```yaml
+build:
+  script:
+    - DEBUG="Eleventy:Logger,darthmall:database" eleventy
+```
+
+<figcaption>Safely set the `DEBUG` variable just for your Eleventy build.</figcaption>
+
+</figure>

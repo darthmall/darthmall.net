@@ -51,6 +51,14 @@ button, input, select, textarea {
   font: inherit;
 }
 
+header > p {
+  border-block-start: 1px solid #888;
+  padding-block: 0.5em;
+  font-family: var(--font-family-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 [hidden] {
   display: none;
 }

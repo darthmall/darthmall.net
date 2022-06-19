@@ -5,20 +5,16 @@ classes: h-entry
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
-  {% include "partials/page-title.njk" %}
-  {% include "partials/theme-toggle.njk" %}
-  <div class="flow e-content" data-layout="center">
-    {% if date -%}
-      <aside aria-label="publication date" class="align-self-start">
-        <p>
-          {% formatDate date %}
-        </p>
-      </aside>
-    {%- endif %}
-    {{ super() }}
-  </div>
+  <main class="flow h-entry" data-layout="center">
+    <header class="flow">
+      <h1 id="Skip" tabindex="-1" class="p-name">{{ title }}</h1>
+      <p><time class="dt-published" date="{{ date }}">{{ date }}</time></p>
+    </header>
 
-  {% if webmentions !== false %}
-    {% include "partials/webmentions.njk" %}
-  {% endif %}
+    <div class="flow e-content">
+      {{ content | safe }}
+    </div>
+  </main>
+
+  {% include "partials/webmentions.njk" %}
 {% endblock %}

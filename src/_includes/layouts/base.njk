@@ -19,15 +19,12 @@
 <body>
   {% include "partials/site-header.njk" %}
 
-  {% set mainClasses = "" %}
-  {% if classes %}
-    {% set mainClasses = ' class="' + classes + '"' %}
-  {% endif %}
-  <main {{ mainClasses | safe }}>
-    {% block content %}
+  {% block content %}
+    <main class="flow" data-layout="center">
+      <h1 id="Skip" tabindex="-1">{{ title }}</h1>
       {{ content | safe }}
-    {% endblock content %}
-  </main>
+    </main>
+  {% endblock content %}
 
   {% include "partials/site-footer.njk" %}
 </body>

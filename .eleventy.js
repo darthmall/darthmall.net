@@ -68,20 +68,6 @@ module.exports = function (config) {
   config.addPassthroughCopy('src/img');
   config.addPassthroughCopy('src/favicon.ico');
 
-  config.on('beforeBuild', () => {
-    const { css, map } = sass.renderSync({
-      file: './src/_scss/style.scss',
-      outFile: 'style.css',
-      importer: [jsonImporter()],
-      outputStyle: 'compressed',
-      sourceMap: true,
-    });
-
-    fs.mkdirSync('./_site/css/', { recursive: true });
-    fs.writeFileSync('./_site/css/style.css', css);
-    fs.writeFileSync('./_site/css/style.map.css', map);
-  });
-
   return {
     dir: {
       input: 'src',

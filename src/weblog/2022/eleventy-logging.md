@@ -1,8 +1,11 @@
 ---
 title: Logging in Eleventy
 date: 2022-06-18
+description: >-
+    How to use the debug package to output custom log messages alongside of
+    Eleventy’s logs in your Eleventy build.
 tags:
-  - Eleventy
+    - Eleventy
 ---
 
 Eleventy uses the [debug](https://www.npmjs.com/package/debug) package to log debug messages to the console. If something is going wrong with your build, you can set the `DEBUG` environment variable to view log messages from specific parts of Eleventy, or all of it. The Eleventy docs refer to this as [Debug Mode](https://www.11ty.dev/docs/debugging/).

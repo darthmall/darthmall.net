@@ -66,6 +66,7 @@ module.exports = function (config) {
   config.addPassthroughCopy('src/fonts');
   config.addPassthroughCopy('src/js');
   config.addPassthroughCopy('src/img');
+  config.addPassthroughCopy('src/favicon.ico');
 
   config.on('beforeBuild', () => {
     const { css, map } = sass.renderSync({

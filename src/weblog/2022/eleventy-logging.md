@@ -78,7 +78,7 @@ DEBUG=Eleventy:Logger,darthmall:database eleventy
 <figcaption>Log Eleventy’s default messages and our custom messages with `debug`.</figcaption>
 </figure>
 
-Et voila! We get to see Eleventy’s usual output about writing templates and so on along with our output from our database code. This way we get nice status messages in our builds, but if something goes wrong, we don’t have to re-run the build in CI to find out what went wrong.
+Et voilà! We get to see Eleventy’s usual output about writing templates and so on along with the output from our database code. This way we get nice status messages in our builds, but if something goes wrong, we don’t have to re-run the build in CI to find out what went wrong.
 
 ## Beware GitLab CI
 
@@ -94,10 +94,10 @@ build:
     - eleventy
 ```
 
-<figcaption>Set the `DEBUG` variable in GitLab CI’s environment variable config section.</figcaption>
+<figcaption>Set the <code>DEBUG</code> variable in GitLab CI’s environment variable config section.</figcaption>
 </figure>
 
-Doing this will probably break your builds. For some reason, setting a `DEBUG` variable in the job like this, causes artifacts to not be uploaded as well as some other bad behaviors. There’s an [open issue for GitLab CI](https://gitlab.com/gitlab-org/gitlab-runner/-/issues/3068), which has been open for several years. Instead, you should set the `DEBUG` variable when you invoke `eleventy`.
+Doing this will probably break your builds. For some reason, setting a `DEBUG` variable in the job like this, causes artifact uploads to fail as well as some other bad behaviors. There’s an [open issue for GitLab CI](https://gitlab.com/gitlab-org/gitlab-runner/-/issues/3068), which has been open for several years. Instead, you should set the `DEBUG` variable when you invoke `eleventy`.
 
 <figure>
 
@@ -107,7 +107,7 @@ build:
     - DEBUG="Eleventy:Logger,darthmall:database" eleventy
 ```
 
-<figcaption>Safely set the `DEBUG` variable just for your Eleventy build.</figcaption>
+<figcaption>Safely set the <code>DEBUG</code> variable just for your Eleventy build.</figcaption>
 </figure>
 
 This limits the scope of the `DEBUG` environment variable to just your Eleventy build process, so that when it comes time for GitLab to upload artifacts or do any other work, the variable is not present and everything continues to function normally.

@@ -2,13 +2,49 @@
   margin: 0;
 }
 
+:root {
+  /* @link https://utopia.fyi/type/calculator?c=320,16,1.25,1140,18,1.333,3,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+
+  --step--2: clamp(0.63rem, calc(0.64rem + -0.01vw), 0.64rem);
+  --step--1: clamp(0.80rem, calc(0.78rem + 0.09vw), 0.84rem);
+  --step-0: clamp(1.00rem, calc(0.95rem + 0.24vw), 1.13rem);
+  --step-1: clamp(1.25rem, calc(1.15rem + 0.49vw), 1.50rem);
+  --step-2: clamp(1.56rem, calc(1.39rem + 0.85vw), 2.00rem);
+  --step-3: clamp(1.95rem, calc(1.68rem + 1.39vw), 2.66rem);
+
+  --font-family-sans: system-ui, sans-serif;
+  --font-family-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+}
+
 html, body {
   height: 100%;
+}
+
+html {
+  font-family: var(--font-family-sans);
+  font-size: var(--step-0);
+  line-height: 1.5;
 }
 
 canvas, iframe, img, svg, video {
   display: block;
   max-width: 100%;
+}
+
+h1 {
+  font-size: var(--step-3);
+}
+
+h2 {
+  font-size: var(--step-2);
+}
+
+h3 {
+  font-size: var(--step-1);
+}
+
+code {
+  font-family: var(--font-family-mono);
 }
 
 button, input, select, textarea {
@@ -17,6 +53,15 @@ button, input, select, textarea {
 
 [hidden] {
   display: none;
+}
+
+[data-layout="center"] {
+  max-width: 78ch;
+  margin-inline: auto;
+}
+
+.flow > * + * {
+  margin-block-start: var(--flow, 1.5em);
 }
 
 @media screen and (-ms-high-contrast: active) {

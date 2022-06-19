@@ -8,7 +8,7 @@ classes: h-entry
   <main class="flow h-entry" data-layout="center">
     <header class="flow">
       <h1 id="Skip" tabindex="-1" class="p-name">{{ title }}</h1>
-      <p><time class="dt-published" date="{{ date }}">{{ date }}</time></p>
+      <p>{% formatDate date, "dt-published" %}</p>
     </header>
 
     <div class="flow e-content">

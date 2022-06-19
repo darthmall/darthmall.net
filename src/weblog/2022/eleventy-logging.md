@@ -1,6 +1,6 @@
 ---
 title: Logging in Eleventy
-date: 2022-06-18
+date: 2022-06-19
 description: >-
     How to use the debug package to output custom log messages alongside of
     Eleventy’s logs in your Eleventy build.

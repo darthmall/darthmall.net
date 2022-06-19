@@ -59,6 +59,7 @@ module.exports = function (config) {
   // Don't mess with this stuff, just pass it on through
   config.addPassthroughCopy('src/_headers');
   config.addPassthroughCopy('src/_redirects');
+  config.addPassthroughCopy('src/css');
   config.addPassthroughCopy('src/js');
   config.addPassthroughCopy('src/img');
   config.addPassthroughCopy('src/favicon.ico');

@@ -6,9 +6,9 @@ classes: h-entry
 
 {% block content %}
   <article class="flow margin-inline-auto h-entry">
-    <header class="flow">
+    <header>
       <h1 id="Skip" tabindex="-1" class="p-name">{{ title }}</h1>
-      <p>{% formatDate date, "dt-published" %}</p>
+      <p class="margin-block-start-xs">{% formatDate date, "dt-published" %}</p>
     </header>
 
     <div class="flow e-content">

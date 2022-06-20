@@ -26,6 +26,16 @@ html {
   line-height: 1.5;
 }
 
+body {
+  width: clamp(20rem, 85vw, 75rem);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+article {
+  max-width: 78ch;
+}
+
 canvas, iframe, img, svg, video {
   display: block;
   max-width: 100%;
@@ -88,12 +98,6 @@ header > p {
   width: 4rem;
 }
 
-[data-layout="center"] {
-  max-width: var(--layout-width, clamp(33ch, 85vw, 78ch));
-  margin-inline: auto;
-  padding-inline: 1rem;
-}
-
 [data-center-width="site"] {
   --layout-width: 100%;
 }
@@ -140,6 +144,10 @@ header > p {
 .list-reset {
   list-style: none;
   padding: 0;
+}
+
+.margin-inline-auto {
+  margin-inline: auto;
 }
 
 .margin-inline-end-auto {

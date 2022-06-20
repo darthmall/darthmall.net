@@ -156,6 +156,12 @@ header > p::after {
   gap: 1rem;
 }
 
+[data-layout="grid"] {
+  display: grid;
+  gap: var(--space-m);
+  grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+}
+
 [data-space="xl"] {
   --space: var(--space-xl);
 }

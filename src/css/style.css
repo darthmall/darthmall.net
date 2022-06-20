@@ -31,6 +31,7 @@
   --space-xl-2xl: clamp(3.00rem, calc(2.41rem + 2.93vw), 4.50rem);
 
   --font-family-sans: system-ui, sans-serif;
+  --font-family-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
   --font-family-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 }
 
@@ -73,6 +74,11 @@ h3 {
 
 pre {
   overflow-x: auto;
+}
+
+figcaption {
+  font-family: var(--font-family-serif);
+  font-style: italic;
 }
 
 code {

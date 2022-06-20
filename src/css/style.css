@@ -53,6 +53,11 @@ canvas, iframe, img, svg, video {
   max-width: 100%;
 }
 
+:is([role="banner"], h1, h2, h3, h4, h5, h6) :is(a, :visited) {
+  text-decoration: none;
+  color: inherit;
+}
+
 h1 {
   font-size: var(--step-3);
 }

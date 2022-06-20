@@ -153,7 +153,7 @@ header > p::after {
   height: 1.5em;
 }
 
-.flow > * + * {
+:where(.flow) > * + * {
   margin-block-start: var(--space, 1.5em);
 }
 

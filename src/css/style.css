@@ -3,32 +3,25 @@
 }
 
 :root {
-  /* @link https://utopia.fyi/type/calculator?c=320,16,1.25,1140,18,1.333,3,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
 
-  --step--2: clamp(0.63rem, calc(0.64rem + -0.01vw), 0.64rem);
-  --step--1: clamp(0.80rem, calc(0.78rem + 0.09vw), 0.84rem);
+  /* @link https://utopia.fyi/type/calculator?c=320,16,1.125,1140,18,1.25,3,1,&s=0.5,1.5|3|4,s-l */
+  --step--1: clamp(0.89rem, calc(0.88rem + 0.02vw), 0.90rem);
   --step-0: clamp(1.00rem, calc(0.95rem + 0.24vw), 1.13rem);
-  --step-1: clamp(1.25rem, calc(1.15rem + 0.49vw), 1.50rem);
-  --step-2: clamp(1.56rem, calc(1.39rem + 0.85vw), 2.00rem);
-  --step-3: clamp(1.95rem, calc(1.68rem + 1.39vw), 2.66rem);
+  --step-1: clamp(1.13rem, calc(1.02rem + 0.55vw), 1.41rem);
+  --step-2: clamp(1.27rem, calc(1.07rem + 0.96vw), 1.76rem);
+  --step-3: clamp(1.42rem, calc(1.12rem + 1.51vw), 2.20rem);
 
-  /* @link https://utopia.fyi/space/calculator?c=320,16,1.25,1140,18,1.333,3,2,&s=0.75|0.5,1.5|2|3|4,s-l */
-
-  --space-2xs: clamp(0.50rem, calc(0.48rem + 0.12vw), 0.56rem);
-  --space-xs: clamp(0.75rem, calc(0.70rem + 0.24vw), 0.88rem);
+  /* @link https://utopia.fyi/space/calculator?c=320,16,1.125,1140,18,1.25,3,1,&s=0.5,1.5|3|4,s-l */
+  --space-xs: clamp(0.50rem, calc(0.48rem + 0.12vw), 0.56rem);
   --space-s: clamp(1.00rem, calc(0.95rem + 0.24vw), 1.13rem);
   --space-m: clamp(1.50rem, calc(1.43rem + 0.37vw), 1.69rem);
-  --space-l: clamp(2.00rem, calc(1.90rem + 0.49vw), 2.25rem);
-  --space-xl: clamp(3.00rem, calc(2.85rem + 0.73vw), 3.38rem);
-  --space-2xl: clamp(4.00rem, calc(3.80rem + 0.98vw), 4.50rem);
-
+  --space-l: clamp(3.00rem, calc(2.85rem + 0.73vw), 3.38rem);
+  --space-xl: clamp(4.00rem, calc(3.80rem + 0.98vw), 4.50rem);
   /* One-up pairs */
-  --space-2xs-xs: clamp(0.50rem, calc(0.35rem + 0.73vw), 0.88rem);
-  --space-xs-s: clamp(0.75rem, calc(0.60rem + 0.73vw), 1.13rem);
+  --space-xs-s: clamp(0.50rem, calc(0.26rem + 1.22vw), 1.13rem);
   --space-s-m: clamp(1.00rem, calc(0.73rem + 1.34vw), 1.69rem);
-  --space-m-l: clamp(1.50rem, calc(1.21rem + 1.46vw), 2.25rem);
-  --space-l-xl: clamp(2.00rem, calc(1.46rem + 2.68vw), 3.38rem);
-  --space-xl-2xl: clamp(3.00rem, calc(2.41rem + 2.93vw), 4.50rem);
+  --space-m-l: clamp(1.50rem, calc(0.77rem + 3.66vw), 3.38rem);
+  --space-l-xl: clamp(3.00rem, calc(2.41rem + 2.93vw), 4.50rem);
 
   --font-family-sans: system-ui, sans-serif;
   --font-family-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
@@ -166,8 +159,14 @@ header > p {
   padding: 0;
 }
 
+.margin-block-start-m { margin-block-start: var(--space-m) }
+.margin-block-end-m { margin-block-end: var(--space-m) }
+.margin-block-start-l { margin-block-start: var(--space-l) }
+.margin-block-end-l { margin-block-end: var(--space-l) }
 .margin-block-start-xl { margin-block-start: var(--space-xl) }
 .margin-block-end-xl { margin-block-end: var(--space-xl) }
+.margin-block-start-m-l { margin-block-start: var(--space-m-l) }
+.margin-block-end-m-l { margin-block-end: var(--space-m-l) }
 .margin-inline-auto { margin-inline: auto }
 .margin-inline-end-auto { margin-inline-end: auto }
 
@@ -179,8 +178,8 @@ header > p {
   overflow: hidden;
 }
 
-.width-xl-2xl {
-  width: var(--space-xl-2xl);
+.width-l-xl {
+  width: var(--space-l-xl);
 }
 
 @media screen and (-ms-high-contrast: active) {

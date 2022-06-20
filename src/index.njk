@@ -1,11 +1,7 @@
 ---
 eleventyExcludeFromCollections: true
+tag: feed
+layout: layouts/gallery.njk
+eleventyComputed:
+  limit: "{{ site.recentPostCount }}"
 ---
-{% extends "layouts/base.njk" %}
-{% block content %}
-<div class="flow">
-  {% include "partials/theme-toggle.njk" %}
-  <h2 id="Skip" tabindex="-1">Recent Posts</h2>
-  {{ components.gallery(collections.feed.slice(0, site.recentPostCount)) }}
-</div>
-{% endblock %}

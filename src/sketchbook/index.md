@@ -1,6 +1,6 @@
 ---
 title: Sketchbook
 eleventyExcludeFromCollections: true
-collection: sketches
+tag: sketches
 layout: layouts/gallery.njk
 ---

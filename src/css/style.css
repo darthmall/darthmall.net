@@ -12,6 +12,24 @@
   --step-2: clamp(1.56rem, calc(1.39rem + 0.85vw), 2.00rem);
   --step-3: clamp(1.95rem, calc(1.68rem + 1.39vw), 2.66rem);
 
+  /* @link https://utopia.fyi/space/calculator?c=320,16,1.25,1140,18,1.333,3,2,&s=0.75|0.5,1.5|2|3|4,s-l */
+
+  --space-2xs: clamp(0.50rem, calc(0.48rem + 0.12vw), 0.56rem);
+  --space-xs: clamp(0.75rem, calc(0.70rem + 0.24vw), 0.88rem);
+  --space-s: clamp(1.00rem, calc(0.95rem + 0.24vw), 1.13rem);
+  --space-m: clamp(1.50rem, calc(1.43rem + 0.37vw), 1.69rem);
+  --space-l: clamp(2.00rem, calc(1.90rem + 0.49vw), 2.25rem);
+  --space-xl: clamp(3.00rem, calc(2.85rem + 0.73vw), 3.38rem);
+  --space-2xl: clamp(4.00rem, calc(3.80rem + 0.98vw), 4.50rem);
+
+  /* One-up pairs */
+  --space-2xs-xs: clamp(0.50rem, calc(0.35rem + 0.73vw), 0.88rem);
+  --space-xs-s: clamp(0.75rem, calc(0.60rem + 0.73vw), 1.13rem);
+  --space-s-m: clamp(1.00rem, calc(0.73rem + 1.34vw), 1.69rem);
+  --space-m-l: clamp(1.50rem, calc(1.21rem + 1.46vw), 2.25rem);
+  --space-l-xl: clamp(2.00rem, calc(1.46rem + 2.68vw), 3.38rem);
+  --space-xl-2xl: clamp(3.00rem, calc(2.41rem + 2.93vw), 4.50rem);
+
   --font-family-sans: system-ui, sans-serif;
   --font-family-mono: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 }
@@ -83,19 +101,16 @@ header > p {
 }
 
 [role="banner"] [href="/"] {
-  border-radius: 50%;
-  overflow: hidden;
   background-image: url("/img/evan-alt.jpg");
   background-size: cover;
 }
 
-[role="banner"] [href="/"]:hover img {
-  opacity: 0;
+[role="banner"] [href="/"] img {
+  max-height: 100%;
 }
 
-[role="banner"] img {
-  height: 4rem;
-  width: 4rem;
+[role="banner"] [href="/"]:hover img {
+  opacity: 0;
 }
 
 [data-center-width="site"] {
@@ -152,6 +167,16 @@ header > p {
 
 .margin-inline-end-auto {
   margin-inline-end: auto;
+}
+
+.shape-circle {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.width-xl-2xl {
+  width: var(--space-xl-2xl);
 }
 
 @media screen and (-ms-high-contrast: active) {

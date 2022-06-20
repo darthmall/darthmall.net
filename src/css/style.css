@@ -106,6 +106,10 @@ header > p {
   gap: 1rem;
 }
 
+.icon {
+  height: 1.5em;
+}
+
 .flow > * + * {
   margin-block-start: var(--flow, 1.5em);
 }

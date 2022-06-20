@@ -1,7 +1,8 @@
 <footer id="site-footer" role="contentinfo"
-        class="flow pad-block-fluid-lg type-body-3" data-layout="center"
-        data-center-width="site" data-space="relative-md">
+        class="flow" data-layout="center"
+        data-center-width="site">
   <hr />
+
   <div data-layout="cluster" data-cluster="center">
     <p>{% copyright %}</p>
 
@@ -9,7 +10,7 @@
        class="margin-inline-auto">Report an accessibility issue</a>
 
     <nav>
-      <ul data-layout="cluster">
+      <ul class="list-reset" data-layout="cluster">
         <li><a href="/privacy/">Privacy</a></li>
         {% for link in social %}
           {% set relAttr = "" %}

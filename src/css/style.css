@@ -53,7 +53,7 @@ canvas, iframe, img, svg, video {
   max-width: 100%;
 }
 
-:is([role="banner"], h1, h2, h3, h4, h5, h6) :is(a, :visited) {
+:is([role="banner"], .card, h1, h2, h3, h4, h5, h6) :is(a, :visited) {
   text-decoration: none;
   color: inherit;
 }
@@ -112,7 +112,11 @@ header > p {
   flex-direction: row;
   gap: 1em;
   align-items: center;
+}
 
+/* FIXME: This should be a utility class for the font style */
+header > p,
+.card small {
   font-family: var(--font-family-mono);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -162,8 +166,44 @@ header > p::after {
   grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
 }
 
+[data-layout="stack"] {
+  display: grid;
+  grid-template-areas: "main";
+  place-items: center;
+}
+
+[data-layout="stack"] > * {
+  grid-area: main;
+  z-index: 1;
+}
+
+[data-layout="stack"] img {
+  z-index: 0;
+}
+
 [data-space="xl"] {
   --space: var(--space-xl);
+}
+
+.card {
+  position: relative;
+  background-color: #ddd;
+}
+
+.card a::after {
+  content: "";
+
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+
+  display: block;
+}
+
+.card > .card--body {
+  margin: 1em;
+  padding: 1em;
+
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 .icon {

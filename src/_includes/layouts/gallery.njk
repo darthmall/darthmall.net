@@ -6,16 +6,18 @@
     {% set items = collections[tag] %}
     {% if limit %}{% set items = items.slice(0, limit) %}{% endif %}
     {% for item in items %}
-      <li data-layout="stack">
-        <div>
-          {% if item.data.date %}
-            <small>{% formatDate item.data.date %}</small>
-          {% endif %}
-          <strong>
-            <a href="{{ item.url }}">{{ item.data.title }}</a>
-          </strong>
+      <li class="card" data-layout="stack">
+        <div class="card--body flow">
+          <div>
+            {% if item.data.date %}
+              <small>{% formatDate item.data.date %}</small><br>
+            {% endif %}
+            <strong>
+              <a href="{{ item.url }}">{{ item.data.title }}</a>
+            </strong>
+          </div>
           {% if item.data.description %}
-            <p>{{ item.data.description }}</p>
+            <div>{{ item.data.description }}</div>
           {% endif %}
         </div>
         {% if item.data.cover %}

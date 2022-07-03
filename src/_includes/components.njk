@@ -1,21 +1,3 @@
-{% macro postList(collection) %}
-<ul class="list-reset" data-layout="grid" data-space="fluid-md" role="list">
-  {% for post in collection %}
-    <li data-layout="flow" data-space="0">
-      <small class="text-3">
-        {% formatDate post.data.date %}
-      </small>
-      <br class="unstyled">
-      <strong>
-        <a href="{{ post.url }}" class="type-display-2">{{ post.data.title }}</a>
-      </strong>
-      <br class="unstyled">
-      <span class="text-3 type-body-4" data-space="relative-sm">{{ post.data.description }}</span>
-    </li>
-  {% endfor %}
-</ul>
-{% endmacro %}
-
 {% macro projectSummary(project) %}
   {% set classAttr = " class='project-summary--" + project.class + "'" if project.class else "" %}
   {% set styleAttr = " style='--color-1:#" + project.color + "'" if project.color else "" %}

@@ -44,10 +44,6 @@ body {
   padding-inline: 1rem;
 }
 
-article {
-  max-width: 68ch;
-}
-
 canvas, iframe, img, svg, video {
   display: block;
   max-width: 100%;
@@ -146,6 +142,11 @@ header > p::after {
 
 [role="banner"] [href="/"]:hover img {
   opacity: 0;
+}
+
+[data-layout=center] {
+  margin-inline: auto;
+  max-width: 68ch;
 }
 
 [data-layout="cluster"] {

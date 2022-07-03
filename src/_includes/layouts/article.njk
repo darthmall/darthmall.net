@@ -5,7 +5,7 @@ classes: h-entry
 {% extends 'layouts/base.njk' %}
 
 {% block content %}
-  <article class="flow margin-inline-auto h-entry">
+  <article class="flow h-entry" data-layout="center">
     <header>
       <h1 id="Skip" tabindex="-1" class="p-name">{{ title }}</h1>
       <p class="margin-block-start-xs">{% formatDate date, "dt-published" %}</p>

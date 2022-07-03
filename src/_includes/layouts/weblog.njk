@@ -1,12 +1,23 @@
-{% extends "layouts/page.njk" %}
+{% extends "layouts/base.njk" %}
+
 {% block content %}
-  {{ super() }}
-  <div class="flow">
-    {% if not tag %}{% set tag = 'posts' %}{% endif %}
-    {% if tag == 'posts' %}
-      {% include 'partials/tag-index.njk' %}
-      <hr>
-    {% endif %}
-    {{ components.postList(collections[tag]) }}
-  </div>
+  <main class="flow" data-space="clear" data-layout="center">
+    <h1 id="Skip" tabindex="-1">{{ title }}</h1>
+
+    <ul class="flow list-reset" role="list">
+      {% for post in collections.posts %}
+        <li>
+          <small>
+            {% formatDate post.data.date, "dt-published" %}
+          </small>
+          <br class="unstyled">
+          <strong>
+            <a href="{{ post.url }}" class="type-display-2">{{ post.data.title }}</a>
+          </strong>
+          <br class="unstyled">
+          <span class="text-3 type-body-4" data-space="relative-sm">{{ post.data.description }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </main>
 {% endblock %}

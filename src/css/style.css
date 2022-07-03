@@ -148,10 +148,6 @@ header > p::after {
   opacity: 0;
 }
 
-[data-center-width="site"] {
-  --layout-width: 100%;
-}
-
 [data-layout="cluster"] {
   display: flex;
   flex-direction: row;

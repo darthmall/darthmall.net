@@ -11,7 +11,7 @@ you might use
 it](https://gomakethings.com/when-and-why-would-you-use-a-constructor-pattern-over-a-utility-library-or-standalone-functions-in-vanilla-javascript/).
 This got me thinking about a design pattern in JavaScript of which I’m fond—I
 think of the pattern as “callable objects”. I first encountered this pattern in
-[D3](https://d3js.com), where it is used extensively to create utilities like
+[D3](https://d3js.org), where it is used extensively to create utilities like
 scales.
 
 <aside>

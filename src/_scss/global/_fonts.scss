@@ -15,15 +15,3 @@
   font-style: oblique -12deg 0deg;
   font-display: swap;
 }
-
-@font-face {
-  font-family: "League Mono";
-  src:
-    url("../fonts/LeagueMono[wdth,wght].woff2") format("woff2 supports variations"),
-    url("../fonts/LeagueMono[wdth,wght].woff2") format("woff2-variations");
-  font-stretch: 50% 200%;
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-}
-

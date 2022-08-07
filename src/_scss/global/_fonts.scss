@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Sporting Grotesque";
-  src: url("../fonts/SportingGrotesque-Bold.woff2") format("woff2");
+  src: url("../fonts/SportingGrotesque-Bold-latin.woff2") format("woff2");
   font-weight: bold;
   font-display: swap;
 }
@@ -8,8 +8,8 @@
 @font-face {
   font-family: Epilogue;
   src:
-    url("../fonts/Epilogue[slnt,wght].woff2") format("woff2 supports variations"),
-    url("../fonts/Epilogue[slnt,wght].woff2") format("woff2-variations");
+    url("../fonts/Epilogue[slnt,wght]-latin.woff2") format("woff2 supports variations"),
+    url("../fonts/Epilogue[slnt,wght]-latin.woff2") format("woff2-variations");
   font-style: normal;
   font-weight: 100 900;
   font-style: oblique -12deg 0deg;

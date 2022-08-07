@@ -3,6 +3,9 @@ title: Callable Objects in JavaScript
 date: 2022-08-07
 description: >-
   A pattern for building stateful functions in JavaScript.
+tags:
+  - JavaScript
+  - Design Patterns
 ---
 
 Recently, Chris Fedinandi wrote about the [constructor

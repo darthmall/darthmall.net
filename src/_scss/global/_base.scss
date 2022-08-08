@@ -81,6 +81,13 @@ hr {
   border-block-start: 1px solid var(--text-1);
 }
 
+aside {
+  --space: var(--space-relative-xl);
+  border-block: 1px solid var(--color-gray-3);
+  margin-block-end: var(--space);
+  padding: var(--space-relative-lg);
+}
+
 aside, figcaption, small {
   @extend %body-3;
 }

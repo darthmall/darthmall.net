@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 RANGE="$(glyphhanger --LATIN)"
-US="$(glyphhanger --US_ASCII)"
 
 pyftsubset \
   'src/fonts/Epilogue[slnt,wght].woff2' \

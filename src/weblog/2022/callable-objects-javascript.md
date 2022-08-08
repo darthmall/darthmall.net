@@ -19,8 +19,6 @@ scales.
 
 <aside>
 
-**Note**
-
 I probably call these “callable objects” because of how this pattern would be
 implemented in Python. In Python, you’d create a class with a [`__call__`
 method](https://docs.python.org/3/reference/datamodel.html?highlight=__call__#object.__call__).
@@ -111,8 +109,6 @@ function as an argument.
 </figure>
 
 <aside>
-
-**Note**
 
 Be careful about [passing functions as callbacks if they’re not designed to be
 callbacks](https://jakearchibald.com/2021/function-callback-risks/).

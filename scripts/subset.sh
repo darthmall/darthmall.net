@@ -21,6 +21,6 @@ pyftsubset \
   'src/fonts/SportingGrotesque.woff2' \
   --unicodes="${RANGE}" \
   --flavor=woff2 \
-  --layout-features+="titl,onum" \
+  --layout-features+="onum" \
   --layout-features-="ss01,lnum" \
   --output-file='src/fonts/SportingGrotesque-latin.woff2'

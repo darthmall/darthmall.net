@@ -13,13 +13,19 @@
 
 %body-3 {
   font-size: var(--font-size--1);
-  font-family: var(--font-stack-mono);
   line-height: var(--line-height-md);
 }
 
 %body-4 {
   @extend %body-1;
   font-size: var(--font-size--1);
+}
+
+%body-5 {
+  font-size: var(--font-size-0);
+  font-weight: normal;
+  font-family: var(--font-stack-heading);
+  line-height: var(--line-height-lg);
 }
 
 %display-1 {

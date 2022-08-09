@@ -21,6 +21,13 @@
   font-size: var(--font-size--1);
 }
 
+%body-5 {
+  font-size: var(--font-size-0);
+  font-weight: normal;
+  font-family: var(--font-stack-heading);
+  line-height: var(--line-height-lg);
+}
+
 %display-1 {
   font-size: var(--font-size-5);
   font-family: var(--font-stack-heading);

@@ -117,7 +117,12 @@ figcaption {
 }
 
 blockquote {
+  @extend %body-5;
+
+  max-width: var(--measure-sm);
+  margin-inline: auto;
   padding: var(--space-relative-md);
+  font-weight: normal;
   background-color: var(--surface-2);
 }
 

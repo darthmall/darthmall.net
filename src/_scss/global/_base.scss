@@ -130,11 +130,6 @@ pre {
   padding: var(--space-relative-md);
   overflow-x: auto;
 
-  &[class*="language-"] {
-    border: 1px solid var(--surface-3);
-    background-color: var(--surface-2);
-  }
-
   code {
     padding: 0;
   }
@@ -144,7 +139,6 @@ code {
   @extend %body-2;
   border-radius: 0.125em;
   padding: 0.125em;
-  background-color: var(--surface-2);
 }
 
 li + li {

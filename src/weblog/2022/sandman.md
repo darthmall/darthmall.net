@@ -10,7 +10,7 @@ We just finished watching Netflix’s adaptation of <i>The Sandman</i>.[^1] I ab
 
 The casting in the adaptation is superb. I think I might even prefer some of the changes in the TV series to the original comics, although I’m going to reserve judgement until I’ve re-read them. At the very least, I don’t think anything made the story worse, and an adaptation that is different, but just as good as the source material is a resounding success in my book.
 
-Since the first season covered the first two volumes of the comic, I’m really hoping they’ll see it through to the end with four more seasons to cover all ten volumes with this cast. I’m also looking forward to re-reading all of these — I just have to wait for my wife to finish with my copy of <i>Preludes and Nocturnes</i>, then I can get started.
+I’m really hoping they’ll see it through to the end with four more seasons to cover all ten volumes of the comics. I’m also looking forward to re-reading all of these — I just have to wait for my wife to finish with my copy of <i>Preludes and Nocturnes</i>, then I can get started.
 
 This show is so worth your time, whether you’ve read the comics or not. But do mind the content warnings at the start of each episode. _The Sandman_ was, in part, a horror comic, and the show is pretty gruesome at times.
 

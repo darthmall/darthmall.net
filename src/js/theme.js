@@ -47,6 +47,16 @@
         el.removeAttribute('aria-pressed');
       }
     });
+
+    document.querySelectorAll('link[href*="themes/prism"]').forEach(function (link) {
+      const media = link.getAttribute("media");
+
+      if (theme === "dark" || (theme === "system" && media === "(prefers-color-scheme: dark)")) {
+        link.href = link.href.replace("prism.css", "prism-tomorrow.css");
+      } else {
+        link.href= link.href.replace("prism-tomorrow.css", "prism.css");
+      }
+    });
   }
 
   window.addEventListener('DOMContentLoaded', init);

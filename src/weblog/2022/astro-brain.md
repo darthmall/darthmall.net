@@ -1,5 +1,5 @@
 ---
-title: Discontent
+title: Astro on the Brain
 date: 2022-09-09
 tags:
   - Eleventy

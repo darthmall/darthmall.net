@@ -11,6 +11,10 @@ canvas, iframe, img, svg, video {
   max-width: 100%;
 }
 
+img {
+  height: auto;
+}
+
 button, input, select, textarea {
   font: inherit;
 }

@@ -42,7 +42,7 @@ You could even use this compiler to replace `<img />` tags, instead of defining 
 
 Astro’s template language also supports named slots, which is great. [With Nunjucks macros](/weblog/2021/includes-and-macros/), you can effectively get one slot, and everything else has to be passed in as an argument. Up until this morning, you only got named slots in any Eleventy template via web components, which only worked once JavaScript upgraded your custom elements in the client. But this whole WebC thing looks like it’ll change that.
 
-The thing I really dislike about Astro’s templates is the inline JavaScript. On the one hand, it’s powerful, and I’ve certainly been frustrated when using Nunjucks by the fact that only _some_ JavaScript is allowed in your tags while some JavaScript syntax causes errors. But I also think that the way Nunjucks or Svelte encourage you to get your data model right so that your templates remain simple is a more maintainable way to work Allowing arbitrary JavaScript in the template itself makes it really easy to stuff your data transformations into your presentation layer, making your templates messy and hard to maintain.
+The thing I really dislike about Astro’s templates is the inline JavaScript. On the one hand, it’s powerful, and I’ve certainly been frustrated when using Nunjucks by the fact that only _some_ JavaScript is allowed in your tags while some JavaScript syntax causes errors. But I also think that the way Nunjucks or Svelte encourage you to get your data model right so that your templates remain simple is a more maintainable way to work. Allowing arbitrary JavaScript in the template itself makes it really easy to stuff your data transformations into your presentation layer, making your templates messy and hard to maintain.
 
 ## Template Reuse
 
@@ -66,7 +66,7 @@ I don’t know that I think this is necessarily any better than Nunjucks’s inh
 
 This is more of a function of the template languages that Eleventy supports than Eleventy itself, but I do think a built-in mechanism for just dumping some HTML into a page is handy. As far as I can tell, there is no equivalent of `{{ "{% include %}" }}` in Astro’s template language, so you’d probably have to build your own `<Include src="..." />` Astro component.
 
-Why might you want this? Well, you could package up a web component with a `<template>` and `<script>` tag in an <samp>.html</samp> file and include it whenever you need it. For small, self-contained web components, this seems like a pretty great way to distribute them in a statically generated site. In Astro, you _could_ do this as an <samp>.astro</samp> component, but since it really is just an HTML snippet, it feels better to me to have it in an <samp>.html</samp> file and just dump that text verbatim into your template.
+Why might you want this? Well, you could package up a web component with a `<template>` and `<script>` tag in an <samp>.html</samp> file and include it whenever you need it. For small, self-contained web components, this seems like a pretty great way to distribute them in a statically generated site. In Astro, you _could_ put the web component in an <samp>.astro</samp> component, but since it really is just an HTML snippet, it feels better to me to have it in an <samp>.html</samp> file and just dump that text verbatim into your template.
 
 ## Partial Hydration
 

@@ -58,7 +58,7 @@ function formatDate(dt, cls = "") {
   return `<time datetime="${isoDate}" class="${cls}">${readableDate}</time>`;
 }
 
-async function image(src, alt, sizes="(min-width: 45rem) 45rem, 100vw") {
+async function picture(src, alt, sizes="(min-width: 45rem) 45rem, 100vw") {
   const options = {
     widths: [300, 600, 720],
     formats: ["avif", "jpg"],
@@ -77,7 +77,7 @@ async function image(src, alt, sizes="(min-width: 45rem) 45rem, 100vw") {
   return Image.generateHTML(metadata, attrs);
 }
 
-image.isAsync = true;
+picture.isAsync = true;
 
 function triskaidecagon(size) {
   const NUMSIDES = 13,
@@ -136,6 +136,6 @@ module.exports = {
   clamp,
   copyright,
   formatDate,
-  image,
+  picture,
   triskaidecagon,
 };

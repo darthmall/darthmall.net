@@ -86,6 +86,10 @@ aside {
   border-block: 1px solid var(--color-gray-3);
   margin-block-end: var(--space);
   padding: var(--space-relative-lg);
+
+  p + p {
+    margin-block-start: 1em;
+  }
 }
 
 aside, figcaption, small {

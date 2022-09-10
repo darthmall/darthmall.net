@@ -12,8 +12,7 @@ tags: ["Eleventy", "Science On a Sphere"]
         "src/img/new-sos-website/sos-website.png",
         "",
         "Hero image and page title of the Science On a Sphere website",
-        "(max-width: 50rem) 100vw, 50rem",
-        [400, 600, 800, 1600] %}
+        "(max-width: 50rem) 100vw, 50rem" %}
     <figcaption>Home page of the newly launched Science On a Sphere website</figcaption>
 </figure>
 
@@ -35,7 +34,7 @@ paint.  Image optimization is on my list of things to do.
             "src/img/new-sos-website/sos-original-lighthouse.png",
             "",
             "Performance: 89; Accessibility 89; Best Practices: 67; SEO: 64",
-            "(max-width: 41rem) 100vw, (max-width: 50em) 50vw, 25rem" %}
+            "(max-width: 41rem) 100vw, (max-width: 50rem) 50vw, 25rem" %}
         {% picture
             "src/img/new-sos-website/sos-lighthouse.png",
             "",

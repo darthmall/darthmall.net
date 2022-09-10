@@ -58,7 +58,7 @@ function formatDate(dt, cls = "") {
   return `<time datetime="${isoDate}" class="${cls}">${readableDate}</time>`;
 }
 
-async function picture(src, alt, sizes="(min-width: 45rem) 45rem, 100vw") {
+async function picture(src, cls, alt, sizes="(min-width: 45rem) 45rem, 100vw") {
   const options = {
     widths: [300, 600, 720],
     formats: ["avif", "jpg"],
@@ -68,6 +68,7 @@ async function picture(src, alt, sizes="(min-width: 45rem) 45rem, 100vw") {
   const metadata = await Image(src, options);
 
   let attrs = {
+    class: cls,
     alt,
     sizes,
     loading: "lazy",

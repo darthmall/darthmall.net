@@ -35,4 +35,3 @@ different little fact about visitor's listening habits each day of the conferenc
 with two other designers at Spotify, I designed and built the application that visualized
 a visitor's favorite genres, the positivitiy of their musical taste, and how danceable
 their music is.
-

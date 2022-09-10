@@ -2,11 +2,11 @@
 title: The Brilliance of Terry Pratchett
 date: 2022-07-10
 description: >-
-  I think it’s hard to overstate the brilliance of Sir Terry Pratchett, although
-  it may have been easy to miss because you were so busy laughing.
+    I think it’s hard to overstate the brilliance of Sir Terry Pratchett, although
+    it may have been easy to miss because you were so busy laughing.
 tags:
-  - Terry Pratchett
-  - Discworld
+    - Terry Pratchett
+    - Discworld
 ---
 
 I think it’s hard to overstate the brilliance of [Sir Terry

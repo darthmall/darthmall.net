@@ -1,39 +1,47 @@
 * {
-  margin: 0;
+	margin: 0;
 }
 
-html, body {
-  height: 100%;
+html,
+body {
+	height: 100%;
 }
 
-canvas, iframe, img, svg, video {
-  display: block;
-  max-width: 100%;
+canvas,
+iframe,
+img,
+svg,
+video {
+	display: block;
+	max-width: 100%;
 }
 
 img {
-  height: auto;
+	height: auto;
 }
 
-button, input, select, textarea {
-  font: inherit;
+button,
+input,
+select,
+textarea {
+	font: inherit;
 }
 
 [hidden] {
-  display: none;
+	display: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms;
-    animation-iteration-count: 1;
-    transition-duration: 0.01ms;
-    scroll-behavior: auto;
-  }
+	* {
+		animation-duration: 0.01ms;
+		animation-iteration-count: 1;
+		transition-duration: 0.01ms;
+		scroll-behavior: auto;
+	}
 }
 
 @media screen and (-ms-high-contrast: active) {
-  button {
-    border: 2px solid currentcolor;
-  }
+	button {
+		border: 2px solid currentcolor;
+	}
 }

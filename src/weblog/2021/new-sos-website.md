@@ -26,7 +26,7 @@ some point, but for now these are some of the highlights for me.
 Three of the four scores from Lighthouse went up on the homepage, from yellow to
 green. Two of them are 100s. Performance dipped a little, probably because of
 the large hero images on the home page slowing down the largest contentful
-paint.  Image optimization is on my list of things to do.
+paint. Image optimization is on my list of things to do.
 
 <figure>
     <div data-layout="grid" data-space="fluid-sm">
@@ -60,7 +60,7 @@ loading our video gallery.
 The site is statically generated using [Eleventy](https://11ty.dev/). The old
 site was mostly static files as well, but it was a mishmash of hand-written HTML
 and some pages managed in [Django](https://www.djangoproject.com/) and exported
-with [Django Bakery](https://django-bakery.readthedocs.io/en/latest/).  The only
+with [Django Bakery](https://django-bakery.readthedocs.io/en/latest/). The only
 part of the old site that wasn't static was the index for the [dataset
 catalog](https://sos.noaa.gov/catalog/datasets/); this was backed by a separate
 Django application that provided an API and the index was rendered client-side
@@ -87,7 +87,7 @@ but it is an improvement. It's also safer to trigger builds manually because
 there's no risk that the cron job will kick off a second build while your first
 is running and peg the CPU of the dev server.
 
-***
+---
 
 None of this is perfect. I'm pretty sure we've stretched Eleventy a bit past
 what it's really good at, although with this new [serverless

@@ -22,14 +22,14 @@ Fair warning: this is probably too clever.
 
 The technique has four components.
 
- 1. [JavaScript data files][js data files] to transform
+1.  [JavaScript data files][js data files] to transform
     assets, such as compiling SCSS into CSS, and expose them as an array
- 2. A JavaScript template that uses the technique for [creating pages from
+2.  A JavaScript template that uses the technique for [creating pages from
     data][pages from data] to output assets to
     files and create a collection for them
- 3. A filter to find the URL for a specific asset to help you load the assets
+3.  A filter to find the URL for a specific asset to help you load the assets
     in your layouts
- 4. Some additional watch targets for Eleventy so the auto-reload works
+4.  Some additional watch targets for Eleventy so the auto-reload works
 
 Clear as mud, right? Let's walk through how I transform the SCSS for this
 site as an example.
@@ -46,7 +46,7 @@ fileName, hashedFileName, and contents.
 
 <figure>
 
-``` js
+```js
 const crypto = require("crypto");
 const path = require("path");
 
@@ -54,49 +54,49 @@ const glob = require("glob");
 const sass = require("sass");
 
 module.exports = function styles() {
-  let stylesheets = [];
+	let stylesheets = [];
 
-  // I use glob to generate an array of all the SCSS files in src/_scss/. Files
-  // prefixed with "_" are ignored.
-  glob
-    .sync("src/_scss/[^_]*.scss")
-    .forEach(function (file) {
-      const baseName = path.basename(file, ".scss"),
-        fileName = `${baseName}.css`;
+	// I use glob to generate an array of all the SCSS files in src/_scss/. Files
+	// prefixed with "_" are ignored.
+	glob.sync("src/_scss/[^_]*.scss").forEach(function (file) {
+		const baseName = path.basename(file, ".scss"),
+			fileName = `${baseName}.css`;
 
-      const output = sass.renderSync({
-        file,
-        outFile: fileName,
-        outputStyle: "compressed",
-        sourceMap: true,
-      });
+		const output = sass.renderSync({
+			file,
+			outFile: fileName,
+			outputStyle: "compressed",
+			sourceMap: true,
+		});
 
-      // Create a hash of the contents to use in the filename for cache busting
-      // in production.
-      const content = output.css.toString("utf8"),
-        hash = crypto.createHash("md5");
+		// Create a hash of the contents to use in the filename for cache busting
+		// in production.
+		const content = output.css.toString("utf8"),
+			hash = crypto.createHash("md5");
 
-      hash.update(content);
+		hash.update(content);
 
-      const hashedFileName = `${baseName}-${hash.digest("hex").slice(0, 10)}.css`;
+		const hashedFileName = `${baseName}-${hash
+			.digest("hex")
+			.slice(0, 10)}.css`;
 
-      stylesheets.push({
-        fileName,
-        hashedFileName,
-        content,
-      });
+		stylesheets.push({
+			fileName,
+			hashedFileName,
+			content,
+		});
 
-      // Include the sourcemap as an asset. There's no need to put a hash in the
-      // filename of the source map, but we still need that property present on
-      // all assets for our JavaScript Template later on.
-      stylesheets.push({
-        fileName: `${fileName}.map`,
-        hashedFileName: `${fileName}.map`,
-        content: output.map.toString("utf8"),
-      });
-    });
+		// Include the sourcemap as an asset. There's no need to put a hash in the
+		// filename of the source map, but we still need that property present on
+		// all assets for our JavaScript Template later on.
+		stylesheets.push({
+			fileName: `${fileName}.map`,
+			hashedFileName: `${fileName}.map`,
+			content: output.map.toString("utf8"),
+		});
+	});
 
-    return stylesheets;
+	return stylesheets;
 };
 ```
 
@@ -115,31 +115,31 @@ in the root of my input directory: `styles.11ty.js`.
 
 <figure>
 
-``` js
+```js
 class Stylesheet {
-  data() {
-    return {
-      eleventyComputed: {
-        assetKey: ({ stylesheet }) => stylesheet.fileName,
-      },
-      permalink: ({ stylesheet }) =>
-        process.env.NODE_ENV === "production"
-          ? `/css/${stylesheet.hashedFileName}`
-          : `/css/${stylesheet.fileName}`,
-      pagination: {
-        addAllPagesToCollections: true,
-        alias: "stylesheet",
-        data: "styles",
-        size: 1,
-      },
-      layout: "",
-      tags: ["_styles"],
-    };
-  }
+	data() {
+		return {
+			eleventyComputed: {
+				assetKey: ({ stylesheet }) => stylesheet.fileName,
+			},
+			permalink: ({ stylesheet }) =>
+				process.env.NODE_ENV === "production"
+					? `/css/${stylesheet.hashedFileName}`
+					: `/css/${stylesheet.fileName}`,
+			pagination: {
+				addAllPagesToCollections: true,
+				alias: "stylesheet",
+				data: "styles",
+				size: 1,
+			},
+			layout: "",
+			tags: ["_styles"],
+		};
+	}
 
-  render({ stylesheet }) {
-    return stylesheet.content;
-  }
+	render({ stylesheet }) {
+		return stylesheet.content;
+	}
 }
 
 module.exports = Stylesheet;
@@ -177,19 +177,19 @@ can add this filter:
 
 <figure>
 
-``` js
+```js
 module.exports = function (eleventyConfig) {
-  // ...
+	// ...
 
-  eleventyConfig.addFilter("assetUrl", function (assetCollection, key) {
-    for (let asset of assetCollection) {
-      if (asset.data.assetKey === key) return asset.url;
-    }
+	eleventyConfig.addFilter("assetUrl", function (assetCollection, key) {
+		for (let asset of assetCollection) {
+			if (asset.data.assetKey === key) return asset.url;
+		}
 
-    return "";
-  });
+		return "";
+	});
 
-  // ...
+	// ...
 };
 ```
 
@@ -203,13 +203,13 @@ and rebuild the site, you can add this to your `.eleventy.js` as well:
 
 <figure>
 
-``` js
+```js
 module.exports = function (eleventyConfig) {
-  // ...
+	// ...
 
-  eleventyConfig.addWatchTarget("./src/_scss/");
+	eleventyConfig.addWatchTarget("./src/_scss/");
 
-  // ...
+	// ...
 };
 ```
 
@@ -226,7 +226,7 @@ our layouts.
 
 <figure>
 
-``` jinja2
+```jinja2
 <link rel="stylesheet" href="{{ '{{ collections._styles | assetUrl(\'global.css\') | url }}' | safe }}">
 ```
 
@@ -247,15 +247,15 @@ not. Plus, I think it helps you understand what's going on in the markup better.
 
 There are a number of things I like about this solution.
 
- - It didn't require any additional dependencies to run tasks (no
-   [Gulp][gulpjs], [Parcel][parceljs], or [Webpack][webpack]), it's all done
-   by wiring up the dev tools (`sass`) in Eleventy
- - I don't have ridiculously complicated NPM scripts to watch my SCSS and my
-   HTML and then have to try to coordinate the two
- - The URLs are robust: asset location is controled by the `permalink` of the
-   JS template, and anything that references the assets automatically gets
-   the right URL, so it's easy to change my mind and move `css/global.css` to
-   `styles/global.css` if I want, or set up a [path prefix][eleventy prefix]
+-   It didn't require any additional dependencies to run tasks (no
+    [Gulp][gulpjs], [Parcel][parceljs], or [Webpack][webpack]), it's all done
+    by wiring up the dev tools (`sass`) in Eleventy
+-   I don't have ridiculously complicated NPM scripts to watch my SCSS and my
+    HTML and then have to try to coordinate the two
+-   The URLs are robust: asset location is controled by the `permalink` of the
+    JS template, and anything that references the assets automatically gets
+    the right URL, so it's easy to change my mind and move `css/global.css` to
+    `styles/global.css` if I want, or set up a [path prefix][eleventy prefix]
 
 ### What's not to like
 

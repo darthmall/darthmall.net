@@ -19,9 +19,9 @@ always obvious why you should choose one over another. Just about anything you
 can do with a macro can also be done with a template include[^2]. The heuristic
 I follow when I'm trying to decide how to organize my templates is:
 
-- Includes are for components that rely on no context, or on global or common
-  context that will be present in any page
-- Macros are for components that need to take parameters
+-   Includes are for components that rely on no context, or on global or common
+    context that will be present in any page
+-   Macros are for components that need to take parameters
 
 Put another way: if I find myself having to use `{{ "{% set %}" }}` to
 configure the context for a partial before I `{{ "{% include %}" }}` that
@@ -33,8 +33,7 @@ I use them in my templates.
 ## Includes
 
 Includes are the simplest of the two encapsulation mechanisms. All you have to
-do is write a fragment of a template in a file, and then you can use the `{{ "{%
-include %}" }}` tag in another template and Nunjucks will replace that tag with
+do is write a fragment of a template in a file, and then you can use the `{{ "{% include %}" }}` tag in another template and Nunjucks will replace that tag with
 the contents of the fragment. An example might help to make this more clear.
 
 Suppose I want to encapsulate the markup for my site header so that I can use it
@@ -45,14 +44,14 @@ in multiple templates. I might create a template fragment that looks like this:
 {% raw %}
 ```html
 <header>
-  <a href="/">{{ site.title }}</a>
-  <nav aria-label="main">
-    <ul>
-      {% for link in navigation %}
-        <li><a href="{{ link.href }}">{{ link.text }}</a></li>
-      {% endfor %}
-    </ul>
-  </nav>
+	<a href="/">{{ site.title }}</a>
+	<nav aria-label="main">
+		<ul>
+			{% for link in navigation %}
+			<li><a href="{{ link.href }}">{{ link.text }}</a></li>
+			{% endfor %}
+		</ul>
+	</nav>
 </header>
 ```
 {% endraw %}
@@ -70,11 +69,11 @@ something like this:
 ```html
 <!DOCTYPE html>
 <html>
-  <body>
-    {% include "./includes/site-header.njk" %}
-    <h1>{{ title | safe }}</h1>
-    {{ content | safe }}
-  </body>
+	<body>
+		{% include "./includes/site-header.njk" %}
+		<h1>{{ title | safe }}</h1>
+		{{ content | safe }}
+	</body>
 </html>
 ```
 {% endraw %}
@@ -83,8 +82,7 @@ something like this:
 </figure>
 
 <i>Et voilà</i>, all of the markup for my site header gets put in every blog
-post. If I need the site header in another page, I just have to `{{ '{% include
-"./includes/site-header.njk" %}' | safe }}` in that template wherever I want the
+post. If I need the site header in another page, I just have to `{{ '{% include "./includes/site-header.njk" %}' | safe }}` in that template wherever I want the
 site header to appear in the markup.
 
 When you include a template fragment in Nunjucks, it is interpreted using the
@@ -92,10 +90,10 @@ same context that is present in the calling template at the time the fragment
 was included. So in my `site-header.njk` partial, I'm making the following
 assumptions about the context:
 
-- There is a variable called `site` which has a property `title`
-- There is a variable called `navigation` that is iterable
-- The objects yielded by iterating over `navigation` have two properties: `href`
-  and `text`
+-   There is a variable called `site` which has a property `title`
+-   There is a variable called `navigation` that is iterable
+-   The objects yielded by iterating over `navigation` have two properties: `href`
+    and `text`
 
 Judging by my use of the fragment from `post.njk`, one might conclude that
 `site` and `navigation` are both global variables provided by whatever
@@ -116,15 +114,13 @@ that iterates over all of my blog posts. That partial might look like this:
 {% raw %}
 ```html
 <article class="card">
-  <h2 class="card__title">
-    <a href="{{ cardUrl }}">{{ cardTitle | safe }}</a>
-  </h2>
-  <div class="card__media">
-    <img src="{{ cardMedia }}" alt="{{ cardMediaAlt }}" />
-  </div>
-  <div class="card__body">
-    {{ cardBody | safe }}
-  </div>
+	<h2 class="card__title">
+		<a href="{{ cardUrl }}">{{ cardTitle | safe }}</a>
+	</h2>
+	<div class="card__media">
+		<img src="{{ cardMedia }}" alt="{{ cardMediaAlt }}" />
+	</div>
+	<div class="card__body">{{ cardBody | safe }}</div>
 </article>
 ```
 {% endraw %}
@@ -143,21 +139,20 @@ will need to do something like this:
 ```html
 <!DOCTYPE html>
 <html>
-  <body>
-    {% include "./includes/site-header.njk" %}
+	<body>
+		{% include "./includes/site-header.njk" %}
 
-    <section aria-label="posts">
-      {% for post in posts %}
-        {% set cardTitle = post.title %}
-        {% set cardUrl = post.url %}
-        {% set cardMedia = post.data.media.src %}
-        {% set cardMediaAlt = post.data.media.alt %}
-        {% set cardBody = post.data.description %}
-
-        {% include "./includes/card.njk" %}
-      {% endfor %}
-    </section>
-  </body>
+		<section aria-label="posts">
+			{% for post in posts %}
+				{% set cardTitle = post.title %}
+				{% set cardUrl = post.url %}
+				{% set cardMedia = post.data.media.src %}
+				{% set cardMediaAlt = post.data.media.alt %}
+				{% set cardBody = post.data.description %}
+				{% include "./includes/card.njk" %}
+			{% endfor %}
+		</section>
+	</body>
 </html>
 ```
 {% endraw %}
@@ -208,15 +203,13 @@ can start by just by wrapping the HTML in a `{{ "{% macro %}" }}` tag.
 ```html
 {% macro card(title, url, media, mediaAlt, body) %}
 <article class="card">
-  <h2 class="card__title">
-    <a href="{{ url }}">{{ title | safe }}</a>
-  </h2>
-  <div class="card__media">
-    <img src="{{ media }}" alt="{{ mediaAlt }}" />
-  </div>
-  <div class="card__body">
-    {{ body | safe }}
-  </div>
+	<h2 class="card__title">
+		<a href="{{ url }}">{{ title | safe }}</a>
+	</h2>
+	<div class="card__media">
+		<img src="{{ media }}" alt="{{ mediaAlt }}" />
+	</div>
+	<div class="card__body">{{ body | safe }}</div>
 </article>
 {% endmacro %}
 ```
@@ -239,7 +232,7 @@ JavaScript. You could almost think of the above as:
 
 ```js
 function card(title, url, media, mediaAlt, body) {
-  return `<article class="card">
+	return `<article class="card">
     <h2 class="card__title">
     ...
   </article>`;
@@ -296,15 +289,15 @@ Now, with our macro in place, our template for the home page becomes this:
 {% import "./macros/components.njk" as components %}
 <!DOCTYPE html>
 <html>
-  <body>
-    {% include "./includes/site-header.njk" %}
+	<body>
+		{% include "./includes/site-header.njk" %}
 
-    <section aria-label="posts">
-      {% for post in posts %}
-        {{ components.card(post.title, post.url, post.media.src, post.media.alt, post.description) }}
-      {% endfor %}
-    </section>
-  </body>
+		<section aria-label="posts">
+			{% for post in posts %}
+				{{ components.card(post.title, post.url, post.media.src, post.media.alt, post.description) }}
+			{% endfor %}
+		</section>
+	</body>
 </html>
 ```
 {% endraw %}
@@ -342,7 +335,7 @@ like:
 {% raw %}
 ```html
 {% for p in projects %}
-  {{ components.card(p.title, p.url, p.screenshot.src, p.screenshot.alt, p.summary) }}
+	{{ components.card(p.title, p.url, p.screenshot.src, p.screenshot.alt, p.summary) }}
 {% endfor %}
 ```
 {% endraw %}
@@ -361,12 +354,11 @@ something like this:
 {% raw %}
 ```html
 {% for post in recent_posts %}
-  {% set postBody %}
-  <p>{{ post.description | safe }}</p>
-  <p>Published: {{ post.pub_date }}</p>
-  {% endset %}
-
-  {{ components.card(post.title, post.url, post.media.src, post.media.alt, postBody) }}
+	{% set postBody %}
+		<p>{{ post.description | safe }}</p>
+		<p>Published: {{ post.pub_date }}</p>
+	{% endset %}
+	{{ components.card(post.title, post.url, post.media.src, post.media.alt, postBody) }}
 {% endfor %}
 ```
 {% endraw %}
@@ -391,15 +383,13 @@ our macro where we want that content to appear.
 ```html
 {% macro card(title, url, media, mediaAlt) %}
 <article class="card">
-  <h2 class="card__title">
-    <a href="{{ url }}">{{ title | safe }}</a>
-  </h2>
-  <div class="card__media">
-    <img src="{{ media }}" alt="{{ mediaAlt }}" />
-  </div>
-  <div class="card__body">
-    {{ caller() }}
-  </div>
+	<h2 class="card__title">
+		<a href="{{ url }}">{{ title | safe }}</a>
+	</h2>
+	<div class="card__media">
+		<img src="{{ media }}" alt="{{ mediaAlt }}" />
+	</div>
+	<div class="card__body">{{ caller() }}</div>
 </article>
 {% endmacro %}
 ```
@@ -420,10 +410,10 @@ Now, when we want to create a card, we use a call block:
 {% raw %}
 ```html
 {% for post in recent_posts %}
-  {% call components.card(post.title, post.url, post.media.src, post.media.alt) %}
-    <p>{{ post.description | safe }}</p>
-    <p>Published: {{ post.pub_date }}</p>
-  {% endcall %}
+	{% call components.card(post.title, post.url, post.media.src, post.media.alt) %}
+		<p>{{ post.description | safe }}</p>
+		<p>Published: {{ post.pub_date }}</p>
+	{% endcall %}
 {% endfor %}
 ```
 {% endraw %}
@@ -438,16 +428,15 @@ Invoking the macro using a {{ '{% call %}' }} block
 {% raw %}
 ```html
 {% for p in projects %}
-  {% call components.card(p.title, p.url, p.screenshot.src, p.screenshot.alt) %}
-    <p>p.summary</p>
-  {% endcall %}
+	{% call components.card(p.title, p.url, p.screenshot.src, p.screenshot.alt) %}
+		<p>p.summary</p>
+	{% endcall %}
 {% endfor %}
 ```
 {% endraw %}
 
 <figcaption>
-For the portfolio, we just put the summary between the
-{{ '{% call %}{% endcall %}' }} tags
+For the portfolio, we just put the summary between the {{ '{% call %}{% endcall %}' }} tags
 </figcaption>
 
 </figure>
@@ -458,8 +447,7 @@ Now we're done with our card macro, I think.
 
 At the end of the day, you should use whatever mechanism for encapsulating
 components that works for you. I'm not trying to convince you that it's wrong to
-`{% raw %}{% set %}{% endraw %}` a bunch of variables before you `{% raw %}{%
-include %}{% endraw %}` a template fragment. You should organize your code in a
+`{% raw %}{% set %}{% endraw %}` a bunch of variables before you `{% raw %}{% include %}{% endraw %}` a template fragment. You should organize your code in a
 way that makes sense to you and works for you. But if you've ever been a bit
 perplexed about the differences between a macro and an include, or unsure of
 which one you should use in any given situation, hopefully this helps you decide
@@ -467,20 +455,23 @@ one way or the other.
 
 ## Further Reading
 
-- [Nunjucks templating
-  documentation](https://mozilla.github.io/nunjucks/templating.html) for more
-  details on include, macro, import, and call
-- [Jinja2 template designer
-  documentation](https://jinja2docs.readthedocs.io/en/stable/templates.html)
-  because Nunjucks is the JavaScript implementation of Jinja2, and sometimes the
-  Jinja2 docs have more information, or describe it in a different way that is
-  useful
-- [I Finally Understand Eleventy's Data
-  Cascade](https://benmyers.dev/blog/eleventy-data-cascade/) by Ben Myers may be
-  useful in understanding how you retrieve variables from items in collections
-  for passing to macros
+-   [Nunjucks templating
+    documentation](https://mozilla.github.io/nunjucks/templating.html) for more
+    details on include, macro, import, and call
+-   [Jinja2 template designer
+    documentation](https://jinja2docs.readthedocs.io/en/stable/templates.html)
+    because Nunjucks is the JavaScript implementation of Jinja2, and sometimes the
+    Jinja2 docs have more information, or describe it in a different way that is
+    useful
+-   [I Finally Understand Eleventy's Data
+    Cascade](https://benmyers.dev/blog/eleventy-data-cascade/) by Ben Myers may be
+    useful in understanding how you retrieve variables from items in collections
+    for passing to macros
 
-[^1]: Well, I suppose you could say three, if you include custom filters as an
-  option, but let's just ignore that for now.
-[^2]: The one exception that comes to mind is recursion. A macro can call itself
-  recursively, but a template cannot recursively include itself.
+[^1]:
+    Well, I suppose you could say three, if you include custom filters as an
+    option, but let's just ignore that for now.
+
+[^2]:
+    The one exception that comes to mind is recursion. A macro can call itself
+    recursively, but a template cannot recursively include itself.

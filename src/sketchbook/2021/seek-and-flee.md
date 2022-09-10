@@ -4,8 +4,8 @@ date: 2021-10-03
 cover: /img/sketchbook/seek-and-flee.jpg
 coverAlt: A yellow triangle and a red triangle and a teal circle
 description: >-
-  Implementation of two steering behaviors: seek and flee. The cursor or pointer
-  is used as the target for the agents
+    Implementation of two steering behaviors: seek and flee. The cursor or pointer
+    is used as the target for the agents
 ---
 
 <figure class="aspect-square">

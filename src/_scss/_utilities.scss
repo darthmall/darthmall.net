@@ -1,61 +1,132 @@
 @use "./type";
 
-[data-space="0"]  { --space: 0 }
-[data-space="fluid-xs"] { --space: var(--space-fluid-xs) }
-[data-space="fluid-sm"] { --space: var(--space-fluid-sm) }
-[data-space="fluid-md"] { --space: var(--space-fluid-md) }
-[data-space="fluid-lg"] { --space: var(--space-fluid-lg) }
-[data-space="fluid-xl"] { --space: var(--space-fluid-xl) }
-[data-space="relative-sm"] { --space: var(--space-relative-sm) }
-[data-space="relative-md"] { --space: var(--space-relative-md) }
-[data-space="relative-lg"] { --space: var(--space-relative-lg) }
-[data-space="relative-xl"] { --space: var(--space-relative-xl) }
+[data-space="0"] {
+	--space: 0;
+}
+[data-space="fluid-xs"] {
+	--space: var(--space-fluid-xs);
+}
+[data-space="fluid-sm"] {
+	--space: var(--space-fluid-sm);
+}
+[data-space="fluid-md"] {
+	--space: var(--space-fluid-md);
+}
+[data-space="fluid-lg"] {
+	--space: var(--space-fluid-lg);
+}
+[data-space="fluid-xl"] {
+	--space: var(--space-fluid-xl);
+}
+[data-space="relative-sm"] {
+	--space: var(--space-relative-sm);
+}
+[data-space="relative-md"] {
+	--space: var(--space-relative-md);
+}
+[data-space="relative-lg"] {
+	--space: var(--space-relative-lg);
+}
+[data-space="relative-xl"] {
+	--space: var(--space-relative-xl);
+}
 
-.margin-block-start-fluid-lg { margin-block-start: var(--space-fluid-lg) }
-.margin-block-start-fluid-xl { margin-block-start: var(--space-fluid-xl) }
-.margin-block-start-relative-md { margin-block-start: var(--space-relative-md) }
-.margin-block-end-relative-sm { margin-block-end: var(--space-relative-sm) }
-.margin-block-end-relative-md { margin-block-end: var(--space-relative-md) }
-.margin-inline-auto { margin-inline: auto }
-.margin-inline-end-auto { margin-inline-end: auto }
+.margin-block-start-fluid-lg {
+	margin-block-start: var(--space-fluid-lg);
+}
+.margin-block-start-fluid-xl {
+	margin-block-start: var(--space-fluid-xl);
+}
+.margin-block-start-relative-md {
+	margin-block-start: var(--space-relative-md);
+}
+.margin-block-end-relative-sm {
+	margin-block-end: var(--space-relative-sm);
+}
+.margin-block-end-relative-md {
+	margin-block-end: var(--space-relative-md);
+}
+.margin-inline-auto {
+	margin-inline: auto;
+}
+.margin-inline-end-auto {
+	margin-inline-end: auto;
+}
 
 .shape-circle {
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  overflow: hidden;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	overflow: hidden;
 }
 
-.pad-block-fluid-md { padding-block: var(--space-fluid-md) }
-.pad-block-fluid-lg { padding-block: var(--space-fluid-lg) }
-.pad-block-relative-md { padding-block: var(--space-relative-md) }
-.pad-block-relative-lg { padding-block: var(--space-relative-lg) }
-.pad-block-relative-xl { padding-block: var(--space-relative-xl) }
+.pad-block-fluid-md {
+	padding-block: var(--space-fluid-md);
+}
+.pad-block-fluid-lg {
+	padding-block: var(--space-fluid-lg);
+}
+.pad-block-relative-md {
+	padding-block: var(--space-relative-md);
+}
+.pad-block-relative-lg {
+	padding-block: var(--space-relative-lg);
+}
+.pad-block-relative-xl {
+	padding-block: var(--space-relative-xl);
+}
 
-.aspect-square { aspect-ratio: 1 / 1 }
+.aspect-square {
+	aspect-ratio: 1 / 1;
+}
 
-.align-self-start { align-self: start }
-.align-self-stretch { align-self: stretch }
-.justify-items-center { justify-items: center }
-.flex-nowrap { flex-wrap: nowrap }
-.flex-grow { flex-grow: 1 }
-.flex-hulk { flex-grow: 99 }
+.align-self-start {
+	align-self: start;
+}
+.align-self-stretch {
+	align-self: stretch;
+}
+.justify-items-center {
+	justify-items: center;
+}
+.flex-nowrap {
+	flex-wrap: nowrap;
+}
+.flex-grow {
+	flex-grow: 1;
+}
+.flex-hulk {
+	flex-grow: 99;
+}
 
-.type-heading-3 { @extend %heading-3 }
-.type-body-3 { @extend %body-3 }
-.type-body-4 { @extend %body-4 }
+.type-heading-3 {
+	@extend %heading-3;
+}
+.type-body-3 {
+	@extend %body-3;
+}
+.type-body-4 {
+	@extend %body-4;
+}
 
-.text-1 { color: var(--text-1) }
-.text-2 { color: var(--text-2) }
-.text-3 { color: var(--text-3) }
+.text-1 {
+	color: var(--text-1);
+}
+.text-2 {
+	color: var(--text-2);
+}
+.text-3 {
+	color: var(--text-3);
+}
 
-.unstyled { display: none }
+.unstyled {
+	display: none;
+}
 
 .list-reset {
-  list-style: none;
-  padding: 0;
+	list-style: none;
+	padding: 0;
 
-  > li {
-    margin: 0;
-  }
+	> li {
+		margin: 0;
+	}
 }
-

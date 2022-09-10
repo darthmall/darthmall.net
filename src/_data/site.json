@@ -1,17 +1,17 @@
 {
-  "title": "Evan Sheehan",
-  "description": "I design and build websites, web applications, and data visualizations. I’ve been known to play fiddle from time to time and board games.",
-  "domain": "darthmall.net",
-  "url": "https://darthmall.net",
-  "recentPostCount": 6,
-  "copyright": "W. Evan Sheehan",
-  "author": {
-    "name": "Evan Sheehan",
-    "email": "evan@darthmall.net"
-  },
-  "a11y": {
-    "contact": "a11y@darthmall.net",
-    "subject": "Accessibility issue on darthmall.net",
-    "body": "Describe the issue in as much detail as you’re able. Thanks!"
-  }
+	"title": "Evan Sheehan",
+	"description": "I design and build websites, web applications, and data visualizations. I’ve been known to play fiddle from time to time and board games.",
+	"domain": "darthmall.net",
+	"url": "https://darthmall.net",
+	"recentPostCount": 6,
+	"copyright": "W. Evan Sheehan",
+	"author": {
+		"name": "Evan Sheehan",
+		"email": "evan@darthmall.net"
+	},
+	"a11y": {
+		"contact": "a11y@darthmall.net",
+		"subject": "Accessibility issue on darthmall.net",
+		"body": "Describe the issue in as much detail as you’re able. Thanks!"
+	}
 }

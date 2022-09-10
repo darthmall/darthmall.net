@@ -40,7 +40,7 @@ Whether or not I'm a parent is something that I consider to be highly
 personal. Typically (as I understand it) when a person becomes pregnant, they
 don't tell people outside of immediate family until they're out of their first
 trimester, and the circle of people who are told slowly expands as the
-pregnancy progresses.  Some people may choose to tell everyone they meet as
+pregnancy progresses. Some people may choose to tell everyone they meet as
 soon as they know, which is perfectly fine, the point is that it should be
 their choice whether to keep it under their hats or broadcast it to the world.
 Surveillance capitalism completely disregards whatever desire I may have
@@ -102,4 +102,3 @@ conflating privacy with anonymity.
 [3]: https://arstechnica.com/tech-policy/2014/06/poorly-anonymized-logs-reveal-nyc-cab-drivers-detailed-whereabouts/
 [4]: http://www.cs.utexas.edu/~shmat/shmat_oak08netflix.pdf
 [5]: https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html
-

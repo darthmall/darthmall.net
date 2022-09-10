@@ -1,112 +1,111 @@
 @use "tokens";
 
-@function corner ($first, $second) {
-  @return #{1 + random($first)}rem #{1 + random($second)}rem;
+@function corner($first, $second) {
+	@return #{1 + random($first)}rem #{1 + random($second)}rem;
 }
 
 @mixin corner-var($location, $first, $second) {
-  --#{$location}-radius: #{corner($first, $second)};
+	--#{$location}-radius: #{corner($first, $second)};
 }
 
 @mixin blob {
-  border-top-left-radius: var(--top-left-radius, corner(8, 5));
-  border-top-right-radius: var(--top-right-radius, corner(4, 8));
-  border-bottom-left-radius: var(--bottom-left-radius, corner(8, 12));
-  border-bottom-right-radius: var(--bottom-right-radius, corner(7, 13));
+	border-top-left-radius: var(--top-left-radius, corner(8, 5));
+	border-top-right-radius: var(--top-right-radius, corner(4, 8));
+	border-bottom-left-radius: var(--bottom-left-radius, corner(8, 12));
+	border-bottom-right-radius: var(--bottom-right-radius, corner(7, 13));
 }
 
 $size: 4rem;
 
 .webmention__avatar {
+	position: relative;
 
-  position: relative;
+	height: $size;
+	width: $size;
+	padding: tokens.space(0);
 
-  height: $size;
-  width: $size;
-  padding: tokens.space(0);
+	&::before,
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
 
-  &::before,
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
+		opacity: 0.4;
+		mix-blend-mode: multiply;
 
-    opacity: 0.4;
-    mix-blend-mode: multiply;
+		z-index: -1;
+	}
 
-    z-index: -1;
-  }
+	&::before {
+		@include blob;
 
-  &::before {
-    @include blob;
+		left: -0.25rem;
+		top: 0;
+		height: $size - 0.75rem;
+		width: $size + 1rem;
 
-    left: -0.25rem;
-    top: 0;
-    height: $size - 0.75rem;
-    width: $size + 1rem;
+		transform: rotate(var(--rotate, 50deg));
 
-    transform: rotate(var(--rotate, 50deg));
+		background-color: tokens.color("primary-shade");
+	}
 
-    background-color: tokens.color("primary-shade");
-  }
+	&::after {
+		@include blob;
 
-  &::after {
-    @include blob;
+		left: 0.5rem;
+		top: -0.125rem;
+		height: $size + 0.25rem;
+		width: $size - 0.5rem;
 
-    left: 0.5rem;
-    top: -0.125rem;
-    height: $size + 0.25rem;
-    width: $size - 0.5rem;
+		transform: rotate(var(--rotate, -10deg));
 
-    transform: rotate(var(--rotate, -10deg));
+		background-color: tokens.color("accent");
+	}
 
-    background-color: tokens.color("accent");
-  }
+	.webmention__avatar--anonymous,
+	> img {
+		@include blob;
 
-  .webmention__avatar--anonymous,
-  > img {
-    @include blob;
+		position: relative;
+		height: 100%;
+		width: 100%;
 
-    position: relative;
-    height: 100%;
-    width: 100%;
+		object-fit: cover;
 
-    object-fit: cover;
-
-    background-color: tokens.color("light");
-  }
+		background-color: tokens.color("light");
+	}
 }
 
 .webmention {
-  &:nth-child(even) .webmention__avatar {
-    &::before {
-      --rotate: #{65 + random(120)}deg;
-      width: $size;
-    }
+	&:nth-child(even) .webmention__avatar {
+		&::before {
+			--rotate: #{65 + random(120)}deg;
+			width: $size;
+		}
 
-    &::after {
-      @include corner-var("top-left", $size, $size * 2);
-    }
-  }
+		&::after {
+			@include corner-var("top-left", $size, $size * 2);
+		}
+	}
 
-  &:nth-child(3n) .webmention__avatar {
-    &::before {
-      --rotate: #{70 + random(20)}deg;
-    }
+	&:nth-child(3n) .webmention__avatar {
+		&::before {
+			--rotate: #{70 + random(20)}deg;
+		}
 
-    &::after {
-      @include corner-var("top-right", $size * 3, $size * 2);
-    }
-  }
+		&::after {
+			@include corner-var("top-right", $size * 3, $size * 2);
+		}
+	}
 
-  &:nth-child(5n) .webmention__avatar {
-    &::after {
-      @include corner-var("top-left", $size, $size * 2);
-    }
+	&:nth-child(5n) .webmention__avatar {
+		&::after {
+			@include corner-var("top-left", $size, $size * 2);
+		}
 
-    > img {
-      @include corner-var("top-right", $size, $size);
-      @include corner-var("bottom-right", $size * 2, $size);
-    }
-  }
+		> img {
+			@include corner-var("top-right", $size, $size);
+			@include corner-var("bottom-right", $size * 2, $size);
+		}
+	}
 }

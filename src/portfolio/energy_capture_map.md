@@ -22,7 +22,7 @@ equatorial regions, whereas corn (green) has evolved to grow more efficiently fu
 north.
 
 The map uses colored bands to indicate the amount of energy capture for each crop at
-different latitudes. Higher energy captures are presented as darker colors.  The
+different latitudes. Higher energy captures are presented as darker colors. The
 scatterplot shows the data points from which the map was generated. The red line
 represents a minimum threshold of energy capture, below which data is not shown on the
 map. Thus, users can set a minimum energy capture for crops on the map to see how that

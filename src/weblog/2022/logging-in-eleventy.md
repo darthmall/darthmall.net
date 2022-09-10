@@ -39,16 +39,16 @@ Since `debug` is already installed with your Eleventy project, you might want to
 const debug = require("debug")("darthmall:database");
 
 module.exports = async function () {
-  let data = [];
-  debug("Fetching data...");
-  try {
-    let data = await getRecords();
-    debug(`Fetched ${data.length} records`);
-  } catch {
-    debug("Database read failed");
-  }
+	let data = [];
+	debug("Fetching data...");
+	try {
+		let data = await getRecords();
+		debug(`Fetched ${data.length} records`);
+	} catch {
+		debug("Database read failed");
+	}
 
-  return data;
+	return data;
 };
 ```
 
@@ -91,10 +91,10 @@ If you happen to be buiding your Eleventy site with GitLab CI, you have to be ca
 
 ```yaml
 build:
-  variables:
-    DEBUG: "Eleventy:Logger,darthmall:database"
-  script:
-    - eleventy
+    variables:
+        DEBUG: "Eleventy:Logger,darthmall:database"
+    script:
+        - eleventy
 ```
 
 <figcaption>Set the <code>DEBUG</code> variable in GitLab CI’s environment variable config section.</figcaption>
@@ -106,8 +106,8 @@ Doing this will probably break your builds. For some reason, setting a `DEBUG` v
 
 ```yaml
 build:
-  script:
-    - DEBUG="Eleventy:Logger,darthmall:database" eleventy
+    script:
+        - DEBUG="Eleventy:Logger,darthmall:database" eleventy
 ```
 
 <figcaption>Safely set the <code>DEBUG</code> variable just for your Eleventy build.</figcaption>

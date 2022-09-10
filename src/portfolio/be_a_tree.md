@@ -6,7 +6,7 @@ thumbnail: /img/work/be_a_tree/be_a_tree_thumb@2x.png
 client: Student Project
 repo: https://github.com/darthmall/Be-a-Tree
 abstract: >-
-  An interactive piece that uses a Kinect to project a silhouette of the viewer and grow tree limbs with blossoms from their body as they raise their arms.
+    An interactive piece that uses a Kinect to project a silhouette of the viewer and grow tree limbs with blossoms from their body as they raise their arms.
 class: lydian
 color: "E85B87"
 ---

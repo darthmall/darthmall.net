@@ -23,4 +23,3 @@ The dashboard displayed over thirty indicators and needed to highlight trends in
 In addition to being interactive on the web, the dashboard also needed to be printable on
 a single sheet of paper so that it could be used as a hand-out for leaders of the polio
 eradication initiative during briefings.
-

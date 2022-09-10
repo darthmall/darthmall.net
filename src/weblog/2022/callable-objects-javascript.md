@@ -2,10 +2,10 @@
 title: Callable Objects in JavaScript
 date: 2022-08-07
 description: >-
-  A pattern for building stateful functions in JavaScript.
+    A pattern for building stateful functions in JavaScript.
 tags:
-  - JavaScript
-  - Design Patterns
+    - JavaScript
+    - Design Patterns
 ---
 
 Recently, Chris Fedinandi wrote about the [constructor
@@ -124,9 +124,9 @@ have to do is write a function that returns another function.
 
 ```js
 function greeter() {
-  function call() {}
+	function call() {}
 
-  return call;
+	return call;
 }
 ```
 
@@ -142,11 +142,11 @@ starters we’ll implement it like this:
 
 ```js
 function greeter() {
-  function call(subject) {
-    return `Hello, ${subject}`;
-  }
+	function call(subject) {
+		return `Hello, ${subject}`;
+	}
 
-  return call;
+	return call;
 }
 ```
 
@@ -163,26 +163,26 @@ salutation variable.
 
 ```js
 function greeter() {
-  // "Private" variable for containing the salutation used by
-  // our greeter, with a default value.
-  let salutation = "Hello";
+	// "Private" variable for containing the salutation used by
+	// our greeter, with a default value.
+	let salutation = "Hello";
 
-  function call(subject) {
-    // Combine the salutation variable in the closure with the
-    // subject argument to form the greeting.
-    return `${salutation}, ${subject}`;
-  }
+	function call(subject) {
+		// Combine the salutation variable in the closure with the
+		// subject argument to form the greeting.
+		return `${salutation}, ${subject}`;
+	}
 
-  // Accessor for the salutation. When called with no argument,
-  // it acts as a getter, otherwise it sets the salutation to
-  // `value`
-  call.salutation = function (value) {
-    if (arguments.length < 1) return salutation;
+	// Accessor for the salutation. When called with no argument,
+	// it acts as a getter, otherwise it sets the salutation to
+	// `value`
+	call.salutation = function (value) {
+		if (arguments.length < 1) return salutation;
 
-    salutation = value;
-  };
+		salutation = value;
+	};
 
-  return call;
+	return call;
 }
 ```
 

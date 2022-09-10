@@ -88,18 +88,17 @@ from this website.
 
 ## References
 
-- [An In-Depth Tutorial of Webmentions +
-  Eleventy](https://sia.codes/posts/webmentions-eleventy-in-depth/) by Sia
-  Karamalegos
-- [Making Persistent Build Folders in
-  Netlify](https://mxb.dev/blog/persistent-build-folders-netlify/) by Max Böck
-- [Adding Webmention Support to a Static
-  Site](https://keithjgrant.com/posts/2019/02/adding-webmention-support-to-a-static-site/)
-  by Keith J. Grant (for specifics on microformats)
-- [Scheduling Netlify deploys with GitHub
-  Actions](https://www.voorhoede.nl/en/blog/scheduling-netlify-deploys-with-github-actions/)
-  by Thadee
-- [Grow the IndieWeb with
-  Webmentions](https://amberwilson.co.uk/blog/grow-the-indieweb-with-webmentions/)
-  by Amber Wilson
-
+-   [An In-Depth Tutorial of Webmentions +
+    Eleventy](https://sia.codes/posts/webmentions-eleventy-in-depth/) by Sia
+    Karamalegos
+-   [Making Persistent Build Folders in
+    Netlify](https://mxb.dev/blog/persistent-build-folders-netlify/) by Max Böck
+-   [Adding Webmention Support to a Static
+    Site](https://keithjgrant.com/posts/2019/02/adding-webmention-support-to-a-static-site/)
+    by Keith J. Grant (for specifics on microformats)
+-   [Scheduling Netlify deploys with GitHub
+    Actions](https://www.voorhoede.nl/en/blog/scheduling-netlify-deploys-with-github-actions/)
+    by Thadee
+-   [Grow the IndieWeb with
+    Webmentions](https://amberwilson.co.uk/blog/grow-the-indieweb-with-webmentions/)
+    by Amber Wilson

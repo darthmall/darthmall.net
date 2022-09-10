@@ -6,64 +6,84 @@
 @use "../../_data/tokens.json";
 
 @function to-precision($num, $precision) {
-  $mult: math.pow(10, $precision);
-  @return math.div(math.round($num * $mult), $mult);
+	$mult: math.pow(10, $precision);
+	@return math.div(math.round($num * $mult), $mult);
 }
 
-@function fluid-clamp($min-size, $max-size, $min-viewport, $max-viewport, $base) {
-  // https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
-  $min-rem: to-precision(math.div($min-size, $base), 2);
-  $max-rem: to-precision(math.div($max-size, $base), 2);
-  $dx: $max-viewport - $min-viewport;
-  $dy: $max-size - $min-size;
-  $slope: math.div($dy, $dx);
-  $intercept: to-precision(math.div(-$min-viewport * $slope + $min-size, 16), 2);
+@function fluid-clamp(
+	$min-size,
+	$max-size,
+	$min-viewport,
+	$max-viewport,
+	$base
+) {
+	// https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+	$min-rem: to-precision(math.div($min-size, $base), 2);
+	$max-rem: to-precision(math.div($max-size, $base), 2);
+	$dx: $max-viewport - $min-viewport;
+	$dy: $max-size - $min-size;
+	$slope: math.div($dy, $dx);
+	$intercept: to-precision(
+		math.div(-$min-viewport * $slope + $min-size, 16),
+		2
+	);
 
-  @return 'clamp(#{$min-rem}rem, #{$intercept}rem + #{to-precision($slope * 100, 2)}vw, #{$max-rem}rem)'; }
+	@return "clamp(#{$min-rem}rem, #{$intercept}rem + #{to-precision($slope * 100, 2)}vw, #{$max-rem}rem)";
+}
 
-@mixin fluid-scale($size, $scale, $steps, $names, $viewport, $base-font-size, $prefix) {
-  $min-viewport: list.nth($viewport, 1);
-  $max-viewport: list.nth($viewport, 2);
+@mixin fluid-scale(
+	$size,
+	$scale,
+	$steps,
+	$names,
+	$viewport,
+	$base-font-size,
+	$prefix
+) {
+	$min-viewport: list.nth($viewport, 1);
+	$max-viewport: list.nth($viewport, 2);
 
-  @for $step from list.nth($steps, 1) through list.nth($steps, 2) {
-    $min-size: list.nth($size, 1) * math.pow(list.nth($scale, 1), $step);
-    $max-size: list.nth($size, 2) * math.pow(list.nth($scale, 2), $step);
-    $label: $step;
-    @if $names {
-      $label: list.nth($names, $step + 1);
-    }
-    --#{$prefix}-#{$label}: #{fluid-clamp(
-        $min-size, $max-size,
-        $min-viewport, $max-viewport,
-        $base-font-size
-    )};
-  }
+	@for $step from list.nth($steps, 1) through list.nth($steps, 2) {
+		$min-size: list.nth($size, 1) * math.pow(list.nth($scale, 1), $step);
+		$max-size: list.nth($size, 2) * math.pow(list.nth($scale, 2), $step);
+		$label: $step;
+		@if $names {
+			$label: list.nth($names, $step + 1);
+		}
+		--#{$prefix}-#{$label}: #{fluid-clamp(
+				$min-size,
+				$max-size,
+				$min-viewport,
+				$max-viewport,
+				$base-font-size
+			)};
+	}
 }
 
 @mixin token($map, $prefix) {
-  @each $tok, $val in $map {
-    --#{$prefix}-#{$tok}: #{$val};
-  }
+	@each $tok, $val in $map {
+		--#{$prefix}-#{$tok}: #{$val};
+	}
 }
 
 :root {
-  @each $prefix, $values in tokens.$static {
-    @include token($values, $prefix);
-  }
+	@each $prefix, $values in tokens.$static {
+		@include token($values, $prefix);
+	}
 
-  @each $prefix, $scale in tokens.$fluid {
-    @include fluid-scale(
-      map.get($scale, 'size'),
-      map.get($scale, 'scale'),
-      map.get($scale, 'steps'),
-      map.get($scale, 'names'),
-      tokens.$viewport,
-      tokens.$base-font-size,
-      $prefix
-    );
-  }
+	@each $prefix, $scale in tokens.$fluid {
+		@include fluid-scale(
+			map.get($scale, "size"),
+			map.get($scale, "scale"),
+			map.get($scale, "steps"),
+			map.get($scale, "names"),
+			tokens.$viewport,
+			tokens.$base-font-size,
+			$prefix
+		);
+	}
 
-  @include mixins.light-theme;
+	@include mixins.light-theme;
 
-  color-scheme: light dark;
+	color-scheme: light dark;
 }

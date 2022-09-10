@@ -38,13 +38,13 @@ set these technologies up individually.
 
 I like to use Docker Compose for development environments for a few reasons.
 
-- Starting the development environment is usually as simple as running
-  `docker-compose up`
-- Docker Compose handles all of the networking between containers, so it's easy
-  to configure connections between them
-- If I'm not deploying the application as a container, then I can usually
-  configure an official base image in `docker-compose.yml` directly instead of
-  having to create a `Dockerfile`
+-   Starting the development environment is usually as simple as running
+    `docker-compose up`
+-   Docker Compose handles all of the networking between containers, so it's easy
+    to configure connections between them
+-   If I'm not deploying the application as a container, then I can usually
+    configure an official base image in `docker-compose.yml` directly instead of
+    having to create a `Dockerfile`
 
 ## Binding the `src/` Directory
 
@@ -142,7 +142,7 @@ Docker Compose will check for a `.env` file in the same directory in which
 
 <figure>
 
-``` bash
+```bash
 echo "UID=$(id -u)" >> .env
 echo "GID=$(id -g)" >> .env
 ```
@@ -244,16 +244,14 @@ ages to figure out a solution to this problem.
 Because of how the official Node Docker image is configured, NPM tries to put
 its cache of packages in `/.npm/`. Unless you're running as `root`, you will get
 an error from NPM whenever you try to install packages. One way around this is
-to always run `npm install` as `root` (`docker-compose run --rm -u root frontend
-install`), but then you have to `sudo chown` your `node_modules/` directory
+to always run `npm install` as `root` (`docker-compose run --rm -u root frontend install`), but then you have to `sudo chown` your `node_modules/` directory
 after every install or update.
 
 I think a better solution is to move where NPM puts its cache to somewhere you
 have permission to write. Fortunately, NPM allows you to [set environment
 variables for any config
 parameters](https://docs.npmjs.com/cli/v6/using-npm/config#environment-variables)
-just by prefixing them with `NPM_CONFIG_`. So we don't have to run `npm config
-cache` to change the cache directory, we can just set `NPM_CONFIG_CACHE` to the
+just by prefixing them with `NPM_CONFIG_`. So we don't have to run `npm config cache` to change the cache directory, we can just set `NPM_CONFIG_CACHE` to the
 desired location in our `docker-compose.yaml`.
 
 <figure>
@@ -322,7 +320,6 @@ frontend:
     user: ${UID}:${GID}
     entrypoint: ["npm"]
     command: ["run", "dev"]
-
 # Other services ...
 ```
 

@@ -1,89 +1,86 @@
 {
-  "experience": [
-    {
-      "title": "Web Developer",
-      "employer": "Cooperative Institute for Research in the Atmosphere",
-      "start": "2018-08-23",
-      "description": "At CIRA I am the web developer for NOAA's Science On a Sphere(r) team where I maintain the SOS website, and develop data visualization applications for NOAA."
-    },
-    {
-      "title": "Designer",
-      "employer": "Spotify",
-      "start": "2015-06-01",
-      "end": "2018-05-01",
-      "description": "At Spotify I design data visualizations and tools that are used to inform product design and business decisions. The projects I’ve worked on include from dashboards with robust filtering capabilities that profile groups of users in terms of demographics, behavior, and taste, and a visualization of how users navigate the Spotify client."
-    },
-    {
-      "title": "Design Technologist",
-      "employer": "Seed Scientific",
-      "start": "2014-06-01",
-      "end": "2015-06-01",
-      "description": "I designed and built data visualization tools for our clients. While there, I implemented the first version of [UNICEF](http://www.unicef.org/)’s [transparency portal](http://open.unicef.org/) and I designed and built the user interface for a data management and reporting application for their Global Polio Eradication Initiative."
-    },
-    {
-      "title": "IT Coordinator",
-      "employer": "National Museum of Mathematics",
-      "start": "2014-01-01",
-      "end": "2014-05-01",
-      "skip": true,
-      "description": "At MoMath, I was responsible for IT support in the office, maintaining the exhibits on the floor of the museum, providing audio/visual support during events, and maintaining and extending a piece of custom software used in MoMath’s math competitions."
-    },
-    {
-      "title": "User Experience Designer",
-      "employer": "Schrödinger, Inc.",
-      "start": "2013-01-01",
-      "end": "2014-01-01",
-      "description": "I designed interfaces for molecular modeling software that was used by researchers at pharmaceutical companies and universities."
-    },
-    {
-      "title": "Senior Developer",
-      "employer": "Zia Consulting, Inc.",
-      "start": "2007-12-01",
-      "end": "2011-02-01",
-      "description": "I designed and developed enterprise content management solutions using a variety of tools and products to meet the needs of clients including the City & County of Denver and GE."
-    },
-    {
-      "title": "Research Assistant",
-      "employer": "University of Colorado at Boulder",
-      "start": "2006-08-01",
-      "end": "2007-08-01",
-      "description": "With a team of computer scientists and geoscientists, I designed and developed an application to support the study of cosmogenic data techniques by geoscientists."
-    }
-  ],
-  "skills": [
-    {
-      "name": "Programming Languages",
-      "skills": [
-        "JavaScript", "Python", "HTML", "CSS", "SQL", "C", "C++"
-      ]
-    },
-    {
-      "name": "Libraries & Tools",
-      "skills": [
-        "D3", "Svelte", "Django", "Flask", "SQLAlchemy", "SCSS"
-      ]
-    },
-    {
-      "name": "Design",
-      "skills": [
-        "User Research", "Usability Studies", "Prototyping", "Wireframing"
-      ]
-    },
-    {
-      "name": "Graphics",
-      "skills": [
-        "Sketch", "Figma", "Adobe Illustrator", "Adobe InDesign"
-      ]
-    }
-  ],
-  "education": [
-    {
-      "name": "Masters of Human-Computer Interaction",
-      "institution": "Carnegie Mellon University"
-    },
-    {
-      "name": "Bachelors of Computer Science",
-      "institution": "University of Colorado at Boulder"
-    }
-  ]
+	"experience": [
+		{
+			"title": "Web Developer",
+			"employer": "Cooperative Institute for Research in the Atmosphere",
+			"start": "2018-08-23",
+			"description": "At CIRA I am the web developer for NOAA's Science On a Sphere(r) team where I maintain the SOS website, and develop data visualization applications for NOAA."
+		},
+		{
+			"title": "Designer",
+			"employer": "Spotify",
+			"start": "2015-06-01",
+			"end": "2018-05-01",
+			"description": "At Spotify I design data visualizations and tools that are used to inform product design and business decisions. The projects I’ve worked on include from dashboards with robust filtering capabilities that profile groups of users in terms of demographics, behavior, and taste, and a visualization of how users navigate the Spotify client."
+		},
+		{
+			"title": "Design Technologist",
+			"employer": "Seed Scientific",
+			"start": "2014-06-01",
+			"end": "2015-06-01",
+			"description": "I designed and built data visualization tools for our clients. While there, I implemented the first version of [UNICEF](http://www.unicef.org/)’s [transparency portal](http://open.unicef.org/) and I designed and built the user interface for a data management and reporting application for their Global Polio Eradication Initiative."
+		},
+		{
+			"title": "IT Coordinator",
+			"employer": "National Museum of Mathematics",
+			"start": "2014-01-01",
+			"end": "2014-05-01",
+			"skip": true,
+			"description": "At MoMath, I was responsible for IT support in the office, maintaining the exhibits on the floor of the museum, providing audio/visual support during events, and maintaining and extending a piece of custom software used in MoMath’s math competitions."
+		},
+		{
+			"title": "User Experience Designer",
+			"employer": "Schrödinger, Inc.",
+			"start": "2013-01-01",
+			"end": "2014-01-01",
+			"description": "I designed interfaces for molecular modeling software that was used by researchers at pharmaceutical companies and universities."
+		},
+		{
+			"title": "Senior Developer",
+			"employer": "Zia Consulting, Inc.",
+			"start": "2007-12-01",
+			"end": "2011-02-01",
+			"description": "I designed and developed enterprise content management solutions using a variety of tools and products to meet the needs of clients including the City & County of Denver and GE."
+		},
+		{
+			"title": "Research Assistant",
+			"employer": "University of Colorado at Boulder",
+			"start": "2006-08-01",
+			"end": "2007-08-01",
+			"description": "With a team of computer scientists and geoscientists, I designed and developed an application to support the study of cosmogenic data techniques by geoscientists."
+		}
+	],
+	"skills": [
+		{
+			"name": "Programming Languages",
+			"skills": ["JavaScript", "Python", "HTML", "CSS", "SQL", "C", "C++"]
+		},
+		{
+			"name": "Libraries & Tools",
+			"skills": ["D3", "Svelte", "Django", "Flask", "SQLAlchemy", "SCSS"]
+		},
+		{
+			"name": "Design",
+			"skills": [
+				"User Research",
+				"Usability Studies",
+				"Prototyping",
+				"Wireframing"
+			]
+		},
+		{
+			"name": "Graphics",
+			"skills": ["Sketch", "Figma", "Adobe Illustrator", "Adobe InDesign"]
+		}
+	],
+	"education": [
+		{
+			"name": "Masters of Human-Computer Interaction",
+			"institution": "Carnegie Mellon University"
+		},
+		{
+			"name": "Bachelors of Computer Science",
+			"institution": "University of Colorado at Boulder"
+		}
+	]
 }

@@ -24,9 +24,8 @@ way Chris did — I'm pretty sure I've seen questions like "which of these citie
 have you lived in" as a means of verifying identity. But I'll tell you the
 states.
 
-* Colorado: 10× homes
-* Pennsylvania: 3× homes
-* New York: 2× homes
-* Maryland: 1× home
-* New Jersey: 1× home
-
+-   Colorado: 10× homes
+-   Pennsylvania: 3× homes
+-   New York: 2× homes
+-   Maryland: 1× home
+-   New Jersey: 1× home

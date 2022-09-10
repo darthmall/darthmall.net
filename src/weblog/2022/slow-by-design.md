@@ -98,19 +98,30 @@ a result.
 Sometimes slowing down a little to be more thoughtful can dramatically improve
 your results.
 
-[^1]: Somehow, despite my proclivity for reading about productivity methods, I
-had missed out on the bullet journal craze from a few years back.
-[^2]: [Remember the Milk](https://rememberthemilk.com),
-[OmniFocus](https://www.omnigroup.com/omnifocus),
-[Things](https://culturedcode.com/things/), and then Remember the Milk again.
-[^3]: I’m re-reading _Getting Things Done_ at the moment and, in the updated
-version, David Allen actually warns about the risk that too much automation
-might mean you don’t check in on all of your “open loops” often enough.
-[^4]: Responding to a post by Jim Nielsen [about Neil Postman’s _Amusing
-Ourselves to
-Death_](https://blog.jim-nielsen.com/2022/the-message-and-medium-of-the-personal-blog/)
-[^5]: That’s not to mention the incentive to constantly publish new material to
-bring people back multiple times a day so you can show them ads.
-[^6]: Of course, making publishing cheaper and easier has also eliminated some
-gate-keeping and introduced a greater diversity of voices, which I think is,
-over all, a good thing.
+[^1]:
+    Somehow, despite my proclivity for reading about productivity methods, I
+    had missed out on the bullet journal craze from a few years back.
+
+[^2]:
+    [Remember the Milk](https://rememberthemilk.com),
+    [OmniFocus](https://www.omnigroup.com/omnifocus),
+    [Things](https://culturedcode.com/things/), and then Remember the Milk again.
+
+[^3]:
+    I’m re-reading _Getting Things Done_ at the moment and, in the updated
+    version, David Allen actually warns about the risk that too much automation
+    might mean you don’t check in on all of your “open loops” often enough.
+
+[^4]:
+    Responding to a post by Jim Nielsen [about Neil Postman’s _Amusing
+    Ourselves to
+    Death_](https://blog.jim-nielsen.com/2022/the-message-and-medium-of-the-personal-blog/)
+
+[^5]:
+    That’s not to mention the incentive to constantly publish new material to
+    bring people back multiple times a day so you can show them ads.
+
+[^6]:
+    Of course, making publishing cheaper and easier has also eliminated some
+    gate-keeping and introduced a greater diversity of voices, which I think is,
+    over all, a good thing.

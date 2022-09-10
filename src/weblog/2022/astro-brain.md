@@ -2,9 +2,9 @@
 title: Astro on the Brain
 date: 2022-09-09
 tags:
-  - Eleventy
-  - Astro
-  - Web Dev
+    - Eleventy
+    - Astro
+    - Web Dev
 description: A little blog-therapy. Talking through the aspects of Astro that are appealing to me and drawing me toward wasting time rewriting my website with Astro.
 ---
 

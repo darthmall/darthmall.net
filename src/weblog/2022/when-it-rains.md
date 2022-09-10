@@ -2,8 +2,8 @@
 title: When it Rains
 date: 2022-08-16
 tags:
-  - Climate Crisis
-  - Transportation
+    - Climate Crisis
+    - Transportation
 description: Fighting the climate crisis has to be about more than driving electric vehicles, it has to be about designing a world where cars are far less important to transportation.
 ---
 

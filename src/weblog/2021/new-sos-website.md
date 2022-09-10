@@ -39,7 +39,7 @@ paint.  Image optimization is on my list of things to do.
             "src/img/new-sos-website/sos-lighthouse.png",
             "",
             "Performance: 81; Accessibility: 94; Best Practices: 100; SEO: 100",
-            "(max-width: 41rem) 100vw, (max-width: 50em) 50vw, 25rem" %}
+            "(max-width: 41rem) 100vw, (max-width: 50rem) 50vw, 25rem" %}
     </div>
     <figcaption>Before and after scores from Lighthouse</figcaption>
 </figure>

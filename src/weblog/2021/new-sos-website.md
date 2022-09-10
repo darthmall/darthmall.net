@@ -8,11 +8,13 @@ tags: ["Eleventy", "Science On a Sphere"]
 ---
 
 <figure>
-<img src="/img/new-sos-website/sos-website.png"
-     alt="Hero image and page title of the Science On a Sphere website" />
-<figcaption>
-Home page of the newly launched Science On a Sphere website
-</figcaption>
+    {% picture
+        "src/img/new-sos-website/sos-website.png",
+        "",
+        "Hero image and page title of the Science On a Sphere website",
+        "(max-width: 50rem) 100vw, 50rem",
+        [400, 600, 800, 1600] %}
+    <figcaption>Home page of the newly launched Science On a Sphere website</figcaption>
 </figure>
 
 Today we launched the new website for [Science On a
@@ -28,15 +30,19 @@ the large hero images on the home page slowing down the largest contentful
 paint.  Image optimization is on my list of things to do.
 
 <figure>
-<div data-layout="grid" data-space="fluid-sm">
-<img src="/img/new-sos-website/sos-original-lighthouse.png"
-     alt="Performance: 89; Accessibility 89; Best Practices: 67; SEO: 64" />
-<img src="/img/new-sos-website/sos-lighthouse.png"
-     alt="Performance: 81; Accessibility: 94; Best Practices: 100; SEO: 100" />
-</div>
-<figcaption>
-Before and after scores from Lighthouse
-</figcaption>
+    <div data-layout="grid" data-space="fluid-sm">
+        {% picture
+            "src/img/new-sos-website/sos-original-lighthouse.png",
+            "",
+            "Performance: 89; Accessibility 89; Best Practices: 67; SEO: 64",
+            "(max-width: 41rem) 100vw, (max-width: 50em) 50vw, 25rem" %}
+        {% picture
+            "src/img/new-sos-website/sos-lighthouse.png",
+            "",
+            "Performance: 81; Accessibility: 94; Best Practices: 100; SEO: 100",
+            "(max-width: 41rem) 100vw, (max-width: 50em) 50vw, 25rem" %}
+    </div>
+    <figcaption>Before and after scores from Lighthouse</figcaption>
 </figure>
 
 ## Ousted Google

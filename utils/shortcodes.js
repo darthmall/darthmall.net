@@ -60,7 +60,7 @@ function formatDate(dt, cls = "") {
 
 async function picture(src, cls, alt, sizes="(min-width: 45rem) 45rem, 100vw") {
   const options = {
-    widths: [300, 600, 720],
+    widths: [400, 600, 800, null],
     formats: ["avif", "jpg"],
     outputDir: "./_site/img/"
   };

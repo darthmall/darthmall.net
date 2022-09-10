@@ -1,8 +1,8 @@
 {
   "name": "evansheehan.com",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Evan Sheehan's personal website",
+  "private": true,
   "scripts": {
     "start": "run-s clean eleventy:dev --print-label",
     "build": "run-s clean eleventy:prod --print-label",
@@ -10,9 +10,12 @@
     "eleventy:dev": "eleventy --serve",
     "eleventy:prod": "eleventy"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "W. Evan Sheehan",
+  "license": "AGPL-3.0-or-later",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:darthmall/website.git"
+  },
   "dependencies": {
     "@11ty/eleventy": "^1.0.2",
     "@11ty/eleventy-img": "^2.0.1",

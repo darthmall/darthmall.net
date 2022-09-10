@@ -15,10 +15,11 @@ coincidentally, this is just about ten years to the day since I made the
 wallpaper.
 
 <figure>
-<img src="/img/dont-panic/dont-panic-original-320.png"
-     class="margin-inline-auto"
-     alt="“Don’t Panic” rendered like a glossy sticker in round pink letters against a
-          blue background">
+    {% picture
+        "src/img/dont-panic/dont-panic-original-320.png",
+        "margin-inline-auto",
+        "“Don’t Panic” rendered like a glossy sticker in round pink letters against a blue background",
+        "(min-width: 320px) 320px, 100vw" %}
 <figcaption>
     My original “Don’t Panic” wallpaper.
 </figcaption>
@@ -45,11 +46,16 @@ like, just please don’t make an NFT of them.
 
 <figure>
     <div class="justify-items-center" data-layout="grid">
-        <img src="/img/dont-panic/dont-panic-repeat-lockscreen-320.png" alt="“Don’t
-        Panic“ repeated with no whitespace, the phrase is highlighted once in pink">
-        <img src="/img/dont-panic/dont-panic-repeat-wallpaper-320.png" alt="“Don’t
-        Panic“ repeated with no whitespace with little contrast against the
-        background">
+        {% picture
+            "src/img/dont-panic/dont-panic-repeat-lockscreen-320.png",
+            "",
+            "“Don’t Panic“ repeated with no whitespace, the phrase is highlighted once in pink",
+            "(min-width: 320px) 320px, 100vw" %}
+        {% picture
+            "src/img/dont-panic/dont-panic-repeat-wallpaper-320.png",
+            "",
+            "“Don’t Panic“ repeated with no whitespace with little contrast against the background",
+            "(min-width: 320px) 320px, 1oovw" %}
     </div>
     <figcaption>
         “Repeat” variant. <a
@@ -61,11 +67,16 @@ like, just please don’t make an NFT of them.
 </figure>
 <figure>
     <div class="justify-items-center" data-layout="grid">
-        <img src="/img/dont-panic/dont-panic-grid-lockscreen-320.png" alt="The nine
-        letters of the phrase “Don’t Panic” arranged in a 3×3 grid in pink">
-        <img src="/img/dont-panic/dont-panic-grid-wallpaper-320.png" alt="The nine
-        letters of the phrase “Don’t Panic” arraned in a 3×3 grid with low contrast
-        against the background">
+        {% picture
+            "src/img/dont-panic/dont-panic-grid-lockscreen-320.png",
+            "",
+            "The nine letters of the phrase “Don’t Panic” arranged in a 3×3 grid in pink",
+            "(min-width: 320px) 320px, 100vw" %}
+        {% picture
+            "src/img/dont-panic/dont-panic-grid-wallpaper-320.png",
+            "",
+            "The nine letters of the phrase “Don’t Panic” arraned in a 3×3 grid with low contrast against the background",
+            "(min-width: 320px) 320px, 100vw" %}
         </div>
     <figcaption>
         “Grid” variant. <a
@@ -77,10 +88,16 @@ like, just please don’t make an NFT of them.
 </figure>
 <figure>
     <div class="justify-items-center" data-layout="grid">
-        <img src="/img/dont-panic/dont-panic-glow-lockscreen-320.png" alt="The phrase
-        “Don’t Panic” in glowing pink letters, like a neon sign">
-        <img src="/img/dont-panic/dont-panic-glow-wallpaper-320.png" alt="The background
-        from the glow lock screen with no lettering">
+        {% picture
+            "src/img/dont-panic/dont-panic-glow-lockscreen-320.png",
+            "",
+            "The phrase “Don’t Panic” in glowing pink letters, like a neon sign",
+            "(min-width: 320px) 320px, 100vw" %}
+        {% picture
+            "src/img/dont-panic/dont-panic-glow-wallpaper-320.png",
+            "",
+            "The background from the glow lock screen with no lettering",
+            "(min-width: 320px) 320px, 100vw" %}
     </div>
     <figcaption>
         “Glow” variant. <a

@@ -31,7 +31,13 @@ module.exports = function (config) {
 
   // Shortcodes
   Object.keys(shortcodes).forEach((shortcodeName) => {
-    config.addShortcode(shortcodeName, shortcodes[shortcodeName]);
+    const fn = shortcodes[shortcodeName];
+
+    if (fn.isAsync) {
+      config.addNunjucksAsyncShortcode(shortcodeName, fn);
+    } else {
+      config.addShortcode(shortcodeName, fn);
+    }
   });
 
   // Transforms

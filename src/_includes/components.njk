@@ -2,8 +2,8 @@
 	<div class="stack h-feed" data-layout="center">
 		{% for item in items %}
 			<article class="h-entry">
-				<h2 class="p-name">
-					<a href="{{ item.url }}">{{ item.data.title | safe }}</a>
+				<h2>
+					<a href="{{ item.url }}" class="p-name">{{ item.data.title | safe }}</a>
 				</h2>
 				{% pubDate item.date %}
 			</article>

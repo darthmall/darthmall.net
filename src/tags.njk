@@ -11,7 +11,10 @@ pagination:
         - recent
         - sketches
 permalink: /tags/{{ tag }}/
-layout: layouts/weblog.njk
+layout: layouts/page.njk
 eleventyComputed:
     title: "{{ tag }}"
 ---
+
+{% import "components.njk" as components %}
+{{ components.feed(collections[tag]) }}

@@ -3,3 +3,6 @@ title: Weblog
 eleventyExcludeFromCollections: true
 layout: layouts/weblog.njk
 ---
+
+{% import "components.njk" as components %}
+{{ components.feed(collections.posts) }}

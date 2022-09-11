@@ -1,11 +1,11 @@
 ---
 eleventyExcludeFromCollections: true
+layout: layouts/base.njk
 ---
-{% extends "layouts/base.njk" %}
-{% block content %}
-<div class="stack" data-layout="center" data-center-width="site">
-  {% include "partials/theme-toggle.njk" %}
-  <h2 id="Skip" tabindex="-1">Recent Posts</h2>
-  {{ components.gallery(collections.feed.slice(0, site.recentPostCount)) }}
-</div>
-{% endblock %}
+
+{% import "components.njk" as components %}
+
+<h1 id="Skip" tabindex="-1">Recent Posts</h1>
+{% include "partials/theme-toggle.njk" %}
+
+{{ components.feed(collections.feed.slice(0, site.recentPostCount)) }}

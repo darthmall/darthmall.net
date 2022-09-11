@@ -84,9 +84,14 @@ async function picture(
 
 picture.isAsync = true;
 
+function pubDate(dateStr) {
+	return formatDate(dateStr, "dt-published");
+}
+
 module.exports = {
 	clamp,
 	copyright,
 	formatDate,
 	picture,
+	pubDate,
 };

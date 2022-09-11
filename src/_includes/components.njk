@@ -1,3 +1,16 @@
+{% macro feed(items) %}
+	<div class="stack h-feed" data-layout="center">
+		{% for item in items %}
+			<article class="h-entry">
+				<h2 class="p-name">
+					<a href="{{ item.url }}">{{ item.data.title | safe }}</a>
+				</h2>
+				{% pubDate item.date %}
+			</article>
+		{% endfor %}
+	</div>
+{% endmacro %}
+
 {% macro gallery(items) %}
 <ul class="list-reset" data-layout="grid" data-space="fluid-md" role="list">
   {% for item in items %}

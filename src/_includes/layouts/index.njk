@@ -1,0 +1,16 @@
+{% extends "layouts/page.njk" %}
+
+{% block content %}
+	{{ super() }}
+
+	<div class="stack h-feed" data-layout="center">
+		{% for page in pageList %}
+			<article class="post-block h-entry">
+				<h2>
+					<a href="{{ page.url }}" class="p-name">{{ page.data.title | safe }}</a>
+				</h2>
+				{% pubDate page.date %}
+			</article>
+		{% endfor %}
+	</div>
+{% endblock %}

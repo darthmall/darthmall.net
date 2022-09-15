@@ -1,16 +1,3 @@
-{% macro feed(items) %}
-	<div class="stack h-feed" data-layout="center">
-		{% for item in items %}
-			<article class="h-entry">
-				<h2>
-					<a href="{{ item.url }}" class="p-name">{{ item.data.title | safe }}</a>
-				</h2>
-				{% pubDate item.date %}
-			</article>
-		{% endfor %}
-	</div>
-{% endmacro %}
-
 {% macro projectSummary(project) %}
   {% set classAttr = " class='project-summary--" + project.class + "'" if project.class else "" %}
   {% set styleAttr = " style='--color-1:#" + project.color + "'" if project.color else "" %}

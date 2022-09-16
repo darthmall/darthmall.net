@@ -4,7 +4,7 @@ eleventyExcludeFromCollections: true
 description: >-
     This site does not track you. It uses no cookies and has no analytics.
     Privacy is a fundamental human right.
-webmentions: false
+showWebmentions: false
 layout: layouts/article.njk
 ---
 

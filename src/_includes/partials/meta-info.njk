@@ -1,4 +1,4 @@
-{% if title %}
+{% if title and title != "Home" %}
   {% set pageTitle = title + ' - ' + site.title %}
 {% else %}
   {% set pageTitle = site.title %}

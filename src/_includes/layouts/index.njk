@@ -6,7 +6,7 @@
 	<div class="stack h-feed" data-layout="center">
 		{% for page in pageList %}
 			<article class="post-block h-entry">
-				<h2>
+				<h2 class="title">
 					<a href="{{ page.url }}" class="p-name">{{ page.data.title | safe }}</a>
 				</h2>
 				{% pubDate page.date %}

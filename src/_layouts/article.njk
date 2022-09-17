@@ -12,8 +12,6 @@ classes: h-entry
 {% endblock %}
 
 {% block content %}
-  {% include "partials/page-title.njk" %}
-  {% include "partials/theme-toggle.njk" %}
   <div class="stack e-content" data-layout="center">
     {% if date -%}
       <aside aria-label="publication date" class="align-self-start">
@@ -22,10 +20,8 @@ classes: h-entry
         </p>
       </aside>
     {%- endif %}
-    {{ super() }}
+    {{ content | safe }}
   </div>
 
-  {% if showWebmentions !== false %}
-    {% include "partials/webmentions.njk" %}
-  {% endif %}
+	{% include "partials/webmentions.njk" %}
 {% endblock %}

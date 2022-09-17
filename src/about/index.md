@@ -1,9 +1,8 @@
 ---
 title: About
-layout: article.njk
+layout: base.njk
 description: >-
     I design and build websites, web applications, and data visualizations.
-showWebmentions: false
 ---
 
 Howdy, my name is Evan.

@@ -26,8 +26,12 @@
     {% set mainClasses = ' class="' + classes + '"' %}
   {% endif %}
   <main {{ mainClasses | safe }}>
+		{% include "partials/page-title.njk" %}
+		{% include "partials/theme-toggle.njk" %}
     {% block content %}
-      {{ content | safe }}
+			<div class="stack" data-layout="center">
+				{{ content | safe }}
+			</div>
     {% endblock content %}
   </main>
 

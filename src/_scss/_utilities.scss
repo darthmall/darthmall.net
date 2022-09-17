@@ -1,52 +1,21 @@
 @use "tokens/fonts";
 
 @mixin css {
-	.margin-block-start-fluid-lg {
-		margin-block-start: var(--space-l);
-	}
-	.margin-block-start-fluid-xl {
-		margin-block-start: var(--space-xl);
-	}
-	.margin-block-start-relative-md {
-		margin-block-start: var(--space-m);
-	}
-	.margin-block-end-relative-sm {
-		margin-block-end: var(--space-s);
-	}
-	.margin-block-end-relative-md {
-		margin-block-end: var(--space-m);
-	}
-	.margin-inline-auto {
-		margin-inline: auto;
-	}
-	.margin-inline-end-auto {
-		margin-inline-end: auto;
-	}
+	.mbs-l { margin-block-start: var(--space-l) }
+
+	.mi-auto { margin-inline: auto }
+	.mie-auto { margin-inline-end: auto }
+
+	.pb-m { padding-block: var(--space-m) }
+	.pb-l { padding-block: var(--space-l) }
+	.pb-xl { padding-block: var(--space-xl) }
+
+	.aspect-square { aspect-ratio: 1 / 1 }
 
 	.shape-circle {
 		aspect-ratio: 1 / 1;
 		border-radius: 50%;
 		overflow: hidden;
-	}
-
-	.pad-block-fluid-md {
-		padding-block: var(--space-m);
-	}
-	.pad-block-fluid-lg {
-		padding-block: var(--space-l);
-	}
-	.pad-block-relative-md {
-		padding-block: var(--space-m);
-	}
-	.pad-block-relative-lg {
-		padding-block: var(--space-l);
-	}
-	.pad-block-relative-xl {
-		padding-block: var(--space-xl);
-	}
-
-	.aspect-square {
-		aspect-ratio: 1 / 1;
 	}
 
 	.align-self-start {
@@ -86,9 +55,5 @@
 	}
 	.text-3 {
 		color: var(--text-3);
-	}
-
-	.unstyled {
-		display: none;
 	}
 }

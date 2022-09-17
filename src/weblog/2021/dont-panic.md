@@ -17,7 +17,7 @@ wallpaper.
 <figure>
     {% picture
         "src/img/dont-panic/dont-panic-original-320.png",
-        "margin-inline-auto",
+        "mi-auto",
         "“Don’t Panic” rendered like a glossy sticker in round pink letters against a blue background",
         "(min-width: 320px) 320px, 100vw" %}
 <figcaption>

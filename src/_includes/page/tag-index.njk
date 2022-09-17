@@ -7,7 +7,7 @@
   {% for tag, pages in collections | dictsort %}
     {% if tag not in skipList %}
       <li class="flex-nowrap" data-layout="cluster" style="--space:var(--space-s)">
-        <a href="/tags/{{ tag }}/" class="margin-inline-end-auto">{{ tag }}</a>
+        <a href="/tags/{{ tag }}/" class="mie-auto">{{ tag }}</a>
         <span>{{ pages.length }}</span>
       </li>
     {% endif %}

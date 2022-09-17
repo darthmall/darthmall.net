@@ -2,6 +2,10 @@
 @use "tokens/fonts";
 
 @mixin css {
+	:root {
+		@include mixins.light-theme;
+	}
+
 	@media (prefers-color-scheme: dark) {
 		:root {
 			@include mixins.dark-theme;
@@ -14,10 +18,6 @@
 
 	[data-theme="dark"] {
 		@include mixins.dark-theme;
-	}
-
-	:root {
-		@include mixins.light-theme;
 	}
 
 	body {

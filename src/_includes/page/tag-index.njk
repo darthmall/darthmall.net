@@ -1,6 +1,7 @@
 {% set skipList = ['all', 'portfolio', 'posts', 'recent', 'sketches'] %}
 <ul aria-label="topics"
-    class="list-reset type-body-3"
+		aria-role="list"
+    class="type-body-3"
     data-layout="columns"
     style="--space:var(--space-m)">
   {% for tag, pages in collections | dictsort %}

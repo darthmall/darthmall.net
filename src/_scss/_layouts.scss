@@ -1,7 +1,7 @@
 @mixin css {
 	.stack {
 		> * + * {
-			margin-block-start: var(--space, var(--space-relative-md));
+			margin-block-start: var(--space, var(--space-m));
 		}
 	}
 
@@ -26,7 +26,7 @@
 
 	[data-layout="columns"] {
 		columns: var(--measure-xs) auto;
-		gap: var(--space, var(--space-fluid-md));
+		gap: var(--space, var(--space-m));
 	}
 
 	[data-layout="cover"] {
@@ -36,16 +36,16 @@
 		align-items: center;
 		box-sizing: border-box;
 		min-block-size: 55vmin;
-		padding: var(--space-fluid-lg) var(--site-margin);
+		padding: var(--space-l) var(--site-margin);
 	}
 
 	[data-layout="center"] {
-		max-inline-size: var(--measure-md);
+		max-inline-size: var(--measure-m);
 		margin-inline: auto;
 		padding-inline: var(--site-margin);
 
 		&[data-center-width="site"] {
-			max-inline-size: var(--width-max-site);
+			max-inline-size: var(--space-max-site);
 		}
 	}
 
@@ -61,7 +61,7 @@
 		gap: var(--space);
 		grid-template-columns: repeat(
 			auto-fit,
-			minmax(min(var(--width-card), 100%), 1fr)
+			minmax(min(var(--space-card), 100%), 1fr)
 		);
 	}
 }

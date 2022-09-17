@@ -1,0 +1,16 @@
+$tokens: (
+	"gray-1": "#ffffff",
+	"gray-2": "#eaeaea",
+	"gray-3": "#959595",
+	"gray-4": "#6d6d6d",
+	"gray-5": "#303030",
+	"gray-6": "#222222",
+	"magenta-1": "#A3224D",
+	"yellow-1": "#ddad3f"
+);
+
+@mixin props {
+	@each $name, $color in $tokens {
+		--color-#{$name}: #{$color};
+	}
+}

@@ -63,9 +63,6 @@ module.exports = function (config) {
   // have a markdown shortcode for declaring blocks of markdown in Nunjucks.
   config.addPairedShortcode('markdown', (data) => md.render(data));
 
-  // Rebuild when the styles change
-  config.addWatchTarget("./src/_scss/");
-
   // Don't mess with this stuff, just pass it on through
   config.addPassthroughCopy('src/_headers');
   config.addPassthroughCopy('src/_redirects');
@@ -73,20 +70,6 @@ module.exports = function (config) {
   config.addPassthroughCopy('src/js');
   config.addPassthroughCopy('src/img');
   config.addPassthroughCopy('src/favicon.ico');
-
-  config.on('beforeBuild', () => {
-    const { css, map } = sass.renderSync({
-      file: './src/_scss/style.scss',
-      outFile: 'style.css',
-      importer: [jsonImporter()],
-      outputStyle: 'compressed',
-      sourceMap: true,
-    });
-
-    fs.mkdirSync('./_site/css/', { recursive: true });
-    fs.writeFileSync('./_site/css/style.css', css);
-    fs.writeFileSync('./_site/css/style.map.css', map);
-  });
 
   return {
     dir: {

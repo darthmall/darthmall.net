@@ -4,14 +4,15 @@
 	"description": "Evan Sheehan's personal website",
 	"private": true,
 	"scripts": {
-		"start": "run-s clean eleventy:dev --print-label",
+		"start": "npm-run-all clean -p watch:* --print-label",
 		"build": "run-s clean eleventy:prod --print-label",
+		"build:sass": "sass src/_scss/style.scss:_site/css/style.css",
 		"clean": "rm -rf _site",
-		"eleventy:dev": "eleventy --serve",
+		"watch:eleventy": "eleventy --serve",
+		"watch:sass": "npm run build:sass -- --watch",
 		"eleventy:prod": "eleventy",
 		"format": "prettier --write src/",
-		"lint": "prettier --check src/",
-		"sass": "sass src/_scss/style.scss:_site/css/style.css"
+		"lint": "prettier --check src/"
 	},
 	"author": "W. Evan Sheehan",
 	"license": "AGPL-3.0-or-later",

@@ -1,4 +1,4 @@
-@mixin light-theme {
+@mixin light {
 	--surface-1: var(--color-gray-1);
 	--surface-2: var(--color-gray-2);
 	--surface-3: var(--color-gray-3);
@@ -8,7 +8,7 @@
 	--primary-1: var(--color-magenta-1);
 }
 
-@mixin dark-theme {
+@mixin dark {
 	--surface-1: var(--color-gray-6);
 	--surface-2: var(--color-gray-5);
 	--surface-3: var(--color-gray-4);
@@ -16,4 +16,22 @@
 	--text-2: var(--color-gray-2);
 	--text-3: var(--color-gray-3);
 	--primary-1: var(--color-yellow-1);
+}
+
+@mixin css {
+	:root {
+		@include light;
+
+		@media (prefers-color-scheme: dark) {
+			@include dark;
+		}
+	}
+
+	[data-theme=light] {
+		@include light;
+	}
+
+	[data-theme=dark] {
+		@include dark;
+	}
 }

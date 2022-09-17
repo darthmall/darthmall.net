@@ -1,0 +1,19 @@
+@mixin css {
+	a {
+		--color: var(--text-1);
+		--visited-color: var(--text-1);
+		--hover-color: var(--primary-1);
+
+		text-underline-offset: 0.125em;
+		color: var(--color);
+		transition: color 150ms linear;
+
+		&:hover {
+			color: var(--hover-color);
+		}
+
+		&:visited:not(:hover) {
+			color: var(--visited-color);
+		}
+	}
+}

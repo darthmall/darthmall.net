@@ -1,0 +1,69 @@
+@mixin css {
+	button {
+		--background: var(--surface-2);
+		--border: var(--text-3);
+		--color: var(--text-1);
+		--active-background: var(--text-1);
+		--active-color: var(--surface-2);
+		--focus-background: var(--surface-2);
+		--focus-color: var(--text-1);
+		--focus-outline: var(--text-1);
+
+		border: 1px solid var(--border);
+		border-radius: 0.25rem;
+		padding: var(--space-xs) var(--space-s)
+			calc(var(--space-xs) * 0.666);
+		line-height: 1;
+		color: var(--color);
+		font-weight: var(--font-weight-bold);
+		background-color: var(--background);
+
+		&:active,
+		&[aria-pressed] {
+			--focus-background: var(--active-background);
+			--focus-color: var(--active-color);
+
+			background: var(--active-background);
+			color: var(--active-color);
+		}
+
+		&:focus:not(:focus-visible) {
+			outline: none;
+		}
+
+		&:focus-visible {
+			background: var(--focus-background);
+			color: var(--focus-color);
+			outline: var(--space-xs) solid var(--focus-outline);
+			outline-offset: 0;
+		}
+	}
+
+	input {
+		--background: var(--surface-1);
+		--border: var(--text-2);
+		--color: var(--text-1);
+		--focus-background: var(--surface-1);
+		--focus-color: var(--text-1);
+		--focus-outline: var(--text-1);
+
+		border: 1px solid var(--border);
+		border-radius: 0.25rem;
+		padding: var(--space-s) var(--space-m)
+			calc(var(--space-s) * 0.666);
+		line-height: 1;
+		color: var(--color);
+		background-color: var(--background);
+
+		&:focus:not(:focus-visible) {
+			outline: none;
+		}
+
+		&:focus-visible {
+			background: var(--focus-background);
+			color: var(--focus-color);
+			outline: 2px solid var(--focus-outline);
+			outline-offset: 0;
+		}
+	}
+}

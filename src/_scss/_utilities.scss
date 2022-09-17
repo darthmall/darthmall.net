@@ -1,132 +1,134 @@
-@use "./type";
+@use "tokens/fonts";
 
-[data-space="0"] {
-	--space: 0;
-}
-[data-space="fluid-xs"] {
-	--space: var(--space-fluid-xs);
-}
-[data-space="fluid-sm"] {
-	--space: var(--space-fluid-sm);
-}
-[data-space="fluid-md"] {
-	--space: var(--space-fluid-md);
-}
-[data-space="fluid-lg"] {
-	--space: var(--space-fluid-lg);
-}
-[data-space="fluid-xl"] {
-	--space: var(--space-fluid-xl);
-}
-[data-space="relative-sm"] {
-	--space: var(--space-relative-sm);
-}
-[data-space="relative-md"] {
-	--space: var(--space-relative-md);
-}
-[data-space="relative-lg"] {
-	--space: var(--space-relative-lg);
-}
-[data-space="relative-xl"] {
-	--space: var(--space-relative-xl);
-}
+@mixin css {
+	[data-space="0"] {
+		--space: 0;
+	}
+	[data-space="fluid-xs"] {
+		--space: var(--space-xs);
+	}
+	[data-space="fluid-sm"] {
+		--space: var(--space-s);
+	}
+	[data-space="fluid-md"] {
+		--space: var(--space-m);
+	}
+	[data-space="fluid-lg"] {
+		--space: var(--space-l);
+	}
+	[data-space="fluid-xl"] {
+		--space: var(--space-xl);
+	}
+	[data-space="relative-sm"] {
+		--space: var(--space-s);
+	}
+	[data-space="relative-md"] {
+		--space: var(--space-m);
+	}
+	[data-space="relative-lg"] {
+		--space: var(--space-l);
+	}
+	[data-space="relative-xl"] {
+		--space: var(--space-xl);
+	}
 
-.margin-block-start-fluid-lg {
-	margin-block-start: var(--space-fluid-lg);
-}
-.margin-block-start-fluid-xl {
-	margin-block-start: var(--space-fluid-xl);
-}
-.margin-block-start-relative-md {
-	margin-block-start: var(--space-relative-md);
-}
-.margin-block-end-relative-sm {
-	margin-block-end: var(--space-relative-sm);
-}
-.margin-block-end-relative-md {
-	margin-block-end: var(--space-relative-md);
-}
-.margin-inline-auto {
-	margin-inline: auto;
-}
-.margin-inline-end-auto {
-	margin-inline-end: auto;
-}
+	.margin-block-start-fluid-lg {
+		margin-block-start: var(--space-l);
+	}
+	.margin-block-start-fluid-xl {
+		margin-block-start: var(--space-xl);
+	}
+	.margin-block-start-relative-md {
+		margin-block-start: var(--space-m);
+	}
+	.margin-block-end-relative-sm {
+		margin-block-end: var(--space-s);
+	}
+	.margin-block-end-relative-md {
+		margin-block-end: var(--space-m);
+	}
+	.margin-inline-auto {
+		margin-inline: auto;
+	}
+	.margin-inline-end-auto {
+		margin-inline-end: auto;
+	}
 
-.shape-circle {
-	aspect-ratio: 1 / 1;
-	border-radius: 50%;
-	overflow: hidden;
-}
+	.shape-circle {
+		aspect-ratio: 1 / 1;
+		border-radius: 50%;
+		overflow: hidden;
+	}
 
-.pad-block-fluid-md {
-	padding-block: var(--space-fluid-md);
-}
-.pad-block-fluid-lg {
-	padding-block: var(--space-fluid-lg);
-}
-.pad-block-relative-md {
-	padding-block: var(--space-relative-md);
-}
-.pad-block-relative-lg {
-	padding-block: var(--space-relative-lg);
-}
-.pad-block-relative-xl {
-	padding-block: var(--space-relative-xl);
-}
+	.pad-block-fluid-md {
+		padding-block: var(--space-m);
+	}
+	.pad-block-fluid-lg {
+		padding-block: var(--space-l);
+	}
+	.pad-block-relative-md {
+		padding-block: var(--space-m);
+	}
+	.pad-block-relative-lg {
+		padding-block: var(--space-l);
+	}
+	.pad-block-relative-xl {
+		padding-block: var(--space-xl);
+	}
 
-.aspect-square {
-	aspect-ratio: 1 / 1;
-}
+	.aspect-square {
+		aspect-ratio: 1 / 1;
+	}
 
-.align-self-start {
-	align-self: start;
-}
-.align-self-stretch {
-	align-self: stretch;
-}
-.justify-items-center {
-	justify-items: center;
-}
-.flex-nowrap {
-	flex-wrap: nowrap;
-}
-.flex-grow {
-	flex-grow: 1;
-}
-.flex-hulk {
-	flex-grow: 99;
-}
+	.align-self-start {
+		align-self: start;
+	}
+	.align-self-stretch {
+		align-self: stretch;
+	}
+	.justify-items-center {
+		justify-items: center;
+	}
+	.flex-nowrap {
+		flex-wrap: nowrap;
+	}
+	.flex-grow {
+		flex-grow: 1;
+	}
+	.flex-hulk {
+		flex-grow: 99;
+	}
 
-.type-heading-3 {
-	@extend %heading-3;
-}
-.type-body-3 {
-	@extend %body-3;
-}
-.type-body-4 {
-	@extend %body-4;
-}
+	.type-heading-3 {
+		@include fonts.heading-3;
+	}
+	.type-body-3 {
+		@include fonts.body-3;
+	}
+	.type-body-4 {
+		@include fonts.body-4;
+	}
 
-.text-1 {
-	color: var(--text-1);
-}
-.text-2 {
-	color: var(--text-2);
-}
-.text-3 {
-	color: var(--text-3);
-}
+	.text-1 {
+		color: var(--text-1);
+	}
+	.text-2 {
+		color: var(--text-2);
+	}
+	.text-3 {
+		color: var(--text-3);
+	}
 
-.unstyled {
-	display: none;
-}
+	.unstyled {
+		display: none;
+	}
 
-.list-reset {
-	list-style: none;
-	padding: 0;
+	.list-reset {
+		list-style: none;
+		padding: 0;
 
-	> li {
-		margin: 0;
+		> li {
+			margin: 0;
+		}
 	}
 }

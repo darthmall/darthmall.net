@@ -2,6 +2,7 @@
 @use "layouts";
 @use "reset";
 @use "tokens";
+@use "utilities";
 
 @layer reset {
 	@include reset.css;
@@ -14,4 +15,8 @@
 
 @layer layout {
 	@include layouts.css;
+}
+
+@layer utilities {
+	@include utilities.css;
 }

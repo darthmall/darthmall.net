@@ -16,6 +16,10 @@
 		@include mixins.dark-theme;
 	}
 
+	:root {
+		@include mixins.light-theme;
+	}
+
 	body {
 		@include fonts.body-1;
 
@@ -26,7 +30,7 @@
 		// 100vw to achive full-bleed or other breakout effects in the layout.
 		overflow-x: hidden;
 
-		--site-margin: var(--space-fluid-sm);
+		--site-margin: var(--space-s);
 
 		> header img {
 			max-height: var(--icon-lg);
@@ -52,8 +56,8 @@
 	}
 
 	:focus {
-		outline: var(--space-relative-xs) solid var(--text-1);
-		outline-offset: var(--space-relative-xs);
+		outline: var(--space-xs) solid var(--text-1);
+		outline-offset: var(--space-xs);
 	}
 
 	footer svg {
@@ -83,10 +87,10 @@
 	}
 
 	aside {
-		--space: var(--space-relative-xl);
+		--space: var(--space-xl);
 		border-block: 1px solid var(--color-gray-3);
 		margin-block-end: var(--space);
-		padding: var(--space-relative-lg);
+		padding: var(--space-l);
 
 		p + p {
 			margin-block-start: 1em;
@@ -113,11 +117,11 @@
 	figure + *,
 	hr,
 	hr + * {
-		--space: var(--space-relative-lg);
+		--space: var(--space-l);
 	}
 
 	figcaption {
-		margin-block-start: var(--space-relative-sm);
+		margin-block-start: var(--space-s);
 		padding-inline: var(--site-margin);
 		text-align: center;
 		color: var(--text-2);
@@ -126,15 +130,15 @@
 	blockquote {
 		@include fonts.body-5;
 
-		max-width: var(--measure-sm);
+		max-width: var(--measure-s);
 		margin-inline: auto;
-		padding: var(--space-relative-md);
+		padding: var(--space-m);
 		font-weight: normal;
 		background-color: var(--surface-2);
 	}
 
 	pre {
-		padding: var(--space-relative-md);
+		padding: var(--space-m);
 		overflow-x: auto;
 
 		code {
@@ -149,7 +153,7 @@
 	}
 
 	li + li {
-		margin-block-start: var(--space-relative-sm);
+		margin-block-start: var(--space-s);
 	}
 
 	a {
@@ -182,8 +186,8 @@
 
 		border: 1px solid var(--border);
 		border-radius: 0.25rem;
-		padding: var(--space-relative-sm) var(--space-relative-md)
-			calc(var(--space-relative-sm) * 0.666);
+		padding: var(--space-xs) var(--space-s)
+			calc(var(--space-xs) * 0.666);
 		line-height: 1;
 		color: var(--color);
 		font-weight: var(--font-weight-bold);
@@ -205,7 +209,7 @@
 		&:focus-visible {
 			background: var(--focus-background);
 			color: var(--focus-color);
-			outline: var(--space-relative-xs) solid var(--focus-outline);
+			outline: var(--space-xs) solid var(--focus-outline);
 			outline-offset: 0;
 		}
 	}
@@ -220,8 +224,8 @@
 
 		border: 1px solid var(--border);
 		border-radius: 0.25rem;
-		padding: var(--space-relative-sm) var(--space-relative-md)
-			calc(var(--space-relative-sm) * 0.666);
+		padding: var(--space-s) var(--space-m)
+			calc(var(--space-s) * 0.666);
 		line-height: 1;
 		color: var(--color);
 		background-color: var(--background);
@@ -254,7 +258,7 @@
 		top: 0;
 		transform: translate(-50%, -100%);
 		border-radius: 4px;
-		padding: var(--space-fluid-xs) var(--space-fluid-sm);
+		padding: var(--space-xs) var(--space-s);
 		background-color: var(--surface-2);
 		text-decoration: none;
 		opacity: 0;
@@ -263,10 +267,10 @@
 		transition-timing-function: ease;
 
 		&:focus {
-			outline: var(--space-relative-xs) solid var(--primary-1);
+			outline: var(--space-xs) solid var(--primary-1);
 			outline-offset: 0;
 			transform: translate(-50%, 0);
-			top: var(--space-fluid-md);
+			top: var(--space-m);
 			opacity: 1;
 		}
 	}

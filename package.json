@@ -6,7 +6,7 @@
 	"scripts": {
 		"start": "npm-run-all clean -p watch:* --print-label",
 		"build": "run-s clean eleventy:prod --print-label",
-		"build:sass": "sass src/_scss/style.scss:_site/css/style.css",
+		"build:sass": "sass src/_scss:_site/css",
 		"clean": "rm -rf _site",
 		"watch:eleventy": "eleventy --serve",
 		"watch:sass": "npm run build:sass -- --watch",

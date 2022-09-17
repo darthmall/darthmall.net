@@ -1,5 +1,3 @@
-@use "tokens";
-
 @function corner($first, $second) {
 	@return #{1 + random($first)}rem #{1 + random($second)}rem;
 }
@@ -22,7 +20,7 @@ $size: 4rem;
 
 	height: $size;
 	width: $size;
-	padding: tokens.space(0);
+	padding: var(--space-s);
 
 	&::before,
 	&::after {
@@ -46,7 +44,7 @@ $size: 4rem;
 
 		transform: rotate(var(--rotate, 50deg));
 
-		background-color: tokens.color("primary-shade");
+		background-color: var(--color-magenta-1);
 	}
 
 	&::after {
@@ -59,7 +57,7 @@ $size: 4rem;
 
 		transform: rotate(var(--rotate, -10deg));
 
-		background-color: tokens.color("accent");
+		background-color: var(--color-yellow-1);
 	}
 
 	.webmention__avatar--anonymous,
@@ -72,7 +70,7 @@ $size: 4rem;
 
 		object-fit: cover;
 
-		background-color: tokens.color("light");
+		background-color: var(--surface-1);
 	}
 }
 

@@ -1,13 +1,11 @@
-@use "./tokens";
-
 .resume {
 	display: grid;
-	column-gap: tokens.space(2);
+	column-gap: var(--space-m);
 	align-items: baseline;
 
 	@supports (grid-template-columns: subgrid) {
 		@media print, screen and (min-width: 57em) {
-			grid-template-columns: fit-content(30%) minmax(auto, tokens.measure(2));
+			grid-template-columns: fit-content(30%) minmax(auto, var(--measure-m));
 			grid-auto-rows: min-content;
 
 			> * {

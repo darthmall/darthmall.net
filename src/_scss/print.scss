@@ -1,5 +1,3 @@
-@use "./tokens";
-
 html {
 	background-color: transparent;
 	font-size: 8pt;
@@ -26,6 +24,6 @@ a[href] {
 	grid-template-columns: fit-content(30%) 1fr;
 
 	> header + * {
-		margin-top: tokens.space(3);
+		margin-top: var(--space-l);
 	}
 }

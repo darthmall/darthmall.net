@@ -10,7 +10,8 @@
 		"eleventy:dev": "eleventy --serve",
 		"eleventy:prod": "eleventy",
 		"format": "prettier --write src/",
-		"lint": "prettier --check src/"
+		"lint": "prettier --check src/",
+		"sass": "sass src/_scss/style.scss:_site/css/style.css"
 	},
 	"author": "W. Evan Sheehan",
 	"license": "AGPL-3.0-or-later",

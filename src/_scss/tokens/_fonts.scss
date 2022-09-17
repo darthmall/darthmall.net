@@ -1,7 +1,7 @@
 $family: (
-	"body": "'Epilogue, sans-serif'",
+	"body": "Epilogue, sans-serif",
 	"heading": "'Sporting Grotesque', sans-serif",
-	"mono": "'ui-monospace, monospace'"
+	"mono": "ui-monospace, monospace"
 );
 
 /* @link https://utopia.fyi/type/calculator?c=320,16,1.125,1280,24,1.414,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
@@ -38,19 +38,19 @@ $measure: (
 
 @mixin props {
 	@each $name, $stack in $family {
-		--font-#{$name}: $stack;
+		--font-#{$name}: #{$stack};
 	}
 	@each $name, $sz in $size {
-		--font-#{$name}: sz;
+		--font-#{$name}: #{$sz};
 	}
 	@each $name, $wght in $weight {
-		--font-#{$name}: $wght;
+		--font-#{$name}: #{$wght};
 	}
 	@each $name, $lh in $line-height {
-		--line-height-#{$name}: $lh;
+		--line-height-#{$name}: #{$lh};
 	}
 	@each $name, $w in $measure {
-		--measure-#{$name}: $w;
+		--measure-#{$name}: #{$w};
 	}
 }
 

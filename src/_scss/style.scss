@@ -1,4 +1,10 @@
-@use "global";
-@use "layouts";
-@use "components";
-@use "utilities";
+@use "tokens";
+@use "reset";
+
+@layer reset {
+	@include reset.css;
+}
+
+@layer default {
+	@include tokens.css;
+}

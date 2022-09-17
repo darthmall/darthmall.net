@@ -71,6 +71,10 @@ module.exports = function (config) {
   config.addPassthroughCopy('src/img');
   config.addPassthroughCopy('src/favicon.ico');
 
+	config.setBrowserSyncConfig({
+		watch: true,
+	});
+
   return {
     dir: {
       input: 'src',

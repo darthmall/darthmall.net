@@ -1,25 +1,27 @@
-.post-block {
-	display: flex;
-	flex-direction: column;
+@mixin css {
+	.post-block {
+		display: flex;
+		flex-direction: column;
 
-	> .title {
-		text-transform: unset;
-	}
+		> .title {
+			text-transform: unset;
+		}
 
-	> time {
-		order: -1;
-		line-height: 1;
+		> time {
+			order: -1;
+			line-height: 1;
 
-		&::before {
-			display: inline-block;
-			content: "";
+			&::before {
+				display: inline-block;
+				content: "";
 
-			height: 2px;
-			width: 2ch;
-			margin-inline-end: 1ch;
-			margin-block-end: 0.325em;
+				height: 2px;
+				width: 2ch;
+				margin-inline-end: 1ch;
+				margin-block-end: 0.325em;
 
-			background-color: var(--color-gray-3);
+				background-color: var(--color-gray-3);
+			}
 		}
 	}
 }

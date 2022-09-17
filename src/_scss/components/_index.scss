@@ -1,4 +1,9 @@
-@forward "card";
-@forward "post-block";
-@forward "project-summary";
-@forward "webmention";
+@use "post-block";
+@use "project-summary";
+@use "webmention";
+
+@mixin css {
+	@include post-block.css;
+	@include project-summary.css;
+	@include webmention.css;
+}

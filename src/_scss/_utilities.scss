@@ -1,37 +1,6 @@
 @use "tokens/fonts";
 
 @mixin css {
-	[data-space="0"] {
-		--space: 0;
-	}
-	[data-space="fluid-xs"] {
-		--space: var(--space-xs);
-	}
-	[data-space="fluid-sm"] {
-		--space: var(--space-s);
-	}
-	[data-space="fluid-md"] {
-		--space: var(--space-m);
-	}
-	[data-space="fluid-lg"] {
-		--space: var(--space-l);
-	}
-	[data-space="fluid-xl"] {
-		--space: var(--space-xl);
-	}
-	[data-space="relative-sm"] {
-		--space: var(--space-s);
-	}
-	[data-space="relative-md"] {
-		--space: var(--space-m);
-	}
-	[data-space="relative-lg"] {
-		--space: var(--space-l);
-	}
-	[data-space="relative-xl"] {
-		--space: var(--space-xl);
-	}
-
 	.margin-block-start-fluid-lg {
 		margin-block-start: var(--space-l);
 	}

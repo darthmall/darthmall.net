@@ -1,65 +1,67 @@
-.stack {
-	> * + * {
-		margin-block-start: var(--space, var(--space-relative-md));
+@mixin css {
+	.stack {
+		> * + * {
+			margin-block-start: var(--space, var(--space-relative-md));
+		}
 	}
-}
 
-[data-layout="cluster"] {
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--space);
-	align-items: center;
+	[data-layout="cluster"] {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space);
+		align-items: center;
 
-	&[data-cluster="center"] {
+		&[data-cluster="center"] {
+			justify-content: center;
+		}
+
+		// List reset, because lists are very common markup for cluster layouts
+		padding: 0;
+		list-style: none;
+
+		> li {
+			margin: 0;
+		}
+	}
+
+	[data-layout="columns"] {
+		columns: var(--measure-xs) auto;
+		gap: var(--space, var(--space-fluid-md));
+	}
+
+	[data-layout="cover"] {
+		display: flex;
+		flex-direction: column;
 		justify-content: center;
+		align-items: center;
+		box-sizing: border-box;
+		min-block-size: 55vmin;
+		padding: var(--space-fluid-lg) var(--site-margin);
 	}
 
-	// List reset, because lists are very common markup for cluster layouts
-	padding: 0;
-	list-style: none;
+	[data-layout="center"] {
+		max-inline-size: var(--measure-md);
+		margin-inline: auto;
+		padding-inline: var(--site-margin);
 
-	> li {
-		margin: 0;
+		&[data-center-width="site"] {
+			max-inline-size: var(--width-max-site);
+		}
 	}
-}
 
-[data-layout="columns"] {
-	columns: var(--measure-xs) auto;
-	gap: var(--space, var(--space-fluid-md));
-}
+	[data-layout="flow"] {
+		@extend .stack;
 
-[data-layout="cover"] {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	box-sizing: border-box;
-	min-block-size: 55vmin;
-	padding: var(--space-fluid-lg) var(--site-margin);
-}
-
-[data-layout="center"] {
-	max-inline-size: var(--measure-md);
-	margin-inline: auto;
-	padding-inline: var(--site-margin);
-
-	&[data-center-width="site"] {
-		max-inline-size: var(--width-max-site);
+		display: flex;
+		flex-direction: column;
 	}
-}
 
-[data-layout="flow"] {
-	@extend .stack;
-
-	display: flex;
-	flex-direction: column;
-}
-
-[data-layout="grid"] {
-	display: grid;
-	gap: var(--space);
-	grid-template-columns: repeat(
-		auto-fit,
-		minmax(min(var(--width-card), 100%), 1fr)
-	);
+	[data-layout="grid"] {
+		display: grid;
+		gap: var(--space);
+		grid-template-columns: repeat(
+			auto-fit,
+			minmax(min(var(--width-card), 100%), 1fr)
+		);
+	}
 }

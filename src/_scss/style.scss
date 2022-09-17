@@ -1,4 +1,5 @@
 @use "default";
+@use "layouts";
 @use "reset";
 @use "tokens";
 
@@ -9,4 +10,8 @@
 @layer default {
 	@include tokens.css;
 	@include default.css;
+}
+
+@layer layout {
+	@include layouts.css;
 }

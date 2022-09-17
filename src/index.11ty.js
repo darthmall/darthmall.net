@@ -3,7 +3,7 @@ class HomePage {
 		return {
 			title: "Home",
 			eleventyExcludeFromCollections: true,
-			layout: "layouts/index.njk",
+			layout: "index.njk",
 			eleventyComputed: {
 				pageList: ({ collections, site }) =>
 					collections.feed.slice(0, site.recentPostCount),

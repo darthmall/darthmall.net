@@ -1,6 +1,6 @@
 ---
 title: About
-layout: layouts/article.njk
+layout: article.njk
 description: >-
     I design and build websites, web applications, and data visualizations.
 showWebmentions: false

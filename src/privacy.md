@@ -5,7 +5,7 @@ description: >-
     This site does not track you. It uses no cookies and has no analytics.
     Privacy is a fundamental human right.
 showWebmentions: false
-layout: layouts/article.njk
+layout: article.njk
 ---
 
 Privacy is a fundamental human right.

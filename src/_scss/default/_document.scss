@@ -16,10 +16,6 @@
 		--icon-m: var(--space-m);
 		--icon-l: var(--space-l);
 
-		> header img {
-			max-height: var(--icon-l);
-		}
-
 		> header a[href="/"] {
 			background-image: url("/img/evan-alt-64.jpg");
 			background-size: cover;

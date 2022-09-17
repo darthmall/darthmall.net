@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="generator" content="eleventy">
 
-  {% include "partials/meta-info.njk" %}
+  {% include "head/meta-info.njk" %}
 
   {% block head %}
 		<link rel="preload" href="/fonts/SportingGrotesque-Bold-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -20,15 +20,15 @@
 </head>
 
 <body>
-  {% include "partials/site-header.njk" %}
+  {% include "site/header.njk" %}
 
   {% set mainClasses = "" %}
   {% if classes %}
     {% set mainClasses = ' class="' + classes + '"' %}
   {% endif %}
   <main {{ mainClasses | safe }}>
-		{% include "partials/page-title.njk" %}
-		{% include "partials/theme-toggle.njk" %}
+		{% include "page/header.njk" %}
+		{% include "components/theme-toggle.njk" %}
     {% block content %}
 			<div class="stack" data-layout="center">
 				{{ content | safe }}
@@ -36,6 +36,6 @@
     {% endblock content %}
   </main>
 
-  {% include "partials/site-footer.njk" %}
+  {% include "site/footer.njk" %}
 </body>
 </html>

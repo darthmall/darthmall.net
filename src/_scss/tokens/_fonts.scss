@@ -99,7 +99,7 @@ $measure: (
 }
 
 @mixin body-4 {
-	@extend %body-1;
+	@include body-1;
 	font-size: var(--font--1);
 }
 

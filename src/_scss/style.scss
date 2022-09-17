@@ -1,5 +1,6 @@
-@use "tokens";
+@use "default";
 @use "reset";
+@use "tokens";
 
 @layer reset {
 	@include reset.css;
@@ -7,4 +8,5 @@
 
 @layer default {
 	@include tokens.css;
+	@include default.css;
 }

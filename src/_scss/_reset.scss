@@ -32,13 +32,9 @@
 		display: none;
 	}
 
-	[aria-role=list] {
+	[role=list] {
 		list-style: none;
 		padding: 0;
-
-		li {
-			margin: 0;
-		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {

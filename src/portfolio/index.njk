@@ -1,15 +1,5 @@
 ---
 title: Portfolio
 eleventyExcludeFromCollections: true
-layout: base.njk
+layout: portfolio.njk
 ---
-
-{% import "components.njk" as components %}
-
-<div class="stack mbs-l" style="--space:var(--space-xl)">
-  {% for project in collections.portfolio %}
-    {% call components.projectSummary(project.data) %}
-      {{ project.templateContent | safe }}
-    {% endcall %}
-  {% endfor %}
-</div>

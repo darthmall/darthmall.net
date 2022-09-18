@@ -1,63 +1,63 @@
-%project-summary {
-	display: flex;
-	flex-direction: column;
-	padding-inline: var(--site-margin);
-
-	.project-summary__container {
-		display: grid;
-		gap: var(--space-relative-md) var(--space-relative-lg);
-		grid-auto-rows: min-content;
-		grid-template-areas:
-			"media"
-			"header"
-			"body";
-		margin-left: auto;
-		margin-right: auto;
-		width: min(100%, var(--width-max-site));
-	}
-
-	.project-summary__header {
-		grid-area: header;
-		line-height: var(--line-height-sm);
-		padding-block-start: var(--space-relative-md);
-		position: relative;
-
-		&::before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: 0;
-			height: 4px;
-			width: 8ch;
-			background-color: var(--color-1);
-		}
-	}
-
-	.project-summary__body {
-		columns: var(--measure-xs) auto;
-		gap: var(--space-fluid-md);
-		grid-area: body;
-
-		> * + * {
-			margin-top: 1em;
-		}
-	}
-
-	.project-summary__media {
-		grid-area: media;
-	}
-
-	img {
-		box-shadow: 0 0 var(--space-relative-md) rgba(0, 0, 0, 0.2);
-		max-height: 95vh;
-	}
-}
-
 @mixin css {
+	%project-summary {
+		display: flex;
+		flex-direction: column;
+		padding-inline: var(--site-margin);
+
+		.project-summary__container {
+			display: grid;
+			gap: var(--space-m) var(--space-l);
+			grid-auto-rows: min-content;
+			grid-template-areas:
+				"media"
+				"header"
+				"body";
+			margin-left: auto;
+			margin-right: auto;
+			width: min(100%, var(--space-max-site));
+		}
+
+		.project-summary__header {
+			grid-area: header;
+			line-height: var(--line-height-sm);
+			padding-block-start: var(--space-xs);
+			position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 4px;
+				width: 8ch;
+				background-color: var(--color-1);
+			}
+		}
+
+		.project-summary__body {
+			columns: var(--measure-xs) auto;
+			gap: var(--space-m);
+			grid-area: body;
+
+			> * + * {
+				margin-top: 1em;
+			}
+		}
+
+		.project-summary__media {
+			grid-area: media;
+		}
+
+		img {
+			box-shadow: 0 0 var(--space-m) rgba(0, 0, 0, 0.2);
+			max-height: 95vh;
+		}
+	}
+
 	.project-summary--ionian {
 		@extend %project-summary;
 
-		// FIXME: this needs to match the width-max-site token, but you can't use
+		// FIXME: this needs to match the space-max-site token, but you can't use
 		// custom props in media queries
 		@media (min-width: 80em) {
 			.project-summary__container {
@@ -66,7 +66,7 @@
 					"media body";
 				grid-template-columns:
 					minmax(auto, max-content)
-					var(--measure-sm);
+					var(--measure-s);
 				grid-template-rows: min-content 1fr;
 			}
 		}
@@ -84,7 +84,7 @@
 			box-sizing: content-box;
 			margin-left: auto;
 			margin-right: auto;
-			max-width: var(--measure-lg);
+			max-width: var(--measure-l);
 			width: 100%;
 		}
 	}
@@ -92,7 +92,7 @@
 	.project-summary--phrygian {
 		@extend %project-summary;
 
-		// FIXME: this needs to match the width-max-site token, but you can't use
+		// FIXME: this needs to match the space-max-site token, but you can't use
 		// custom props in media queries
 		@media (min-width: 80em) {
 			.project-summary__container {
@@ -101,15 +101,15 @@
 
 			.project-summary__header {
 				float: left;
-				margin-block-end: var(--space-fluid-md);
-				margin-block-start: var(--space-fluid-lg);
+				margin-block-end: var(--space-m);
+				margin-block-start: var(--space-l);
 			}
 
 			.project-summary__media {
 				float: right;
-				margin-inline-start: var(--space-relative-lg);
-				margin-block-end: var(--space-relative-lg);
-				max-width: calc(100% - var(--measure-sm) - var(--space-relative-lg));
+				margin-inline-start: var(--space-l);
+				margin-block-end: var(--space-l);
+				max-width: calc(100% - var(--measure-s) - var(--space-l));
 			}
 
 			.project-summary__body {
@@ -117,7 +117,7 @@
 
 				> * {
 					clear: left;
-					max-width: var(--measure-lg);
+					max-width: var(--measure-l);
 				}
 			}
 		}
@@ -128,7 +128,7 @@
 
 		background-color: var(--surface-2);
 		color: var(--text-2);
-		padding-block: var(--space-relative-xl);
+		padding-block: var(--space-xl);
 		text-align: center;
 
 		.project-summary__media,
@@ -148,7 +148,7 @@
 		}
 
 		.project-summary__body {
-			width: min(100%, var(--measure-md));
+			width: min(100%, var(--measure-m));
 		}
 	}
 }

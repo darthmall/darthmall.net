@@ -1,0 +1,11 @@
+{% extends "./base.njk" %}
+
+{% block content %}
+	<div class="stack mbs-l" style="--space:var(--space-xl)">
+		{% for project in collections.portfolio %}
+			{% call components.projectSummary(project.data) %}
+				{{ project.templateContent | safe }}
+			{% endcall %}
+		{% endfor %}
+	</div>
+{% endblock %}

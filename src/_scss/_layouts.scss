@@ -49,13 +49,6 @@
 		}
 	}
 
-	[data-layout="flow"] {
-		@extend .stack;
-
-		display: flex;
-		flex-direction: column;
-	}
-
 	[data-layout="grid"] {
 		display: grid;
 		gap: var(--space);

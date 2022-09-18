@@ -1,4 +1,3 @@
-@use "components";
 @use "default";
 @use "layouts";
 @use "reset";
@@ -16,10 +15,6 @@
 
 @layer layout {
 	@include layouts.css;
-}
-
-@layer component {
-	@include components.css;
 }
 
 @layer utility {

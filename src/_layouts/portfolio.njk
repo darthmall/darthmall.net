@@ -1,5 +1,11 @@
 {% extends "./base.njk" %}
 
+{% block head %}
+	{{ super() }}
+	<style>
+		@import "/css/components/project-summary.css" layer(block);
+	</style>
+{% endblock %}
 {% block content %}
 	<div class="stack mbs-l" style="--space:var(--space-xl)">
 		{% for project in collections.portfolio %}

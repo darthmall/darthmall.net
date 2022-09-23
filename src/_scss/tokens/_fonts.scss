@@ -1,60 +1,32 @@
-$family: (
-	"body": "Epilogue, sans-serif",
-	"heading": "'Sporting Grotesque', sans-serif",
-	"mono": "ui-monospace, monospace"
-);
+$font-body: "Epilogue, sans-serif";
+$font-heading: "'Sporting Grotesque', sans-serif";
+$font-mono: "ui-monospace, monospace";
 
-/* @link https://utopia.fyi/type/calculator?c=320,16,1.125,1280,24,1.414,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
-$size: (
-  "-1": clamp(0.89rem, calc(0.83rem + 0.29vw), 1.06rem),
-  "0": clamp(1.00rem, calc(0.83rem + 0.83vw), 1.50rem),
-  "1": clamp(1.13rem, calc(0.79rem + 1.66vw), 2.12rem),
-  "2": clamp(1.27rem, calc(0.69rem + 2.89vw), 3.00rem),
-  "3": clamp(1.42rem, calc(0.48rem + 4.69vw), 4.24rem),
-  "4": clamp(1.60rem, calc(0.14rem + 7.32vw), 6.00rem),
-  "5": clamp(1.80rem, calc(-0.42rem + 11.13vw), 8.48rem)
-);
+// @link https://utopia.fyi/type/calculator?c=320,16,1.125,1280,24,1.414,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l
+$font-size--1: clamp(0.89rem, calc(0.83rem + 0.29vw), 1.06rem);
+$font-size-0: clamp(1.00rem, calc(0.83rem + 0.83vw), 1.50rem);
+$font-size-1: clamp(1.13rem, calc(0.79rem + 1.66vw), 2.12rem);
+$font-size-2: clamp(1.27rem, calc(0.69rem + 2.89vw), 3.00rem);
+$font-size-3: clamp(1.42rem, calc(0.48rem + 4.69vw), 4.24rem);
+$font-size-4: clamp(1.60rem, calc(0.14rem + 7.32vw), 6.00rem);
+$font-size-5: clamp(1.80rem, calc(-0.42rem + 11.13vw), 8.48rem);
 
-$weight: (
-	"regular": 275,
-	"semi-bold": 350,
-	"bold": 500,
-	"black": 750
-);
+$font-weight-regular: 275;
+$font-weight-semi-bold: 350;
+$font-weight-bold: 500;
+$font-weight-black: 750;
 
-$line-height: (
-	"xs": 1,
-	"sm": 1.15,
-	"md": 1.5,
-);
+$line-height-xs: 1;
+$line-height-sm: 1.15;
+$line-height-md: 1.5;
 
-$measure: (
-	"xs": 34ch,
-	"s": 42ch,
-	"m": 54ch,
-	"l": 72ch,
-	"xl": 88ch
-);
+$-measure-xs: 34ch;
+$-measure-s: 42ch;
+$-measure-m: 54ch;
+$-measure-l: 72ch;
+$-measure-xl: 88ch;
 
-@mixin props {
-	@each $name, $stack in $family {
-		--font-#{$name}: #{$stack};
-	}
-	@each $name, $sz in $size {
-		--font-#{$name}: #{$sz};
-	}
-	@each $name, $wght in $weight {
-		--font-#{$name}: #{$wght};
-	}
-	@each $name, $lh in $line-height {
-		--line-height-#{$name}: #{$lh};
-	}
-	@each $name, $w in $measure {
-		--measure-#{$name}: #{$w};
-	}
-}
-
-@mixin declaration {
+@mixin font-face {
 	@font-face {
 		font-family: "Sporting Grotesque";
 		src: url("/fonts/SportingGrotesque-Bold-latin.woff2") format("woff2");
@@ -79,74 +51,5 @@ $measure: (
 		font-style: oblique -12deg 0deg;
 		font-display: swap;
 	}
-}
-
-@mixin body-1 {
-	font-size: var(--font-0);
-	font-weight: var(--font-regular, normal);
-	line-height: var(--line-height-md);
-	font-family: var(--font-body);
-	font-feature-settings: "ss01";
-}
-
-@mixin body-2 {
-	font-family: var(--font-mono);
-}
-
-@mixin body-3 {
-	font-size: var(--font--1);
-	line-height: var(--line-height-md);
-}
-
-@mixin body-4 {
-	@include body-1;
-	font-size: var(--font--1);
-}
-
-@mixin body-5 {
-	font-size: var(--font-0);
-	font-weight: normal;
-	font-family: var(--font-heading);
-	line-height: var(--line-height-lg);
-}
-
-@mixin display-1 {
-	font-size: var(--font-5);
-	font-family: var(--font-heading);
-	line-height: var(--line-height-xs);
-}
-
-@mixin display-2 {
-	font-size: var(--font-1);
-	font-family: var(--font-heading);
-	line-height: var(--line-height-sm);
-}
-
-@mixin heading-1 {
-	font-size: var(--font-2);
-	font-weight: var(--font-black, bold);
-	font-family: var(--font-body);
-	font-feature-settings: normal;
-	line-height: var(--line-height-sm);
-	text-transform: lowercase;
-}
-
-@mixin heading-2 {
-	font-size: var(--font-1);
-	font-weight: var(--font-bold, bold);
-	font-family: var(--font-body);
-	font-feature-settings: normal;
-	line-height: var(--line-height-sm);
-}
-
-@mixin heading-3 {
-	font-size: var(--font-0);
-	font-weight: var(--font-semi-bold, normal);
-	line-height: var(--line-height-md);
-	font-family: var(--font-body);
-	font-feature-settings: "ss01";
-	letter-spacing: 0.05em;
-	text-transform: lowercase;
-	color: var(--color-gray-1);
 }
 

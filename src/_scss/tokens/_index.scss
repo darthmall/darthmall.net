@@ -1,13 +1,4 @@
-@use "colors";
-@use "fonts";
-@use "space";
-
-@mixin css {
-	@include fonts.declaration;
-
-	:root {
-		@include colors.props;
-		@include fonts.props;
-		@include space.props;
-	}
-}
+@forward "colors";
+@forward "fonts";
+@forward "space";
+@forward "text";

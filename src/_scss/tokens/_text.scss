@@ -1,0 +1,70 @@
+@mixin body-1 {
+	font-size: var(--font-0);
+	font-weight: var(--font-regular, normal);
+	line-height: var(--line-height-md);
+	font-family: var(--font-body);
+	font-feature-settings: "ss01";
+}
+
+@mixin body-2 {
+	font-family: var(--font-mono);
+}
+
+@mixin body-3 {
+	font-size: var(--font--1);
+	line-height: var(--line-height-md);
+}
+
+@mixin body-4 {
+	@include body-1;
+	font-size: var(--font--1);
+}
+
+@mixin body-5 {
+	font-size: var(--font-0);
+	font-weight: normal;
+	font-family: var(--font-heading);
+	line-height: var(--line-height-lg);
+}
+
+@mixin display-1 {
+	font-size: var(--font-5);
+	font-family: var(--font-heading);
+	line-height: var(--line-height-xs);
+}
+
+@mixin display-2 {
+	font-size: var(--font-1);
+	font-family: var(--font-heading);
+	line-height: var(--line-height-sm);
+}
+
+@mixin heading-1 {
+	font-size: var(--font-2);
+	font-weight: var(--font-black, bold);
+	font-family: var(--font-body);
+	font-feature-settings: normal;
+	line-height: var(--line-height-sm);
+	text-transform: lowercase;
+}
+
+@mixin heading-2 {
+	font-size: var(--font-1);
+	font-weight: var(--font-bold, bold);
+	font-family: var(--font-body);
+	font-feature-settings: normal;
+	line-height: var(--line-height-sm);
+}
+
+@mixin heading-3 {
+	font-size: var(--font-0);
+	font-weight: var(--font-semi-bold, normal);
+	line-height: var(--line-height-md);
+	font-family: var(--font-body);
+	font-feature-settings: "ss01";
+	letter-spacing: 0.05em;
+	text-transform: lowercase;
+	color: var(--color-gray-1);
+}
+
+

@@ -1,3 +1,6 @@
+@use "sass:meta";
+
+@use "../tokens";
 @use "a11y";
 @use "controls";
 @use "document";
@@ -6,10 +9,18 @@
 @use "type";
 
 @mixin css {
-	@include scheme.css;
-	@include document.css;
-	@include a11y.css;
-	@include type.css;
-	@include links.css;
-	@include controls.css;
+	@include tokens.font-face;
+
+	:root {
+		@each $name, $val in meta.module-variables("tokens") {
+			--#{$name}: #{$val};
+		}
+	}
+
+	// @include scheme.css;
+	// @include document.css;
+	// @include a11y.css;
+	// @include type.css;
+	// @include links.css;
+	// @include controls.css;
 }

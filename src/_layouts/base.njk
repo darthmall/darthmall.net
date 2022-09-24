@@ -32,13 +32,15 @@
     {% set mainClasses = ' class="' + classes + '"' %}
   {% endif %}
   <main {{ mainClasses | safe }}>
-		{% include "page/header.njk" %}
-		{% include "components/theme-toggle.njk" %}
-    {% block content %}
-			<div class="stack" data-layout="center">
-				{{ content | safe }}
-			</div>
-    {% endblock content %}
+    {% block main %}
+      {% include "page/header.njk" %}
+      {% include "components/theme-toggle.njk" %}
+      {% block content %}
+        <div class="stack" data-layout="center">
+          {{ content | safe }}
+        </div>
+      {% endblock content %}
+    {% endblock %}
   </main>
 
   {% include "site/footer.njk" %}

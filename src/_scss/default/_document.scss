@@ -1,9 +1,5 @@
-@use "../tokens/fonts";
-
 @mixin css {
 	body {
-		@include fonts.body-1;
-
 		background: var(--surface-1);
 		color: var(--text-1);
 
@@ -58,7 +54,7 @@
 	aside,
 	figcaption,
 	small {
-		@include fonts.body-3;
+		// TODO
 	}
 
 	figure {
@@ -86,7 +82,7 @@
 	}
 
 	blockquote {
-		@include fonts.body-5;
+		// TODO
 
 		max-width: var(--measure-s);
 		margin-inline: auto;
@@ -105,7 +101,7 @@
 	}
 
 	code {
-		@include fonts.body-2;
+		// TODO
 		border-radius: 0.125em;
 		padding: 0.125em;
 	}
@@ -121,6 +117,6 @@
 	}
 
 	.footnotes {
-		@include fonts.body-4;
+		// TODO
 	}
 }

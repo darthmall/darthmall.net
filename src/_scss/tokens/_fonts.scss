@@ -2,14 +2,13 @@ $font-body: "Epilogue, sans-serif";
 $font-display: "'Sporting Grotesque', sans-serif";
 $font-mono: "ui-monospace, monospace";
 
-// @link https://utopia.fyi/type/calculator?c=320,16,1.125,1280,24,1.414,5,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l
-$font-size--1: clamp(0.89rem, calc(0.83rem + 0.29vw), 1.06rem);
+// @link https://utopia.fyi/type/calculator?c=320,16,1.25,1280,24,1.618,4,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l
+$font-size--1: clamp(0.80rem, calc(0.76rem + 0.21vw), 0.93rem);
 $font-size-0: clamp(1.00rem, calc(0.83rem + 0.83vw), 1.50rem);
-$font-size-1: clamp(1.13rem, calc(0.79rem + 1.66vw), 2.12rem);
-$font-size-2: clamp(1.27rem, calc(0.69rem + 2.89vw), 3.00rem);
-$font-size-3: clamp(1.42rem, calc(0.48rem + 4.69vw), 4.24rem);
-$font-size-4: clamp(1.60rem, calc(0.14rem + 7.32vw), 6.00rem);
-$font-size-5: clamp(1.80rem, calc(-0.42rem + 11.13vw), 8.48rem);
+$font-size-1: clamp(1.25rem, calc(0.86rem + 1.96vw), 2.43rem);
+$font-size-2: clamp(1.56rem, calc(0.77rem + 3.94vw), 3.93rem);
+$font-size-3: clamp(1.95rem, calc(0.49rem + 7.33vw), 6.35rem);
+$font-size-4: clamp(2.44rem, calc(-0.17rem + 13.06vw), 10.28rem);
 
 $font-weight-regular: 275;
 $font-weight-semi-bold: 350;

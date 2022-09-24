@@ -1,0 +1,53 @@
+---
+title: Design
+---
+
+{% extends "./_layouts/base.njk" %}
+
+{% block head %}
+	{{ super() }}
+<style>
+	body {
+		padding-inline: clamp(1em, 5vw, 4em);
+	}
+
+	p, li, blockquote, figcaption {
+		max-width: 66ch;
+	}
+</style>
+{% endblock %}
+
+{% block body %}
+	<h1>Design</h1>
+	<article>
+		<h2>Type</h2>
+
+		<h3>Display</h3>
+		<p class="display-1">The Brilliance of Terry Pratchett</p>
+		<p><strong>display-1</strong></p>
+
+		<h3>Headings</h3>
+		<p class="heading-1" style="overflow-wrap: break-word">The Brilliance of Terry Pratchett</p>
+		<p><strong>heading-1</strong></p>
+		<p class="heading-2">The Brilliance of Terry Pratchett</p>
+		<p><strong>heading-2</strong></p>
+		<p class="heading-3">The Brilliance of Terry Pratchett</p>
+		<p><strong>heading-3</strong></p>
+		<p class="heading-4">The Brilliance of Terry Pratchett</p>
+		<p><strong>heading-4</strong></p>
+		<p class="heading-5">The Brilliance of Terry Pratchett</p>
+		<p><strong>heading-5</strong></p>
+
+		<h3>Body</h3>
+		<p class="body-1">I think it’s hard to overstate the brilliance of Sir Terry Pratchett, although it may have been easy to miss because you were so busy laughing.</p>
+		<p><strong>body-1</strong></p>
+		<p class="body-2">I think it’s hard to overstate the brilliance of Sir Terry Pratchett, although it may have been easy to miss because you were so busy laughing.</p>
+		<p><strong>body-2</strong></p>
+		<p class="body-3">I think it’s hard to overstate the brilliance of Sir Terry Pratchett, although it may have been easy to miss because you were so busy laughing.</p>
+		<p><strong>body-3</strong></p>
+		<p class="body-4">I think it’s hard to overstate the brilliance of Sir Terry Pratchett, although it may have been easy to miss because you were so busy laughing.</p>
+		<p><strong>body-4</strong></p>
+		<p class="body-5">I think it’s hard to overstate the brilliance of Sir Terry Pratchett, although it may have been easy to miss because you were so busy laughing.</p>
+		<p><strong>body-5</strong></p>
+	</article>
+{% endblock %}

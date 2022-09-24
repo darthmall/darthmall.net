@@ -17,7 +17,7 @@
 			@import "/css/layer/reset.css" layer(reset);
 			@import "/css/layer/default.css" layer(default);
 			/* @import "/css/layer/layout.css" layer(layout); */
-			/* @import "/css/layer/utility.css" layer(utility); */
+			@import "/css/layer/utility.css" layer(utility);
 		</style>
     <link rel="stylesheet" media="print" href="/css/print.css">
     <script src="/js/theme.js"></script>
@@ -25,6 +25,7 @@
 </head>
 
 <body>
+{% block body %}
   {% include "site/header.njk" %}
 
   {% set mainClasses = "" %}
@@ -44,5 +45,6 @@
   </main>
 
   {% include "site/footer.njk" %}
+{% endblock %}
 </body>
 </html>

@@ -1,13 +1,15 @@
-@mixin body-1 {
-	font-size: var(--font-0);
-	font-weight: var(--font-regular, normal);
-	line-height: var(--line-height-md);
-	font-family: var(--font-body);
-	font-feature-settings: "ss01";
+@mixin display-1 {
+	font-size: var(--font-size-5);
+	font-family: var(--font-display);
+	line-height: var(--line-height-xs);
 }
 
-@mixin body-2 {
-	font-family: var(--font-mono);
+@mixin body-1 {
+	font-size: var(--font-size-0);
+	font-weight: var(--font-weight-regular, normal);
+	line-height: var(--line-height-m);
+	font-family: var(--font-body);
+	font-feature-settings: "ss01";
 }
 
 @mixin body-3 {
@@ -25,18 +27,6 @@
 	font-weight: normal;
 	font-family: var(--font-heading);
 	line-height: var(--line-height-lg);
-}
-
-@mixin display-1 {
-	font-size: var(--font-5);
-	font-family: var(--font-heading);
-	line-height: var(--line-height-xs);
-}
-
-@mixin display-2 {
-	font-size: var(--font-1);
-	font-family: var(--font-heading);
-	line-height: var(--line-height-sm);
 }
 
 @mixin heading-1 {

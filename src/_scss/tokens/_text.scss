@@ -33,26 +33,29 @@
 }
 
 @mixin body-1 {
-	font-size: var(--font-size-0);
-	font-weight: var(--font-weight-regular, normal);
-	line-height: var(--line-height-m);
+	font-size: var(--font-size-2);
+	font-weight: var(--font-weight-semi-bold);
+	line-height: var(--line-height-s);
 	font-family: var(--font-body);
+}
+
+@mixin body-2 {
+	@include body-1;
+	font-size: var(--font-size-1);
+	font-style: italic;
 	font-feature-settings: "ss01";
+	line-height: var(--line-height-s);
 }
 
 @mixin body-3 {
-	font-size: var(--font--1);
-	line-height: var(--line-height-md);
+	@include body-1;
+	font-size: var(--font-size-0);
+	font-weight: var(--font-weight-regular);
+	line-height: var(--line-height-m);
 }
 
 @mixin body-4 {
 	@include body-1;
-	font-size: var(--font--1);
-}
-
-@mixin body-5 {
-	font-size: var(--font-0);
-	font-weight: normal;
-	font-family: var(--font-heading);
-	line-height: var(--line-height-lg);
+	font-size: var(--font-size--1);
+	line-height: var(--line-height-m);
 }

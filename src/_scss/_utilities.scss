@@ -6,10 +6,9 @@
 	.heading-2 { @include tokens.heading-2; }
 	.heading-3 { @include tokens.heading-3; }
 	.body-1 { @include tokens.body-1; }
-	// .body-2 { @include tokens.body-2; }
+	.body-2 { @include tokens.body-2; }
 	.body-3 { @include tokens.body-3; }
 	.body-4 { @include tokens.body-4; }
-	.body-5 { @include tokens.body-5; }
 
 	.mbs-l { margin-block-start: var(--space-l) }
 

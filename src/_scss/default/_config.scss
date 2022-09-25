@@ -1,0 +1,7 @@
+@mixin css {
+	body {
+		--site-margin: var(--space-s);
+
+		--icon-m: var(--font-size-1);
+	}
+}

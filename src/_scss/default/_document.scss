@@ -11,11 +11,6 @@
 		// 100vw to achive full-bleed or other breakout effects in the layout.
 		overflow-x: hidden;
 
-		--site-margin: var(--space-s);
-		--icon-s: var(--space-s);
-		--icon-m: var(--space-m);
-		--icon-l: var(--space-l);
-
 		> header a[href="/"] {
 			background-image: url("/img/evan-alt-64.jpg");
 			background-size: cover;

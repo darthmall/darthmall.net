@@ -1,7 +1,7 @@
 @mixin css {
 	.stack {
 		> * + * {
-			margin-block-start: var(--space, var(--space-m));
+			margin-block-start: var(--space, 1em);
 		}
 	}
 

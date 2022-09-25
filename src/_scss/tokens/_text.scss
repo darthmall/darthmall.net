@@ -6,32 +6,25 @@
 
 @mixin heading-1 {
 	font-size: var(--font-size-2);
-	font-weight: var(--font-black, bold);
+	font-weight: var(--font-weight-black);
 	font-family: var(--font-body);
-	font-feature-settings: normal;
-	line-height: var(--line-height-sm);
-	text-transform: lowercase;
+	font-feature-settings: "ss01";
+	line-height: var(--line-height-s);
 }
 
 @mixin heading-2 {
 	font-size: var(--font-size-1);
-	font-weight: var(--font-bold, bold);
+	font-weight: var(--font-weight-black);
 	font-family: var(--font-body);
-	font-feature-settings: normal;
-	line-height: var(--line-height-sm);
+	font-feature-settings: "ss01";
+	line-height: var(--line-height-s);
 }
 
 @mixin heading-3 {
 	font-size: var(--font-size-0);
-	font-weight: var(--font-semi-bold, normal);
-	line-height: var(--line-height-md);
+	font-weight: var(--font-weight-black);
 	font-family: var(--font-body);
 	font-feature-settings: "ss01";
-	letter-spacing: 0.05em;
-	text-transform: lowercase;
-	color: var(--color-gray-4);
-}
-
 	line-height: var(--line-height-s);
 }
 

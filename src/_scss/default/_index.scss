@@ -7,7 +7,6 @@
 @use "document";
 @use "links";
 @use "scheme";
-@use "type";
 
 @mixin css {
 	@include tokens.font-face;
@@ -23,7 +22,6 @@
 	@include scheme.css;
 	@include document.css;
 	@include a11y.css;
-	// @include type.css;
 	// @include links.css;
 	// @include controls.css;
 }

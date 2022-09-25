@@ -9,6 +9,8 @@
 	.body-2 { @include tokens.body-2; }
 	.body-3 { @include tokens.body-3; }
 
+	.text-center { text-align: center; }
+
 	.mbs-0 { margin-block-start: 0; }
 	.mbs-l { margin-block-start: var(--space-l) }
 

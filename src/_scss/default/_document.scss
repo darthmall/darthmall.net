@@ -1,5 +1,9 @@
+@use "../tokens";
+
 @mixin css {
 	body {
+		@include tokens.body-2;
+
 		background: var(--surface-1);
 		color: var(--text-1);
 
@@ -30,6 +34,10 @@
 			}
 		}
 	}
+
+	h1 { @include tokens.heading-1; }
+	h2 { @include tokens.heading-2; }
+	h3 { @include tokens.heading-3; }
 
 	footer svg {
 		height: var(--icon-m);

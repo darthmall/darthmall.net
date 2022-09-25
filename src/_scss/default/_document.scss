@@ -10,23 +10,23 @@
 		// Prevent scrollbars (especially on windows) when setting inline-size to
 		// 100vw to achive full-bleed or other breakout effects in the layout.
 		overflow-x: hidden;
+	}
 
-		> header a[href="/"] {
-			background-image: url("/img/evan-alt-64.jpg");
-			background-size: cover;
+	header a[href="/"] {
+		background-image: url("/img/evan-alt-64.jpg");
+		background-size: cover;
 
-			&:hover > * {
-				opacity: 0;
-			}
+		&:hover > * {
+			opacity: 0;
 		}
+	}
 
-		> header nav a {
-			text-decoration: none;
-			border-bottom: 0.125em solid transparent;
+	header nav a {
+		text-decoration: none;
+		border-bottom: 0.125em solid transparent;
 
-			&[aria-current] {
-				border-color: var(--primary-1);
-			}
+		&[aria-current] {
+			border-color: var(--primary-1);
 		}
 	}
 

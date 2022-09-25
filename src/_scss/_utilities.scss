@@ -8,7 +8,6 @@
 	.body-1 { @include tokens.body-1; }
 	.body-2 { @include tokens.body-2; }
 	.body-3 { @include tokens.body-3; }
-	.body-4 { @include tokens.body-4; }
 
 	.mbs-l { margin-block-start: var(--space-l) }
 

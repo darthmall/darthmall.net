@@ -19,11 +19,11 @@ $line-height-xs: 1;
 $line-height-s: 1.15;
 $line-height-m: 1.5;
 
-$-measure-xs: 34ch;
-$-measure-s: 42ch;
-$-measure-m: 54ch;
-$-measure-l: 72ch;
-$-measure-xl: 88ch;
+$measure-xs: 34ch;
+$measure-s: 42ch;
+$measure-m: 54ch;
+$measure-l: 72ch;
+$measure-xl: 88ch;
 
 @mixin font-face {
 	@font-face {

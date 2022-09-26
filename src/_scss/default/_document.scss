@@ -10,6 +10,10 @@
 		// Prevent scrollbars (especially on windows) when setting inline-size to
 		// 100vw to achive full-bleed or other breakout effects in the layout.
 		overflow-x: hidden;
+
+		> header {
+			--space: var(--space-s);
+		}
 	}
 
 	header a[href="/"] {

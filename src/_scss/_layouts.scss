@@ -24,11 +24,6 @@
 		}
 	}
 
-	[data-layout="columns"] {
-		columns: var(--measure-xs) auto;
-		gap: var(--space, var(--space-m));
-	}
-
 	[data-layout="cover"] {
 		display: flex;
 		flex-direction: column;

@@ -11,16 +11,12 @@
 		gap: var(--space);
 		align-items: center;
 
-		&[data-cluster="center"] {
-			justify-content: center;
+		> * {
+			margin: 0;
 		}
 
-		// List reset, because lists are very common markup for cluster layouts
-		padding: 0;
-		list-style: none;
-
-		> li {
-			margin: 0;
+		&[data-cluster="center"] {
+			justify-content: center;
 		}
 	}
 

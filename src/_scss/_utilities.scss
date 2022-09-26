@@ -9,8 +9,6 @@
 	.body-2 { @include tokens.body-2; }
 	.body-3 { @include tokens.body-3; }
 
-	.text-center { text-align: center; }
-
 	.mbs-0 { margin-block-start: 0; }
 	.mbs-l { margin-block-start: var(--space-l) }
 
@@ -19,7 +17,6 @@
 
 	.pb-m { padding-block: var(--space-m) }
 	.pb-l { padding-block: var(--space-l) }
-	.pb-xl { padding-block: var(--space-xl) }
 
 	.aspect-square { aspect-ratio: 1 / 1 }
 
@@ -29,32 +26,6 @@
 		overflow: hidden;
 	}
 
-	.align-self-start {
-		align-self: start;
-	}
-	.align-self-stretch {
-		align-self: stretch;
-	}
-	.justify-items-center {
-		justify-items: center;
-	}
-	.flex-nowrap {
-		flex-wrap: nowrap;
-	}
-	.flex-grow {
-		flex-grow: 1;
-	}
-	.flex-hulk {
-		flex-grow: 99;
-	}
-
-	.text-1 {
-		color: var(--text-1);
-	}
-	.text-2 {
-		color: var(--text-2);
-	}
-	.text-3 {
-		color: var(--text-3);
-	}
+	.flex-grow { flex-grow: 1; }
+	.flex-hulk { flex-grow: 99; }
 }

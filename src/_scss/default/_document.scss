@@ -80,6 +80,10 @@
 	figcaption,
 	.footnotes {
 		@include tokens.body-3;
+
+		p {
+			max-width: var(--measure-l);
+		}
 	}
 
 	figure {

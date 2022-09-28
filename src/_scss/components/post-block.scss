@@ -3,7 +3,7 @@
 	flex-direction: column;
 
 	> .title {
-		text-transform: unset;
+		margin: 0;
 	}
 
 	> time {
@@ -15,7 +15,7 @@
 			content: "";
 
 			height: 2px;
-			width: 2ch;
+			width: 1.5ch;
 			margin-inline-end: 1ch;
 			margin-block-end: 0.325em;
 

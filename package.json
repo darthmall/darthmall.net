@@ -5,12 +5,12 @@
 	"private": true,
 	"scripts": {
 		"start": "npm-run-all clean -p watch:* --print-label",
-		"build": "run-s clean eleventy:prod --print-label",
+		"build": "npm-run-all clean -p build:* --print-label",
+		"build:eleventy": "eleventy",
 		"build:sass": "sass src/styles:_site/css",
 		"clean": "rm -rf _site",
 		"watch:eleventy": "eleventy --serve",
 		"watch:sass": "npm run build:sass -- --watch",
-		"eleventy:prod": "eleventy",
 		"format": "prettier --write src/",
 		"lint": "prettier --check src/"
 	},

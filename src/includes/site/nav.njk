@@ -1,0 +1,22 @@
+<nav>
+  <ul data-layout="cluster" role="list">
+    {% for link in navigation %}
+      {% set currentAttr = "" %}
+      {% set relAttr = "" %}
+
+      {% if page.url.startsWith(link.url) %}
+        {% set currentAttr = ' aria-current="page"' %}
+      {% endif %}
+
+      {% if link.rel %}
+        {% set relAttr = ' rel="' + link.rel + '"' %}
+      {% endif %}
+
+      <li class="type-heading-3">
+        <a href="{{ link.url | url }}"{{ relAttr | safe }}{{ currentAttr | safe }}>
+          {{ link.text | safe }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

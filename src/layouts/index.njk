@@ -1,0 +1,23 @@
+{% extends "./base.njk" %}
+
+{% block head %}
+	{{ super () }}
+	<style>
+		@import "/css/components/post-block.css" layer(block);
+	</style>
+{% endblock %}
+
+{% block content %}
+	{{ super() }}
+
+	<div class="flow mbs-l h-feed" data-layout="center">
+		{% for page in pageList %}
+			<article class="post-block h-entry">
+				<h2 class="title">
+					<a href="{{ page.url }}" class="p-name">{{ page.data.title | safe }}</a>
+				</h2>
+				{% pubDate page.date %}
+			</article>
+		{% endfor %}
+	</div>
+{% endblock %}

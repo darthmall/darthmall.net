@@ -1,8 +1,8 @@
-const site = require("../src/_data/site.json");
+const site = require("../src/data/site.json");
 
 function feed(collection) {
 	return collection
-		.getFilteredByGlob(["./src/weblog/**/*.md", "./src/sketchbook/**/*.md"])
+		.getFilteredByGlob(["./src/pages/weblog/**/*.md", "./src/pages/sketchbook/**/*.md"])
 		.sort((a, b) => {
 			if (a.data.date > b.data.date) return -1;
 			if (a.data.date < b.data.date) return 1;
@@ -14,7 +14,7 @@ function feed(collection) {
 
 function portfolio(collection) {
 	return collection
-		.getFilteredByGlob("./src/portfolio/**/*.md")
+		.getFilteredByGlob("./src/pages/portfolio/**/*.md")
 		.filter((post) => !post.data.draft)
 		.sort((a, b) => {
 			// Sort by the order field first, placing older projects after newer projects
@@ -43,13 +43,13 @@ function posts(collection) {
 		livePosts = (post) => post.date <= now && !post.data.draft;
 
 	return collection
-		.getFilteredByGlob("./src/weblog/**/*.md")
+		.getFilteredByGlob("./src/pages/weblog/**/*.md")
 		.filter(livePosts)
 		.reverse();
 }
 
 function sketches(collection) {
-	return collection.getFilteredByGlob("./src/sketchbook/**/*.md").reverse();
+	return collection.getFilteredByGlob("./src/pages/sketchbook/**/*.md").reverse();
 }
 
 module.exports = {

@@ -1,0 +1,56 @@
+@mixin display-1 {
+	font-size: var(--font-size-4);
+	font-family: var(--font-display);
+	font-weight: bold;
+	line-height: var(--line-height-xs);
+}
+
+@mixin heading-1 {
+	font-size: var(--font-size-2);
+	font-weight: var(--font-weight-black);
+	font-family: var(--font-body);
+	font-feature-settings: "ss01";
+	line-height: var(--line-height-s);
+}
+
+@mixin heading-2 {
+	font-size: var(--font-size-1);
+	font-weight: var(--font-weight-black);
+	font-family: var(--font-body);
+	font-feature-settings: "ss01";
+	line-height: var(--line-height-s);
+}
+
+@mixin heading-3 {
+	font-size: var(--font-size-0);
+	font-weight: var(--font-weight-black);
+	font-family: var(--font-body);
+	font-feature-settings: "ss01";
+	line-height: var(--line-height-s);
+}
+
+@mixin body-1 {
+	font-size: var(--font-size-1);
+	font-weight: var(--font-weight-regular);
+	font-family: var(--font-body);
+	line-height: var(--line-height-s);
+}
+
+@mixin body-2 {
+	font-size: var(--font-size-0);
+	font-weight: var(--font-weight-regular);
+	font-family: var(--font-body);
+	line-height: var(--line-height-m);
+}
+
+@mixin body-3 {
+	font-size: var(--font-size--1);
+	font-weight: var(--font-weight-semi-bold);
+	font-family: var(--font-body);
+	line-height: var(--line-height-m);
+}
+
+@mixin body-italic {
+	font-style: italic;
+	font-feature-settings: "ss01";
+}

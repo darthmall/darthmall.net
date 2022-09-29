@@ -1,0 +1,52 @@
+@mixin css {
+	.flow {
+		> * + * {
+			margin-block-start: var(--space, 1em);
+		}
+	}
+
+	[data-layout="cluster"] {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--space);
+		align-items: center;
+
+		> * {
+			margin: 0;
+		}
+
+		&[data-cluster="center"] {
+			justify-content: center;
+		}
+	}
+
+	// Used for the big display headers on pages
+	[data-layout="cover"] {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		box-sizing: border-box;
+		min-block-size: 55vmin;
+		padding: var(--space-l) var(--site-margin);
+	}
+
+	[data-layout="center"] {
+		max-inline-size: var(--measure-m);
+		margin-inline: auto;
+		padding-inline: var(--site-margin);
+
+		&[data-center-width="site"] {
+			max-inline-size: var(--space-max-site);
+		}
+	}
+
+	[data-layout="grid"] {
+		display: grid;
+		gap: var(--space);
+		grid-template-columns: repeat(
+			auto-fit,
+			minmax(min(var(--space-card), 100%), 1fr)
+		);
+	}
+}

@@ -1,0 +1,132 @@
+@use "../tokens";
+
+@mixin css {
+	body {
+		@include tokens.body-2;
+
+		background: var(--surface-1);
+		color: var(--text-1);
+
+		// Prevent scrollbars (especially on windows) when setting inline-size to
+		// 100vw to achive full-bleed or other breakout effects in the layout.
+		overflow-x: hidden;
+
+		> header {
+			--space: var(--space-s);
+			--link-decoration: none;
+		}
+	}
+
+	header a[href="/"] {
+		background-image: url("/img/evan-alt-64.jpg");
+		background-size: cover;
+
+		&:hover > * {
+			opacity: 0;
+		}
+	}
+
+	header nav a {
+		border-bottom: 0.125em solid transparent;
+
+		&[aria-current] {
+			border-color: var(--primary-1);
+		}
+	}
+
+	h1 { @include tokens.heading-1; }
+	h2 { @include tokens.heading-2; }
+	h3 { @include tokens.heading-3; }
+
+	h1, h2, h3 { --link-decoration: none; }
+
+	footer svg {
+		height: var(--icon-m);
+	}
+
+	hr {
+		border: none;
+		border-block-start: 1px solid var(--text-1);
+	}
+
+	li,
+	p {
+		box-sizing: content-box;
+		max-width: var(--measure-m);
+	}
+
+	h2,
+	h3,
+	* + p {
+		margin-block-start: 1em;
+	}
+
+	li + li {
+		margin-block-start: 0.5em;
+	}
+
+	aside,
+	figure,
+	hr {
+		margin-block: 2em;
+	}
+
+	aside {
+		border-block: 1px solid var(--color-gray-3);
+		padding: var(--space-l);
+	}
+
+	aside,
+	figcaption,
+	.footnotes {
+		@include tokens.body-3;
+
+		p {
+			max-width: var(--measure-l);
+		}
+	}
+
+	figure {
+		--_size: min(100vw, var(--measure-lg));
+
+		box-sizing: border-box;
+		inline-size: var(--_size);
+		margin-inline-start: calc((100% - var(--_size)) / 2);
+	}
+
+	figcaption {
+		margin-block-start: var(--space-s);
+		padding-inline: var(--site-margin);
+		text-align: center;
+		color: var(--text-2);
+	}
+
+	blockquote {
+		margin-inline: auto;
+		padding: var(--space-m);
+		font-weight: normal;
+		background-color: var(--surface-2);
+	}
+
+	pre {
+		padding: var(--space-m);
+		overflow-x: auto;
+
+		code {
+			padding: 0;
+		}
+	}
+
+	code {
+		font-family: var(--font-mono);
+		border-radius: 0.125em;
+		padding: 0.125em;
+	}
+
+	// FIXME: This seems like it's either part of the utilities, or an exception.
+	[class*="aspect-"] > iframe {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+}

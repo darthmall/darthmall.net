@@ -9,7 +9,7 @@ tags: ["Eleventy", "Science On a Sphere"]
 
 <figure>
     {% picture
-        "src/img/new-sos-website/sos-website.png",
+        "public/img/new-sos-website/sos-website.png",
         "",
         "Hero image and page title of the Science On a Sphere website",
         "(max-width: 50rem) 100vw, 50rem" %}
@@ -31,12 +31,12 @@ paint. Image optimization is on my list of things to do.
 <figure>
     <div data-layout="grid" style="--space:var(--space-s)">
         {% picture
-            "src/img/new-sos-website/sos-original-lighthouse.png",
+            "public/img/new-sos-website/sos-original-lighthouse.png",
             "",
             "Performance: 89; Accessibility 89; Best Practices: 67; SEO: 64",
             "(max-width: 41rem) 100vw, (max-width: 50rem) 50vw, 25rem" %}
         {% picture
-            "src/img/new-sos-website/sos-lighthouse.png",
+            "public/img/new-sos-website/sos-lighthouse.png",
             "",
             "Performance: 81; Accessibility: 94; Best Practices: 100; SEO: 100",
             "(max-width: 41rem) 100vw, (max-width: 50rem) 50vw, 25rem" %}

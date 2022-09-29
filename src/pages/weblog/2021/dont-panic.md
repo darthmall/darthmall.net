@@ -16,7 +16,7 @@ wallpaper.
 
 <figure>
     {% picture
-        "src/img/dont-panic/dont-panic-original-320.png",
+        "public/img/dont-panic/dont-panic-original-320.png",
         "mi-auto",
         "“Don’t Panic” rendered like a glossy sticker in round pink letters against a blue background",
         "(min-width: 320px) 320px, 100vw" %}
@@ -47,12 +47,12 @@ like, just please don’t make an NFT of them.
 <figure>
     <div style="justify-items: center" data-layout="grid">
         {% picture
-            "src/img/dont-panic/dont-panic-repeat-lockscreen-320.png",
+            "public/img/dont-panic/dont-panic-repeat-lockscreen-320.png",
             "",
             "“Don’t Panic“ repeated with no whitespace, the phrase is highlighted once in pink",
             "(min-width: 320px) 320px, 100vw" %}
         {% picture
-            "src/img/dont-panic/dont-panic-repeat-wallpaper-320.png",
+            "public/img/dont-panic/dont-panic-repeat-wallpaper-320.png",
             "",
             "“Don’t Panic“ repeated with no whitespace with little contrast against the background",
             "(min-width: 320px) 320px, 1oovw" %}
@@ -68,12 +68,12 @@ like, just please don’t make an NFT of them.
 <figure>
     <div style="justify-items: center" data-layout="grid">
         {% picture
-            "src/img/dont-panic/dont-panic-grid-lockscreen-320.png",
+            "public/img/dont-panic/dont-panic-grid-lockscreen-320.png",
             "",
             "The nine letters of the phrase “Don’t Panic” arranged in a 3×3 grid in pink",
             "(min-width: 320px) 320px, 100vw" %}
         {% picture
-            "src/img/dont-panic/dont-panic-grid-wallpaper-320.png",
+            "public/img/dont-panic/dont-panic-grid-wallpaper-320.png",
             "",
             "The nine letters of the phrase “Don’t Panic” arraned in a 3×3 grid with low contrast against the background",
             "(min-width: 320px) 320px, 100vw" %}
@@ -89,12 +89,12 @@ like, just please don’t make an NFT of them.
 <figure>
     <div style="justify-items: center" data-layout="grid">
         {% picture
-            "src/img/dont-panic/dont-panic-glow-lockscreen-320.png",
+            "public/img/dont-panic/dont-panic-glow-lockscreen-320.png",
             "",
             "The phrase “Don’t Panic” in glowing pink letters, like a neon sign",
             "(min-width: 320px) 320px, 100vw" %}
         {% picture
-            "src/img/dont-panic/dont-panic-glow-wallpaper-320.png",
+            "public/img/dont-panic/dont-panic-glow-wallpaper-320.png",
             "",
             "The background from the glow lock screen with no lettering",
             "(min-width: 320px) 320px, 100vw" %}

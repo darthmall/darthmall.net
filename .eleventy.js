@@ -63,13 +63,7 @@ module.exports = function (config) {
   // have a markdown shortcode for declaring blocks of markdown in Nunjucks.
   config.addPairedShortcode('markdown', (data) => md.render(data));
 
-  // Don't mess with this stuff, just pass it on through
-  config.addPassthroughCopy('src/_headers');
-  config.addPassthroughCopy('src/_redirects');
-  config.addPassthroughCopy('src/fonts');
-  config.addPassthroughCopy('src/js');
-  config.addPassthroughCopy('src/img');
-  config.addPassthroughCopy('src/favicon.ico');
+  config.addPassthroughCopy({ "public": "." });
 
 	config.setBrowserSyncConfig({
 		watch: true,
@@ -77,8 +71,10 @@ module.exports = function (config) {
 
   return {
     dir: {
-      input: 'src',
-			layouts: "_layouts",
+      input: "src/pages",
+      includes: "../includes",
+			layouts: "../layouts",
+      data: "../data",
     },
     markdownTemplateEngine: "njk",
   };

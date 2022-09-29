@@ -7,7 +7,7 @@ description: >-
 
 Howdy, my name is Evan.
 
-{% picture "src/img/about.jpg", "", "Me, a 30-something white man, in a red vest, holding a glass of whisky and smiling at the camera at a ski resort in Norway" %}
+{% picture "public/img/about.jpg", "", "Me, a 30-something white man, in a red vest, holding a glass of whisky and smiling at the camera at a ski resort in Norway" %}
 
 Professionally, I design and build websites, web applications, and data visualizations. I
 am currently employed by the [Cooperative Institute for Research in the

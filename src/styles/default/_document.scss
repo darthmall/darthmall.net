@@ -37,8 +37,12 @@
 	h1 { @include tokens.heading-1; }
 	h2 { @include tokens.heading-2; }
 	h3 { @include tokens.heading-3; }
+	h4 {
+		@include tokens.heading-3;
+		color: var(--text-2);
+	}
 
-	h1, h2, h3 { --link-decoration: none; }
+	h1, h2, h3, h4 { --link-decoration: none; }
 
 	footer svg {
 		height: var(--icon-m);
@@ -57,12 +61,21 @@
 
 	h2,
 	h3,
+	h4,
 	* + p {
 		margin-block-start: 1em;
 	}
 
+	h4 + p {
+		margin-block-start: 0.25em;
+	}
+
 	li + li {
 		margin-block-start: 0.5em;
+	}
+
+	ol, ul {
+		margin-block: var(--space-m);
 	}
 
 	aside,

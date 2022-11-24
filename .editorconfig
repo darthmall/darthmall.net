@@ -9,6 +9,9 @@ insert_final_newline = true
 max_line_length = 80
 trim_trailing_whitespace = true
 
+[*.{md,json,toml}]
+max_line_length = 0
+
 [*.{md,toml}]
 indent_size = 4
 

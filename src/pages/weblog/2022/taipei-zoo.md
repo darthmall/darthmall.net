@@ -1,7 +1,8 @@
 ---
 title: Taipei Zoo
 date: 2022-11-30
-description: TKTKTK
+description: Photos from a visit to the Taipei Zoo
+cover: /img/2022-taipei-zoo/red_panda.jpg
 tags:
   - Photography
 ---

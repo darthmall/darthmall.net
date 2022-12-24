@@ -2,6 +2,8 @@
 title: Bring Back Blogging
 date: 2022-12-24
 description: As people are abandoning Twitter, maybe it’s time to go back to writing blogs. Sign up at bringback.blog and write three posts in January. They don’t have to be long. Look at how short this post is…
+tags:
+- Bring Back Blogging
 ---
 
 I signed up for [bringback.blog](https://bringback.blog/).

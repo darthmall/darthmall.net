@@ -3,6 +3,7 @@
 	font-family: var(--font-display);
 	font-weight: bold;
 	line-height: var(--line-height-xs);
+	word-break: break-word;
 }
 
 @mixin heading-1 {

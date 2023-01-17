@@ -136,6 +136,15 @@
 		padding: 0.125em;
 	}
 
+	sup {
+		// FIXME: Epilogue has a nice superscript feature that I'd like to turn on,
+		// but I need to figure out which browser styles to disable to make it work.
+		// For now I'll just set the line-height to 1 to fix the vertical rhythm in
+		// paragraphs
+		// font-feature-settings: "sups" on;
+		line-height: 1;
+	}
+
 	// FIXME: This seems like it's either part of the utilities, or an exception.
 	[class*="aspect-"] > iframe {
 		width: 100%;

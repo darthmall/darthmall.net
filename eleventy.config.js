@@ -7,16 +7,12 @@ const anchor = require('markdown-it-anchor');
 const jsonImporter = require('node-sass-json-importer');
 const sass = require('sass');
 
-const UpgradeHelper = require('@11ty/eleventy-upgrade-help');
-
 const collections = require('./utils/collections.js');
 const filters = require('./utils/filters.js');
 const shortcodes = require('./utils/shortcodes.js');
 const transforms = require('./utils/transforms.js');
 
 module.exports = function (config) {
-  config.addPlugin(UpgradeHelper);
-
   // Plugins
   config.addPlugin(pluginRss);
   config.addPlugin(syntaxHighlight, {

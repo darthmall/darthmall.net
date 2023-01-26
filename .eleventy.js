@@ -69,10 +69,6 @@ module.exports = function (config) {
 
   config.addPassthroughCopy({ "public": "." });
 
-	config.setBrowserSyncConfig({
-		watch: true,
-	});
-
   return {
     dir: {
       input: "src/pages",

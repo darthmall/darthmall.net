@@ -5,7 +5,7 @@ const siteMeta = require("../src/data/site.json");
 function copyright() {
 	const now = new Date();
 
-	return `&copy; ${now.getUTCFullYear()} ${siteMeta.copyright}`;
+	return `&copy; ${now.getUTCFullYear()} <a href="/about/">${siteMeta.copyright}</a>`;
 }
 
 function formatDate(dt, cls = "") {

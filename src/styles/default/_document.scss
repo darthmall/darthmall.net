@@ -79,6 +79,7 @@
 	}
 
 	aside,
+	blockquote,
 	figure,
 	hr {
 		margin-block: 2em;
@@ -116,9 +117,8 @@
 
 	blockquote {
 		margin-inline: auto;
+		border: 0.25em double var(--surface-3);
 		padding: var(--space-m);
-		font-weight: normal;
-		background-color: var(--surface-2);
 	}
 
 	pre {

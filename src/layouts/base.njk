@@ -6,19 +6,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="generator" content="eleventy">
+  <meta name="generator" content="{{ eleventy.generator }}">
 
   {% include "head/meta-info.njk" %}
 
   {% block head %}
 		<link rel="preload" href="/fonts/SportingGrotesque-Bold-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/fonts/Epilogue[slnt,wght]-latin.woff2" as="font" type="font/woff2" crossorigin>
-		<style>
-			@import "/css/layer/reset.css" layer(reset);
-			@import "/css/layer/default.css" layer(default);
-			@import "/css/layer/layout.css" layer(layout);
-			@import "/css/layer/utility.css" layer(utility);
-		</style>
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" media="print" href="/css/print.css">
     <script src="/js/theme.js"></script>
   {% endblock %}
@@ -28,21 +23,9 @@
 {% block body %}
   {% include "site/header.njk" %}
 
-  {% set mainClasses = "" %}
-  {% if classes %}
-    {% set mainClasses = ' class="' + classes + '"' %}
-  {% endif %}
-  <main {{ mainClasses | safe }}>
-    {% block main %}
-      {% include "page/header.njk" %}
-      {% include "components/theme-toggle.njk" %}
-      {% block content %}
-        <div data-layout="center">
-          {{ content | safe }}
-        </div>
-      {% endblock %}
-    {% endblock %}
-  </main>
+  {% block main %}
+    {{ content | safe }}
+  {% endblock %}
 
   {% include "site/footer.njk" %}
 {% endblock %}

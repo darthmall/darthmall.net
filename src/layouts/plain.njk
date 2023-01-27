@@ -1,0 +1,11 @@
+{% extends "./base.njk" %}
+
+{% block main %}
+<main>
+	{% include "page/header.njk" %}
+	<div data-layout="center">
+		{% include "components/theme-toggle.njk" %}
+		{{ content | safe }}
+	</div>
+</main>
+{% endblock %}

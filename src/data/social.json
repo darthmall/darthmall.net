@@ -2,13 +2,8 @@
 	{
 		"text": "RSS",
 		"icon": "rss.svg",
+		"rel": "alternate",
 		"url": "/feed.xml"
-	},
-	{
-		"text": "Mastodon",
-		"icon": "mastodon.svg",
-		"url": "https://vis.social/@darth_mall",
-		"rel": "me"
 	},
 	{
 		"text": "CodePen",

@@ -1,7 +1,3 @@
----
-classes: h-entry
----
-
 {% extends "./base.njk" %}
 
 {% block head %}
@@ -13,7 +9,10 @@ classes: h-entry
   {{ super() }}
 {% endblock %}
 
-{% block content %}
+{% block main %}
+<main class="h-entry">
+  {% include "page/header.njk" %}
+  {% include "components/theme-toggle.njk" %}
   <div class="e-content" data-layout="center">
     {% if date -%}
       <aside aria-label="publication date" style="align-self: start">
@@ -26,4 +25,5 @@ classes: h-entry
   </div>
 
 	{% include "page/webmentions.njk" %}
+</main>
 {% endblock %}

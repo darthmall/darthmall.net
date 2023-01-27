@@ -10,6 +10,10 @@ class HomePage {
 			},
 		};
 	}
+
+	render() {
+		return `<p><a href="/weblog/">More Posts &Rarr;</a></p>`;
+	}
 }
 
 module.exports = HomePage;

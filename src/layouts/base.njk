@@ -23,21 +23,9 @@
 {% block body %}
   {% include "site/header.njk" %}
 
-  {% set mainClasses = "" %}
-  {% if classes %}
-    {% set mainClasses = ' class="' + classes + '"' %}
-  {% endif %}
-  <main {{ mainClasses | safe }}>
-    {% block main %}
-      {% include "page/header.njk" %}
-      {% include "components/theme-toggle.njk" %}
-      {% block content %}
-        <div data-layout="center">
-          {{ content | safe }}
-        </div>
-      {% endblock %}
-    {% endblock %}
-  </main>
+  {% block main %}
+    {{ content | safe }}
+  {% endblock %}
 
   {% include "site/footer.njk" %}
 {% endblock %}

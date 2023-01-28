@@ -11,7 +11,9 @@
 @mixin css {
 	@include tokens.font-face;
 
-	:root {
+	:root,
+	*::after,
+	*::before {
 		@each $name, $val in meta.module-variables("tokens") {
 			--#{$name}: #{$val};
 		}

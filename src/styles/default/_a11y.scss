@@ -4,8 +4,8 @@
 	}
 
 	:focus-visible {
-		outline: var(--space-xs) solid var(--text-1);
-		outline-offset: var(--space-xs);
+		outline: 0.25rem solid var(--text-1);
+		outline-offset: 0.25rem;
 	}
 
 	[href="#Skip"] {

@@ -3,6 +3,7 @@
 @use "./layouts";
 @use "./utilities";
 @use "./components/post-block";
+@use "./components/webmention";
 
 @layer reset {
 	@include reset.css;
@@ -18,6 +19,7 @@
 
 @layer block {
 	@include post-block.css;
+	@include webmention.css;
 }
 
 @layer utility {

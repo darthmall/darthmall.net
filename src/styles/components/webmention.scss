@@ -1,28 +1,99 @@
-.webmention {
-	display: grid;
+@function corner($first, $second) {
+	@return #{1 + random($first)}rem #{1 + random($second)}rem;
+}
 
-	grid-auto-rows: min-content;
-	grid-template-areas:
-		"av . auth"
-		"av . body";
-	grid-template-columns: var(--icon-md) var(--space-fluid-sm) 1fr;
+@mixin corner-var($location, $first, $second) {
+	--#{$location}-radius: #{corner($first, $second)};
+}
 
-	.webmention__avatar {
-		grid-area: av;
-		background-color: var(--surface-2);
+@mixin blob {
+	border-top-left-radius: var(--top-left-radius, corner(8, 5));
+	border-top-right-radius: var(--top-right-radius, corner(4, 8));
+	border-bottom-left-radius: var(--bottom-left-radius, corner(8, 12));
+	border-bottom-right-radius: var(--bottom-right-radius, corner(7, 13));
+}
 
-		> img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
+$size: 4rem;
+
+@mixin css {
+	.webmention {
+		display: grid;
+
+		gap: var(--space-xs);
+		grid-template-areas:
+			"av auth"
+			"av body";
+		grid-template-columns: min-content 1fr;
+		grid-template-rows: min-content 1fr;
+
+		.webmention__avatar {
+			grid-area: av;
+			display: grid;
+			place-items: center;
+			grid-template-areas: "main";
+
+			height: $size;
+			width: $size;
+			padding: var(--space-s);
+
+			&::before,
+			&::after {
+				content: "";
+				display: block;
+				grid-area: main;
+
+				opacity: 0.4;
+				mix-blend-mode: multiply;
+
+				z-index: -1;
+			}
+
+			&::before {
+				@include blob;
+
+				left: -0.25rem;
+				top: 0;
+				height: $size - 0.75rem;
+				width: $size + 1rem;
+
+				transform: rotate(var(--rotate, 50deg));
+
+				background-color: var(--primary-1);
+			}
+
+			&::after {
+				@include blob;
+
+				left: 0.5rem;
+				top: -0.125rem;
+				height: $size + 0.25rem;
+				width: $size - 0.5rem;
+
+				transform: rotate(var(--rotate, -10deg));
+
+				background-color: var(--secondary-1);
+			}
+
+			.webmention__avatar--anonymous,
+			> img {
+				@include blob;
+
+				grid-area: main;
+				aspect-ratio: 1;
+				width: $size;
+
+				object-fit: cover;
+
+				background-color: var(--surface-1);
+			}
 		}
-	}
 
-	.webmention__author {
-		grid-area: auth;
-	}
+		.webmention__author {
+			grid-area: auth;
+		}
 
-	.webmention__body {
-		grid-area: body;
+		.webmention__body {
+			grid-area: body;
+		}
 	}
 }

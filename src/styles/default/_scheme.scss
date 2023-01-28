@@ -6,6 +6,7 @@
 	--text-2: var(--color-gray-5);
 	--text-3: var(--color-gray-4);
 	--primary-1: var(--color-magenta-1);
+	--secondary-1: var(--color-yellow-1);
 }
 
 @mixin dark {
@@ -16,10 +17,13 @@
 	--text-2: var(--color-gray-2);
 	--text-3: var(--color-gray-3);
 	--primary-1: var(--color-yellow-1);
+	--secondary-1: var(--color-magenta-1);
 }
 
 @mixin css {
-	:root {
+	:root,
+	*::after,
+	*::before {
 		@include light;
 
 		@media (prefers-color-scheme: dark) {

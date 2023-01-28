@@ -19,11 +19,12 @@ $size: 4rem;
 	.webmention {
 		display: grid;
 
-		grid-auto-rows: min-content;
+		gap: var(--space-xs);
 		grid-template-areas:
-			"av . auth"
-			"av . body";
-		grid-template-columns: var(--icon-md) var(--space-fluid-sm) 1fr;
+			"av auth"
+			"av body";
+		grid-template-columns: min-content 1fr;
+		grid-template-rows: min-content 1fr;
 
 		.webmention__avatar {
 			grid-area: av;

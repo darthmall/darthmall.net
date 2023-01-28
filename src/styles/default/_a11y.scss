@@ -1,5 +1,9 @@
 @mixin css {
-	:focus {
+	:focus:not(:focus-visible) {
+		outline: none;
+	}
+
+	:focus-visible {
 		outline: var(--space-xs) solid var(--text-1);
 		outline-offset: var(--space-xs);
 	}

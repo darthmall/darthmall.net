@@ -70,16 +70,16 @@
 	--measure-l: 72ch;
 	--measure-xl: 88ch;
 
-	--color-gray-1: "#ffffff";
-	--color-gray-2: "#eaeaea";
-	--color-gray-3: "#959595";
-	--color-gray-4: "#6d6d6d";
-	--color-gray-5: "#303030";
-	--color-gray-6: "#222222";
+	--color-gray-1: #ffffff;
+	--color-gray-2: #eaeaea;
+	--color-gray-3: #959595;
+	--color-gray-4: #6d6d6d;
+	--color-gray-5: #303030;
+	--color-gray-6: #222222;
 
-	--color-magenta-1: "#A3224D";
+	--color-magenta-1: #A3224D;
 
-	--color-yellow-1: "#ddad3f";
+	--color-yellow-1: #ddad3f;
 
 	/* @link https://utopia.fyi/space/calculator?c=320,16,1.125,1280,24,1.414,5,1,&s=0.75,1.5|2|3, */
 	--space-xs: clamp(0.75rem, calc(0.63rem + 0.63vw), 1.13rem);

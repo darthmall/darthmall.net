@@ -1,3 +1,9 @@
+function accessor(value) {
+	if (typeof value === "function") return value;
+
+	return (obj) => obj[value];
+}
+
 function* chain(...iterables) {
 	for (let i of iterables) {
 		for (let j of i) {

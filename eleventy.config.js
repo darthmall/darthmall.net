@@ -65,10 +65,10 @@ module.exports = function (config) {
 
   return {
     dir: {
-      input: "src/pages",
-      includes: "../includes",
-			layouts: "../layouts",
-      data: "../data",
+      input: "src",
+      includes: "_includes",
+			layouts: "_layouts",
+      data: "_data",
     },
     markdownTemplateEngine: "njk",
   };

@@ -1,6 +1,6 @@
 const Image = require("@11ty/eleventy-img");
 
-const siteMeta = require("../src/data/site.json");
+const siteMeta = require("../src/_data/site.json");
 
 function copyright() {
 	const now = new Date();

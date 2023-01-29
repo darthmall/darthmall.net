@@ -1,31 +1,44 @@
-@use "tokens";
-
-@mixin css {
-	.display-1 { @include tokens.display-1; }
-	.heading-1 { @include tokens.heading-1; }
-	.heading-2 { @include tokens.heading-2; }
-	.heading-3 { @include tokens.heading-3; }
-	.body-1 { @include tokens.body-1; }
-	.body-2 { @include tokens.body-2; }
-	.body-3 { @include tokens.body-3; }
-
-	.mbs-0 { margin-block-start: 0; }
-	.mbs-l { margin-block-start: var(--space-l) }
-
-	.mi-auto { margin-inline: auto }
-	.mie-auto { margin-inline-end: auto }
-
-	.pb-m { padding-block: var(--space-m) }
-	.pb-l { padding-block: var(--space-l) }
-
-	.aspect-square { aspect-ratio: 1 / 1 }
-
-	.shape-circle {
-		aspect-ratio: 1 / 1;
-		border-radius: 50%;
-		overflow: hidden;
-	}
-
-	.flex-grow { flex-grow: 1; }
-	.flex-hulk { flex-grow: 99; }
+.display-1 {
+	font: var(--display-1);
 }
+
+.heading-1 {
+	font: var(--heading-1);
+	font-feature-settings: var(--heading-1-features);
+}
+.heading-2 {
+	font: var(--heading-2);
+	font-feature-settings: var(--heading-2-features);
+}
+.heading-3 {
+	font: var(--heading-3);
+	font-feature-settings: var(--heading-3-features);
+}
+.heading-4 {
+	font: var(--heading-4);
+	font-feature-settings: var(--heading-4-features);
+}
+
+.body-1 { font: var(--body-1); }
+.body-2 { font: var(--body-2); }
+.body-3 { font: var(--body-3); }
+
+.mbs-0 { margin-block-start: 0; }
+.mbs-l { margin-block-start: var(--space-l) }
+
+.mi-auto { margin-inline: auto }
+.mie-auto { margin-inline-end: auto }
+
+.pb-m { padding-block: var(--space-m) }
+.pb-l { padding-block: var(--space-l) }
+
+.aspect-square { aspect-ratio: 1 / 1 }
+
+.shape-circle {
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	overflow: clip;
+}
+
+.flex-grow { flex-grow: 1; }
+.flex-hulk { flex-grow: 99; }

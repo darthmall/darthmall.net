@@ -7,11 +7,13 @@ const anchor = require('markdown-it-anchor');
 
 const collections = require('./utils/collections.js');
 const filters = require('./utils/filters.js');
+const lightningcss = require('./utils/lightningcss.js');
 const shortcodes = require('./utils/shortcodes.js');
 const transforms = require('./utils/transforms.js');
 
 module.exports = function (config) {
   // Plugins
+  config.addPlugin(lightningcss);
   config.addPlugin(pluginRss);
   config.addPlugin(syntaxHighlight, {
     templateFormats: ["njk", "md"],

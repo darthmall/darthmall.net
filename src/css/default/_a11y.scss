@@ -1,0 +1,33 @@
+@mixin css {
+	:focus:not(:focus-visible) {
+		outline: none;
+	}
+
+	:focus-visible {
+		outline: 0.25rem solid var(--text-1);
+		outline-offset: 0.25rem;
+	}
+
+	[href="#Skip"] {
+		position: absolute;
+		left: 50%;
+		top: 0;
+		transform: translate(-50%, -100%);
+		border-radius: 4px;
+		padding: var(--space-xs) var(--space-s);
+		background-color: var(--surface-2);
+		text-decoration: none;
+		opacity: 0;
+		transition-property: top, transform, opacity;
+		transition-duration: 300ms;
+		transition-timing-function: ease;
+
+		&:focus {
+			outline: var(--space-xs) solid var(--primary-1);
+			outline-offset: 0;
+			transform: translate(-50%, 0);
+			top: var(--space-m);
+			opacity: 1;
+		}
+	}
+}

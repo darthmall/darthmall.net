@@ -37,13 +37,13 @@ h1 {
 	word-break: break-word;
 }
 h2 {
-	font: var(--heading-1);
-	font-feature-settings: var(--heading-1-features);
+	font: var(--heading-2);
+	font-feature-settings: var(--heading-2-features);
 }
 
 h3 {
-	font: var(--heading-2);
-	font-feature-settings: var(--heading-2-features);
+	font: var(--heading-3);
+	font-feature-settings: var(--heading-3-features);
 }
 
 h4 {

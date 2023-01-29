@@ -3,7 +3,9 @@ const { statSync } = require("node:fs");
 
 const browserslist = require("browserslist");
 const debug = require("debug")("Styles");
-const { bundleAsync, browserslistToTargets } = require("lightningcss");
+const { bundleAsync, browserslistToTargets, transform } = require("lightningcss");
+
+const targets = browserslistToTargets(browserslist("defaults"));
 
 module.exports = function(eleventyConfig) {
 	eleventyConfig.addTemplateFormats("css");
@@ -20,8 +22,6 @@ module.exports = function(eleventyConfig) {
 			// Track imported CSS files to inform Eleventy of dependencies that should
 			// trigger a rebuild of this file when running with --incremental.
 			const dependencies = new Set();
-
-			const targets = browserslistToTargets(browserslist("defaults"));
 
 			let result;
 			try {
@@ -60,5 +60,28 @@ module.exports = function(eleventyConfig) {
 
 			return () => result?.code.toString();
 		}
+	});
+
+	eleventyConfig.addPairedShortcode("style", function(content, bucket = "default") {
+		const result = transform({
+			code: Buffer.from(content),
+			minify: true,
+			drafts: {
+				nesting: true,
+			},
+			targets,
+		});
+
+		if (!this.page.style) {
+			this.page.style = {};
+		}
+
+		if (!this.page.style[bucket]) {
+			this.page.style[bucket] = "";
+		}
+
+		this.page.style[bucket] += result.code.toString("utf8");
+
+		return "";
 	});
 };

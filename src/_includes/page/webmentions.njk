@@ -1,6 +1,89 @@
 {% set target %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
 {% set mentions = webmentions | webmentionsForUrl(target) %}
 
+{% style "component" %}
+.webmention {
+	&, *::after, *::before {
+		--_size: 4rem;
+	}
+
+	display: grid;
+
+	gap: var(--space-xs);
+	grid-template-areas:
+		"av auth"
+		"av body";
+	grid-template-columns: min-content 1fr;
+	grid-template-rows: min-content 1fr;
+
+	.webmention__avatar {
+		grid-area: av;
+		display: grid;
+		place-items: center;
+		grid-template-areas: "main";
+
+		height: var(--_size);
+		width: var(--_size);
+		padding: var(--space-s);
+
+		&::before,
+		&::after {
+			content: "";
+			display: block;
+			grid-area: main;
+
+			opacity: 0.4;
+			mix-blend-mode: multiply;
+
+			z-index: -1;
+		}
+
+		&::before {
+			{% blob %}
+
+			height: calc(var(--_size) - 0.75rem);
+			width: calc(var(--_size) + 1rem);
+
+			transform: rotate(var(--rotate, 50deg));
+
+			background-color: var(--primary-1);
+		}
+
+		&::after {
+			{% blob %}
+
+			height: calc(var(--_size) + 0.25rem);
+			width: calc(var(--_size) - 0.5rem);
+
+			transform: rotate(var(--rotate, -10deg));
+
+			background-color: var(--secondary-1);
+		}
+
+		.webmention__avatar--anonymous,
+		> img {
+			{% blob %}
+
+			grid-area: main;
+			aspect-ratio: 1;
+			width: calc(var(--_size) - 0.5rem);
+
+			object-fit: cover;
+
+			background-color: var(--surface-1);
+		}
+	}
+
+	.webmention__author {
+		grid-area: auth;
+	}
+
+	.webmention__body {
+		grid-area: body;
+	}
+}
+{% endstyle %}
+
 <div class="pb-l" data-layout="center">
   <aside class="flow type-body-4">
     <h2>Webmentions</h2>

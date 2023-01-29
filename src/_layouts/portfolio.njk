@@ -1,12 +1,5 @@
 {% extends "./base.njk" %}
 
-{% block head %}
-	{{ super() }}
-	<style>
-		@import "/css/components/project-summary.css" layer(block);
-	</style>
-{% endblock %}
-
 {# FIXME: Getting some errors from LightningCSS about this
 {% style %}
 [class~=project-summary] {

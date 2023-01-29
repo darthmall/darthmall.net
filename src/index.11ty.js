@@ -12,7 +12,20 @@ class HomePage {
 	}
 
 	render() {
-		return `<p><a href="/weblog/">More Posts &Rarr;</a></p>`;
+		this.style(`.more-posts > .arrow {
+				display: inline-block;
+				transition: transform 500ms ease;
+			}
+			.more-posts:hover > .arrow {
+				transform: translateX(0.5ch);
+			}`);
+
+		return `<p>
+			<a class=more-posts href="/weblog/">
+				More Posts
+				<span class=arrow aria-hidden=true>&Rarr;</span>
+			</a>
+		</p>`;
 	}
 }
 

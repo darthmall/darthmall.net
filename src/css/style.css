@@ -1,5 +1,5 @@
 @layer reset, base, layout, component, utility;
 
-@import "reset" layer(reset);
-@import "base" layer(base);
-@import "layout" layer(layout);
+@import "reset/_index.css" layer(reset);
+@import "base/_index.css" layer(base);
+@import "layout/_index.css" layer(layout);

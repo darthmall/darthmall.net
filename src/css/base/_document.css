@@ -1,0 +1,152 @@
+body {
+	font: var(--body-2);
+
+	background: var(--surface-1);
+	color: var(--text-1);
+
+	/* Prevent scrollbars (especially on windows) when setting inline-size to
+	 * 100vw to achive full-bleed or other breakout effects in the layout.
+	 */
+	overflow-x: hidden;
+
+	> header {
+		--space: var(--space-s);
+		--link-decoration: none;
+	}
+}
+
+header a[href="/"] {
+	background-image: url("/img/evan-alt-64.jpg");
+	background-size: cover;
+
+	&:hover > * {
+		opacity: 0;
+	}
+}
+
+header nav a {
+	border-bottom: 0.125em solid transparent;
+
+	&[aria-current] {
+		border-color: var(--primary-1);
+	}
+}
+
+h1 { font: var(--heading-1); }
+h2 { font: var(--heading-2); }
+h3 { font: var(--heading-3); }
+h4 {
+	font: var(--heading-3);
+	color: var(--text-2);
+}
+
+h1, h2, h3, h4 { --link-decoration: none; }
+
+footer svg {
+	height: var(--icon-m);
+}
+
+hr {
+	border: none;
+	border-block-start: 1px solid var(--text-1);
+}
+
+li,
+p {
+	box-sizing: content-box;
+	max-width: var(--measure-m);
+}
+
+h2,
+h3,
+h4,
+* + p {
+	margin-block-start: 1em;
+}
+
+h4 + p {
+	margin-block-start: 0.25em;
+}
+
+li + li {
+	margin-block-start: 0.5em;
+}
+
+ol, ul {
+	margin-block: var(--space-m);
+}
+
+aside,
+blockquote,
+figure,
+hr {
+	margin-block: 2em;
+}
+
+aside {
+	border-block: 1px solid var(--color-gray-3);
+	padding: var(--space-l);
+}
+
+aside,
+figcaption,
+.footnotes {
+	font: var(--body-3);
+
+	& p {
+		max-width: var(--measure-l);
+	}
+}
+
+figure {
+	--_size: min(100vw, var(--measure-lg));
+
+	box-sizing: border-box;
+	inline-size: var(--_size);
+	margin-inline-start: calc((100% - var(--_size)) / 2);
+}
+
+figcaption {
+	margin-block-start: var(--space-s);
+	padding-inline: var(--site-margin);
+	text-align: center;
+	color: var(--text-2);
+}
+
+blockquote {
+	margin-inline: auto;
+	border: 0.25em double var(--surface-3);
+	padding: var(--space-m);
+}
+
+pre {
+	padding: var(--space-m);
+	overflow-x: auto;
+
+	& code {
+		padding: 0;
+	}
+}
+
+code {
+	font-family: var(--font-mono);
+	border-radius: 0.125em;
+	padding: 0.125em;
+}
+
+sup {
+	/* FIXME: Epilogue has a nice superscript feature that I'd like to turn on,
+	 * but I need to figure out which browser styles to disable to make it work.
+	 * For now I'll just set the line-height to 1 to fix the vertical rhythm in
+	 * paragraphs
+	 */
+	/* font-feature-settings: "sups" on; */
+	line-height: 1;
+}
+
+/* FIXME: This seems like it's either part of the utilities, or an exception. */
+[class*="aspect-"] > iframe {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}

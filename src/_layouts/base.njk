@@ -19,6 +19,13 @@
     <link rel="stylesheet" media="print" href="/css/print.css">
     <script src="/js/theme.js"></script>
   {% endblock %}
+  <style>
+    {% for bucket, style in page.style %}
+    @layer {{ bucket }} {
+      {{ style | safe }}
+    }
+    {% endfor %}
+  </style>
 </head>
 
 <body>

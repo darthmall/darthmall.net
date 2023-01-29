@@ -107,6 +107,9 @@
 	--text-3: var(--color-gray-4);
 	--primary-1: var(--color-magenta-1);
 	--secondary-1: var(--color-yellow-1);
+
+	--site-margin: var(--space-s);
+	--icon-m: var(--font-size-1);
 }
 
 [data-theme=light] {

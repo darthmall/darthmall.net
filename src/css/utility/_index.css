@@ -32,6 +32,8 @@
 .pb-m { padding-block: var(--space-m) }
 .pb-l { padding-block: var(--space-l) }
 
+.p-0 { padding: 0 }
+
 .aspect-square { aspect-ratio: 1 / 1 }
 
 .shape-circle {

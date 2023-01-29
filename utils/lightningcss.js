@@ -62,7 +62,9 @@ module.exports = function(eleventyConfig) {
 		}
 	});
 
-	eleventyConfig.addPairedShortcode("style", function(content, bucket = "default") {
+	eleventyConfig.addPairedShortcode("style", function(content, bucket = "page") {
+		debug("style shortcode");
+
 		const result = transform({
 			code: Buffer.from(content),
 			minify: true,

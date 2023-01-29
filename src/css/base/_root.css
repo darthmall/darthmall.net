@@ -24,9 +24,9 @@
 }
 
 :root {
-	--font-body: "Epilogue, sans-serif";
-	--font-display: "'Sporting Grotesque', sans-serif";
-	--font-mono: "ui-monospace, monospace";
+	--font-body: Epilogue, sans-serif;
+	--font-display: "Sporting Grotesque", sans-serif;
+	--font-mono: ui-monospace, monospace;
 
 	/* @link https://utopia.fyi/type/calculator?c=320,16,1.25,1280,24,1.618,4,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
 	--font-size--1: clamp(0.8rem, calc(0.76rem + 0.21vw), 0.93rem);
@@ -45,24 +45,24 @@
 	--line-height-s: 1.15;
 	--line-height-m: 1.5;
 
-	--display-1: bold var(--font-size-4) var(--line-height-xs) var(--font-display);
+	--display-1: bold var(--font-size-4)/var(--line-height-xs) var(--font-display);
 
-	--heading-1: var(--font-weight-black) var(--font-size-2) var(--line-height-s)
+	--heading-1: var(--font-weight-black) var(--font-size-2)/var(--line-height-s)
 		var(--font-body);
 	--heading-1-features: "ss01";
-	--heading-2: var(--font-weight-black) var(--font-size-1) var(--line-height-s)
+	--heading-2: var(--font-weight-black) var(--font-size-1)/var(--line-height-s)
 		var(--font-body);
 	--heading-2-features: "ss01";
-	--heading-3: var(--font-weight-black) var(--font-size-0) var(--line-height-s)
+	--heading-3: var(--font-weight-black) var(--font-size-0)/var(--line-height-s)
 		var(--font-body);
 	--heading-3-features: "ss01";
 
 	--body-1: var(--text-style, normal) var(--font-weight-regular)
-		var(--font-size-1) var(--line-height-s) var(--font-body);
+		var(--font-size-1)/var(--line-height-s) var(--font-body);
 	--body-2: var(--text-style, normal) var(--font-weight-regular)
-		var(--font-size-2) var(--line-height-m) var(--font-body);
+		var(--font-size-2)/var(--line-height-m) var(--font-body);
 	--body-3: var(--text-style, normal) var(--font-weight-semi-bold)
-		var(--font-size--1) var(--line-height-m) var(--font-body);
+		var(--font-size--1)/var(--line-height-m) var(--font-body);
 
 	--measure-xs: 34ch;
 	--measure-s: 42ch;

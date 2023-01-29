@@ -1,4 +1,8 @@
-{% extends "./base.njk" %}
+---
+layout: base.njk
+---
+
+{% import "components.njk" as components %}
 
 {# FIXME: Getting some errors from LightningCSS about this
 {% style %}
@@ -144,12 +148,10 @@
 {% endstyle %}
 #}
 
-{% block content %}
-	<div class="flow mbs-l" style="--space:var(--space-xl)">
-		{% for project in collections.portfolio %}
-			{% call components.projectSummary(project.data) %}
-				{{ project.templateContent | safe }}
-			{% endcall %}
-		{% endfor %}
-	</div>
-{% endblock %}
+<div class="flow mbs-l" style="--space:var(--space-xl)">
+	{% for project in collections.portfolio %}
+		{% call components.projectSummary(project.data) %}
+			{{ project.templateContent | safe }}
+		{% endcall %}
+	{% endfor %}
+</div>

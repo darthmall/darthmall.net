@@ -1,4 +1,6 @@
-{% extends "./base.njk" %}
+---
+layout: base.njk
+---
 
 {% style %}
 .webmention {
@@ -83,7 +85,6 @@
 }
 {% endstyle %}
 
-{% block main %}
 <main class="h-entry">
   {% include "page/header.njk" %}
   {% include "components/theme-toggle.njk" %}
@@ -100,4 +101,3 @@
 
 	{% include "page/webmentions.njk" %}
 </main>
-{% endblock %}

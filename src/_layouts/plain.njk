@@ -1,6 +1,7 @@
-{% extends "./base.njk" %}
+---
+layout: base.njk
+---
 
-{% block main %}
 <main>
 	{% include "page/header.njk" %}
 	<div data-layout="center">
@@ -8,4 +9,3 @@
 		{{ content | safe }}
 	</div>
 </main>
-{% endblock %}

@@ -6,6 +6,151 @@
 		@import "/css/components/project-summary.css" layer(block);
 	</style>
 {% endblock %}
+
+{# FIXME: Getting some errors from LightningCSS about this
+{% style %}
+[class~=project-summary] {
+	display: flex;
+	flex-direction: column;
+	padding-inline: var(--site-margin);
+
+	& .project-summary__container {
+		display: grid;
+		gap: var(--space-m) var(--space-l);
+		grid-auto-rows: min-content;
+		grid-template-areas:
+			"media"
+			"header"
+			"body";
+		margin-left: auto;
+		margin-right: auto;
+		width: min(100%, var(--space-max-site));
+	}
+
+	& .project-summary__header {
+		grid-area: header;
+		line-height: var(--line-height-sm);
+		padding-block-start: var(--space-xs);
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 4px;
+			width: 8ch;
+			background-color: var(--color-1);
+		}
+	}
+
+	& .project-summary__body {
+		columns: var(--measure-xs) auto;
+		gap: var(--space-m);
+		grid-area: body;
+
+		& > * + * {
+			margin-top: 1em;
+		}
+	}
+
+	& .project-summary__media {
+		grid-area: media;
+	}
+
+	& img {
+		box-shadow: 0 0 var(--space-m) rgba(0, 0, 0, 0.2);
+		max-height: 95vh;
+	}
+}
+
+.project-summary--dorian {
+	& .project-summary__media {
+		justify-self: center;
+	}
+
+	& .project-summary__header,
+	& .project-summary__body {
+		box-sizing: content-box;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: var(--measure-l);
+		width: 100%;
+	}
+}
+
+// FIXME: this needs to match the space-max-site token, but you can't use
+// custom props in media queries
+@media (min-width: 80em) {
+	.project-summary--ionian .project-summary__container {
+		grid-template-areas:
+			"media header"
+			"media body";
+		grid-template-columns:
+			minmax(auto, max-content)
+			var(--measure-s);
+		grid-template-rows: min-content 1fr;
+	}
+
+	.project-summary--phrygian {
+		& .project-summary__container {
+			display: block;
+		}
+
+		& .project-summary__header {
+			float: left;
+			margin-block-end: var(--space-m);
+			margin-block-start: var(--space-l);
+		}
+
+		& .project-summary__media {
+			float: right;
+			margin-inline-start: var(--space-l);
+			margin-block-end: var(--space-l);
+			max-width: calc(100% - var(--measure-s) - var(--space-l));
+		}
+
+		& .project-summary__body {
+			display: contents;
+
+			& > * {
+				clear: left;
+				max-width: var(--measure-l);
+			}
+		}
+	}
+}
+
+.project-summary--lydian {
+	background-color: var(--surface-2);
+	color: var(--text-2);
+	padding-block: var(--space-xl);
+	text-align: center;
+
+	& .project-summary__media,
+	& .project-summary__body {
+		justify-self: center;
+	}
+
+	& .project-summary__header {
+		& p {
+			max-width: unset;
+			color: var(--text-2);
+		}
+
+		&::before {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
+	& .project-summary__body {
+		width: min(100%, var(--measure-m));
+	}
+}
+{% endstyle %}
+#}
+
 {% block content %}
 	<div class="flow mbs-l" style="--space:var(--space-xl)">
 		{% for project in collections.portfolio %}

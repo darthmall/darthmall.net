@@ -4,8 +4,9 @@ html {
 }
 
 h1 {
-	// Some additional padding for Sporting Grotesque to keep it from getting
-	// clipped.
+	/* Some additional padding for Sporting Grotesque to keep it from getting
+	 * clipped.
+	 */
 	padding-top: 0.125em;
 }
 p {

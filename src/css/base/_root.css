@@ -23,7 +23,9 @@
 	font-display: swap;
 }
 
-:root {
+:root,
+*::after,
+*::before {
 	--font-body: Epilogue, sans-serif;
 	--font-display: "Sporting Grotesque", sans-serif;
 	--font-mono: ui-monospace, monospace;

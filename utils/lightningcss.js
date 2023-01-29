@@ -63,7 +63,8 @@ module.exports = function(eleventyConfig) {
 	});
 
 	eleventyConfig.addPairedShortcode("style", function(content, bucket = "page") {
-		debug("style shortcode");
+		debug("style shortcode: %s", bucket);
+		debug("page: %o", this.page);
 
 		const result = transform({
 			code: Buffer.from(content),

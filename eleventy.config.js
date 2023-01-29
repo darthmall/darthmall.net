@@ -5,6 +5,7 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const markdownIt = require('markdown-it');
 const anchor = require('markdown-it-anchor');
 
+const blob = require("./utils/blob.js");
 const collections = require('./utils/collections.js');
 const filters = require('./utils/filters.js');
 const lightningcss = require('./utils/lightningcss.js');
@@ -39,6 +40,8 @@ module.exports = function (config) {
       config.addShortcode(shortcodeName, fn);
     }
   });
+
+  config.addShortcode("blob", blob);
 
   // Transforms
   Object.keys(transforms).forEach((transformName) => {

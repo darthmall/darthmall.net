@@ -1,4 +1,5 @@
 @layer reset, base, layout, component, utility;
 
 @import "reset" layer(reset);
+@import "base" layer(base);
 @import "layout" layer(layout);

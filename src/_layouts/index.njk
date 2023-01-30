@@ -9,23 +9,23 @@ layout: base.njk
 
 	> .title {
 		margin: 0;
-	}
 
-	> .title::after {
-		content: "\21A0";
-		display: inline-block;
+		&::after {
+			content: "\21A0";
+			display: inline-block;
 
-		color: var(--link-hover-color);
-		opacity: 0;
+			color: var(--link-hover-color);
+			opacity: 0;
 
-		transition-property: transform, opacity;
-		transition-duration: 300ms;
-		transition-timing-function: ease;
-	}
+			transition-property: transform, opacity;
+			transition-duration: 300ms;
+			transition-timing-function: ease;
+		}
 
-	> .title:hover::after {
-		opacity: 1;
-		transform: translateX(0.5ch);
+		&:is(:hover, :focus-within)::after {
+			opacity: 1;
+			transform: translateX(0.5ch);
+		}
 	}
 
 	> time {

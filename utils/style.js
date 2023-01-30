@@ -54,6 +54,7 @@ module.exports = function(eleventyConfig) {
 				});
 			} catch (error) {
 				debug("Error parsing '%s': %o", inputPath, error);
+				throw error;
 			}
 
 			this.addDependencies(inputPath, Array.from(dependencies));

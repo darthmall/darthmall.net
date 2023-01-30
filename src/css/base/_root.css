@@ -112,6 +112,9 @@
 
 	--site-margin: var(--space-s);
 	--icon-m: var(--font-size-1);
+
+	--link-visited-color: var(--text-1);
+	--link-hover-color: var(--primary-1);
 }
 
 @media (prefers-color-scheme: dark) {

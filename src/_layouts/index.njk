@@ -1,0 +1,43 @@
+---
+layout: base.njk
+---
+
+{% style "page" %}
+.post-block {
+	display: flex;
+	flex-direction: column;
+
+	> .title {
+		margin: 0;
+	}
+
+	> time {
+		order: -1;
+		line-height: 1;
+
+		&::before {
+			display: inline-block;
+			content: "";
+
+			height: 2px;
+			width: 1.5ch;
+			margin-inline-end: 1ch;
+			margin-block-end: 0.325em;
+
+			background-color: var(--color-gray-3);
+		}
+	}
+}
+{% endstyle %}
+
+<main class="flow mbs-l h-feed" data-layout="center">
+	{% for page in pageList %}
+		<article class="post-block h-entry">
+			<h2 class="title">
+				<a href="{{ page.url }}" class="p-name">{{ page.data.title | safe }}</a>
+			</h2>
+			{% pubDate page.date %}
+		</article>
+	{% endfor %}
+	{{ content | safe }}
+</main>

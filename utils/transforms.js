@@ -5,10 +5,6 @@ function formatHtml(content, outputPath) {
 		return prettier.format(content, { parser: "html" });
 	}
 
-	if (outputPath.endsWith(".css")) {
-		return prettier.format(content, { parser: "css" });
-	}
-
 	return content;
 }
 

@@ -4,16 +4,17 @@ const pluginRss = require('@11ty/eleventy-plugin-rss');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const markdownIt = require('markdown-it');
 const anchor = require('markdown-it-anchor');
-const jsonImporter = require('node-sass-json-importer');
-const sass = require('sass');
 
+const blob = require("./utils/blob.js");
 const collections = require('./utils/collections.js');
 const filters = require('./utils/filters.js');
+const style = require('./utils/style.js');
 const shortcodes = require('./utils/shortcodes.js');
 const transforms = require('./utils/transforms.js');
 
 module.exports = function (config) {
   // Plugins
+  config.addPlugin(style);
   config.addPlugin(pluginRss);
   config.addPlugin(syntaxHighlight, {
     templateFormats: ["njk", "md"],
@@ -39,6 +40,8 @@ module.exports = function (config) {
       config.addShortcode(shortcodeName, fn);
     }
   });
+
+  config.addShortcode("blob", blob);
 
   // Transforms
   Object.keys(transforms).forEach((transformName) => {
@@ -67,10 +70,10 @@ module.exports = function (config) {
 
   return {
     dir: {
-      input: "src/pages",
-      includes: "../includes",
-			layouts: "../layouts",
-      data: "../data",
+      input: "src",
+      includes: "_includes",
+			layouts: "_layouts",
+      data: "_data",
     },
     markdownTemplateEngine: "njk",
   };

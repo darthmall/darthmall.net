@@ -36,7 +36,7 @@ program
 		const subdir = new Date().getFullYear().toString();
 		const slug = slugify(title);
 		const tmpl = postTemplate(title);
-		const dir = `src/pages/weblog/${subdir}`;
+		const dir = `src/weblog/${subdir}`;
 		const file = `${dir}/${slug}.md`;
 
 		if (fs.existsSync(file)) {

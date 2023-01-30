@@ -52,7 +52,7 @@
 			});
 
 		document
-			.querySelectorAll('link[href*="themes/prism"]')
+			.querySelectorAll('link[href*="/css/prism"]')
 			.forEach(function (link) {
 				const media = link.getAttribute("media");
 

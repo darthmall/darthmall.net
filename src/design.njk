@@ -1,0 +1,63 @@
+---
+title: Design
+eleventyExcludeFromCollections: true
+---
+
+{% extends "./_layouts/base.njk" %}
+
+{% block head %}
+	{{ super() }}
+<style>
+	body {
+		padding-inline: clamp(1em, 5vw, 4em);
+	}
+
+	p, li, blockquote, figcaption {
+		max-width: 66ch;
+	}
+</style>
+{% endblock %}
+
+{% block body %}
+	<h1>Design</h1>
+
+	<p class="body-1">Design tokens for <a href="/">darthmall.net</a>.</p>
+
+	<article>
+		<h2>Type</h2>
+
+		<p><a href="https://darthmall.net/">darthmall.net</a> uses two font
+			families: <a
+				href="https://velvetyne.fr/fonts/sporting-grotesque/">Sporting
+				Grotesque</a> for display text and <a
+				href="https://www.etceteratype.co/epilogue">Epilogue</a> for headings
+		and body text.</p>
+
+		<p>The <a
+				href="https://utopia.fyi/type/calculator?c=320,16,1.25,1280,24,1.618,4,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l">type
+				scale</a> comes from Utopia.fyi. It uses a ratio of 1.25 for the
+			smallest scale starting from a viewport width of 320px and grows to a
+			ratio of 1.618 at 1280px. There are six steps in the scale, the largest
+		of which is reserved for display text.</p>
+
+		<h3>Display</h3>
+		<p class="body-3"><strong>display-1</strong></p>
+		<p class="display-1 mbs-0">The Brilliance of Terry Pratchett</p>
+
+		<h3>Headings</h3>
+		<p class="body-3"><strong>heading-1</strong></p>
+		<p class="heading-1 mbs-0" style="overflow-wrap: break-word">The Brilliance of Terry Pratchett</p>
+		<p class="body-3"><strong>heading-2</strong></p>
+		<p class="heading-2 mbs-0">The Brilliance of Terry Pratchett</p>
+		<p class="body-3"><strong>heading-3</strong></p>
+		<p class="heading-3 mbs-0">The Brilliance of Terry Pratchett</p>
+
+		<h3>Body</h3>
+		<p class="body-3"><strong>body-1</strong></p>
+		<p class="body-1 mbs-0">I think it’s hard to overstate the brilliance of Sir Terry Pratchett, although it may have been easy to miss because you were so busy laughing.</p>
+		<p class="body-3"><strong>body-2</strong></p>
+		<p class="body-2 mbs-0">I think it’s hard to overstate the brilliance of Sir Terry Pratchett, although it may have been easy to miss because you were so busy laughing.</p>
+		<p class="body-3"><strong>body-3</strong></p>
+		<p class="body-3 mbs-0">I think it’s hard to overstate the brilliance of Sir Terry Pratchett, although it may have been easy to miss because you were so busy laughing.</p>
+	</article>
+{% endblock %}

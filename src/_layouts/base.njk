@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="generator" content="{{ eleventy.generator }}">
+
+  {% include "head/meta-info.njk" %}
+
+  <link rel="preload" href="/fonts/SportingGrotesque-Bold-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/Epilogue[slnt,wght]-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <style>@layer reset, base, layout, component, page, utility, preference;</style>
+
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="/css/print.css" rel="stylesheet" media="print">
+  <link href="/css/prism.css" rel="stylesheet" media="(prefers-color-scheme: light)">
+  <link href="/css/prism-tomorrow.css" rel="stylesheet" media="(prefers-color-scheme: dark)">
+
+  <script src="/js/theme.js"></script>
+  <style>
+    {% for bucket, style in page.style %}
+    @layer {{ bucket }} {
+      {{ style | safe }}
+    }
+    {% endfor %}
+  </style>
+</head>
+
+<body>
+  {% include "site/header.njk" %}
+
+  {{ content | safe }}
+
+  {% include "site/footer.njk" %}
+</body>
+</html>

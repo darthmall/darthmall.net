@@ -1,18 +1,14 @@
 a {
-	--color: var(--text-1);
-	--visited-color: var(--text-1);
-	--hover-color: var(--primary-1);
-
 	text-decoration: var(--link-decoration, underline);
 	text-underline-offset: 0.125em;
-	color: var(--color);
+	color: var(--link-color, inherit);
 	transition: color 150ms linear;
 
 	&:hover {
-		color: var(--hover-color);
+		color: var(--link-hover-color);
 	}
 
 	&:visited:not(:hover) {
-		color: var(--visited-color);
+		color: var(--link-visited-color);
 	}
 }

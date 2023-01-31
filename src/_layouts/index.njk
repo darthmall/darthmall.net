@@ -9,6 +9,24 @@ layout: base.njk
 
 	> .title {
 		margin: 0;
+
+		> .arrow {
+			position: relative;
+			left: 0;
+			display: inline;
+
+			color: var(--link-hover-color);
+			opacity: 0;
+
+			transition-property: left, opacity;
+			transition-duration: 300ms;
+			transition-timing-function: ease;
+		}
+
+		&:is(:hover, :focus-within) > .arrow {
+			opacity: 1;
+			left: 0.5ch;
+		}
 	}
 
 	> time {
@@ -34,7 +52,9 @@ layout: base.njk
 	{% for page in pageList %}
 		<article class="post-block h-entry">
 			<h2 class="title">
-				<a href="{{ page.url }}" class="p-name">{{ page.data.title | safe }}</a>
+				<a href="{{ page.url }}" class="p-name"
+				>{{ page.data.title | safe }}</a><span
+				class=arrow aria-hidden=true>&Rarr;</span>
 			</h2>
 			{% pubDate page.date %}
 		</article>

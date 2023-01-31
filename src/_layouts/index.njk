@@ -11,19 +11,21 @@ layout: base.njk
 		margin: 0;
 
 		> .arrow {
-			display: inline-block;
+			position: relative;
+			left: 0;
+			display: inline;
 
 			color: var(--link-hover-color);
 			opacity: 0;
 
-			transition-property: transform, opacity;
+			transition-property: left, opacity;
 			transition-duration: 300ms;
 			transition-timing-function: ease;
 		}
 
 		&:is(:hover, :focus-within) > .arrow {
 			opacity: 1;
-			transform: translateX(0.5ch);
+			left: 0.5ch;
 		}
 	}
 
@@ -51,7 +53,7 @@ layout: base.njk
 		<article class="post-block h-entry">
 			<h2 class="title">
 				<a href="{{ page.url }}" class="p-name"
-				>{{ page.data.title | safe }}</a>&#xFEFF;<span
+				>{{ page.data.title | safe }}</a><span
 				class=arrow aria-hidden=true>&Rarr;</span>
 			</h2>
 			{% pubDate page.date %}

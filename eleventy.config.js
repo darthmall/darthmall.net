@@ -48,6 +48,11 @@ module.exports = function (config) {
     config.addTransform(transformName, transforms[transformName]);
   });
 
+	config.setFrontMatterParsingOptions({
+		excerpt: true,
+		excerpt_separator: "<!-- excerpt -->",
+	});
+
   // Markdown
   const md = markdownIt({
       html: true,

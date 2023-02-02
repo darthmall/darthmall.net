@@ -25,9 +25,10 @@
   <meta property="og:image:alt" content="{{ coverAlt or '' }}">
   <meta property="twitter:image:alt" content="{{ coverAlt or '' }}">
 {% endif %}
-<meta property="description" content="{{ description or site.description }}">
-<meta property="og:description" content="{{ description or site.description }}">
-<meta property="twitter:description" content="{{ description or site.description }}">
+{% set desc = description or page.excerpt or site.description %}
+<meta property="description" content="{{ desc }}">
+<meta property="og:description" content="{{ desc }}">
+<meta property="twitter:description" content="{{ desc }}">
 
 {% if seo.image %}
   <meta property="og:image" content="{{ site.url }}{{ seo.image }}">

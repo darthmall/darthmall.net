@@ -57,7 +57,7 @@ If we take it for granted that our job as web developers is to create fast, reli
 If we can find ways to make it easier to build fast, reliable, responsive, accessible websites, then perhaps we can actually improve UX by improving DX.
 
 For example, [Islands Architecture](https://www.patterns.dev/posts/islands-architecture/) is a pattern that can meaningfully improve UX for a lot of websites.
-You use JavaScript only for small pockets of interactivity.
+You use JavaScript only for small pockets of interactivity, so one JavaScript error won’t tank the whole site.
 JavaScript is only loaded when it’s needed, so you can save bandwidth and render the site faster.
 Of course setting it up is a little more work because you can’t just drop a script tag to your whole JavaScript bundle in the `<head>` of your website.
 
@@ -69,16 +69,17 @@ Still, `<is-land>` is an example of making a hard programming problem easier to 
 ## Context Matters
 
 Good user experience is contextual.
-What makes for a good experience on the [Science On a Sphere](https://sos.noaa.gov/) website is not the same thing that makes for a good experience on Zoom.
-Part of what I think went wrong with the mass adoption of these client-side JavaScript frameworks is that the problems they’re meant to solve aren’t problems that needed solving on many of the websites that adopted them.[^2]
+What makes for a good experience on the [Science On a Sphere](https://sos.noaa.gov/) website is not the same thing that makes for a good experience on Zoom.[^2]
+Part of what I think went wrong with the mass adoption of these client-side JavaScript frameworks is that the problems they’re meant to solve aren’t problems that needed solving on many of the websites that adopted them.[^3]
 In fact, the solutions they provided were actually often problems in the contexts in which they were used.
 
 Perhaps developer experience, like user experience, is not universal.
 When a tool claims it has good developer experience, maybe we should get in the habit of asking, “which experiences?”
 If a tool helps you solve problems you don’t even have, is it really a better experience?
 
-Figure out what it takes to provide good experiences for your users[^3] and only then can you know how to improve your developer experience to benefit your users.
+Figure out what it takes to provide good experiences for your users[^4] and only then can you know how to improve your developer experience to benefit your users.
 
 [^1]: It’s kind of like trickle down economics for software developers.
-[^2]: It has been said many times that React was developed to solve Facebook’s problems. Very, very few websites have Facebook’s problems.
-[^3]: I mean actually figure it out. Do some user research. Do some testing. Don’t just assume that using JavaScript to load JSON is going to be a better experience than letting the browser fetch and render a new HTML document.
+[^2]: Don’t make this about websites <i>vs.</i> webapps. It doesn’t matter if you think you think you’re buiding an app or not, what matters is you understand your users’ needs and recognize that not all websites have the same problems to solve.
+[^3]: It has been said many times that React was developed to solve Facebook’s problems. Very, very few websites have Facebook’s problems.
+[^4]: I mean actually figure it out. Do some user research. Do some testing. Don’t just assume that using JavaScript to load JSON is going to be a better experience than letting the browser fetch and render a new HTML document.

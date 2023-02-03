@@ -1,6 +1,7 @@
 const fs = require('fs');
 
 const pluginRss = require('@11ty/eleventy-plugin-rss');
+const sitemap = require('@quasibit/eleventy-plugin-sitemap');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const markdownIt = require('markdown-it');
 const anchor = require('markdown-it-anchor');
@@ -18,6 +19,11 @@ module.exports = function (config) {
   config.addPlugin(pluginRss);
   config.addPlugin(syntaxHighlight, {
     templateFormats: ["njk", "md"],
+  });
+  config.addPlugin(sitemap, {
+    sitemap: {
+      hostname: "https://darthmall.net"
+    }
   });
 
   // Collections
@@ -71,7 +77,7 @@ module.exports = function (config) {
   // have a markdown shortcode for declaring blocks of markdown in Nunjucks.
   config.addPairedShortcode('markdown', (data) => md.render(data));
 
-  config.addPassthroughCopy({ "public": "." });
+  config.addPassthroughCopy({ "./public/": "/" });
 
   return {
     dir: {

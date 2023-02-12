@@ -28,6 +28,8 @@ It can seem like the only thing that’s preventing me from realizing that fanta
 I find that I have to actively remind myself that New York City is not always the way it is portrayed in movies.[^1]
 The apartments are smaller, the streets more crowded, the trains less reliable.
 On TV you can’t smell the hot wet garbage in the summer, and you never see people having to detour around the mountains of garbage bags that obstruct the sidewalks every week.
+And of course, when I lived there, I was still me.
+New York didn’t magically change me.
 
 These are all the things I have to remind myself of when I start feeling pangs of regret for leaving.
 Not because I think New York is bad, just to remind myself that it wasn’t as perfect for me as it is in my imagination.
@@ -53,8 +55,11 @@ I’m resolving to spend my first year back getting involved in the Coloradan pu
 
 So I’m starting to look over the resources from groups likes [Strong Towns](https://www.strongtowns.org/), trying to figure out how to get involved locally and influence decisions that make Lafayette, CO a little nicer without a car.
 Like Henry, I’m hoping that there may be some value in my software skills that can help these efforts—even if it’s just that I’m good at wrangling a spreadsheet.
+Or maybe I just need to show up to City Council meetings to ask the tough questions, like: why do the cops need pickup trucks?[^4]
 
 I’d much rather live in a world where people can find community and entertainment just about anywhere, instead of so many people all trying to pile into the same four cities.
+
+Anyway, from one Colorado ➯ New York ➯ Colorado transplant to another: welcome back, Henry!
 
 <aside>
 <p><strong>Postscript</strong></p>
@@ -64,3 +69,4 @@ I’d much rather live in a world where people can find community and entertainm
 [^1]: Where, it’s my understanding, that New York City is often actually portrayed by Toronto.
 [^2]: New York is also way too car-centric. I’ve encountered people who think that New York is a great example of a city that has good public transportation, but I disagree. It certainly has more public transportation than most places in the USA, but it’s in bad shape and a ton of work has gone into making space for cars in New York. I never felt safe biking in New York because of all the cars.
 [^3]: Speaking of neighborhoods, my son is now old enough that we’ve begun watching <i>Mister Rogers’ Neighborhood</i>, and that is making me miss Pittsburgh. Honestly, if I were going to move back to any city at this point, it would probably be Pittsburgh, but I’d still miss the mountains and I don’t love the humidity back East.
+[^4]: No joke. I don’t think I’ve ever seen Lafayette PD drive a *car*. They drive SUVs and *pickup trucks*.

@@ -76,6 +76,7 @@ module.exports = function (config) {
   // I find it handy to be able to write markdown in my Nunjucks templates sometimes, so I
   // have a markdown shortcode for declaring blocks of markdown in Nunjucks.
   config.addPairedShortcode('markdown', (data) => md.render(data));
+	config.addFilter('md', (data) => md.render(data));
 
   config.addPassthroughCopy({ "./public/": "/" });
 

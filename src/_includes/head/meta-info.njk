@@ -26,9 +26,9 @@
   <meta property="twitter:image:alt" content="{{ coverAlt or '' }}">
 {% endif %}
 {% set desc = description or page.excerpt or site.description %}
-<meta name="description" content="{{ desc }}">
-<meta property="og:description" content="{{ desc }}">
-<meta property="twitter:description" content="{{ desc }}">
+<meta name="description" content="{{ desc | md | striptags }}">
+<meta property="og:description" content="{{ desc | md | striptags }}">
+<meta property="twitter:description" content="{{ desc | md | striptags }}">
 
 {% if seo.image %}
   <meta property="og:image" content="{{ site.url }}{{ seo.image }}">

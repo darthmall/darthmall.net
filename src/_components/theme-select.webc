@@ -1,0 +1,58 @@
+<template>
+	<style>
+		:host {
+			contain: content;
+
+			display: grid;
+			grid-auto-flow: column;
+			grid-auto-columns: 1fr;
+			gap: 0.25ch;
+
+			border: 1px solid black;
+		}
+
+		:host,
+		button {
+			/* This should be large enough to create a rounded pill effect */
+			border-radius: 2em;
+		}
+
+		button {
+			border: none;
+			padding-block: 0.5em;
+			padding-inline: 2em;
+			line-height: 1;
+			background-color: transparent;
+		}
+
+		button:hover {
+			background-color: gray;
+		}
+
+		[aria-pressed=true] {
+			background-color: black;
+			color: white;
+		}
+	</style>
+	<button aria-pressed=false>Light</button>
+	<button aria-pressed=true>System</button>
+	<button aria-pressed=false>Dark</button>
+</template>
+
+<script>
+customElements.define(
+	"theme-select",
+	class ThemeSelect extends HTMLElement {
+		constructor() {
+			super();
+			this.attachShadow({ mode: "open" });
+		}
+
+		connectedCallback() {
+			const template = this.querySelector(":scope > template");
+			this.shadowRoot.appendChild(template.content);
+		}
+	}
+);
+</script>
+

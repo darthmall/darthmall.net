@@ -1,6 +1,8 @@
 const fs = require('fs');
 
+const { EleventyRenderPlugin } = require("@11ty/eleventy");
 const pluginRss = require('@11ty/eleventy-plugin-rss');
+const pluginWebc = require("@11ty/eleventy-plugin-webc");
 const sitemap = require('@quasibit/eleventy-plugin-sitemap');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 const markdownIt = require('markdown-it');
@@ -17,6 +19,10 @@ module.exports = function (config) {
   // Plugins
   config.addPlugin(style);
   config.addPlugin(pluginRss);
+	config.addPlugin(EleventyRenderPlugin);
+	config.addPlugin(pluginWebc, {
+		components: "src/_components/**/*.webc",
+	});
   config.addPlugin(syntaxHighlight, {
     templateFormats: ["njk", "md"],
   });

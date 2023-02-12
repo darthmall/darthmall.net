@@ -17,7 +17,6 @@
   <link href="/css/prism.css" rel="stylesheet" media="(prefers-color-scheme: light)">
   <link href="/css/prism-tomorrow.css" rel="stylesheet" media="(prefers-color-scheme: dark)">
 
-  <script src="/js/theme.js"></script>
   <style>
     {% for bucket, style in page.style %}
     @layer {{ bucket }} {
@@ -33,5 +32,7 @@
   {{ content | safe }}
 
   {% include "site/footer.njk" %}
+
+	<script>{{ page.url | webcGetJs | safe }}</script>
 </body>
 </html>

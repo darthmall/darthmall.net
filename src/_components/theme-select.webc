@@ -51,6 +51,19 @@ customElements.define(
 		connectedCallback() {
 			const template = this.querySelector(":scope > template");
 			this.shadowRoot.appendChild(template.content);
+			this.shadowRoot.addEventListener("click", this.clickedCallback)
+		}
+
+		disconnectedCallback() {
+			this.shadowRoot.removeEventListener("click", this.clickedCallback);
+		}
+
+		clickedCallback = (event) => {
+			if (event.target.nodeName !== "BUTTON") return;
+			this.shadowRoot
+				.querySelector("[aria-pressed=true]")
+				.setAttribute("aria-pressed", "false");
+			event.target.setAttribute("aria-pressed", "true");
 		}
 	}
 );

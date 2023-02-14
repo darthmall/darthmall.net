@@ -33,6 +33,7 @@
 
   {% include "site/footer.njk" %}
 
+	<style>{{ page.url | webcGetCss | safe }}</style>
 	<script>{{ page.url | webcGetJs | safe }}</script>
 </body>
 </html>

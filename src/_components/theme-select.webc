@@ -8,7 +8,7 @@
 			grid-auto-columns: 1fr;
 			gap: 0.25ch;
 
-			border: 1px solid black;
+			border: 1px solid var(--button-border);
 		}
 
 		:host,
@@ -24,17 +24,31 @@
 			border: none;
 			padding-block: 0.5em;
 			padding-inline: 2em;
+			color: var(--button-text);
 			line-height: 1;
-			background-color: transparent;
+			background-color: var(--button-face, transparent);
+			opacity: 0.7;
+
+			transition-property: background-color, opacity;
+			transition-duration: 300ms;
+			transition-timing-function: ease;
 		}
 
 		button:hover {
-			background-color: gray;
+			opacity: 1;
+		}
+
+		button:not([aria-pressed=true]):hover {
+			background-color: var(--button-face-hover);
 		}
 
 		[aria-pressed=true] {
-			background-color: black;
-			color: white;
+			color: var(--accent-color-text, AccentColorText);
+			background-color: var(--accent-color, AccentColor);
+		}
+
+		button > * {
+			pointer-events: none;
 		}
 
 		svg {
@@ -100,3 +114,12 @@ customElements.define(
 );
 </script>
 
+<style>
+	theme-select {
+		--button-face-hover: var(--surface-2);
+		--button-border: var(--surface-3);
+		--button-text: var(--text-1);
+		--accent-color: var(--primary-1);
+		--accent-color-text: var(--surface-1);
+	}
+</style>

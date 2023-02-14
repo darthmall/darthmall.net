@@ -15,9 +15,18 @@ body {
 	}
 }
 
+header > .container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+	justify-items: center;
+}
+
 header a[href="/"] {
 	background-image: url("/img/evan-alt-64.jpg");
 	background-size: cover;
+
+	grid-column: 2 / 3;
 
 	&:hover > * {
 		opacity: 0;

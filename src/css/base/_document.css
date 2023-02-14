@@ -33,6 +33,10 @@ header a[href="/"] {
 	}
 }
 
+header theme-select {
+	justify-self: end;
+}
+
 header nav a {
 	border-bottom: 0.125em solid transparent;
 

@@ -23,19 +23,13 @@
 			gap: 0.5em;
 			border: none;
 			padding-block: 0.5em;
-			padding-inline: 2em;
 			color: var(--button-text);
 			line-height: 1;
 			background-color: var(--button-face, transparent);
-			opacity: 0.7;
 
-			transition-property: background-color, opacity;
+			transition-property: background-color;
 			transition-duration: 300ms;
 			transition-timing-function: ease;
-		}
-
-		button:hover {
-			opacity: 1;
 		}
 
 		button:not([aria-pressed=true]):hover {
@@ -49,6 +43,16 @@
 
 		button > * {
 			pointer-events: none;
+		}
+
+		button > span {
+			clip: rect(0 0 0 0);
+			clip-path: inset(50%);
+			height: 1px;
+			overflow: hidden;
+			position: absolute;
+			white-space: nowrap;
+			width: 1px;
 		}
 
 		svg {

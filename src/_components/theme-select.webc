@@ -27,12 +27,12 @@
 			line-height: 1;
 			background-color: var(--button-face, transparent);
 
-			transition-property: background-color;
+			transition-property: background-color, color;
 			transition-duration: 300ms;
 			transition-timing-function: ease;
 		}
 
-		button:not([aria-pressed=true]):hover {
+		[aria-pressed=false]:hover {
 			background-color: var(--button-face-hover);
 		}
 

@@ -8,7 +8,7 @@
 			grid-auto-columns: 1fr;
 			gap: 0.25ch;
 
-			border: 1px solid var(--button-border);
+			background-color: var(--button-border);
 		}
 
 		:host,
@@ -168,8 +168,8 @@ customElements.define(
 
 <style>
 	theme-select {
-		--button-face-hover: var(--surface-2);
-		--button-border: var(--surface-3);
+		--button-face-hover: var(--surface-3);
+		--button-border: var(--surface-2);
 		--button-text: var(--text-1);
 		--accent-color: var(--primary-1);
 		--accent-color-text: var(--surface-1);

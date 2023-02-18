@@ -34,7 +34,7 @@ header a[href="/"] {
 }
 
 header theme-select {
-	justify-self: end;
+	justify-self: stretch;
 }
 
 header nav a {

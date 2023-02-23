@@ -1,5 +1,5 @@
 window.getTheme = function getTheme() {
-	return localStorage.getItem("theme-preference");
+	return localStorage.getItem("theme-preference") ?? "system";
 }
 
 window.toggleTheme = function toggleTheme(theme) {
@@ -27,8 +27,4 @@ window.toggleTheme = function toggleTheme(theme) {
 		});
 }
 
-const theme = localStorage.getItem("theme-preference");
-if (theme) {
-	toggleTheme(theme);
-}
-
+toggleTheme(getTheme());

@@ -57,6 +57,10 @@ header nav a {
 	a[href="/"] {
 		grid-column: 2 / 3;
 	}
+
+	.theme-section {
+		justify-self: end;
+	}
 }
 
 h1 {

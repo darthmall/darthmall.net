@@ -1,24 +1,13 @@
 <template>
 	<style>
 		:host {
-			contain: content;
-
 			display: grid;
 			grid-auto-flow: column;
 			grid-auto-columns: 1fr;
-			gap: 0.25ch;
-
-			background-color: var(--button-border);
-		}
-
-		:host,
-		button {
-			/* This should be large enough to create a rounded pill effect */
-			border-radius: 2em;
+			gap: 4px;
 		}
 
 		button {
-			container: toggle / inline-size;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -27,56 +16,32 @@
 			padding-block: 0.5em;
 			color: var(--button-text);
 			line-height: 1;
-			background-color: var(--button-face, transparent);
+			background-color: var(--button-face, ButtonFace);
 
-			transition-property: background-color, color;
+			transition-property: background-color, color, filter;
 			transition-duration: 300ms;
-			transition-timing-function: ease;
+			transition-timing-function: linear;
+		}
+
+		[aria-pressed=true] {
+			background-color: var(--accent-color, AccentColor);
+			color: var(--accent-color-text, AccentColorText);
 		}
 
 		[aria-pressed=false]:hover {
 			background-color: var(--button-face-hover);
 		}
 
-		[aria-pressed=true] {
-			color: var(--accent-color-text, AccentColorText);
-			background-color: var(--accent-color, AccentColor);
-		}
-
 		button > * {
 			pointer-events: none;
-		}
-
-		button > span {
-			clip: rect(0 0 0 0);
-			clip-path: inset(50%);
-			height: 1px;
-			overflow: hidden;
-			position: absolute;
-			white-space: nowrap;
-			width: 1px;
 		}
 
 		svg {
 			flex: 0 0 1.5em;
 			aspect-ratio: 1;
 		}
-
-		@container (min-width: 7.2em) {
-			button {
-				padding-inline: 1.5em;
-			}
-			button > span {
-				clip: unset;
-				clip-path: unset;
-				height: unset;
-				overflow: unset;
-				position: unset;
-				white-space: unset;
-				width: unset;
-			}
-		}
 	</style>
+
 	<button aria-pressed=false data-theme=light>
 		<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 			<circle cx="12" cy="12" r="4"></circle>
@@ -168,10 +133,12 @@ customElements.define(
 
 <style>
 	theme-select {
+		--button-face: var(--surface-2);
 		--button-face-hover: var(--surface-3);
 		--button-border: var(--surface-2);
 		--button-text: var(--text-1);
 		--accent-color: var(--primary-1);
 		--accent-color-text: var(--surface-1);
+		--gap: var(--space-s);
 	}
 </style>

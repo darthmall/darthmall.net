@@ -33,8 +33,25 @@
 .pb-l { padding-block: var(--space-l) }
 
 .p-0 { padding: 0 }
+.p-2xs { padding: var(--space-2xs) }
+.p-xs { padding: var(--space-xs) }
+.p-s { padding: var(--space-s) }
+
+.text-upper { text-transform: uppercase }
 
 .aspect-square { aspect-ratio: 1 / 1 }
+
+.bb-surface-2 {
+	border-bottom: 1px solid var(--surface-2);
+}
+
+.bb-surface-3 {
+	border-bottom: 1px solid var(--surface-3);
+}
+
+.justify-stretch {
+	justify-self: stretch;
+}
 
 .shape-circle {
 	aspect-ratio: 1 / 1;

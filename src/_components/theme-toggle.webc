@@ -76,8 +76,8 @@
 
 <script>
 customElements.define(
-	"theme-select",
-	class ThemeSelect extends HTMLElement {
+	"theme-toggle",
+	class ThemeToggle extends HTMLElement {
 		constructor() {
 			super();
 			this.attachShadow({ mode: "open" });
@@ -116,7 +116,7 @@ customElements.define(
 </script>
 
 <style>
-	theme-select {
+	theme-toggle {
 		--button-face: var(--surface-2);
 		--button-face-hover: var(--surface-3);
 		--button-border: var(--surface-2);

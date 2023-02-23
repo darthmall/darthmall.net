@@ -77,8 +77,6 @@
 customElements.define(
 	"theme-select",
 	class ThemeSelect extends HTMLElement {
-		static #THEME_KEY = "theme-preference";
-
 		constructor() {
 			super();
 			this.attachShadow({ mode: "open" });
@@ -88,6 +86,9 @@ customElements.define(
 			const template = this.querySelector(":scope > template");
 			this.shadowRoot.appendChild(template.content);
 			this.shadowRoot.addEventListener("click", this.clickedCallback)
+
+			const currentTheme = window.getTheme();
+			this.update(currentTheme);
 		}
 
 		disconnectedCallback() {
@@ -96,36 +97,18 @@ customElements.define(
 
 		clickedCallback = (event) => {
 			if (event.target.nodeName !== "BUTTON") return;
-			this.shadowRoot
-				.querySelector("[aria-pressed=true]")
-				.setAttribute("aria-pressed", "false");
-			event.target.setAttribute("aria-pressed", "true");
-			this.#toggleTheme(event.target.dataset["theme"]);
+			const theme = event.target.dataset["theme"];
+			this.update(theme);
+			window.toggleTheme(theme);
 		}
 
-		#toggleTheme(theme) {
-			if (theme === "system") {
-				document.documentElement.removeAttribute("data-theme");
-				localStorage.removeItem(ThemeSelect.#THEME_KEY);
-			} else {
-				document.documentElement.dataset.theme = theme;
-				localStorage.setItem(ThemeSelect.#THEME_KEY, theme);
+		update(theme) {
+			const buttonList = this.shadowRoot.querySelectorAll("[aria-pressed]");
+			for (const btn of buttonList) {
+				btn.setAttribute(
+					"aria-pressed", btn.dataset["theme"] === theme ? "true" : "false"
+				);
 			}
-
-			document
-				.querySelectorAll('link[href*="/css/prism"]')
-				.forEach(function (link) {
-					const media = link.getAttribute("media");
-
-					if (
-						theme === "dark" ||
-						(theme === "system" && media === "(prefers-color-scheme: dark)")
-					) {
-						link.href = link.href.replace("prism.css", "prism-tomorrow.css");
-					} else {
-						link.href = link.href.replace("prism-tomorrow.css", "prism.css");
-					}
-				});
 		}
 	}
 );

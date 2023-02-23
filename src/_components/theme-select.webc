@@ -28,7 +28,8 @@
 			color: var(--accent-color-text, AccentColorText);
 		}
 
-		[aria-pressed=false]:hover {
+		[aria-pressed=false]:hover,
+		[aria-pressed=false]:focus {
 			background-color: var(--button-face-hover);
 		}
 

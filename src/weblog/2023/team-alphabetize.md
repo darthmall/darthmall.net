@@ -48,7 +48,7 @@ An alphabetical sort is arbitrary, but it is also the nearest thing to a univers
 Most anyone familiar with a language that uses the latin alphabet will be familiar with the concept of “alphabetical order” and will quickly recognize it when they see it.
 This is why I’m such a booster of alphabetizing lists in pretty much any context.
 
-So I’m going back to alphabetizing my declaratioons; not reluctantly, but enthusiastically.
+So I’m going back to alphabetizing my declarations — not reluctantly, but enthusiastically.
 In theory I love the idea of some kind of semantic grouping of declarations, but in practice I’ll be much happier to never have to think about ordering my CSS declarations again.
 
 [^1]: Which would be exacerbated by me importing this from a separate package.

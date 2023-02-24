@@ -1,5 +1,5 @@
 ---
-title: "Back on Team Alphabetize"
+title: "Ordering My CSS Declarations"
 date: 2023-02-17
 tags:
 - Web Dev

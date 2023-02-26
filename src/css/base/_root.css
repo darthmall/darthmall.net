@@ -30,7 +30,8 @@
 	--font-display: "Sporting Grotesque", sans-serif;
 	--font-mono: ui-monospace, monospace;
 
-	/* @link https://utopia.fyi/type/calculator?c=320,16,1.25,1280,24,1.618,4,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+	/* @link https://utopia.fyi/type/calculator?c=320,16,1.25,1280,24,1.618,4,2,&s=,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+	--font-size--2: clamp(0.57rem, calc(0.66rem + -0.11vw), 0.64rem);
 	--font-size--1: clamp(0.8rem, calc(0.76rem + 0.21vw), 0.93rem);
 	--font-size-0: clamp(1rem, calc(0.83rem + 0.83vw), 1.5rem);
 	--font-size-1: clamp(1.25rem, calc(0.86rem + 1.96vw), 2.43rem);
@@ -58,6 +59,9 @@
 	--heading-3: var(--font-weight-black) var(--font-size-0)/var(--line-height-s)
 		var(--font-body);
 	--heading-3-features: "ss01";
+	--heading-4: var(--font-weight-black) var(--font-size--1)/var(--line-height-xs)
+		var(--font-body);
+	--heading-4-features: "ss01";
 
 	--body-1: var(--text-style, normal) var(--font-weight-regular)
 		var(--font-size-1)/var(--line-height-s) var(--font-body);
@@ -84,6 +88,7 @@
 	--color-yellow-1: #ddad3f;
 
 	/* @link https://utopia.fyi/space/calculator?c=320,16,1.125,1280,24,1.414,5,1,&s=0.75,1.5|2|3, */
+	--space-2xs: clamp(0.50rem, calc(0.42rem + 0.42vw), 0.75rem);
 	--space-xs: clamp(0.75rem, calc(0.63rem + 0.63vw), 1.13rem);
 	--space-s: clamp(1rem, calc(0.83rem + 0.83vw), 1.5rem);
 	--space-m: clamp(1.5rem, calc(1.25rem + 1.25vw), 2.25rem);

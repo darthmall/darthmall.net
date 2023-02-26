@@ -15,6 +15,18 @@ body {
 	}
 }
 
+body > header {
+	container: site-header / inline-size;
+}
+
+header > .container {
+	display: grid;
+	grid-auto-flow: row;
+	align-items: center;
+	justify-items: center;
+	row-gap: var(--space-m);
+}
+
 header a[href="/"] {
 	background-image: url("/img/evan-alt-64.jpg");
 	background-size: cover;
@@ -24,11 +36,30 @@ header a[href="/"] {
 	}
 }
 
+header theme-select {
+	justify-self: stretch;
+}
+
 header nav a {
 	border-bottom: 0.125em solid transparent;
 
 	&[aria-current] {
 		border-color: var(--primary-1);
+	}
+}
+
+@container site-header (min-width: 26em) {
+	.container {
+		grid-auto-flow: column;
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	a[href="/"] {
+		grid-column: 2 / 3;
+	}
+
+	.theme-section {
+		justify-self: end;
 	}
 }
 

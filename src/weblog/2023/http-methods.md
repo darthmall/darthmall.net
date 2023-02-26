@@ -19,7 +19,7 @@ Maybe it doesn’t matter that your `PUT` method is not idempotent, or that you 
 Or if you just want to `POST` every request just so you can use that sweet, sweet post body and encode the actual method as a property of the body; well, where’s the harm?
 
 This doesn’t feel like it has the same kinds of consequences as ignoring something like the HTML standard.
-When you decided that you can just make everything a `<div>`, you create tons of problems for people relying on assistive technology.
+When you decide that you can just make everything a `<div>`, you create tons of problems for people relying on assistive technology.
 I can’t think of any adverse consequences of misusing HTTP methods.
 
 The HTTP methods are useful, I suppose, because browsers implement them.

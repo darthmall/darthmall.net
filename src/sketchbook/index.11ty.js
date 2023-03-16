@@ -3,10 +3,10 @@ class Sketchbook {
 		return {
 			title: "Sketchbook",
 			eleventyExcludeFromCollections: true,
-			layout: "index.njk",
+			layout: "index.webc",
 			eleventyComputed: {
-				pageList: ({ collections }) => collections.sketches
-			}
+				pageList: ({ collections }) => collections.sketches,
+			},
 		};
 	}
 }

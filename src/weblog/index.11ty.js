@@ -3,7 +3,7 @@ class Weblog {
 		return {
 			title: "Weblog",
 			eleventyExcludeFromCollections: true,
-			layout: "index.njk",
+			layout: "index.webc",
 			eleventyComputed: {
 				pageList: ({ collections }) => collections.posts,
 			},

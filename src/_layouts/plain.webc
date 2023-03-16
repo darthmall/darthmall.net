@@ -1,0 +1,10 @@
+---
+layout: base.njk
+---
+
+<main>
+	<template webc:type="11ty" 11ty:type="njk">
+		{% include "page/header.njk" %}
+	</template>
+	<div data-layout="center" @raw="content"></div>
+</main>

@@ -1,6 +1,6 @@
 ---
 title: About
-layout: plain.njk
+layout: plain.webc
 description: >-
     I design and build websites, web applications, and data visualizations.
 ---

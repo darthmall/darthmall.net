@@ -17,11 +17,11 @@
 		"url": "git@github.com:darthmall/website.git"
 	},
 	"dependencies": {
-		"@11ty/eleventy": "^2.0.0-beta.1",
+		"@11ty/eleventy": "^2.0.0",
 		"@11ty/eleventy-img": "^2.0.1",
 		"@11ty/eleventy-plugin-rss": "^1.1.1",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
-		"@11ty/eleventy-plugin-webc": "^0.8.1",
+		"@11ty/eleventy-plugin-webc": "^0.9.4",
 		"@quasibit/eleventy-plugin-sitemap": "^2.2.0",
 		"browserslist": "^4.21.4",
 		"dotenv": "^8.6.0",

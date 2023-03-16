@@ -1,0 +1,19 @@
+---
+layout: base.njk
+---
+
+<main class="h-entry">
+	<template webc:type="11ty" 11ty:type="njk">
+		{% include "page/header.njk" %}
+	</template>
+  <div class="e-content" data-layout="center">
+		<aside webc:if="date" aria-label="publication date" style="align-self: start">
+			<p @raw="formatDate(date)"></p>
+		</aside>
+		<template @raw="content" webc:nokeep></template>
+  </div>
+
+	<template webc:type="11ty" 11ty:type="njk">
+		{% include "page/webmentions.njk" %}
+	</template>
+</main>

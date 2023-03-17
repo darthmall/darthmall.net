@@ -4,6 +4,7 @@ layout: base.njk
 
 <main class="h-entry">
 	<page-header @text="title" :@tags="tags"></page-header>
+
   <div class="e-content" data-layout="center">
 		<aside webc:if="date" aria-label="publication date" style="align-self: start">
 			<p @raw="formatDate(date)"></p>
@@ -11,7 +12,5 @@ layout: base.njk
 		<template @raw="content" webc:nokeep></template>
   </div>
 
-	<template webc:type="11ty" 11ty:type="njk">
-		{% include "page/webmentions.njk" %}
-	</template>
+	<web-mentions></web-mentions>
 </main>

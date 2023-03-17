@@ -10,13 +10,11 @@ const anchor = require("markdown-it-anchor");
 
 const collections = require("./utils/collections.js");
 const filters = require("./utils/filters.js");
-const style = require("./utils/style.js");
 const shortcodes = require("./utils/shortcodes.js");
 const transforms = require("./utils/transforms.js");
 
 module.exports = function(config) {
 	// Plugins
-	config.addPlugin(style);
 	config.addPlugin(pluginRss);
 	config.addPlugin(EleventyRenderPlugin);
 	config.addPlugin(pluginWebc, {

@@ -238,7 +238,6 @@
 	}
 
 	body > header {
-		container: site-header / inline-size;
 		--space: var(--space-s);
 		--link-decoration: none;
 	}
@@ -270,21 +269,6 @@
 
 	header nav a[aria-current] {
 		border-color: var(--primary-1);
-	}
-
-	@container site-header (min-width: 26em) {
-		.container {
-			grid-auto-flow: column;
-			grid-template-columns: repeat(3, 1fr);
-		}
-
-		a[href="/"] {
-			grid-column: 2 / 3;
-		}
-
-		.theme-section {
-			justify-self: end;
-		}
 	}
 
 	h1 {

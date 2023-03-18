@@ -1,0 +1,36 @@
+<footer id="site-footer" role="contentinfo"
+        class="flow pb-l type-body-3" data-layout="center"
+        data-center-width="site" style="--space:var(--space-m)">
+  <hr />
+  <div data-layout="cluster" data-cluster="center">
+    <p @raw="copyright()"></p>
+
+    <a href="mailto:{{ site.a11y.contact }}?subject={{ site.a11y.subject }}&body={{ site.a11y.body }}"
+       class="mi-auto">Report an accessibility issue</a>
+
+    <nav>
+      <ul data-layout="cluster" style="--space:var(--space-xs)" role="list">
+        <li><a href="/privacy/">Privacy</a></li>
+				<script webc:type="js">
+					social.map((link) => {
+						let attrs = "";
+						let content = link.text;
+
+						if (link.rel) {
+							attrs += ` rel="${link.rel}"`
+						}
+
+						if (link.icon) {
+							attrs += ` title="${link.text}"`;
+							content = `<icon-${link.icon}></icon-${link.icon}>`;
+						}
+
+						return `<li>
+							<a href="${link.url}"${attrs}>${content}</a>
+						</li>`;
+					}).join("");
+				</script>
+      </ul>
+    </nav>
+  </div>
+</footer>

@@ -74,7 +74,7 @@
 	</button>
 </template>
 
-<script>
+<script webc:bucket="defer">
 customElements.define(
 	"theme-toggle",
 	class ThemeToggle extends HTMLElement {
@@ -115,7 +115,7 @@ customElements.define(
 );
 </script>
 
-<style>
+<style webc:bucket="defer">
 	theme-toggle {
 		--button-face: var(--surface-2);
 		--button-face-hover: var(--surface-3);

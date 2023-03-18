@@ -1,13 +1,13 @@
 [
 	{
 		"text": "RSS",
-		"icon": "rss.svg",
+		"icon": "rss",
 		"rel": "alternate",
 		"url": "/feed.xml"
 	},
 	{
 		"text": "CodePen",
-		"icon": "codepen.svg",
+		"icon": "codepen",
 		"url": "https://codepen.io/darthmall",
 		"rel": "me"
 	}

@@ -7,9 +7,7 @@
     </a>
 		<section class="theme-section flow" style="--space:0.25em">
 			<h2 class="heading-4 text-upper mbs-0">Theme</h2>
-			{% renderTemplate "webc" %}
-				<theme-toggle></theme-toggle>
-			{% endrenderTemplate %}
+			<theme-toggle></theme-toggle>
 		</section>
   </div>
 </header>

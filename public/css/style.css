@@ -32,13 +32,13 @@
 		display: none;
 	}
 
-	[role=list] {
+	[role="list"] {
 		list-style: none;
 		padding: 0;
+	}
 
-		> li {
-			margin: 0;
-		}
+	[role="list"] > li {
+		margin: 0;
 	}
 
 	@media (prefers-reduced-motion: no-preference) {

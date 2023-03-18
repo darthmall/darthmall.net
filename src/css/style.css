@@ -1,5 +1,0 @@
-@import "reset/_index.css" layer(reset);
-@import "base/_index.css" layer(base);
-@import "layout/_index.css" layer(layout);
-@import "utility/_index.css" layer(utility);
-@import "_preference.css" layer(preference);

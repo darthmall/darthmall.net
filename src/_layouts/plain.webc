@@ -1,0 +1,8 @@
+---
+layout: base.webc
+---
+
+<main>
+	<page-header @text="title" :@tags="tags"></page-header>
+	<div data-layout="center" @raw="content"></div>
+</main>

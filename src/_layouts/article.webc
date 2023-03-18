@@ -1,0 +1,16 @@
+---
+layout: base.webc
+---
+
+<main class="h-entry">
+	<page-header @text="title" :@tags="tags"></page-header>
+
+  <div class="e-content" data-layout="center">
+		<aside webc:if="date" aria-label="publication date" style="align-self: start">
+			<p @raw="formatDate(date)"></p>
+		</aside>
+		<template @raw="content" webc:nokeep></template>
+  </div>
+
+	<web-mentions></web-mentions>
+</main>

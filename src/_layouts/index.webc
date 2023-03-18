@@ -1,0 +1,16 @@
+---
+layout: base.webc
+---
+
+<main class="flow mbs-l h-feed" data-layout="center">
+	<script webc:type="js">
+		pageList.map((page) => `<post-summary @date="${page.date}">
+			<h2 slot="title" class="title">
+				<a href="${page.url}" class="p-name">${page.data.title}</a><span
+				class=arrow aria-hidden=true>&Rarr;</span>
+			</h2>
+		</post-summary>`).join("");
+	</script>
+
+	<template @raw="content" webc:nokeep></template>
+</main>

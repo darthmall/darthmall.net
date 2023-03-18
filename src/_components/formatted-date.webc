@@ -1,0 +1,22 @@
+<time :datetime="new Date(date).toISOString().substring(0, 10)"
+	webc:root="override"><script webc:type="js">
+		const MONTHS = [
+			"January",
+			"February",
+			"March",
+			"April",
+			"May",
+			"June",
+			"July",
+			"August",
+			"September",
+			"October",
+			"November",
+			"December",
+		];
+
+		const dt = new Date(date);
+		const month = MONTHS[dt.getUTCMonth()];
+		`${dt.getUTCDate()} ${month} ${dt.getUTCFullYear()}`;
+	</script
+></time>

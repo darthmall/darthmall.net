@@ -1,0 +1,110 @@
+<div class="pb-l" data-layout="center">
+  <aside class="flow type-body-4 p-0">
+    <h2>Webmentions</h2>
+    <p>
+      <a href="/weblog/2021/webmentions/">What’s a “Webmention”</a>, you ask?
+    </p>
+
+		<template webc:type="11ty" 11ty:type="njk">
+			{% set target %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
+			{% set mentions = webmentions | webmentionsForUrl(target) %}
+			{% for webmention in mentions %}
+				<article class="webmention">
+					<div class="webmention__avatar shape-circle">
+						{% if webmention.author and webmention.author.photo %}
+							<img src="{{ webmention.author.photo }}" alt="" loading="lazy" />
+						{% else %}
+							<div class="webmention__avatar--anonymous"></div>
+						{% endif %}
+					</div>
+
+					<div class="webmention__author">
+						<a href="{{ webmention.url }}">
+							{%- if webmention.author -%}
+								<strong>{{ webmention.author.name }}</strong>
+							{%- else -%}
+								<strong>Anonymous</strong>
+							{%- endif -%}
+						</a>
+						<span>&mdash;
+							<small>
+								{% formatDate webmention.published %}
+							</small>
+						</span>
+					</div>
+
+					<div class="webmention__body">
+						{% if webmention.content.text|length > 2000 -%}
+							Mentioned {% if webmention.name -%}
+								in <a href="{{ webmention.url }}">{{ webmention.name }}</a>
+								{%- else -%}
+								on <a href="{{ webmention.url }}">{% formatDate webmention.published %}</a>
+								{%- endif %}
+						{%- else -%}
+							{{ webmention.content.text }}
+						{%- endif %}.
+					</div>
+				</article>
+			{% else %}
+				<p>No one’s mentioned this post yet.</p>
+			{% endfor %}
+		</template>
+
+    <p style="--space:var(--space-m)">Send me a webmention!</p>
+
+    <form action="https://webmention.io/darthmall.net/webmention" method="post">
+      <input name="target" type="hidden" value="{{ site.url }}{{ page.url }}">
+
+      <label for="webmention-source">URL</label>
+
+      <div data-layout="cluster" style="--space:var(--space-xs)">
+        <input id="webmention-source" name="source" type="url"
+               class="flex-hulk"
+               placeholder="https://example.com" required>
+
+        <button type="submit" class="flex-grow" style="align-self: stretch">Send Webmention</button>
+      </div>
+    </form>
+
+  </aside>
+</div>
+
+<style webc:bucket="defer">
+	.webmention {
+		--_size: 4rem;
+	}
+
+	.webmention {
+		display: grid;
+
+		gap: var(--space-xs);
+		grid-template-areas:
+			"av auth"
+			"av body";
+		grid-template-columns: min-content 1fr;
+		grid-template-rows: min-content 1fr;
+	}
+
+	.webmention__avatar {
+		grid-area: av;
+
+		height: var(--_size);
+		width: var(--_size);
+	}
+
+	.webmention__avatar .webmention__avatar--anonymous,
+	.webmention__avatar > img {
+		aspect-ratio: 1;
+		width: 100%;
+		object-fit: cover;
+		background-color: var(--surface-1);
+	}
+
+	.webmention__author {
+		grid-area: auth;
+	}
+
+	.webmention__body {
+		grid-area: body;
+	}
+</style>

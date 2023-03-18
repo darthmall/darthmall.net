@@ -1,40 +1,15 @@
-const site = require("../src/_data/site.json");
-
 function feed(collection) {
 	return collection
-		.getFilteredByGlob(["./src/weblog/**/*.md", "./src/pages/sketchbook/**/*.md"])
+		.getFilteredByGlob([
+			"./src/weblog/**/*.md",
+			"./src/pages/sketchbook/**/*.md",
+		])
 		.sort((a, b) => {
 			if (a.data.date > b.data.date) return -1;
 			if (a.data.date < b.data.date) return 1;
 			if (a.data.title < b.data.title) return -1;
 			if (a.data.title > b.data.title) return 1;
 			return 0;
-		});
-}
-
-function portfolio(collection) {
-	return collection
-		.getFilteredByGlob("./src/portfolio/**/*.md")
-		.filter((post) => !post.data.draft)
-		.sort((a, b) => {
-			// Sort by the order field first, placing older projects after newer projects
-			if (a.data.order > b.data.order) return -1;
-			if (a.data.order < b.data.order) return 1;
-
-			// If the order fields are identical fallback to sorting by title
-			if (a.data.title < b.data.title) return -1;
-			if (a.data.title > b.data.title) return 1;
-
-			return 0;
-		})
-		.map((p, i, posts) => {
-			const prev = posts[i - 1],
-				next = posts[i + 1];
-
-			if (prev) p.data.prev = prev.data;
-			if (next) p.data.next = next.data;
-
-			return p;
 		});
 }
 
@@ -54,7 +29,6 @@ function sketches(collection) {
 
 module.exports = {
 	feed,
-	portfolio,
 	posts,
 	sketches,
 };

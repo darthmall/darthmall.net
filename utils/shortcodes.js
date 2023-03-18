@@ -5,7 +5,8 @@ const siteMeta = require("../src/_data/site.json");
 function copyright() {
 	const now = new Date();
 
-	return `&copy; ${now.getUTCFullYear()} <a href="/about/">${siteMeta.copyright}</a>`;
+	return `&copy; ${now.getUTCFullYear()} <a href="/about/">${siteMeta.copyright
+		}</a>`;
 }
 
 function formatDate(dt, cls = "") {
@@ -60,8 +61,6 @@ async function picture(
 
 	return Image.generateHTML(metadata, attrs);
 }
-
-picture.isAsync = true;
 
 function pubDate(dateStr) {
 	return formatDate(dateStr, "dt-published");

@@ -235,14 +235,12 @@
 		*/
 		overflow-x: hidden;
 
-		> header {
-			--space: var(--space-s);
-			--link-decoration: none;
-		}
 	}
 
 	body > header {
 		container: site-header / inline-size;
+		--space: var(--space-s);
+		--link-decoration: none;
 	}
 
 	header > .container {

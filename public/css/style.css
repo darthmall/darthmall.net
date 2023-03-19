@@ -239,6 +239,7 @@
 	}
 
 	body > header {
+		container: site-header / inline-size;
 		--space: var(--space-s);
 		--link-decoration: none;
 	}
@@ -271,6 +272,21 @@
 	hr {
 		border: none;
 		border-block-start: 1px solid var(--text-1);
+	}
+
+	@container site-header (min-width: 26em) {
+		.container {
+			grid-auto-flow: column;
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		a[href="/"] {
+			grid-column: 2 / 3;
+		}
+
+		.theme-section {
+			justify-self: end;
+		}
 	}
 
 	h1 {

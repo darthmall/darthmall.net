@@ -5,7 +5,7 @@ layout: base.webc
 <main class="h-entry">
 	<page-header @text="title" :@tags="tags"></page-header>
 
-  <div class="e-content" data-layout="center">
+  <div class="center e-content">
 		<aside webc:if="date" aria-label="publication date" style="align-self: start">
 			<p @raw="formatDate(date)"></p>
 		</aside>

@@ -1,15 +1,15 @@
 <footer id="site-footer" role="contentinfo"
-        class="flow pb-l type-body-3" data-layout="center"
-        data-center-width="site" style="--space:var(--space-m)">
+        class="center max-inline-site flow pb-l type-body-3"
+        style="--space:var(--space-m)">
   <hr />
-  <div data-layout="cluster" data-cluster="center">
+  <div class="cluster justify-content-center">
     <p @raw="copyright()"></p>
 
     <a href="mailto:{{ site.a11y.contact }}?subject={{ site.a11y.subject }}&body={{ site.a11y.body }}"
        class="mi-auto">Report an accessibility issue</a>
 
     <nav>
-      <ul data-layout="cluster" style="--space:var(--space-xs)" role="list">
+      <ul class="cluster" style="--space:var(--space-xs)" role="list">
         <li><a href="/privacy/">Privacy</a></li>
 				<script webc:type="js">
 					social.map((link) => {

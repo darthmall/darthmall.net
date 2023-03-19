@@ -45,7 +45,7 @@ variant. You’re welcome to download them and use them on your phone, if you
 like, just please don’t make an NFT of them.
 
 <figure>
-    <div style="justify-items: center" data-layout="grid">
+    <div style="justify-items: center" class="grid">
         {% picture
             "public/img/dont-panic/dont-panic-repeat-lockscreen-320.png",
             "",
@@ -66,7 +66,7 @@ like, just please don’t make an NFT of them.
     </figcaption>
 </figure>
 <figure>
-    <div style="justify-items: center" data-layout="grid">
+    <div style="justify-items: center" class="grid">
         {% picture
             "public/img/dont-panic/dont-panic-grid-lockscreen-320.png",
             "",
@@ -87,7 +87,7 @@ like, just please don’t make an NFT of them.
     </figcaption>
 </figure>
 <figure>
-    <div style="justify-items: center" data-layout="grid">
+    <div style="justify-items: center" class="grid">
         {% picture
             "public/img/dont-panic/dont-panic-glow-lockscreen-320.png",
             "",

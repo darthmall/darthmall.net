@@ -1,4 +1,4 @@
-<div class="pb-l" data-layout="center">
+<div class="center pb-l">
   <aside class="flow type-body-4 p-0">
     <h2>Webmentions</h2>
     <p>
@@ -57,7 +57,7 @@
 
       <label for="webmention-source">URL</label>
 
-      <div data-layout="cluster" style="--space:var(--space-xs)">
+      <div class="cluster" style="--space:var(--space-xs)">
         <input id="webmention-source" name="source" type="url"
                class="flex-hulk"
                placeholder="https://example.com" required>

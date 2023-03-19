@@ -29,7 +29,7 @@ the large hero images on the home page slowing down the largest contentful
 paint. Image optimization is on my list of things to do.
 
 <figure>
-    <div data-layout="grid" style="--space:var(--space-s)">
+    <div class="grid" style="--space:var(--space-s)">
         {% picture
             "public/img/new-sos-website/sos-original-lighthouse.png",
             "",

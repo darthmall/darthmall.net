@@ -1,5 +1,4 @@
-<header role="banner" class="h-card p-author pb-l"
-  data-layout="center" data-center-width="site">
+<header role="banner" class="center max-inline-site h-card p-author pb-l">
   <a href="#Skip">Skip to content</a>
   <div class="container">
     <a href="/" class="shape-circle u-url p-name" aria-label="Home">

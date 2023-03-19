@@ -230,6 +230,8 @@
 
 		background: var(--surface-1);
 		color: var(--text-1);
+		display: grid;
+		grid-template-rows: auto 1fr auto;
 
 		/* Prevent scrollbars (especially on windows) when setting inline-size to
 		* 100vw to achive full-bleed or other breakout effects in the layout.

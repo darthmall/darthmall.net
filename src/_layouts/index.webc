@@ -2,7 +2,7 @@
 layout: base.webc
 ---
 
-<main class="flow mbs-l h-feed" data-layout="center">
+<main class="center flow mbs-l h-feed">
 	<script webc:type="js">
 		pageList.map((page) => `<post-summary @date="${page.date}">
 			<h2 slot="title" class="title">

@@ -14,7 +14,7 @@ screen / wallpaper. I made it over winter break while I was in grad school, so,
 coincidentally, this is just about ten years to the day since I made the
 wallpaper.
 
-<figure>
+<figure class="max-inline-content">
     {% picture
         "public/img/dont-panic/dont-panic-original-320.png",
         "mi-auto",
@@ -44,8 +44,8 @@ I’m currently using the “glow” variant, although I also quite like the “
 variant. You’re welcome to download them and use them on your phone, if you
 like, just please don’t make an NFT of them.
 
-<figure>
-    <div style="justify-items: center" data-layout="grid">
+<figure class="max-inline-content">
+    <div class="grid">
         {% picture
             "public/img/dont-panic/dont-panic-repeat-lockscreen-320.png",
             "",
@@ -65,8 +65,8 @@ like, just please don’t make an NFT of them.
         download>Full-size “Repeat” wallpaper</a>.
     </figcaption>
 </figure>
-<figure>
-    <div style="justify-items: center" data-layout="grid">
+<figure class="max-inline-content">
+    <div class="grid">
         {% picture
             "public/img/dont-panic/dont-panic-grid-lockscreen-320.png",
             "",
@@ -86,8 +86,8 @@ like, just please don’t make an NFT of them.
         download>Full-size “Grid” wallpaper</a>.
     </figcaption>
 </figure>
-<figure>
-    <div style="justify-items: center" data-layout="grid">
+<figure class="max-inline-content">
+    <div class="grid">
         {% picture
             "public/img/dont-panic/dont-panic-glow-lockscreen-320.png",
             "",

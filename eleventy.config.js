@@ -65,7 +65,13 @@ module.exports = function(config) {
 			.use(footnote)
 	);
 
-	config.addPassthroughCopy({ "./public/": "/" });
+	config.setServerPassthroughCopyBehavior("passthrough");
+	config.addPassthroughCopy({
+		"./public/": "/",
+		"./node_modules/prismjs/themes/prism.css": "/css/prism.css",
+		"./node_modules/prismjs/themes/prism-tomorrow.css":
+			"/css/prism-tomorrow.css",
+	});
 
 	return {
 		dir: {

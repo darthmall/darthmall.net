@@ -263,14 +263,6 @@
 		justify-self: stretch;
 	}
 
-	header nav a {
-		border-bottom: 0.125em solid transparent;
-	}
-
-	header nav a[aria-current] {
-		border-color: var(--primary-1);
-	}
-
 	h1 {
 		font: var(--display-1);
 		word-break: break-word;

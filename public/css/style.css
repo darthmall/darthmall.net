@@ -274,7 +274,7 @@
 		border-block-start: 1px solid var(--text-1);
 	}
 
-	@container site-header (min-width: 26em) {
+	@container site-header (min-width: 50rem) {
 		.container {
 			grid-auto-flow: column;
 			grid-template-columns: repeat(3, 1fr);

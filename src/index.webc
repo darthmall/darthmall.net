@@ -1,6 +1,5 @@
 ---js
 {
-	title: "Home",
 	layout: "index.webc",
 	eleventyExcludeFromCollections: true,
 	eleventyComputed: {

@@ -7,15 +7,15 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const anchor = require("markdown-it-anchor");
 const footnote = require("markdown-it-footnote");
 
-const { feed, posts, sketches } = require("./utils/collections.js");
-const { webmentionsForUrl } = require("./utils/filters.js");
+const { feed, posts, sketches } = require("./config/collections.js");
+const { webmentionsForUrl } = require("./config/filters.js");
 const {
 	copyright,
 	formatDate,
 	picture,
 	pubDate,
-} = require("./utils/shortcodes.js");
-const { formatHtml } = require("./utils/transforms.js");
+} = require("./config/shortcodes.js");
+const { formatHtml } = require("./config/transforms.js");
 
 module.exports = function(config) {
 	// Plugins

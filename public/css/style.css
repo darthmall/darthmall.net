@@ -128,11 +128,11 @@
 		--body-3: var(--text-style, normal) var(--font-weight-semi-bold)
 			var(--font-size--1) / var(--line-height-m) var(--font-body);
 
-		--measure-xs: 34ch;
-		--measure-s: 42ch;
-		--measure-m: 54ch;
-		--measure-l: 72ch;
-		--measure-xl: 88ch;
+		--measure-xs: 27.9rem;
+		--measure-s: 34.5rem;
+		--measure-m: 44.5rem; /* 54ch @ 16px; 0.82 rem/ch */
+		--measure-l: 59rem;
+		--measure-xl: 72.2rem;
 
 		--color-gray-1: #ffffff;
 		--color-gray-2: #eaeaea;
@@ -235,6 +235,7 @@
 		* 100vw to achive full-bleed or other breakout effects in the layout.
 		*/
 		overflow-x: hidden;
+		padding-inline: var(--site-margin);
 	}
 
 	body > header {
@@ -261,6 +262,15 @@
 
 	header theme-select {
 		justify-self: stretch;
+	}
+
+	footer svg {
+		height: var(--icon-m);
+	}
+
+	hr {
+		border: none;
+		border-block-start: 1px solid var(--text-1);
 	}
 
 	h1 {
@@ -291,88 +301,86 @@
 		--link-decoration: none;
 	}
 
-	footer svg {
-		height: var(--icon-m);
+	/* Prose */
+	.prose :is(p, figcaption, hr, h2, h3, h4) {
+		inline-size: min(100%, var(--measure-m));
+		margin-inline: auto;
 	}
 
-	hr {
-		border: none;
-		border-block-start: 1px solid var(--text-1);
+	.prose :is(ol, ul) {
+		--_padding: 4.5ch;
+		inline-size: min(
+			calc(100% - var(--_padding)),
+			calc(var(--measure-m) - var(--_padding))
+		);
+		margin-inline: auto;
+		padding-inline-start: var(--_padding);
 	}
 
-	li,
-	p {
-		max-width: var(--measure-m);
-	}
-
-	h2,
-	h3,
-	h4,
-	* + p {
+	.prose :is(h2, h3, h4, p + p) {
 		margin-block-start: 1em;
 	}
 
-	h4 + p {
-		margin-block-start: 0.25em;
+	.prose :is(h2, h3) {
+		margin-block-end: 0.5em;
 	}
 
-	li + li {
+	.prose h4 {
+		margin-block-end: 0.25em;
+	}
+
+	.prose li + li {
 		margin-block-start: 0.5em;
 	}
 
-	ol,
-	ul {
-		margin-block: var(--space-m);
-	}
-
-	aside,
-	blockquote,
-	figure,
-	hr {
+	.prose :is(aside, blockquote, figure, hr, ol, ul) {
 		margin-block: 2em;
 	}
 
-	aside {
+	.prose aside {
+		--_padding: var(--space-l);
 		border-block: 1px solid var(--color-gray-3);
-		padding: var(--space-l);
+		inline-size: min(calc(100% - 2 * var(--_padding)), var(--measure-s));
+		margin-inline: auto;
+		padding: var(--_padding);
 	}
 
-	aside,
-	figcaption,
+	.prose :is(aside, figcaption),
 	.footnotes {
 		font: var(--body-3);
 	}
 
-	aside p,
-	figcaption p,
-	.footnotes p {
-		max-width: var(--measure-l);
-	}
-
-	figure {
-		--_size: min(100vw, var(--measure-lg));
-
-		box-sizing: border-box;
-		inline-size: var(--_size);
-		margin-inline-start: calc((100% - var(--_size)) / 2);
-	}
-
-	figcaption {
-		margin-block-start: var(--space-s);
-		padding-inline: var(--site-margin);
-		text-align: center;
-		color: var(--text-2);
-	}
-
-	blockquote {
+	.prose figure {
 		margin-inline: auto;
-		border: 0.25em double var(--surface-3);
-		padding: var(--space-m);
 	}
 
-	pre {
-		padding: var(--space-m);
+	.prose figcaption {
+		color: var(--text-2);
+		grid-column: 1 / -1;
+		margin-block-start: var(--space-s);
+		text-align: center;
+	}
+
+	.prose blockquote {
+		--_padding: var(--space-m);
+		--_border: 0.25em;
+		border: var(--_border) double var(--surface-3);
+		inline-size: min(
+			calc(100% - 2 * var(--_padding) - 2 * var(--_border)),
+			var(--measure-m)
+		);
+		margin-inline: auto;
+		padding: var(--_padding);
+	}
+
+	.prose pre {
+		--_padding: var(--space-m);
+		background-color: var(--surface-2);
+		border-radius: 0.25rem;
+		inline-size: min(calc(100% - 2 * var(--_padding)), 88ch);
+		margin-inline: auto !important; /* FIXME: Fighting with Prism themes */
 		overflow-x: auto;
+		padding: var(--_padding);
 	}
 
 	pre code {
@@ -515,14 +523,13 @@
 	}
 
 	.center {
-		max-inline-size: var(--measure-m);
+		inline-size: min(100%, var(--measure-m));
 		margin-inline: auto;
-		padding-inline: var(--site-margin);
 	}
 
 	.grid {
 		display: grid;
-		gap: var(--space);
+		gap: var(--space, var(--space-s));
 		grid-template-columns: repeat(
 			auto-fit,
 			minmax(min(var(--space-card), 100%), 1fr)
@@ -566,7 +573,11 @@
 	}
 
 	.max-inline-site {
-		max-inline-size: var(--space-max-site);
+		inline-size: min(100%, var(--space-max-site));
+	}
+
+	.max-inline-content {
+		max-inline-size: max-content;
 	}
 
 	.mbs-0 {

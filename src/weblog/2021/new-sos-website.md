@@ -7,7 +7,7 @@ description: >-
 tags: ["Eleventy", "Science On a Sphere"]
 ---
 
-<figure>
+<figure class="max-inline-content">
     {% picture
         "public/img/new-sos-website/sos-website.png",
         "",
@@ -28,7 +28,7 @@ green. Two of them are 100s. Performance dipped a little, probably because of
 the large hero images on the home page slowing down the largest contentful
 paint. Image optimization is on my list of things to do.
 
-<figure>
+<figure class="max-inline-content">
     <div class="grid" style="--space:var(--space-s)">
         {% picture
             "public/img/new-sos-website/sos-original-lighthouse.png",

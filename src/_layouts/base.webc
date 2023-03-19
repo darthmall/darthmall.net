@@ -7,7 +7,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="generator" :content="eleventy.generator">
 
-	<meta webc:is="meta-info">
+	<meta webc:is="meta-info" webc:nokeep>
 
 	<link rel="preload" href="/fonts/SportingGrotesque-Bold-latin.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="preload" href="/fonts/Epilogue[slnt,wght]-latin.woff2" as="font" type="font/woff2" crossorigin>

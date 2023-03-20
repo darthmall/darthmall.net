@@ -7,7 +7,9 @@ layout: base.webc
 
   <div class="prose e-content">
 		<aside webc:if="date" aria-label="publication date" style="align-self: start">
-			<p @raw="formatDate(date)"></p>
+			<p>
+				<time :@date="date" format="dd LLLL yyyy" class="dt-published"></time>
+			</p>
 		</aside>
 		<template @raw="content" webc:nokeep></template>
   </div>

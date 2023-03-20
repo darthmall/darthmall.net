@@ -14,5 +14,5 @@ layout: base.webc
 		<template @raw="content" webc:nokeep></template>
   </div>
 
-	<web-mentions></web-mentions>
+	<web-mentions :@target="site.url + page.url"></web-mentions>
 </main>

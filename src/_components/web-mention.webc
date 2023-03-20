@@ -21,7 +21,7 @@
 					necessary, but without it, I get an error about accessing .published
 					when webmention is undefined.
 				-->
-				<time :@date="webmention?.published" format="d LLLL yyyy"></time>
+				<time :@date="webmention?.published"></time>
 			</small>
 		</span>
 	</div>
@@ -37,7 +37,7 @@
 					body += `in <a href="${webmention.url}">${webmention.name}</a>`;
 				} else {
 					body += `on <a href="${webmention.url}"
-						><time :@date="webmention.published" format="d LLLL yyyy"></time></a>`;
+						><time :@date="webmention.published"></time></a>`;
 				}
 
 				body += ".";

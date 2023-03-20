@@ -9,34 +9,6 @@ function copyright() {
 		}</a>`;
 }
 
-function formatDate(dt, cls = "") {
-	const MONTHS = [
-		"January",
-		"February",
-		"March",
-		"April",
-		"May",
-		"June",
-		"July",
-		"August",
-		"September",
-		"October",
-		"November",
-		"December",
-	];
-
-	if (!dt) return "";
-	if (!(dt instanceof Date)) dt = new Date(dt);
-
-	const month = MONTHS[dt.getUTCMonth()];
-	const readableDate = `${dt.getUTCDate()} ${month} ${dt.getUTCFullYear()}`;
-
-	// Get the ISO formatted date and strip out the time component
-	const isoDate = dt.toISOString().substring(0, 10);
-
-	return `<time datetime="${isoDate}" class="${cls}">${readableDate}</time>`;
-}
-
 async function picture(
 	src,
 	cls,
@@ -62,13 +34,7 @@ async function picture(
 	return Image.generateHTML(metadata, attrs);
 }
 
-function pubDate(dateStr) {
-	return formatDate(dateStr, "dt-published");
-}
-
 module.exports = {
 	copyright,
-	formatDate,
 	picture,
-	pubDate,
 };

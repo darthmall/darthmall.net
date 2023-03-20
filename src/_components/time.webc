@@ -1,0 +1,10 @@
+<script webc:type="js" webc:root="override">
+	const { DateTime } = require("luxon");
+	const dt = date instanceof Date
+		? DateTime.fromJSDate(date, { zone: "utc" })
+		: DateTime.fromISO(date);
+	const datetime = dt.toFormat("yyyy-LL-dd");
+	const display = dt.toFormat(format || site.dateDisplayFormat);
+
+	`<time webc:raw datetime="${datetime}">${display}</time>`;
+</script>

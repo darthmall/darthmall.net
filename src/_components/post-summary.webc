@@ -1,6 +1,6 @@
 <article class="post-block h-entry" webc:root="override">
 	<slot name="title"></slot>
-	<formatted-date :date="date" class="dt-published"></formatted-date>
+	<time :@date="date" class="dt-published"></time>
 </article>
 
 <style>

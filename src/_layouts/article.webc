@@ -7,10 +7,12 @@ layout: base.webc
 
   <div class="prose e-content">
 		<aside webc:if="date" aria-label="publication date" style="align-self: start">
-			<p @raw="formatDate(date)"></p>
+			<p>
+				<time :@date="date" class="dt-published"></time>
+			</p>
 		</aside>
 		<template @raw="content" webc:nokeep></template>
   </div>
 
-	<web-mentions></web-mentions>
+	<web-mentions :@target="site.url + page.url"></web-mentions>
 </main>

@@ -13,5 +13,6 @@
 		"contact": "a11y@darthmall.net",
 		"subject": "Accessibility issue on darthmall.net",
 		"body": "Describe the issue in as much detail as you’re able. Thanks!"
-	}
+	},
+	"dateDisplayFormat": "d LLLL yyyy"
 }

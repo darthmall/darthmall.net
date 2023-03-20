@@ -4,7 +4,7 @@ layout: base.webc
 
 <main class="center flow mbs-l h-feed">
 	<script webc:type="js">
-		pageList.map((page) => `<post-summary @date="${page.date}">
+		pageList.map((page) => `<post-summary @date="${page.date.toISOString()}">
 			<h2 slot="title" class="title">
 				<a href="${page.url}" class="p-name">${page.data.title}</a><span
 				class=arrow aria-hidden=true>&Rarr;</span>

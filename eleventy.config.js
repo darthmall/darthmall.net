@@ -4,18 +4,13 @@ const pluginWebc = require("@11ty/eleventy-plugin-webc");
 const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
-const anchor = require("markdown-it-anchor");
-const footnote = require("markdown-it-footnote");
+const markdownConfig = require("./config/markdown.config.js");
 
-const { feed, posts, sketches } = require("./utils/collections.js");
-const { webmentionsForUrl } = require("./utils/filters.js");
-const {
-	copyright,
-	formatDate,
-	picture,
-	pubDate,
-} = require("./utils/shortcodes.js");
-const { formatHtml } = require("./utils/transforms.js");
+const { feed, posts, sketches } = require("./config/collections.js");
+const { webmentionsForUrl } = require("./config/filters.js");
+const { formatHtml } = require("./config/transforms.js");
+
+const { copyright, picture } = require("./config/shortcodes.js");
 
 module.exports = function(config) {
 	// Plugins
@@ -33,6 +28,9 @@ module.exports = function(config) {
 		},
 	});
 
+	// Markdown config
+	config.addPlugin(markdownConfig);
+
 	// Collections
 	config.addCollection("feed", feed);
 	config.addCollection("posts", posts);
@@ -43,27 +41,11 @@ module.exports = function(config) {
 
 	// Shortcodes
 	config.addShortcode("copyright", copyright);
-	config.addShortcode("formatDate", formatDate);
-	config.addShortcode("pubDate", pubDate);
 
 	config.addAsyncShortcode("picture", picture);
 
 	// Transforms
 	config.addTransform("formatHtml", formatHtml);
-
-	config.setFrontMatterParsingOptions({
-		excerpt: true,
-		excerpt_separator: "<!-- excerpt -->",
-	});
-
-	config.amendLibrary("md", (md) =>
-		md
-			.use(anchor, {
-				level: [2],
-				permalink: anchor.permalink.headerLink(),
-			})
-			.use(footnote)
-	);
 
 	config.setServerPassthroughCopyBehavior("passthrough");
 	config.addPassthroughCopy({

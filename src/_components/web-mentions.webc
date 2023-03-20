@@ -5,50 +5,20 @@
       <a href="/weblog/2021/webmentions/">What’s a “Webmention”</a>, you ask?
     </p>
 
-		<template webc:type="11ty" 11ty:type="njk">
-			{% set target %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
-			{% set mentions = webmentions | webmentionsForUrl(target) %}
-			{% for webmention in mentions %}
-				<article class="webmention">
-					<div class="webmention__avatar shape-circle">
-						{% if webmention.author and webmention.author.photo %}
-							<img src="{{ webmention.author.photo }}" alt="" loading="lazy" />
-						{% else %}
-							<div class="webmention__avatar--anonymous"></div>
-						{% endif %}
-					</div>
+		<script webc:type="js">
+			let mentions = [];
 
-					<div class="webmention__author">
-						<a href="{{ webmention.url }}">
-							{%- if webmention.author -%}
-								<strong>{{ webmention.author.name }}</strong>
-							{%- else -%}
-								<strong>Anonymous</strong>
-							{%- endif -%}
-						</a>
-						<span>&mdash;
-							<small>
-								{% formatDate webmention.published %}
-							</small>
-						</span>
-					</div>
+			webmentions.children.forEach((m, i) => {
+				if (m["wm-target"] === target && m["content"]) {
+					mentions.push(`<web-mention
+						:@webmention="webmentions.children[${i}]"></web-mention>`);
+				}
+			});
 
-					<div class="webmention__body">
-						{% if webmention.content.text|length > 2000 -%}
-							Mentioned {% if webmention.name -%}
-								in <a href="{{ webmention.url }}">{{ webmention.name }}</a>
-								{%- else -%}
-								on <a href="{{ webmention.url }}">{% formatDate webmention.published %}</a>
-								{%- endif %}
-						{%- else -%}
-							{{ webmention.content.text }}
-						{%- endif %}.
-					</div>
-				</article>
-			{% else %}
-				<p>No one’s mentioned this post yet.</p>
-			{% endfor %}
-		</template>
+			mentions.length > 0
+				? mentions.join("\n")
+				: "<p>No one’s mentioned this post yet.</p>";
+		</script>
 
     <p style="--space:var(--space-m)">Send me a webmention!</p>
 

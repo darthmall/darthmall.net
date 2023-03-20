@@ -368,7 +368,8 @@
 		font: var(--body-3);
 	}
 
-	.prose figure {
+	.prose figure,
+	.prose figure img {
 		margin-inline: auto;
 	}
 

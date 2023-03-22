@@ -241,6 +241,11 @@
 		justify-self: stretch;
 	}
 
+	a[href="#Skip"] {
+		--link-decoration: underline;
+		color: var(--text-2);
+	}
+
 	footer svg {
 		height: var(--icon-m);
 	}
@@ -257,6 +262,7 @@
 		}
 
 		a[href="#Skip"] {
+			align-self: end;
 			justify-self: start;
 		}
 

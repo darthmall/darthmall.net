@@ -3,14 +3,17 @@ layout: base.webc
 ---
 
 <main class="center flow mbs-l h-feed">
-	<script webc:type="js">
-		pageList.map((page) => `<post-summary @date="${page.date.toISOString()}">
-			<h2 slot="title" class="title">
-				<a href="${page.url}" class="p-name">${page.data.title}</a><span
-				class=arrow aria-hidden=true>&Rarr;</span>
-			</h2>
-		</post-summary>`).join("");
-	</script>
+	<h1 @raw="title || site.title"></h1>
+	<div id="Skip" tabindex="-1" class="flow">
+		<script webc:type="js">
+			pageList.map((page) => `<post-summary @date="${page.date.toISOString()}">
+				<h2 slot="title" class="title">
+					<a href="${page.url}" class="p-name">${page.data.title}</a><span
+					class=arrow aria-hidden=true>&Rarr;</span>
+				</h2>
+			</post-summary>`).join("");
+		</script>
+	</div>
 
 	<template @raw="content" webc:nokeep></template>
 </main>

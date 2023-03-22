@@ -1,6 +1,5 @@
 <header class="cover" webc:root="override">
-  <h1 id="Skip" tabindex="-1" class="display-1 p-name"
-			style="text-align: center">
+  <h1 class="display-1 p-name" style="text-align: center">
 		<slot></slot>
 	</h1>
 

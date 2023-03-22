@@ -10,6 +10,8 @@
 	}
 
 	.post-block > .title {
+		font: var(--heading-2);
+		font-feature-settings: var(--heading-2-features);
 		margin: 0;
 	}
 

@@ -266,8 +266,8 @@
 	}
 
 	h1 {
-		font: var(--display-1);
-		word-break: break-word;
+		font: var(--heading-1);
+		font-feature-settings: var(--heading-1-features);
 	}
 
 	h2 {
@@ -533,6 +533,7 @@
 @layer utility {
 	.display-1 {
 		font: var(--display-1);
+		word-break: break-word;
 	}
 
 	.heading-1 {

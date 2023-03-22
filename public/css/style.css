@@ -202,29 +202,6 @@
 		outline-offset: 0.25rem;
 	}
 
-	[href="#Skip"] {
-		position: absolute;
-		left: 50%;
-		top: 0;
-		transform: translate(-50%, -100%);
-		border-radius: 4px;
-		padding: var(--space-xs) var(--space-s);
-		background-color: var(--surface-2);
-		text-decoration: none;
-		opacity: 0;
-		transition-property: top, transform, opacity;
-		transition-duration: 300ms;
-		transition-timing-function: ease;
-	}
-
-	[href="#Skip"]:focus {
-		outline: var(--space-xs) solid var(--primary-1);
-		outline-offset: 0;
-		transform: translate(-50%, 0);
-		top: var(--space-m);
-		opacity: 1;
-	}
-
 	body {
 		font: var(--body-2);
 
@@ -241,15 +218,12 @@
 	}
 
 	body > header {
-		container: site-header / inline-size;
 		--space: var(--space-s);
 		--link-decoration: none;
-	}
 
-	header > .container {
+		align-items: center;
 		display: grid;
 		grid-auto-flow: row;
-		align-items: center;
 		justify-items: center;
 		row-gap: var(--space-m);
 	}
@@ -276,14 +250,14 @@
 		border-block-start: 1px solid var(--text-1);
 	}
 
-	@container site-header (min-width: 50rem) {
-		.container {
+	@media (min-width: 50rem) {
+		body > header {
 			grid-auto-flow: column;
 			grid-template-columns: repeat(3, 1fr);
 		}
 
-		a[href="/"] {
-			grid-column: 2 / 3;
+		a[href="#Skip"] {
+			justify-self: start;
 		}
 
 		.theme-section {

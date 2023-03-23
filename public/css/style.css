@@ -247,7 +247,9 @@
 	}
 
 	footer svg {
-		height: var(--icon-m);
+		display: inline-block;
+		height: 1.15em;
+		vertical-align: text-bottom;
 	}
 
 	hr {
@@ -637,6 +639,10 @@
 
 	.justify-stretch {
 		justify-self: stretch;
+	}
+
+	.align-items-start {
+		align-items: start;
 	}
 
 	.shape-circle {

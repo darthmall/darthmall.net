@@ -127,6 +127,8 @@
 			var(--font-size-0) / var(--line-height-m) var(--font-body);
 		--body-3: var(--text-style, normal) var(--font-weight-semi-bold)
 			var(--font-size--1) / var(--line-height-m) var(--font-body);
+		--body-3-black: var(--text-style, normal) var(--font-weight-black)
+			var(--font-size--1) / var(--line-height-m) var(--font-body);
 
 		--measure-xs: 27.9rem;
 		--measure-s: 34.5rem;
@@ -303,7 +305,7 @@
 	}
 
 	/* Prose */
-	.prose :is(p, figcaption, hr, h2, h3, h4) {
+	.prose :is(p, figcaption, hr, h1, h2, h3, h4) {
 		inline-size: min(100%, var(--measure-m));
 		margin-inline: auto;
 	}
@@ -590,6 +592,10 @@
 		margin-block-start: var(--space-l);
 	}
 
+	.mbs-xl {
+		margin-block-start: var(--space-xl);
+	}
+
 	.mi-auto {
 		margin-inline: auto;
 	}
@@ -615,6 +621,10 @@
 	}
 	.p-s {
 		padding: var(--space-s);
+	}
+
+	.text-center {
+		text-align: center;
 	}
 
 	.text-upper {

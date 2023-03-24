@@ -5,7 +5,7 @@ description: >-
     I design and build websites, web applications, and data visualizations.
 ---
 
-Howdy, my name is Evan.
+# Howdy, my name is Evan.
 
 {% picture "public/img/about.jpg", "", "Me, a 30-something white man, in a red vest, holding a glass of whisky and smiling at the camera at a ski resort in Norway" %}
 

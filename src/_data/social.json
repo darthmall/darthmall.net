@@ -6,6 +6,12 @@
 		"url": "/feed.xml"
 	},
 	{
+		"text": "Mastodon",
+		"icon": "mastodon",
+		"rel": "me",
+		"url": "https://notacult.social/@darth_mall"
+	},
+	{
 		"text": "CodePen",
 		"icon": "codepen",
 		"url": "https://codepen.io/darthmall",

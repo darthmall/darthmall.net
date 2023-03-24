@@ -7,7 +7,7 @@ description: >-
 layout: plain.webc
 ---
 
-Privacy is a fundamental human right.
+# Privacy is a fundamental human right.
 
 This site does not track you. It uses no cookies and has no analytics. The fonts
 are hosted along with the rest of the content on the site, not loaded from a

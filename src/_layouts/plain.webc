@@ -2,7 +2,4 @@
 layout: base.webc
 ---
 
-<main class="prose">
-	<h1 @text="title"></h1>
-	<div id="Skip" tabindex="-1" @raw="content"></div>
-</main>
+<main id="Skip" tabindex="-1" class="prose" @raw="content"></main>

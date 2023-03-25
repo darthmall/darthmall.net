@@ -22,7 +22,7 @@ I left them in-place because I was trying not to get side-tracked by redesigning
 
 I had a couple of icons in my footer that had no visible labels: the link to my RSS feed and my CodePen profile. Both used `aria-label` to provide accessible names for the links. Generally speaking, I oppose unlabeled icons because there’s no guarantee that a person both recognizes what the icon is meant to be and correctly infers its purpose in the interface. And it’s very hard to search for an icon. A labeled icon, on the other hand, is more likely to be understood correctly, and failing that, the label can always be used as a search term.
 
-Nonetheless, I opted for unlabeled icons because I thought they looked nice. I figured that social links like this are common enough in footers—at least I see them pretty regularly—and the stakes were pretty low. The worst outcome is that someone who doesn’t recognize the RSS logo clicks it and gets a face full of XML.
+Nonetheless, I opted for unlabeled icons because I thought they looked nice. I figured that social links like this are common enough in footers—at least I see them pretty regularly—and the stakes were pretty low. The worst outcome is that someone who doesn’t recognize the RSS logo, clicks it, and gets a face full of XML.
 
 But in light of the debate over enshrining `.visually-hidden` in a spec, I was scrutinizing this decision more closely. I decided that, although it was probably _ok_ to have these icon-only links down there, I didn’t _need_ them to be unlabeled. There were few enough links, and I had enough space in the footer, that I could simply stack them vertically in a bulleted list and make the labels visible next to the icons.
 

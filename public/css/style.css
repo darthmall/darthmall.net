@@ -497,6 +497,11 @@
 	a:visited:not(:hover) {
 		color: var(--link-visited-color);
 	}
+
+	fieldset {
+		border: none;
+		padding: 0;
+	}
 }
 
 @layer layout {
@@ -623,11 +628,16 @@
 		padding: var(--space-s);
 	}
 
+	.color-text-3 {
+		color: var(--text-3);
+	}
+
 	.text-center {
 		text-align: center;
 	}
 
 	.text-upper {
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
 	}
 

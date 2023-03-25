@@ -7,14 +7,14 @@ layout: base.webc
 		<h1 @raw="title" class="display-1 text-center p-name"></h1>
 		<dl class="cluster">
 			<div webc:if="date">
-				<dt>Published</dt>
+				<dt class="heading-4 text-upper color-text-3">Published</dt>
 				<dd><time :@date="date" class="dt-published"></time></dd>
 			</div>
 			<div webc:if="tags">
 				<script webc:type="js">
 					const tagLinks = tags.map((t) => `<dd><a href="/tags/${t}/">${t}</a></dd>`);
 					tagLinks.length > 0
-						? `<dt>Tagged</dt>
+						? `<dt class="heading-4 text-upper color-text-3">Tagged</dt>
 							${tagLinks.join("")}`
 						: "";
 				</script>
@@ -32,14 +32,6 @@ layout: base.webc
 		--space: var(--space-m);
 		inline-size: min(100%, var(--measure-m));
 		margin-inline: auto;
-	}
-
-	header > dl dt {
-		color: var(--text-3);
-		display: block;
-		font: var(--body-3-black);
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
 	}
 
 	header > dl dd {

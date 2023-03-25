@@ -52,7 +52,7 @@ There is one extant use of `aria-label` left on the site: the illustration of me
 
 I’m not writing this to convince anyone they should eliminate visually hidden text from their site. I did this work because I wanted to see how far I could push such an exercise just for my own edification; although I do think my site is better for it (especially the metadata on blog posts).
 
-Mostly I just wanted to step back from the question of “do we need a native mechanism for visually hiding elements” to share how the mere existence of the debate was educational for me. I appreciated how the debate provoked me to take a closer look at some of my own assumptions.
+Mostly I just wanted to step back from the question of “do we need a native mechanism for visually hiding elements” to share how the mere existence of the debate was educational for me. I appreciated how the debate provoked me to take a closer look at some of my own assumptions. Even though I was already in the habit of questioning decisions about hiding text, I sometimes reached for `aria-label` because others had done so, rather than asking myself whether it was really appropriate for my context.
 
 [^1]: Plus I’ll take any excuse to use a `<dl>`.
 [^2]: Sorry, not sorry.

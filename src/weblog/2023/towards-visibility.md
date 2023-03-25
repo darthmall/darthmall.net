@@ -40,9 +40,9 @@ I confess that of all the changes I made, I like this one the least, aesthetical
 
 ## Visible Skip Link
 
-Perhaps the most unusual change I made to the design was making the skip link visible in the header. Scott O’Hara suggests that [skip links are a workaround](https://www.scottohara.me/blog/2023/03/21/visually-hidden-hack.html) for a missing browser feature: the ability to navigate a page using landmark regions. I’d never thought of it that, but as someone who prefers to keep his hands on the homerow of his keyboard as much as possible, I would certainly appreciate some navigation shortcuts like this in my browser. That got me thinking that maybe the skip link isn’t just for people relying on assistive technology.
+Perhaps the most unusual change I made to the design was making the skip link visible in the header. Scott O’Hara suggests that [skip links are a workaround](https://www.scottohara.me/blog/2023/03/21/visually-hidden-hack.html) for a missing browser feature: the ability to navigate a page using landmark regions. I’d never thought of it like that, but as someone who prefers to keep his hands on the homerow of his keyboard as much as possible, I would certainly appreciate some navigation shortcuts like this in my browser. That got me thinking that maybe the skip link isn’t just for people relying on assistive technology.
 
-Especially given the ludicrous size of the headings on my blog posts, I thought that maybe some folks might like a quick way to just jump right past the title and get to the text of the post. If nothing else, I had plenty of room in my spartan header that I could just remove the `.visually-hidden` styles from the skip link and it would fit right in to the header. It was easy to add it, and I have trouble imagining that it’s doing any harm.
+Especially given the ludicrous size of the headings on my blog posts[^2], I thought that maybe some folks might like a quick way to just jump right past the title and get to the text of the post. If nothing else, I had plenty of room in my spartan header that I could just remove the `.visually-hidden` styles from the skip link and it would fit right in to the header. It was easy to add it, and I have trouble imagining that it’s doing any harm.
 
 ## The Lone Instance of Hidden Text
 
@@ -55,3 +55,4 @@ I’m not writing this to convince anyone they should eliminate visually hidden 
 Mostly I just wanted to step back from the question of “do we need a native mechanism for visually hiding elements” to share how the mere existence of the debate was educational for me. I appreciated how the debate provoked me to take a closer look at some of my own assumptions.
 
 [^1]: Plus I’ll take any excuse to use a `<dl>`.
+[^2]: Sorry, not sorry.

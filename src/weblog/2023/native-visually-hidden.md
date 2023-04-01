@@ -33,6 +33,7 @@ For better and worse, we will have instances where we need to visually hide cont
 </blockquote>
 <figcaption>&#x2015;&#x202F;Scott O’Hara, <q>Visually hidden content is a hack that needs to be resolved, not enshrined</q></figcaption>
 </figure>
+
 And this is all assuming that we live in a world where nobody prioritizes their own aesthetic taste over the usability of what they’re building. I would love it if people chose visible labels over unlabeled icons and plain old built-in controls over fancy, custom-styled controls, but I don’t think we’ll ever get there. I think there will always be designers, product owners, and managers who say things like, <q>none of our users are disabled,</q> or, <q>the design is cleaner without all of that text.</q>
 
 As long as people are going to be visually hiding elements, I think it’s a good idea to help them do it in the best way possible. Which brings me to the rest of my argument: why I’m not satisfied with the current technique.

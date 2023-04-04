@@ -7,7 +7,7 @@ tags:
 - Accessibility
 ---
 
-I wrote previously about some [changes I made to the design of this site](/weblog/2023/towards-visibility/); changes that made text that was previously invisible on the page, but still exposed to assistive technology, visible to everyone. These changes were prompted by a debate in the accessibility community online about whether or not it would be good to have a native mechanism to create <q>visually hidden</q> elements—that is to say, elements that aren’t visible on-screen, but which are represented to people by assistive technology.
+I wrote previously about some [changes I made to the design of this site](/weblog/2023/towards-visibility/); changes that made text that was previously invisible on the page, but still exposed to assistive technology, visible to everyone. These changes were prompted by a debate in the accessibility community about whether or not it would be good to have a native mechanism to create “visually hidden” elements—that is to say, elements that aren’t visible on-screen, but which are represented to people by assistive technology.
 
 To make a long story short, despite the fact that I chose to eliminate nearly all of the visually hidden text on my site, I’d still like to see a native `.visually-hidden` become part of a specification and implemented uniformly across browsers and assistive technology. Broadly speaking, there are three reasons I feel this way:
 
@@ -19,7 +19,7 @@ To make a long story short, despite the fact that I chose to eliminate nearly al
 
 In November of 2022, TPGi published [The anatomy of visually-hidden](https://www.tpgi.com/the-anatomy-of-visually-hidden/) which breaks down how the recommended `.visually-hidden` ruleset works. It ends by suggesting that it might be nice to be able to just set `display: visually-hidden` in your CSS. Then, in March of 2023, my pal Ben offered his thoughts on why [the web needs a native `.visually-hidden`](https://benmyers.dev/blog/native-visually-hidden/).[^1] Shortly after Ben published his article, [Web Axe](http://www.webaxe.org/we-dont-need-visually-hidden/) and [Scott O’Hara](https://www.scottohara.me/blog/2023/03/21/visually-hidden-hack.html) both published articles voicing their opposition to the idea of having a native way to visually hide elements on the web.
 
-I’d encourage you to (re)read those articles. It’s a lot to read, but there’s a lot of good information contained therein. I’ll do my best from here on to summarize the points I’m addressing honestly, but there are plenty of really great details in these articles that are worth your time and attention.[^2]
+I’d encourage you to (re)read those articles. It’s a lot to read, but there’s a lot of good information contained therein. I’ll do my best from here on to summarize honestly the points I’m addressing, but there are plenty of really great details in these articles that are worth your time and attention.[^2]
 
 ## Encouraging Universal Design
 
@@ -29,12 +29,12 @@ And I tend to agree. I get a little uncomfortable whenever I reach for `.visuall
 
 <figure>
 <blockquote>
-For better and worse, we will have instances where we need to visually hide content to mitigage a gap in the visual design. That’s not to say that every gap is necessarily due to a failure to incorporate accessibility in the design process.
+For better and worse, we will have instances where we need to visually hide content to mitigate a gap in the visual design. That’s not to say that every gap is necessarily due to a failure to incorporate accessibility in the design process.
 </blockquote>
 <figcaption>&#x2015;&#x202F;Scott O’Hara, <q>Visually hidden content is a hack that needs to be resolved, not enshrined</q></figcaption>
 </figure>
 
-And this is all assuming that we live in a world where nobody prioritizes their own aesthetic taste over the usability of what they’re building. I would love it if people chose visible labels over unlabeled icons and plain old built-in controls over fancy, custom-styled controls, but I don’t think we’ll ever get there. I think there will always be designers, product owners, and managers who say things like, <q>none of our users are disabled,</q> or, <q>the design is cleaner without all of that text.</q>
+And this is all assuming that we live in a world where nobody prioritizes their own taste over the usability of what they’re building. I would love it if people chose visible labels over unlabeled icons and plain old built-in controls over fancy, custom-styled controls, but I don’t think we’ll ever get there. I think there will always be designers, product owners, and managers who say things like, <q>none of our users are disabled,</q> or, <q>the design is cleaner without all of that text.</q>
 
 As long as people are going to be visually hiding elements, I think it’s a good idea to help them do it in the best way possible. Which brings me to the rest of my argument: why I’m not satisfied with the current technique.
 
@@ -42,7 +42,7 @@ As long as people are going to be visually hiding elements, I think it’s a goo
 
 Sure, there’s a recommended ruleset for visually hiding elements, but it’s not a standard.
 
-First, how do you find the recommended ruleset? If you happen to care about accessibility, chances are you know some reliable sources for this kind of information, and you’ll check there. If not, you might do a web search. The problem with searching, though, is the internet has a long memory. You could easily find an outdated version of this ruleset. Or you may be copying the same ruleset you’ve been using for the past 10 years that you picked up from Twitter Bootstrap.
+First, how do you find the recommended ruleset? If you happen to care about accessibility, chances are you know some reliable sources for this kind of information, and you’ll check there. If not, you might do a web search. The problem with both approaches, though, is that the internet has a long memory. You could easily find an outdated version of this ruleset. Or you may be copying the same ruleset you’ve been using for the past 10 years that you picked up from Twitter Bootstrap.
 
 Second, although our goals for visually hidden elements remain the same—<i>i.e.</i> remove the element from document flow, make it invisible on-screen, but leave it in the accessibility tree—the techniques change over time because they are based on heuristics that exist in different browsers, different assistive technologies, and combinations of those two.
 
@@ -57,7 +57,7 @@ Scott’s article suggests that we might be able to [simplify our ruleset down t
 }
 ```
 
-He exhorts people to test for themselves, but thorough accessibility testing like this is really difficult. It requires multiple browsers, operating systems, and assistive technology. According to Scott’s CodePen, he’s tested this ruleset with combinations of JAWS, Narrator, NVDA, VoiceOver, and TalkBack in Edge, Firefox, Chrome, and Safari on iOS and Android (and I presume Windows), and yet he _still_ doesn’t actually recommend this ruleset, he simply suggests this might be sufficient.
+He exhorts people to test for themselves, but thorough accessibility testing like this is really difficult. It requires multiple browsers, operating systems, devices, and assistive technology. According to Scott’s CodePen, he’s tested this ruleset with combinations of JAWS, Narrator, NVDA, VoiceOver, and TalkBack in Edge, Firefox, Chrome, and Safari on iOS and Android (and I presume Windows), and yet he _still_ doesn’t actually recommend this ruleset, he simply suggests this might be sufficient, but you should test for yourself.
 
 This is like the bad old days of web development when you couldn’t count on browsers even trying to implement the specs, let alone maintain any kind of parity as to which parts of the specs had been implemented. The only way we could be sure our sites worked everywhere they needed to was to have a bunch of browsers and operating systems, test them, and then come up with hacks to work around the parts that were different.
 
@@ -67,7 +67,7 @@ There is no substitute for testing. We should all be testing our software as muc
 
 ## It’s hard to understand why `.visually-hidden` works
 
-My final issue with contenting ourselves with a recommended ruleset for visually hiding elements is that it’s hard to understand what it’s doing. This is another symptom of the fact that it’s a collection of hacks that are based on the variety of heuristics that exist in browsers and assistive technology. The problem with not being able to understand the rule is that, as Scott points out in [Inclusively Hidden](https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html), there are actually different kinds of hidden elements.
+The last reason that I’m discontented with relying on a recommended ruleset for visually hiding elements is that it’s hard to understand what it’s doing. This is another symptom of the fact that it’s a collection of hacks that are based on the variety of heuristics that exist in browsers and assistive technology. The problem with not being able to understand the rule is that, as Scott points out in [Inclusively Hidden](https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html), there are actually different kinds of hidden elements.
 
 In some cases, you want the `.visually-hidden` ruleset we’ve been discussing; the ruleset that removes an element—usually a piece of text used for an accessible name—from document flow, makes it invisible, and leaves it in the accessibility tree. But in some cases, maybe you want actually want the element to retain its size. For example, if you’re hiding a built-in form control to present a fancier custom representation of the same control. Or perhaps you have an element that is being staged offscreen and needs to be animated into view; in which case, you might use the older version of `.visually-hidden` which relied on absolutely positioning an element out of view using an extremely large negative position based on the writing mode.
 
@@ -79,7 +79,11 @@ As it is, probably a small percentage of web developers understand how the `.vis
 
 The debate around this topic has by and large been really good for me. I’ve gained a deeper understanding of how the `.visually-hidden` ruleset works. It’s caused me to look more closely at my own decisions to visually hide text and re-motivated me to strive for universal design in my work.
 
-But at the end of the day, I am not convinced that we can eliminate the need for visually hidden elements. They are [desire paths](https://en.wikipedia.org/wiki/Desire_path) that represent real needs—or at least wants—that will not likely disappear any time soon. So as long as people are going to be doing this, I think it’s best to help them do it in the most accessible way possible. The alternative seems to be to continue tolerating people using out-of-date or untested rulesets to visually hide elements.
+But at the end of the day, I am not convinced that we can eliminate the need for visually hidden elements. They are [desire paths](https://en.wikipedia.org/wiki/Desire_path) that represent real needs—or at least wants—that will not likely disappear. So as long as people are going to be doing this, I think it’s best to help them do it in the most accessible way possible. The alternative seems to be to continue tolerating people using out-of-date or untested rulesets to visually hide elements.
+
+## Acknowledgements
+
+Thanks to [Ben](https://benmyers.dev/) for reviewing this post.
 
 [^1]: Full disclosure: in addition to being friends with Ben, I am quoted in the article voicing my support for this idea.
 [^2]: Like Scott’s [pattern for an accessible call-to-action](https://codepen.io/scottohara/pen/LYJgbrd) in a card. I seriously love this pattern and I am probably going to start using it.

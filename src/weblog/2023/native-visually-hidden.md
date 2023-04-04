@@ -1,6 +1,6 @@
 ---
 title: Web Native “Visually Hidden”
-date: 2023-04-01
+date: 2023-04-04
 description: Two cents on the topic of native visually hidden elements for the web. You didn’t ask for it, but I delivered anyway.
 tags:
 - Web Dev

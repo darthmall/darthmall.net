@@ -11,7 +11,7 @@ const { feed, posts, sketches } = require("./_config/collections.js");
 const { webmentionsForUrl } = require("./_config/filters.js");
 const { formatHtml } = require("./_config/transforms.js");
 
-const { copyright, picture } = require("./_config/shortcodes.js");
+const { copyright, picture, time } = require("./_config/shortcodes.js");
 
 module.exports = function(config) {
 	// Plugins
@@ -43,6 +43,7 @@ module.exports = function(config) {
 
 	// Shortcodes
 	config.addShortcode("copyright", copyright);
+	config.addShortcode("time", time);
 
 	config.addAsyncShortcode("picture", picture);
 

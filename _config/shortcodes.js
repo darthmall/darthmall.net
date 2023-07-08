@@ -1,3 +1,4 @@
+const { DateTime } = require("luxon");
 const Image = require("@11ty/eleventy-img");
 
 const siteMeta = require("../_data/site.json");
@@ -7,6 +8,16 @@ function copyright() {
 
 	return `&copy; ${now.getUTCFullYear()} <a href="/about/">${siteMeta.copyright
 		}</a>`;
+}
+
+function time(date, format=siteMeta.dateDisplayFormat) {
+	const dt = date instanceof Date
+		? DateTime.fromJSDate(date, { zone: "utc" })
+		: DateTime.fromISO(date);
+	const datetime = dt.toFormat("yyyy-LL-dd");
+	const display = dt.toFormat(format);
+
+	return `<time datetime="${datetime}">${display}</time>`;
 }
 
 async function picture(
@@ -37,4 +48,5 @@ async function picture(
 module.exports = {
 	copyright,
 	picture,
+	time,
 };

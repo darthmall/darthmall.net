@@ -1,4 +1,5 @@
 const { EleventyRenderPlugin } = require("@11ty/eleventy");
+const pluginBundle = require("@11ty/eleventy-plugin-bundle");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginWebc = require("@11ty/eleventy-plugin-webc");
 const sitemap = require("@quasibit/eleventy-plugin-sitemap");
@@ -14,6 +15,7 @@ const { copyright, picture } = require("./_config/shortcodes.js");
 
 module.exports = function(config) {
 	// Plugins
+	config.addPlugin(pluginBundle);
 	config.addPlugin(pluginRss);
 	config.addPlugin(EleventyRenderPlugin);
 	config.addPlugin(pluginWebc, {

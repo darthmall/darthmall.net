@@ -1,0 +1,26 @@
+<footer id="site-footer" role="contentinfo"
+        class="center max-inline-site flow pb-l type-body-3"
+        style="--space:var(--space-m)">
+  <hr>
+  <div class="cluster justify-content-center align-items-start">
+		<p>{% copyright %}</p>
+
+		<a href="mailto:{{ site.a11y.contact }}?subject={{ site.a11y.subject }}&body={{ site.a11y.body }}" class="mi-auto">Report an accessibility issue</a>
+
+    <nav>
+      <ul>
+        <li><a href="/privacy/">Privacy</a></li>
+				{% for link in social %}
+					<li>
+						<a href="{{ link.href }}"{% if link.rel %} rel="{{ link.rel }}"{% endif %}>
+							{%- if link.icon %}
+								{%- render "icon-" + link.icon -%}
+							{% endif -%}
+							{{ link.content }}
+						</a>
+					</li>
+				{% endfor %}
+      </ul>
+    </nav>
+  </div>
+</footer>

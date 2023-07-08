@@ -1,0 +1,71 @@
+<div class="center pb-l">
+  <aside class="flow type-body-4 p-0">
+    <h2>Webmentions</h2>
+    <p>
+      <a href="/weblog/2021/webmentions/">What’s a “Webmention”</a>, you ask?
+    </p>
+
+		{% for mention in mentions %}
+			{% render "web-mention" with mention as webmention %}
+		{% else %}
+			<p>No one’s mentioned this post yet.</p>
+		{% endfor %}
+
+    <p style="--space:var(--space-m)">Send me a webmention!</p>
+
+    <form action="https://webmention.io/darthmall.net/webmention" method="post">
+      <input name="target" type="hidden" value="{{ site.url }}{{ page.url }}">
+
+      <label for="webmention-source">URL</label>
+
+      <div class="cluster" style="--space:var(--space-xs)">
+        <input id="webmention-source" name="source" type="url"
+               class="flex-hulk"
+               placeholder="https://example.com" required>
+
+        <button type="submit" class="flex-grow" style="align-self: stretch">Send Webmention</button>
+      </div>
+    </form>
+
+  </aside>
+</div>
+
+{% css %}
+	.webmention {
+		--_size: 4rem;
+	}
+
+	.webmention {
+		display: grid;
+
+		gap: var(--space-xs);
+		grid-template-areas:
+			"av auth"
+			"av body";
+		grid-template-columns: min-content 1fr;
+		grid-template-rows: min-content 1fr;
+	}
+
+	.webmention__avatar {
+		grid-area: av;
+
+		height: var(--_size);
+		width: var(--_size);
+	}
+
+	.webmention__avatar .webmention__avatar--anonymous,
+	.webmention__avatar > img {
+		aspect-ratio: 1;
+		width: 100%;
+		object-fit: cover;
+		background-color: var(--surface-1);
+	}
+
+	.webmention__author {
+		grid-area: auth;
+	}
+
+	.webmention__body {
+		grid-area: body;
+	}
+{% endcss %}

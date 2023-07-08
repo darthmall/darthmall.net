@@ -1,0 +1,47 @@
+---
+layout: base.liquid
+---
+
+<main class="h-entry">
+	<header>
+		<h1 class="display-1 text-center p-name">{{ title }}</h1>
+		<dl class="cluster">
+			{% if date %}
+				<div>
+					<dt class="heading-4 text-upper color-text-3">Published</dt>
+					<dd>{% time date %}</dd>
+				</div>
+			{% endif %}
+			{% if tags %}
+				<div>
+					<dt class="heading-4 text-upper color-text-3">Tagged</dt>
+					{% for t in tags %}
+						<dd><a href="/tags/{{ t }}">{{ t }}</a></dd>
+					{% endfor %}
+				</div>
+			{% endif %}
+		</dl>
+	</header>
+
+	<div id="Skip" tabindex="-1" class="prose mbs-xl e-content">{{ content }}</div>
+
+	{% capture canonical %}{{ site.url }}{{ page.url }}{% endcapture %}
+	{% assign mentions = webmentions | webmentionsForUrl: canonical %}
+	{% render "web-mentions", page: page, mentions: mentions %}
+</main>
+
+{% css %}
+	header > dl {
+		--space: var(--space-m);
+		inline-size: min(100%, var(--measure-m));
+		margin-inline: auto;
+	}
+
+	header > dl dd {
+		display: inline-block;
+	}
+
+	header > dl dd:not(:last-child)::after {
+		content: ", ";
+	}
+{% endcss %}

@@ -1,0 +1,35 @@
+<article class="webmention">
+	<div class="webmention__avatar shape-circle">
+		{% if webmention.author.photo %}
+			<img src="{{ webmention.author.photo }}" alt="" loading="lazy" />
+		{% else %}
+			<div class="webmention__avatar--anonymous"></div>
+		{% endif %}
+	</div>
+
+	<div class="webmention__author">
+		<a href="{{ webmention.url }}">
+			<strong>{{ webmention.author.name | default: "Anonymous" }}</strong>
+		</a>
+		{%- if webmention.published %}
+		&mdash;<small>{% time webmention.published %}</small>
+		{% endif %}
+	</div>
+
+	<div class="webmention__body">
+		{% if webmention.content.text %}
+			{% if webmention.content.text.length > 2000 %}
+				Mentioned
+				{% if webmention.name %}
+					in <a href="{{ webmention.url }}">{{ webmention.name }}</a>.
+				{% else %}
+					on <a href="{{ webmention.url }}">{% time webmention.published %}</a>.
+				{% endif %}
+			{% else %}
+				{{ webmention.content.text }}
+			{% endif %}
+		{% else %}
+			Empty mention.
+		{% endif %}
+	</div>
+</article>

@@ -1,0 +1,32 @@
+---
+layout: "base.liquid"
+eleventyExcludeFromCollections: true
+---
+
+<main class="center flow">
+	<h1 id="Skip">Latest Posts</h1>
+
+	<div class="flow h-feed">
+		{% for post in collections.feed limit:site.recentPostCount %}
+			{% render "post-summary", page: page, post: post %}
+		{% endfor %}
+	</div>
+
+	<p>
+		<a class=more-posts href="/weblog/">
+			More Posts
+			<span class=arrow aria-hidden=true>&Rarr;</span>
+		</a>
+	</p>
+</main>
+
+{% css %}
+	.more-posts > .arrow {
+		display: inline-block;
+		transition: transform 500ms ease;
+	}
+
+	.more-posts:hover > .arrow {
+		transform: translateX(0.5ch);
+	}
+{% endcss %}

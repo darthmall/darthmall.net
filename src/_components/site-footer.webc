@@ -1,3 +1,9 @@
+<script webc:setup>
+function mailto({ contact, subject, body }) {
+	return `mailto:${contact}?subject=${subject}&body=${body}`;
+}
+</script>
+
 <footer id="site-footer" role="contentinfo"
         class="center max-inline-site flow pb-l type-body-3"
         style="--space:var(--space-m)">
@@ -5,8 +11,7 @@
   <div class="cluster justify-content-center align-items-start">
     <p @raw="copyright()"></p>
 
-    <a href="mailto:{{ site.a11y.contact }}?subject={{ site.a11y.subject }}&body={{ site.a11y.body }}"
-       class="mi-auto">Report an accessibility issue</a>
+    <a :href="mailto(site.a11y)" class="mi-auto">Report an accessibility issue</a>
 
     <nav>
       <ul>

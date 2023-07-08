@@ -8,7 +8,7 @@ class TagPage {
 				alias: "tag",
 				filter: ["all", "feed", "portfolio", "posts", "recent", "sketches"],
 			},
-			layout: "index.webc",
+			layout: "index.liquid",
 			eleventyComputed: {
 				permalink: ({ tag }) => `/tags/${tag}/`,
 				title: ({ tag }) => tag,

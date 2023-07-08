@@ -7,16 +7,9 @@ eleventyExcludeFromCollections: true
 	<h1 id="Skip">Latest Posts</h1>
 
 	<div class="flow h-feed">
-		<script webc:type="js">
-			collections.feed
-				.slice(0, site.recentPostCount)
-				.map((page) => `<post-summary @date="${page.date.toISOString()}">
-					<h2 slot="title" class="title">
-						<a href="${page.url}" class="p-name">${page.data.title}</a><span
-						class="arrow" aria-hidden="true">&Rarr;</span>
-					</h2>
-				</post-summary>`).join("");
-		</script>
+		{% for post in collections.feed limit:site.recentPostCount %}
+			{% render "post-summary", page: page, post: post %}
+		{% endfor %}
 	</div>
 
 	<p>
@@ -27,7 +20,7 @@ eleventyExcludeFromCollections: true
 	</p>
 </main>
 
-<style>
+{% css %}
 	.more-posts > .arrow {
 		display: inline-block;
 		transition: transform 500ms ease;
@@ -36,4 +29,4 @@ eleventyExcludeFromCollections: true
 	.more-posts:hover > .arrow {
 		transform: translateX(0.5ch);
 	}
-</style>
+{% endcss %}

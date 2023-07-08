@@ -22,7 +22,7 @@ module.exports = function(config) {
 		components: "_includes/**/*.webc",
 	});
 	config.addPlugin(syntaxHighlight, {
-		templateFormats: ["njk", "md"],
+		templateFormats: ["njk", "liquid", "md"],
 	});
 	config.addPlugin(sitemap, {
 		sitemap: {

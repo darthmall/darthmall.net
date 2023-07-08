@@ -3,4 +3,4 @@ permalink: /sitemap.xml
 eleventyExcludeFromCollections: true
 ---
 
-<template @raw="sitemap(collections.all)" webc:nokeep></template>
+{%- sitemap collections.all -%}

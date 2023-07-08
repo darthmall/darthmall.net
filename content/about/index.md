@@ -1,6 +1,6 @@
 ---
 title: About
-layout: plain.webc
+layout: plain.liquid
 description: >-
     I design and build websites, web applications, and data visualizations.
 ---

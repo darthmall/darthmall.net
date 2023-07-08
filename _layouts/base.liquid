@@ -36,7 +36,7 @@
 <body>
 	{% render "site-header", page: page %}
 	{{ content }}
-	{% render "site-footer" %}
+	{% render "site-footer", social: social %}
 
 	<style>{% getBundle "css", "defer" %}</style>
 	<script>{% getBundle "js", "defer" %}</script>

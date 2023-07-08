@@ -4,20 +4,20 @@ const pluginWebc = require("@11ty/eleventy-plugin-webc");
 const sitemap = require("@quasibit/eleventy-plugin-sitemap");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
-const markdownConfig = require("./config/markdown.config.js");
+const markdownConfig = require("./_config/markdown.config.js");
 
-const { feed, posts, sketches } = require("./config/collections.js");
-const { webmentionsForUrl } = require("./config/filters.js");
-const { formatHtml } = require("./config/transforms.js");
+const { feed, posts, sketches } = require("./_config/collections.js");
+const { webmentionsForUrl } = require("./_config/filters.js");
+const { formatHtml } = require("./_config/transforms.js");
 
-const { copyright, picture } = require("./config/shortcodes.js");
+const { copyright, picture } = require("./_config/shortcodes.js");
 
 module.exports = function(config) {
 	// Plugins
 	config.addPlugin(pluginRss);
 	config.addPlugin(EleventyRenderPlugin);
 	config.addPlugin(pluginWebc, {
-		components: "src/_components/**/*.webc",
+		components: "_includes/**/*.webc",
 	});
 	config.addPlugin(syntaxHighlight, {
 		templateFormats: ["njk", "md"],
@@ -57,10 +57,10 @@ module.exports = function(config) {
 
 	return {
 		dir: {
-			input: "src",
-			includes: "_includes",
-			layouts: "_layouts",
-			data: "_data",
+			input: "content",
+			includes: "../_includes",
+			layouts: "../_layouts",
+			data: "../_data",
 		},
 		markdownTemplateEngine: "njk",
 	};

@@ -1,8 +1,8 @@
 function feed(collection) {
 	return collection
 		.getFilteredByGlob([
-			"./src/weblog/**/*.md",
-			"./src/pages/sketchbook/**/*.md",
+			"./content/weblog/**/*.md",
+			"./content/pages/sketchbook/**/*.md",
 		])
 		.sort((a, b) => {
 			if (a.data.date > b.data.date) return -1;
@@ -18,13 +18,13 @@ function posts(collection) {
 		livePosts = (post) => post.date <= now && !post.data.draft;
 
 	return collection
-		.getFilteredByGlob("./src/weblog/**/*.md")
+		.getFilteredByGlob("./content/weblog/**/*.md")
 		.filter(livePosts)
 		.reverse();
 }
 
 function sketches(collection) {
-	return collection.getFilteredByGlob("./src/sketchbook/**/*.md").reverse();
+	return collection.getFilteredByGlob("./content/sketchbook/**/*.md").reverse();
 }
 
 module.exports = {

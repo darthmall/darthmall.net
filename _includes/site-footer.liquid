@@ -14,7 +14,7 @@
 					<li>
 						<a href="{{ link.href }}"{% if link.rel %} rel="{{ link.rel }}"{% endif %}>
 							{%- if link.icon %}
-								{%- render "icon-" + link.icon -%}
+								{%- render "icon-{{ link.icon }}" -%}
 							{% endif -%}
 							{{ link.content }}
 						</a>

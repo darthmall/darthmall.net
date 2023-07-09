@@ -24,13 +24,28 @@
 }
 
 @layer reset {
-	* {
+	*,
+	*::after,
+	*::before {
+		font-feature-settings: "kern";
+		font-kerning: normal;
+		-moz-osx-font-smoothing: grayscale !important;
+		-webkit-font-smoothing: antialiased !important;
 		margin: 0;
+	}
+
+	:root {
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
 	}
 
 	body {
 		min-block-size: 100%;
 		min-block-size: 100dvb;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		text-wrap: balance;
 	}
 
 	canvas,
@@ -53,6 +68,10 @@
 		font: inherit;
 	}
 
+	[id] {
+		scroll-margin-top: 2ex;
+	}
+
 	[hidden] {
 		display: none;
 	}
@@ -64,6 +83,10 @@
 
 	[role="list"] > li {
 		margin: 0;
+	}
+
+	:focus:not(:focus-visible) {
+		outline-color: transparent;
 	}
 
 	@media (prefers-reduced-motion: no-preference) {
@@ -193,10 +216,6 @@
 			--primary-1: var(--color-yellow-1);
 			--secondary-1: var(--color-magenta-1);
 		}
-	}
-
-	:focus:not(:focus-visible) {
-		outline: none;
 	}
 
 	:focus-visible {
@@ -444,10 +463,6 @@
 		color: var(--active-color);
 	}
 
-	button:focus:not(:focus-visible) {
-		outline: none;
-	}
-
 	button:focus-visible {
 		background: var(--focus-background);
 		color: var(--focus-color);
@@ -470,10 +485,6 @@
 		line-height: 1;
 		color: var(--color);
 		background-color: var(--background);
-	}
-
-	input:focus:not(:focus-visible) {
-		outline: none;
 	}
 
 	input:focus-visible {

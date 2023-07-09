@@ -198,7 +198,7 @@
 		--primary-1: var(--color-magenta-1);
 		--secondary-1: var(--color-yellow-1);
 
-		--site-margin: var(--space-s);
+		--site-margin: var(--space-l);
 		--icon-m: var(--font-size-1);
 
 		--link-visited-color: var(--text-1);
@@ -324,21 +324,6 @@
 	}
 
 	/* Prose */
-	.prose :is(p, figcaption, hr, h1, h2, h3, h4) {
-		inline-size: min(100%, var(--measure-m));
-		margin-inline: auto;
-	}
-
-	.prose :is(ol, ul) {
-		--_padding: 4.5ch;
-		inline-size: min(
-			calc(100% - var(--_padding)),
-			calc(var(--measure-m) - var(--_padding))
-		);
-		margin-inline: auto;
-		padding-inline-start: var(--_padding);
-	}
-
 	.prose :is(h2, h3, h4, p + p) {
 		margin-block-start: 1em;
 	}
@@ -351,19 +336,21 @@
 		margin-block-end: 0.25em;
 	}
 
+	.prose :is(ol, ul) {
+		padding: 0;
+	}
+
 	.prose li + li {
 		margin-block-start: 0.5em;
 	}
 
-	.prose :is(aside, blockquote, figure, hr, ol, ul) {
+	.prose :is(aside, blockquote, figure, hr, dl, ol, ul) {
 		margin-block: 2em;
 	}
 
 	.prose aside {
 		--_padding: var(--space-l);
 		border-block: 1px solid var(--color-gray-3);
-		inline-size: min(calc(100% - 2 * var(--_padding)), var(--measure-s));
-		margin-inline: auto;
 		padding: var(--_padding);
 	}
 
@@ -400,8 +387,6 @@
 		--_padding: var(--space-m);
 		background-color: var(--surface-2);
 		border-radius: 0.25rem;
-		inline-size: min(calc(100% - 2 * var(--_padding)), 88ch);
-		margin-inline: auto !important; /* FIXME: Fighting with Prism themes */
 		overflow-x: auto;
 		padding: var(--_padding);
 	}

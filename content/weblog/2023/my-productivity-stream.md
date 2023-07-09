@@ -11,23 +11,42 @@ tags:
 Alex wrote about his [productivity stream](https://trost.codes/posts/productivity-system-2023/), which is something I’ve been thinking about for myself a lot lately. This kind of stuff is a bit like catnip for me, so I couldn’t really resist writing about my own tools and workflow, despite the fact that I’m experimenting pretty heavily with some changes to the process at the moment. I’m not sure how these things will work out, but I also know that there were several ways in which I felt like what I have been doing up until recently weren’t working all that well for me. Anyway, here’s a quick run-down…
 
 <dl>
+
+<div>
 <dt>Tasks</dt>
 <dd><a href="https://bulletjournal.com/">Bullet Journal</a></dd>
 <dd><a href="https://signal.org/download/">Signal</a></dd>
+</div>
+
+<div>
 <dt>Calendar</dt>
 <dd><a href="https://proton.me/calendar">Proton Calendar</a></dd>
 <dd>Bullet Journal</dd>
+</div>
+
+<div>
 <dt>Note-taking</dt>
 <dd>Bullet Journal</dd>
 <dd><a href="https://obsidian.md/">Obsidian</a></dd>
 <dd>Signal</dd>
+</div>
+
+<div>
 <dt>Writing</dt>
 <dd><a href="https://typora.io/">Typora</a></dd>
 <dd>Obsidian</dd>
+</div>
+
+<div>
 <dt>RSS</dt>
 <dd><a href="https://readwise.io/read">Readwise Reader</a></dd>
+</div>
+
+<div>
 <dt>Read Later</dt>
 <dd>Readwise Reader</dd>
+</div>
+
 </dl>
 
 ## Bullet Journal

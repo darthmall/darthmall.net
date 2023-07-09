@@ -391,6 +391,21 @@
 		padding: var(--_padding);
 	}
 
+	.prose dl:has(> div) {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr));
+		gap: var(--space-s);
+	}
+
+	.prose dl:has(> div) dt {
+		margin-block-start: 0;
+	}
+
+	.prose dt {
+		font-weight: var(--font-weight-black);
+		margin-block-start: var(--space-s);
+	}
+
 	pre code {
 		padding: 0;
 	}

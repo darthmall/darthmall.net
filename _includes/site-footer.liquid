@@ -12,7 +12,7 @@
         <li><a href="/privacy/">Privacy</a></li>
 				{% for link in social %}
 					<li>
-						<a href="{{ link.href }}"{% if link.rel %} rel="{{ link.rel }}"{% endif %}>
+						<a href="{{ link.url }}"{% if link.rel %} rel="{{ link.rel }}"{% endif %}>
 							{%- if link.icon %}
 								{%- render "icon-{{ link.icon }}" -%}
 							{% endif -%}

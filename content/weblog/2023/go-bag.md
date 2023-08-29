@@ -46,11 +46,22 @@ I plan to change out the spare clothes every week or two when I’m doing laundr
 
 At the same time, I’ll probably change out the water in the two 48 fl. oz. Nalgenes I keep some drinking water in. Either drinking it or watering some house plants so that the water in the bottles is relatively fresh. Also a chance to check the bottles and see if they need a wash. I also plan to cycle out whatever food we keep in there periodically so that it doesn’t become too stale.
 
+## Resources
+
+Here are some websites I was using to help me put all of this together.
+
+- [https://www.livingwithfire.com/preparing-for-wildfire/prepare-for-wildfire-pack-a-to-go-bag/](https://www.livingwithfire.com/preparing-for-wildfire/prepare-for-wildfire-pack-a-to-go-bag/)
+- [https://www.nytimes.com/2022/06/29/climate/emergency-go-bag.html](https://www.nytimes.com/2022/06/29/climate/emergency-go-bag.html)
+- [https://www.ready.gov/kit](https://www.ready.gov/kit)
+- [https://coloradosun.com/2022/01/04/how-to-prepare-for-a-wildfire-in-colorado/](https://coloradosun.com/2022/01/04/how-to-prepare-for-a-wildfire-in-colorado/)
+
 ## Put together what you have
 
 At this point, I’ve got most of the stuff on that list in our bag, but not all of it. I’ve been slowly adding things to this list as they occur to me, and I’ve been slowly adding things to the bag as I have time and ability to collect them.
 
-Pretty much everyone can probably collect their important documents, a change of clothes, and whatever you need to charge your phone, and then stuff those in a spare backpack that you leave somewhere convenient for you when you’re leaving. That’s a pretty good start.
+Pretty much everyone can probably collect their important documents, a change of clothes, and whatever you need to charge your phone, and then stuff those in a spare backpack that you leave somewhere convenient for you when you’re leaving.
+
+That’s a pretty good start.
 
 [^1]: It was actually [Andy Bell’s harrowing account of the fire in Rhodes](https://andy-bell.co.uk/rhodes-wildfires/) that finally motivated me to get my shit together. Reading that caused me so much anxiety I had trouble sleeping, and the best way I could find to deal with the anxiety was to prep my go-bag.
 [^2]: This is something I still need to add, and I have to do a little more research into purification methods. I remember what we used to do in scouts when we went backpacking, but I want to understand water safety a little better before I start buying and packing gear because an emergency situation might be different than wandering around mountains.

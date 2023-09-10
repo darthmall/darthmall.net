@@ -340,8 +340,13 @@
 		padding: 0;
 	}
 
+	.prose :is(ol, ul) :is(ol, ul) {
+		padding-left: 1em;
+		margin-block: 0;
+	}
+
 	.prose li + li {
-		margin-block-start: 0.5em;
+		margin-block-start: 0.25em;
 	}
 
 	.prose :is(aside, blockquote, figure, hr, dl, ol, ul) {

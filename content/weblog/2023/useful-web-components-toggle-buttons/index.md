@@ -1,7 +1,7 @@
 ---
 title: "Useful Web Components: Toggle Buttons"
 date: 2023-09-25
-description: ""
+description: "An implementation of a toggle button group, or segmented control using Web Components"
 tags:
   - Web Dev
   - Web Components

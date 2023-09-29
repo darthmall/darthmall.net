@@ -1,0 +1,185 @@
+---
+layout: null
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="color-scheme" content="light dark">
+	<title>Toggle Button Group Demo</title>
+	<style>
+		button[aria-pressed="true"] {
+			background-color: AccentColor;
+			border-color: AccentColor;
+			color: AccentColorText;
+		}
+
+		/* Make all buttons in the group the same width */
+		toggle-group {
+			display: grid;
+			grid-auto-columns: 1fr;
+			grid-auto-flow: column;
+		}
+
+		/* Eliminate rounded corners on inner edges of buttons. */
+		toggle-group button:not(:first-of-type) {
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
+		toggle-group button:not(:last-of-type) {
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+	</style>
+	<style>
+		@layer base {
+			* {
+				box-sizing: border-box;
+			}
+
+			html {
+				background-color: Canvas;
+				font-family: system-ui, sans-serif;
+			}
+
+			body {
+				display: grid;
+				margin: auto;
+				min-height: 100vh;
+				place-items: center;
+				width: min(100%, 25rem);
+			}
+
+			fieldset {
+				border: none;
+				width: 100%;
+			}
+
+			button {
+				padding: 0.25em 1em;
+				border-radius: 0.25em;
+				border: 1px solid;
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<fieldset>
+		<legend>Choose one</legend>
+		<toggle-group>
+			<button name="choose-one" value="one">One</button>
+			<button name="choose-one" value="two">Two</button>
+			<button name="choose-one" value="three">Three</button>
+		</toggle-group>
+	</fieldset>
+
+	<fieldset>
+		<legend>Choose all that apply</legend>
+		<toggle-group multiple>
+			<button name="choose-any" value="one">One</button>
+			<button name="choose-any" value="two">Two</button>
+			<button name="choose-any" value="three">Three</button>
+		</toggle-group>
+	</fieldset>
+
+	<script>
+		class ToggleGroup extends HTMLElement {
+			connectedCallback() {
+				this.addEventListener("click", this.#handleClick);
+			}
+
+			disconnectedCallback() {
+				this.removeEventListener("click", this.#handleClick);
+			}
+
+			get multiple() {
+				return this.hasAttribute("multiple");
+			}
+
+			set multiple(value) {
+				if (value === true) {
+					this.setAttribute("multiple", "");
+				} else {
+					this.removeAttribute("multiple");
+				}
+			}
+
+			get value() {
+				const value_list = [];
+
+				for (let btn of this.querySelectorAll("[aria-pressed=true]")) {
+					value_list.push(btn.value);
+				}
+
+				return this.multiple ? value_list : value_list[0];
+			}
+
+			set value(val) {
+				// Ensure we are always working with an array, for simplicity.
+				if (!Array.isArray(val)) {
+					this.value = [val];
+					return;
+				}
+
+				// If this is a single-select toggle group and there's more than one
+				// value in the array, we ignore all but the first value.
+				if (val.length > 1 && !this.multiple) {
+					this.value = [val[0]];
+					return;
+				}
+
+				// Update the state to match the value.
+				for (let btn of this.querySelectorAll("button")) {
+					const state = val.includes(btn.value) ? "true" : "false";
+					btn.setAttribute("aria-pressed", state);
+				}
+			}
+
+			#handleClick(event) {
+				const target = event.target;
+
+				// Bail out, in case someone puts a non-button element inside this component
+				if (target.localName !== "button") return;
+
+				// Prevent form submission when the toggle group is inside a form element
+				// for progressive enhancement
+				event.preventDefault();
+
+				// If the toggle group is a multi-select, toggle the event target and
+				// we're all done
+				if (this.multiple) {
+					this.#toggleState(target);
+					return;
+				}
+
+				// In single select mode, clear any existing selections...
+				for (let btn of this.querySelectorAll("[aria-pressed=true]")) {
+					btn.setAttribute("aria-pressed", "false");
+				}
+
+				// ...and then select the event target
+				target.setAttribute("aria-pressed", "true");
+
+				this.dispatchEvent(
+					new CustomEvent("togglechange", { detail: { value: this.value } })
+				);
+			}
+
+			#toggleState(button) {
+				const currentValue = button.getAttribute("aria-pressed");
+				const toggledValue = currentValue === "true" ? "false" : "true";
+				button.setAttribute("aria-pressed", toggledValue);
+			}
+		}
+
+		customElements.define("toggle-group", ToggleGroup);
+	</script>
+</body>
+
+</html>

@@ -65,6 +65,7 @@ module.exports = function(config) {
 			layouts: "../_layouts",
 			data: "../_data",
 		},
+		htmlTemplateEngine: false,
 		markdownTemplateEngine: "njk",
 	};
 };

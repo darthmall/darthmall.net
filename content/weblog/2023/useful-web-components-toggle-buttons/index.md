@@ -53,9 +53,9 @@ When we come to the implementation of our `<toggle-group>` Web Component, we’l
 
 ```css
 button[aria-pressed="true"] {
-    background-color: AccentColor;
-    border-color: AccentColor;
-    color: AccentColorText;
+    background-color: dodgerblue;
+    border-color: dodgerblue;
+    color: black;
 }
 
 /* Make all buttons in the group the same width */
@@ -75,6 +75,11 @@ toggle-group button:not(:last-of-type) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
+
+/* Prevent clicks on elements nested inside buttons */
+toggle-group button * {
+    pointer-events: none;
+}
 ```
 
 <figcaption>Styles for the toggle group.</figcaption>
@@ -84,7 +89,9 @@ Our styles are also pretty minimal. First, we define a style that communicates t
 
 Next, we handle the layout of the buttons in our toggle group. Grid makes this really easy and ensures that we have no gaps between buttons and that all buttons have the same size.
 
-The last two rules remove rounded corners on the internal edges of any of the buttons. If you don’t have rounded corners on your buttons, this won’t really matter, and the corners of your toggle group will be square. If you do round the corners of your buttons, then the corners of your toggle group will match whatever border radius you have set for your buttons, and we only straighten out the corners we need to so that the control looks like a single, segmented button.
+The next two rules remove rounded corners on the internal edges of any of the buttons. If you don’t have rounded corners on your buttons, this won’t really matter, and the corners of your toggle group will be square. If you do round the corners of your buttons, then the corners of your toggle group will match whatever border radius you have set for your buttons, and we only straighten out the corners we need to so that the control looks like a single, segmented button.
+
+Finally, we disable pointer events on elements contained inside of the buttons. This allows you to put an icon inside the buttons along with the text, without allowing it to be the target of a click event. This way, when we implement the click handler, we don’t have to worry about the event target being the SVG inside of the button instead of the button itself.
 
 ## JavaScript
 

@@ -13,9 +13,9 @@ layout: null
 	<title>Toggle Button Group Demo</title>
 	<style>
 		button[aria-pressed="true"] {
-			background-color: AccentColor;
-			border-color: AccentColor;
-			color: AccentColorText;
+			background-color: dodgerblue;
+			border-color: dodgerblue;
+			color: black;
 		}
 
 		/* Make all buttons in the group the same width */
@@ -34,6 +34,10 @@ layout: null
 		toggle-group button:not(:last-of-type) {
 			border-top-right-radius: 0;
 			border-bottom-right-radius: 0;
+		}
+
+		toggle-group button * {
+			pointer-events: none;
 		}
 	</style>
 	<style>

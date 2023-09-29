@@ -370,6 +370,7 @@
 	}
 
 	.prose figcaption {
+		background-color: var(--surface-1);
 		color: var(--text-2);
 		grid-column: 1 / -1;
 		margin-block-start: var(--space-s);
@@ -409,6 +410,16 @@
 	.prose dt {
 		font-weight: var(--font-weight-black);
 		margin-block-start: var(--space-s);
+	}
+
+	figure:has(iframe) {
+		background-color: var(--surface-2);
+		padding-block-start: var(--space-s);
+	}
+
+	figure iframe {
+		border: none;
+		margin-inline: auto;
 	}
 
 	pre code {

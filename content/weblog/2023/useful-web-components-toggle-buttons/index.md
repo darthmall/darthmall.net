@@ -5,7 +5,6 @@ description: "An implementation of a toggle button group, or segmented control u
 tags:
   - Web Dev
   - Web Components
-eleventyExcludeFromCollections: true
 ---
 
 This post is the first of a series highlighting some of my favorite uses for web components.
@@ -15,7 +14,7 @@ This post is the first of a series highlighting some of my favorite uses for web
 <figcaption>A group of toggle buttons, also known as a segmented control.</figcaption>
 </figure>
 
-One of my favorite uses of Web Components is as a container for HTML elements that helps manage some aspect of state. In this case, we can wrap a couple of `<button>` elements to create a set of toggle buttons, like you might use for a theme picker on your website.
+One of my favorite uses of Web Components is as a container for HTML elements that helps manage some aspect of state. In this case, we can wrap a couple of `<button>` elements to create a set of toggle buttons, like you might use for a theme picker on your website. Let me know what you think over on the fediverse: <a href="https://notacult.social/@darth_mall" rel="me">@darth_mall@notacult.social</a>.
 
 ## Markup
 
@@ -111,7 +110,8 @@ class ToggleGroup extends HTMLElement {
 
 	// Internal methods
     #handleClick(event) {}
-    #toggleState(button) {}
+    #setState(state) {}
+    #togglePressed(button) {}
 }
 
 customElements.define("toggle-group", ToggleGroup);
@@ -186,23 +186,16 @@ get value() {
 }
 
 set value(val) {
-    // Ensure we are always working with an array, for simplicity.
     if (!Array.isArray(val)) {
-        this.value = [val];
-        return;
-    }
-
-    // If this is a single-select toggle group and there's more than one
-    // value in the array, we ignore all but the first value.
-    if (val.length > 1 && !this.multiple) {
-        this.value = [val[0]];
-        return;
-    }
-
-    // Update the state to match the value.
-    for (let btn of this.querySelectorAll("button")) {
-        const state = val.includes(btn.value) ? "true" : "false";
-        btn.setAttribute("aria-pressed", state);
+        // Ensure we are always working with an array, for simplicity.
+        this.#setState([val]);
+    } else if (val.length > 1 && !this.multiple) {
+        // If this is a single-select toggle group and there's more than one
+    	// value in the array, we ignore all but the first value.
+        this.#setState([val[0]]);
+    } else {
+        // Assigned value is fine as-is.
+        this.#setState(val);
     }
 }
 ```
@@ -212,7 +205,7 @@ set value(val) {
 
 The `value` property is modeled after the `value` property on `<input>` elements. The getter simply iterates over all of the children of the component that are toggled on and adds their value to an array of values. If the toggle group has multi-select enabled, it returns the array, otherwise it returns the first item in the array. If nothing is selected, it returns `undefined`.
 
-The setter will accept either a single value or an array of values, with a guard to ignore all but the first array element if the toggle group is in single-select mode. Then it iterates over all of the buttons inside the component and sets its `aria-pressed` attribute based on whether or not its value can be found in the array of values being set.
+The setter will accept either a single value or an array of values, with a guard to ignore all but the first array element if the toggle group is in single-select mode. It just ensures that we’re passing a valid argument to the `#setState` method so that the <abbr>API</abbr> for anyone using the Web Component via JavaScript has a nicer time, rather than requiring them to always pass an array.
 
 ### Click handler
 
@@ -230,20 +223,13 @@ The setter will accept either a single value or an array of values, with a guard
     event.preventDefault();
 
     // If the toggle group is a multi-select, toggle the event target and
-    // we're all done
+    // we're all done, otherwise set the state of the control
     if (this.multiple) {
         this.#toggleState(target);
-        return;
+    } else {
+        this.#setState([target.value]);
     }
 
-    // In single select mode, clear any existing selections...
-    for (let btn of this.querySelectorAll("[aria-pressed=true]")) {
-        btn.setAttribute("aria-pressed", "false");
-    }
-
-    // ...and then select the event target
-    target.setAttribute("aria-pressed", "true");
-    
     this.dispatchEvent(new CustomEvent(
         "togglechange",
         { detail: { value: this.value } },
@@ -256,14 +242,32 @@ The setter will accept either a single value or an array of values, with a guard
 
 The first thing the handler does is check to see if the thing that was clicked was actually a button. In the event that someone put something other than a button inside the toggle group, we want to just ignore clicks and let the browser do whatever else it wants to do. If it is a button, we want to prevent the default browser behavior, because this toggle group could be inside a form and we don’t want the form submitting (more on this when we get to progressive enhancement).
 
-With those guards in place, the next thing to do is check to see if this toggle group is a multi-select group or not. If it is a multi-select group, then all we have to do is toggle the state of whatever button was clicked. If it’s a single-select group, we first reset all of the buttons to off, and then turn on the toggle that was clicked. And finally dispatch a custom event to notify listeners that the value of the toggle group has changed.
+With those guards in place, the next thing to do is check to see if this toggle group is a multi-select group or not. If it is a multi-select group, then all we have to do is toggle the state of whatever button was clicked. If it’s a single-select group, we just pass the value of the event target to `#setState`.
 
-### Toggle state method
+### Set state method
 
 <figure>
 
 ```js
-#toggleState(button) {
+#setState(state) {
+    for (let btn of this.querySelectorAll("button")) {
+        const pressed = state.includes(btn.value) ? "true" : "false";
+        btn.setAttribute("aria-pressed", pressed);
+    }
+}
+```
+
+<figcaption>Implementation of the set state private method.</figcaption>
+</figure>
+
+The set state method is a utility to set the `aria-pressed` attributes on all the buttons to match the desired state. The argument, `state`, is an array of strings corresponding to the values on each button that should be turned on; all other buttons will be turned off. This method is private because it doesn’t include any checks on the arguments—it assumes that `state` is an array. This allows us to skip unnecessary checks when we call internally from our click handler and we know the correct format of the argument to pass. We can then push all of the checks to be more permissive in what we accept from authors using this Web Component into the `value` setter for a nicer API.
+
+### Toggle pressed method
+
+<figure>
+
+```js
+#togglePressed(button) {
     const currentValue = button.getAttribute("aria-pressed");
     const toggledValue = currentValue === "true" ? "false" : "true";
     button.setAttribute("aria-pressed", toggledValue);

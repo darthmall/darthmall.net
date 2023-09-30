@@ -125,23 +125,16 @@ layout: null
 			}
 
 			set value(val) {
-				// Ensure we are always working with an array, for simplicity.
 				if (!Array.isArray(val)) {
-					this.value = [val];
-					return;
-				}
-
-				// If this is a single-select toggle group and there's more than one
-				// value in the array, we ignore all but the first value.
-				if (val.length > 1 && !this.multiple) {
-					this.value = [val[0]];
-					return;
-				}
-
-				// Update the state to match the value.
-				for (let btn of this.querySelectorAll("button")) {
-					const state = val.includes(btn.value) ? "true" : "false";
-					btn.setAttribute("aria-pressed", state);
+					// Ensure we are always working with an array, for simplicity.
+					this.#setState([val]);
+				} else if (val.length > 1 && !this.multiple) {
+					// If this is a single-select toggle group and there's more than one
+					// value in the array, we ignore all but the first value.
+					this.#setState([val[0]]);
+				} else {
+					// Assigned value is fine as-is.
+					this.#setState(val);
 				}
 			}
 
@@ -156,26 +149,26 @@ layout: null
 				event.preventDefault();
 
 				// If the toggle group is a multi-select, toggle the event target and
-				// we're all done
+				// we're all done, otherwise set the state of the control
 				if (this.multiple) {
-					this.#toggleState(target);
-					return;
+					this.#togglePressed(target);
+				} else {
+					this.#setState([target.value]);
 				}
-
-				// In single select mode, clear any existing selections...
-				for (let btn of this.querySelectorAll("[aria-pressed=true]")) {
-					btn.setAttribute("aria-pressed", "false");
-				}
-
-				// ...and then select the event target
-				target.setAttribute("aria-pressed", "true");
 
 				this.dispatchEvent(
 					new CustomEvent("togglechange", { detail: { value: this.value } })
 				);
 			}
 
-			#toggleState(button) {
+			#setState(state) {
+				for (let btn of this.querySelectorAll("button")) {
+					const pressed = state.includes(btn.value) ? "true" : "false";
+					btn.setAttribute("aria-pressed", pressed);
+				}
+			}
+
+			#togglePressed(button) {
 				const currentValue = button.getAttribute("aria-pressed");
 				const toggledValue = currentValue === "true" ? "false" : "true";
 				button.setAttribute("aria-pressed", toggledValue);

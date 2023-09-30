@@ -333,4 +333,4 @@ fieldset:has(toggle-group:not(:defined)) {
 <figcaption><abbr>CSS</abbr> to hide the Web Component until it is upgraded.</figcaption>
 </figure>
 
-[^1]: It would therefore be a good idea to ask yourself whether you really want a toggle group, or if you’d be better off just using a group of radio buttons. A case for using a toggle group instead of a radio group can be made when we come to the progressive enhancement portion of the component.
+[^1]: It would therefore be a good idea to ask yourself whether you really want a toggle group, or if you’d be better off just using a group of radio buttons.

@@ -231,11 +231,15 @@
 		display: grid;
 		grid-template-rows: auto 1fr auto;
 
-		/* Prevent scrollbars (especially on windows) when setting inline-size to
-		* 100vw to achive full-bleed or other breakout effects in the layout.
-		*/
-		overflow-x: hidden;
 		padding-inline: var(--site-margin);
+	}
+
+	body,
+	body > * {
+		/* Prevent scrollbars (especially on windows) when setting inline-size to
+		 * 100vw to achive full-bleed or other breakout effects in the layout.
+		 */
+		overflow-x: hidden;
 	}
 
 	body > header {

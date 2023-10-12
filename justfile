@@ -9,6 +9,9 @@ default: build
 build:
 	eleventy
 
+serve:
+	eleventy --serve --incremental --quiet
+
 lint:
   prettier --check _config/ _data/ _includes/ _layouts/ _lib/ content/ public/
 

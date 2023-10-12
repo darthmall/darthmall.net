@@ -4,6 +4,8 @@ UNICODE_RANGE := 'U+0-FF,U+131,U+152,U+153,U+2BB,U+2BC,U+2C6,U+2DA,U+2DC,U+2000-
 SITE_DIR := "_site"
 FONT_OUTPUT := SITE_DIR / "fonts"
 
+default: build
+
 build:
 	eleventy
 

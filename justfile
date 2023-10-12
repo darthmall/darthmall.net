@@ -7,6 +7,12 @@ FONT_OUTPUT := SITE_DIR / "fonts"
 build:
 	eleventy
 
+lint:
+  prettier --check _config/ _data/ _includes/ _layouts/ _lib/ content/ public/
+
+format:
+	prettier --write src/
+
 subset-fonts: subset-epilogue subset-atkinson subset-sporting-grotesque
 
 _font_dir:

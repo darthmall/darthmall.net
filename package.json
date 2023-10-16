@@ -4,11 +4,7 @@
 	"description": "Evan Sheehan's personal website",
 	"private": true,
 	"scripts": {
-		"start": "eleventy --serve --incremental --quiet",
 		"build": "eleventy",
-		"clean": "rm -rf _site",
-		"format": "prettier --write src/",
-		"lint": "prettier --check src/"
 	},
 	"author": "W. Evan Sheehan",
 	"license": "AGPL-3.0-or-later",

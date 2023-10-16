@@ -4,7 +4,7 @@
 	"description": "Evan Sheehan's personal website",
 	"private": true,
 	"scripts": {
-		"build": "eleventy",
+		"build": "eleventy"
 	},
 	"author": "W. Evan Sheehan",
 	"license": "AGPL-3.0-or-later",

@@ -4,3 +4,4 @@ _cache/
 *.code-workspace
 _site/
 node_modules/
+tmp/

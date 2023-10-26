@@ -1,3 +1,5 @@
+I’ve moved this repository over to Codeberg: https://codeberg.org/darth_mall/darthmall.net
+
 Evan Sheehan’s [personal website](https://darthmall.net/).
 
 ## Set up
